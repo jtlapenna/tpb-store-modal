@@ -64,6 +64,7 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   display: flex !important;
   height: 100vh !important;
   overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
 /* Left panel - Fixed image gallery */
@@ -79,6 +80,8 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   padding: 24px !important;
   box-sizing: border-box !important;
   position: relative !important;
+  height: 100vh !important;
+  flex-shrink: 0 !important;
 }
 
 /* Right panel - Scrollable content */
@@ -89,6 +92,8 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   padding: 24px !important;
   box-sizing: border-box !important;
   position: relative !important;
+  height: 100vh !important;
+  flex-shrink: 0 !important;
 }
 
 /* Clean content container */

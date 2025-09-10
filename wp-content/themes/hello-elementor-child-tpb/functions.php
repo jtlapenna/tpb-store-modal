@@ -203,11 +203,7 @@ add_action( 'wp_head', function () {
 				leftPanel.appendChild(gallery.cloneNode(true));
 			}
 			
-			// Create clean content container for right panel
-			const contentContainer = document.createElement('div');
-			contentContainer.className = 'tpb-qv-content';
-			
-			// Move essential product content (filtered)
+			// Move summary content to right panel (with noise filtering)
 			const summary = product.querySelector('.summary');
 			if (summary) {
 				// Clone summary and clean it up
@@ -231,9 +227,11 @@ add_action( 'wp_head', function () {
 				});
 				
 				// Remove duplicate "Add to quote" buttons (keep only the first one)
-				const addToQuoteButtons = cleanSummary.querySelectorAll('a[href*="add-to-quote"], button:contains("Add to quote")');
+				const addToQuoteButtons = cleanSummary.querySelectorAll('a[href*="add-to-quote"], button');
 				addToQuoteButtons.forEach((btn, index) => {
-					if (index > 0) btn.remove();
+					if (btn.textContent.includes('Add to quote') && index > 0) {
+						btn.remove();
+					}
 				});
 				
 				// Remove duplicate pricing
@@ -242,10 +240,10 @@ add_action( 'wp_head', function () {
 					if (index > 0) price.remove();
 				});
 				
-				contentContainer.appendChild(cleanSummary);
+				rightPanel.appendChild(cleanSummary);
 			}
 			
-			// Add only essential CPB configuration elements
+			// Add essential CPB configuration elements to right panel
 			const essentialElements = product.querySelectorAll(`
 				.woocommerce-variation,
 				.woocommerce-variation-add-to-cart,
@@ -253,18 +251,14 @@ add_action( 'wp_head', function () {
 				.woocommerce-variation-price,
 				.woocommerce-variation-availability,
 				form.cart .variations,
-				form.cart .single_variation_wrap,
-				.woocommerce-product-gallery-thumbs,
-				.woocommerce-product-gallery__wrapper
+				form.cart .single_variation_wrap
 			`);
 			
 			essentialElements.forEach(element => {
-				if (element && !contentContainer.contains(element)) {
-					contentContainer.appendChild(element.cloneNode(true));
+				if (element && !rightPanel.contains(element)) {
+					rightPanel.appendChild(element.cloneNode(true));
 				}
 			});
-			
-			rightPanel.appendChild(contentContainer);
 			
 			// Clear body and add panels
 			body.innerHTML = '';
