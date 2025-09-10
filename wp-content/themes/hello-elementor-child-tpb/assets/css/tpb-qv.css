@@ -144,6 +144,68 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   width: 100% !important;
 }
 
+/* CPB Configuration styles for right panel */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-tabs,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .product_meta,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-product-attributes,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-product-details__short-description,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .cart,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-variation,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-variation-add-to-cart,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-variation-description,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-variation-price,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .woocommerce-variation-availability {
+  padding: 0 !important;
+  margin: 0 0 20px 0 !important;
+  width: 100% !important;
+}
+
+/* Ensure CPB forms and variations are visible */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart {
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations {
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations tr {
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations td {
+  padding: 0 0 8px 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations label {
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations select {
+  margin: 0 0 8px 0 !important;
+  padding: 8px 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+  color: #333 !important;
+}
+
 /* Ensure proper spacing for modal content */
 .tpb-qv .woocommerce div.product {
   padding: 0 !important;

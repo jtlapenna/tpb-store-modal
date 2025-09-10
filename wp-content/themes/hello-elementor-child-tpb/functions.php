@@ -203,11 +203,19 @@ add_action( 'wp_head', function () {
 				leftPanel.appendChild(gallery.cloneNode(true));
 			}
 			
-			// Move summary content to right panel
+			// Move ALL product content to right panel (including CPB configurations)
 			const summary = product.querySelector('.summary');
 			if (summary) {
 				rightPanel.appendChild(summary.cloneNode(true));
 			}
+			
+			// Also move any additional product content outside of summary
+			const additionalContent = product.querySelectorAll(':not(.woocommerce-product-gallery):not(.summary)');
+			additionalContent.forEach(element => {
+				if (element.tagName !== 'SCRIPT' && element.tagName !== 'STYLE') {
+					rightPanel.appendChild(element.cloneNode(true));
+				}
+			});
 			
 			// Clear body and add panels
 			body.innerHTML = '';
