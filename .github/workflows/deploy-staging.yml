@@ -32,10 +32,10 @@ jobs:
           port:     ${{ secrets.SFTP_PORT_STAGING }}
           username: ${{ secrets.SFTP_USER_STAGING }}
           password: ${{ secrets.SFTP_PASS_STAGING }}
-          sftp_only: true
-          delete: false
+          sftp_only: false
           local_path:  'wp-content/themes/hello-elementor-child-tpb/*'
           remote_path: '/html/wp-content/themes/hello-elementor-child-tpb'
+          delete_remote_files: false
 
       - name: SFTP deploy mu-plugins/tpb-quickview (staging)
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -44,10 +44,10 @@ jobs:
           port:     ${{ secrets.SFTP_PORT_STAGING }}
           username: ${{ secrets.SFTP_USER_STAGING }}
           password: ${{ secrets.SFTP_PASS_STAGING }}
-          sftp_only: true
-          delete: false
+          sftp_only: false
           local_path:  'wp-content/mu-plugins/tpb-quickview/*'
           remote_path: '/html/wp-content/mu-plugins/tpb-quickview'
+          delete_remote_files: false
 
       - name: Flush caches (staging)
         run: |
