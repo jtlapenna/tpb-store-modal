@@ -68,8 +68,10 @@ add_action( 'wp_head', function () {
 			margin: 0 !important;
 			padding: 0 !important;
 			display: flex !important;
+			width: 100% !important;
 			height: 100vh !important;
 			overflow: hidden !important;
+			box-sizing: border-box !important;
 		}
 		/* Ensure all text is visible in iframe mode */
 		body, .woocommerce, .product, .entry-content, 
@@ -158,6 +160,7 @@ add_action( 'wp_head', function () {
 		
 		.tpb-qv .tpb-qv-right-panel {
 			width: 55% !important;
+			flex: 1 !important;
 			background: #fff !important;
 			overflow-y: auto !important;
 			padding: 24px !important;
@@ -197,16 +200,17 @@ add_action( 'wp_head', function () {
 			leftPanel.style.flexShrink = '0';
 			leftPanel.style.boxSizing = 'border-box';
 			
-				// Create right panel for content
-				const rightPanel = document.createElement('div');
-				rightPanel.className = 'tpb-qv-right-panel';
-				rightPanel.style.width = '55%';
-				rightPanel.style.height = '100vh';
-				rightPanel.style.overflowY = 'auto';
-				rightPanel.style.overflowX = 'hidden';
-				rightPanel.style.boxSizing = 'border-box';
-				rightPanel.style.display = 'flex';
-				rightPanel.style.flexDirection = 'column';
+			// Create right panel for content
+			const rightPanel = document.createElement('div');
+			rightPanel.className = 'tpb-qv-right-panel';
+			rightPanel.style.width = '55%';
+			rightPanel.style.flex = '1';
+			rightPanel.style.height = '100vh';
+			rightPanel.style.overflowY = 'auto';
+			rightPanel.style.overflowX = 'hidden';
+			rightPanel.style.boxSizing = 'border-box';
+			rightPanel.style.display = 'flex';
+			rightPanel.style.flexDirection = 'column';
 			
 			// Move product gallery to left panel
 			const gallery = product.querySelector('.woocommerce-product-gallery');
