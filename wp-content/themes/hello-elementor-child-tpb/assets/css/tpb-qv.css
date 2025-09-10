@@ -10,14 +10,14 @@
 
 #tpb-qv-overlay .tpb-qv-modal {
   position: relative;
-  width: min(1100px, 92vw);
-  height: min(88vh, 860px);
-  margin: 4vh auto;
+  width: min(1200px, 95vw);
+  height: min(90vh, 900px);
+  margin: 5vh auto;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,.35);
   overflow: hidden;
-  padding: 24px;
+  display: flex;
   box-sizing: border-box;
 }
 
@@ -52,13 +52,46 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   height: 100%;
   border: 0;
   background: #fff;
-  margin: -24px;
-  width: calc(100% + 48px);
-  height: calc(100% + 48px);
+  position: relative;
+}
+
+/* Two-panel layout for modal content */
+.tpb-qv body {
+  color: #333 !important;
+  background: #fff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* Left panel - Fixed image gallery */
+.tpb-qv .tpb-qv-left-panel {
+  width: 45% !important;
+  min-width: 400px !important;
+  background: #f8f9fa !important;
+  border-right: 1px solid #e9ecef !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+/* Right panel - Scrollable content */
+.tpb-qv .tpb-qv-right-panel {
+  width: 55% !important;
+  background: #fff !important;
+  overflow-y: auto !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
 }
 
 /* Force text colors for better contrast in iframe content */
-.tpb-qv body,
 .tpb-qv .woocommerce,
 .tpb-qv .product,
 .tpb-qv .entry-content,
@@ -66,8 +99,49 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
 .tpb-qv .elementor-element {
   color: #333 !important;
   background: #fff !important;
-  padding: 24px !important;
   margin: 0 !important;
+}
+
+/* Image gallery styles for left panel */
+.tpb-qv .tpb-qv-left-panel .woocommerce-product-gallery {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .tpb-qv-left-panel .woocommerce-product-gallery__wrapper {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .tpb-qv-left-panel .woocommerce-product-gallery__image {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .tpb-qv-left-panel .woocommerce-product-gallery__image img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 600px !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+/* Content organization for right panel */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
 }
 
 /* Ensure proper spacing for modal content */

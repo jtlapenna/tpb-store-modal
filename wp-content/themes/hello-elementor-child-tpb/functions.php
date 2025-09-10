@@ -65,8 +65,11 @@ add_action( 'wp_head', function () {
 		html, body { 
 			background: #fff !important; 
 			color: #333 !important;
-			padding: 24px !important;
 			margin: 0 !important;
+			padding: 0 !important;
+			display: flex !important;
+			height: 100vh !important;
+			overflow: hidden !important;
 		}
 		/* Ensure all text is visible in iframe mode */
 		body, .woocommerce, .product, .entry-content, 
@@ -137,7 +140,82 @@ add_action( 'wp_head', function () {
 			color: #5ac59a !important;
 			font-weight: bold !important;
 		}
+		
+		/* Two-panel layout styles */
+		.tpb-qv-left-panel {
+			width: 45% !important;
+			min-width: 400px !important;
+			background: #f8f9fa !important;
+			border-right: 1px solid #e9ecef !important;
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+			align-items: center !important;
+			padding: 24px !important;
+			box-sizing: border-box !important;
+			position: relative !important;
+		}
+		
+		.tpb-qv-right-panel {
+			width: 55% !important;
+			background: #fff !important;
+			overflow-y: auto !important;
+			padding: 24px !important;
+			box-sizing: border-box !important;
+			position: relative !important;
+		}
+		
+		.tpb-qv-left-panel .woocommerce-product-gallery {
+			width: 100% !important;
+			max-width: 500px !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		
+		.tpb-qv-left-panel .woocommerce-product-gallery img {
+			width: 100% !important;
+			height: auto !important;
+			max-height: 600px !important;
+			object-fit: contain !important;
+			border-radius: 8px !important;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+		}
 	</style>
+	
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		// Create two-panel layout
+		const body = document.body;
+		const product = document.querySelector('.woocommerce div.product');
+		
+		if (product) {
+			// Create left panel for images
+			const leftPanel = document.createElement('div');
+			leftPanel.className = 'tpb-qv-left-panel';
+			
+			// Create right panel for content
+			const rightPanel = document.createElement('div');
+			rightPanel.className = 'tpb-qv-right-panel';
+			
+			// Move product gallery to left panel
+			const gallery = product.querySelector('.woocommerce-product-gallery');
+			if (gallery) {
+				leftPanel.appendChild(gallery.cloneNode(true));
+			}
+			
+			// Move summary content to right panel
+			const summary = product.querySelector('.summary');
+			if (summary) {
+				rightPanel.appendChild(summary.cloneNode(true));
+			}
+			
+			// Clear body and add panels
+			body.innerHTML = '';
+			body.appendChild(leftPanel);
+			body.appendChild(rightPanel);
+		}
+	});
+	</script>
 	<?php
 } );
 
