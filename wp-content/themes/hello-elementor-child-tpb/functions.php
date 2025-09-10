@@ -240,6 +240,20 @@ add_action( 'wp_head', function () {
 					if (index > 0) price.remove();
 				});
 				
+				// Remove any duplicate product blocks or sections
+				const productBlocks = cleanSummary.querySelectorAll('.woocommerce div.product');
+				productBlocks.forEach((block, index) => {
+					if (index > 0) block.remove();
+				});
+				
+				// Remove duplicate "Choose SKUs" text
+				const chooseTexts = cleanSummary.querySelectorAll('p');
+				chooseTexts.forEach((p, index) => {
+					if (p.textContent.includes('Choose SKUs, Mount, and Finish') && index > 0) {
+						p.remove();
+					}
+				});
+				
 				rightPanel.appendChild(cleanSummary);
 			}
 			

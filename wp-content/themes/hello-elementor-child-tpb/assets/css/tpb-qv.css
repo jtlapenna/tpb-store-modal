@@ -10,7 +10,7 @@
 
 #tpb-qv-overlay .tpb-qv-modal {
   position: relative;
-  width: min(1200px, 95vw);
+  width: min(1400px, 98vw);
   height: min(90vh, 900px);
   margin: 5vh auto;
   background: #fff;
@@ -142,6 +142,45 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
 /* Hide duplicate "Choose SKUs" text */
 .tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary p:contains("Choose SKUs, Mount, and Finish.") ~ p:contains("Choose SKUs, Mount, and Finish.") {
   display: none !important;
+}
+
+/* Remove any remaining duplicate product blocks */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary ~ .woocommerce div.product {
+  display: none !important;
+}
+
+/* Hide duplicate product information blocks */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary ~ * {
+  display: none !important;
+}
+
+/* Ensure content wraps properly and stays within bounds */
+.tpb-qv .tpb-qv-right-panel * {
+  max-width: 100% !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Fix button and input overflow */
+.tpb-qv .tpb-qv-right-panel button,
+.tpb-qv .tpb-qv-right-panel input,
+.tpb-qv .tpb-qv-right-panel select,
+.tpb-qv .tpb-qv-right-panel .add_to_cart_button {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure text doesn't overflow */
+.tpb-qv .tpb-qv-right-panel p,
+.tpb-qv .tpb-qv-right-panel h1,
+.tpb-qv .tpb-qv-right-panel h2,
+.tpb-qv .tpb-qv-right-panel h3,
+.tpb-qv .tpb-qv-right-panel h4,
+.tpb-qv .tpb-qv-right-panel h5,
+.tpb-qv .tpb-qv-right-panel h6 {
+  max-width: 100% !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
 /* Force text colors for better contrast in iframe content */
