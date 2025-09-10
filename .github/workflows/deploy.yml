@@ -1,0 +1,56 @@
+name: Deploy (SFTP)
+# noop change to ensure workflow registration
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'wp-content/themes/hello-elementor-child-tpb/**'
+      - 'wp-content/mu-plugins/tpb-quickview/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Commit SHA, tag, or branch to deploy'
+        required: false
+        default: ''
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.ref || github.ref }}
+
+      - name: SFTP deploy child theme
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server:   ${{ secrets.SFTP_HOST }}
+          port:     ${{ secrets.SFTP_PORT }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASS }}
+          sftp_only: true
+          delete: false
+          local_path:  'wp-content/themes/hello-elementor-child-tpb/*'
+          remote_path: '/html/wp-content/themes/hello-elementor-child-tpb'
+
+      - name: SFTP deploy mu-plugins/tpb-quickview
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server:   ${{ secrets.SFTP_HOST }}
+          port:     ${{ secrets.SFTP_PORT }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASS }}
+          sftp_only: true
+          delete: false
+          local_path:  'wp-content/mu-plugins/tpb-quickview/*'
+          remote_path: '/html/wp-content/mu-plugins/tpb-quickview'
+
+      - name: Flush caches (optional)
+        run: |
+          curl -fsS "${{ secrets.SITE_URL }}/?tpb_deploy_flush=${{ secrets.DEPLOY_TOKEN }}" || true
+
+
