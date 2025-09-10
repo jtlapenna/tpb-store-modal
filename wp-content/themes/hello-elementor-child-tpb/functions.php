@@ -203,19 +203,68 @@ add_action( 'wp_head', function () {
 				leftPanel.appendChild(gallery.cloneNode(true));
 			}
 			
-			// Move ALL product content to right panel (including CPB configurations)
+			// Create clean content container for right panel
+			const contentContainer = document.createElement('div');
+			contentContainer.className = 'tpb-qv-content';
+			
+			// Move essential product content (filtered)
 			const summary = product.querySelector('.summary');
 			if (summary) {
-				rightPanel.appendChild(summary.cloneNode(true));
+				// Clone summary and clean it up
+				const cleanSummary = summary.cloneNode(true);
+				
+				// Remove redundant elements
+				const elementsToRemove = [
+					'.woocommerce-product-rating',
+					'.woocommerce-product-details__short-description',
+					'.product_meta',
+					'.woocommerce-tabs',
+					'.woocommerce-product-attributes',
+					'.related.products',
+					'.upsells.products',
+					'.cross-sells.products'
+				];
+				
+				elementsToRemove.forEach(selector => {
+					const elements = cleanSummary.querySelectorAll(selector);
+					elements.forEach(el => el.remove());
+				});
+				
+				// Remove duplicate "Add to quote" buttons (keep only the first one)
+				const addToQuoteButtons = cleanSummary.querySelectorAll('a[href*="add-to-quote"], button:contains("Add to quote")');
+				addToQuoteButtons.forEach((btn, index) => {
+					if (index > 0) btn.remove();
+				});
+				
+				// Remove duplicate pricing
+				const prices = cleanSummary.querySelectorAll('.price, .woocommerce-Price-amount');
+				prices.forEach((price, index) => {
+					if (index > 0) price.remove();
+				});
+				
+				contentContainer.appendChild(cleanSummary);
 			}
 			
-			// Also move any additional product content outside of summary
-			const additionalContent = product.querySelectorAll(':not(.woocommerce-product-gallery):not(.summary)');
-			additionalContent.forEach(element => {
-				if (element.tagName !== 'SCRIPT' && element.tagName !== 'STYLE') {
-					rightPanel.appendChild(element.cloneNode(true));
+			// Add only essential CPB configuration elements
+			const essentialElements = product.querySelectorAll(`
+				.woocommerce-variation,
+				.woocommerce-variation-add-to-cart,
+				.woocommerce-variation-description,
+				.woocommerce-variation-price,
+				.woocommerce-variation-availability,
+				form.cart .variations,
+				form.cart .single_variation_wrap,
+				.woocommerce-product-gallery-thumbs,
+				.woocommerce-product-gallery__wrapper
+			`);
+			
+			essentialElements.forEach(element => {
+				if (element && !contentContainer.contains(element)) {
+					contentContainer.appendChild(element.cloneNode(true));
 				}
 			});
+			
+			rightPanel.appendChild(contentContainer);
 			
 			// Clear body and add panels
 			body.innerHTML = '';

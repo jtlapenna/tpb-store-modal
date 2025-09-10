@@ -91,6 +91,35 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   position: relative !important;
 }
 
+/* Clean content container */
+.tpb-qv .tpb-qv-content {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Hide noise elements in right panel */
+.tpb-qv .tpb-qv-right-panel .woocommerce-product-rating,
+.tpb-qv .tpb-qv-right-panel .woocommerce-product-details__short-description,
+.tpb-qv .tpb-qv-right-panel .product_meta,
+.tpb-qv .tpb-qv-right-panel .woocommerce-tabs,
+.tpb-qv .tpb-qv-right-panel .woocommerce-product-attributes,
+.tpb-qv .tpb-qv-right-panel .related.products,
+.tpb-qv .tpb-qv-right-panel .upsells.products,
+.tpb-qv .tpb-qv-right-panel .cross-sells.products,
+.tpb-qv .tpb-qv-right-panel .woocommerce-product-gallery-thumbs,
+.tpb-qv .tpb-qv-right-panel .woocommerce-product-gallery__wrapper {
+  display: none !important;
+}
+
+/* Remove duplicate buttons and pricing */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary a[href*="add-to-quote"]:not(:first-child),
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary button:contains("Add to quote"):not(:first-child),
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary .price:not(:first-child),
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary .woocommerce-Price-amount:not(:first-child) {
+  display: none !important;
+}
+
 /* Force text colors for better contrast in iframe content */
 .tpb-qv .woocommerce,
 .tpb-qv .product,
