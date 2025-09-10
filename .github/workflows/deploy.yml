@@ -43,6 +43,8 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y sshpass
           sshpass -p "${{ secrets.SFTP_PASS }}" sftp -P "${{ secrets.SFTP_PORT }}" -o StrictHostKeyChecking=no "${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}" <<'SFTP'
+          rm /html/wp-content/mu-plugins/tpb-quickview
+          rmdir /html/wp-content/mu-plugins/tpb-quickview
           mkdir /html/wp-content/mu-plugins
           mkdir /html/wp-content/mu-plugins/tpb-quickview
 SFTP
@@ -55,8 +57,8 @@ SFTP
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           sftp_only: true
-          local_path:  'wp-content/mu-plugins/tpb-quickview/*'
-          remote_path: '/html/wp-content/mu-plugins/tpb-quickview/'
+          local_path:  'wp-content/mu-plugins/tpb-quickview'
+          remote_path: '/html/wp-content/mu-plugins/'
           delete_remote_files: false
 
       - name: Flush caches (optional)
