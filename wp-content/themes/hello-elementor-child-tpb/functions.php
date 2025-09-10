@@ -214,104 +214,59 @@ add_action( 'wp_head', function () {
 				leftPanel.appendChild(gallery.cloneNode(true));
 			}
 			
-			// Move summary content to right panel (with noise filtering)
+			// Create a clean content container for right panel
+			const contentContainer = document.createElement('div');
+			contentContainer.className = 'tpb-qv-content';
+			contentContainer.style.width = '100%';
+			contentContainer.style.boxSizing = 'border-box';
+			contentContainer.style.padding = '0';
+			contentContainer.style.margin = '0';
+			
+			// Add only essential elements in a controlled order
 			const summary = product.querySelector('.summary');
 			if (summary) {
-				// Clone summary and clean it up
-				const cleanSummary = summary.cloneNode(true);
+				// Add product title (h1)
+				const title = summary.querySelector('h1, h2, h3, h4, h5, h6');
+				if (title) {
+					const titleClone = title.cloneNode(true);
+					titleClone.style.marginBottom = '16px';
+					titleClone.style.fontSize = '24px';
+					titleClone.style.fontWeight = 'bold';
+					contentContainer.appendChild(titleClone);
+				}
 				
-				// Remove redundant elements
-				const elementsToRemove = [
-					'.woocommerce-product-rating',
-					'.woocommerce-product-details__short-description',
-					'.product_meta',
-					'.woocommerce-tabs',
-					'.woocommerce-product-attributes',
-					'.related.products',
-					'.upsells.products',
-					'.cross-sells.products'
-				];
+				// Add price (only first instance)
+				const price = summary.querySelector('.price, .woocommerce-Price-amount');
+				if (price) {
+					const priceClone = price.cloneNode(true);
+					priceClone.style.marginBottom = '16px';
+					priceClone.style.fontSize = '18px';
+					priceClone.style.fontWeight = 'bold';
+					priceClone.style.color = '#5ac59a';
+					contentContainer.appendChild(priceClone);
+				}
 				
-				elementsToRemove.forEach(selector => {
-					const elements = cleanSummary.querySelectorAll(selector);
-					elements.forEach(el => el.remove());
-				});
+				// Add stock status
+				const stock = summary.querySelector('.stock, .woocommerce-stock');
+				if (stock) {
+					const stockClone = stock.cloneNode(true);
+					stockClone.style.marginBottom = '16px';
+					contentContainer.appendChild(stockClone);
+				}
 				
-				// Remove duplicate "Add to quote" buttons (keep only the first one)
-				const addToQuoteButtons = cleanSummary.querySelectorAll('a[href*="add-to-quote"], button');
-				addToQuoteButtons.forEach((btn, index) => {
-					if (btn.textContent.includes('Add to quote') && index > 0) {
-						btn.remove();
-					}
-				});
-				
-				// Remove duplicate pricing
-				const prices = cleanSummary.querySelectorAll('.price, .woocommerce-Price-amount');
-				prices.forEach((price, index) => {
-					if (index > 0) price.remove();
-				});
-				
-				// Remove any duplicate product blocks or sections
-				const productBlocks = cleanSummary.querySelectorAll('.woocommerce div.product');
-				productBlocks.forEach((block, index) => {
-					if (index > 0) block.remove();
-				});
-				
-				// Remove duplicate "Choose SKUs" text
-				const chooseTexts = cleanSummary.querySelectorAll('p');
-				chooseTexts.forEach((p, index) => {
-					if (p.textContent.includes('Choose SKUs, Mount, and Finish') && index > 0) {
-						p.remove();
-					}
-				});
-				
-				// Remove any remaining duplicate sections or blocks
-				const allElements = cleanSummary.querySelectorAll('*');
-				const seenTexts = new Set();
-				allElements.forEach(element => {
-					const text = element.textContent?.trim();
-					if (text && text.length > 10) {
-						if (seenTexts.has(text)) {
-							element.remove();
-						} else {
-							seenTexts.add(text);
-						}
-					}
-				});
-				
-				rightPanel.appendChild(cleanSummary);
+				// Add "Choose SKUs" instruction (only once)
+				const chooseText = summary.querySelector('p');
+				if (chooseText && chooseText.textContent.includes('Choose SKUs, Mount, and Finish')) {
+					const chooseTextClone = chooseText.cloneNode(true);
+					chooseTextClone.style.marginBottom = '16px';
+					chooseTextClone.style.fontStyle = 'italic';
+					chooseTextClone.style.color = '#666';
+					contentContainer.appendChild(chooseTextClone);
+				}
 			}
 			
-			// Add essential CPB configuration elements to right panel
-			const essentialSelectors = [
-				'.woocommerce-variation',
-				'.woocommerce-variation-add-to-cart',
-				'.woocommerce-variation-description',
-				'.woocommerce-variation-price',
-				'.woocommerce-variation-availability',
-				'form.cart .variations',
-				'form.cart .single_variation_wrap',
-				'form.cart',
-				'.woocommerce div.product form',
-				'.variations',
-				'.single_variation_wrap',
-				'.woocommerce-variation-add-to-cart',
-				'.woocommerce-variation-description',
-				'.woocommerce-variation-price',
-				'.woocommerce-variation-availability'
-			];
-			
-			essentialSelectors.forEach(selector => {
-				const elements = product.querySelectorAll(selector);
-				elements.forEach(element => {
-					if (element && !rightPanel.contains(element)) {
-						rightPanel.appendChild(element.cloneNode(true));
-					}
-				});
-			});
-			
-			// Add only essential CPB configuration elements (avoiding duplicates)
-			const cpbSelectors = [
+			// Add CPB configuration elements (variations, forms, etc.)
+			const cpbElements = [
 				'form.cart .variations',
 				'form.cart .single_variation_wrap',
 				'.woocommerce-variation',
@@ -321,14 +276,31 @@ add_action( 'wp_head', function () {
 				'.woocommerce-variation-availability'
 			];
 			
-			cpbSelectors.forEach(selector => {
+			cpbElements.forEach(selector => {
 				const elements = product.querySelectorAll(selector);
 				elements.forEach(element => {
-					if (element && !rightPanel.contains(element)) {
-						rightPanel.appendChild(element.cloneNode(true));
+					if (element) {
+						const elementClone = element.cloneNode(true);
+						elementClone.style.marginBottom = '16px';
+						elementClone.style.width = '100%';
+						elementClone.style.boxSizing = 'border-box';
+						contentContainer.appendChild(elementClone);
 					}
 				});
 			});
+			
+			// Add cart form (quantity and add to cart button)
+			const cartForm = product.querySelector('form.cart');
+			if (cartForm) {
+				const cartFormClone = cartForm.cloneNode(true);
+				cartFormClone.style.marginTop = '20px';
+				cartFormClone.style.width = '100%';
+				cartFormClone.style.boxSizing = 'border-box';
+				contentContainer.appendChild(cartFormClone);
+			}
+			
+			// Append content container to right panel
+			rightPanel.appendChild(contentContainer);
 			
 			// Clear body and add panels
 			body.innerHTML = '';
