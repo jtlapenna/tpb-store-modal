@@ -25,16 +25,6 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.inputs.ref || github.ref }}
 
-      - name: Ensure remote directories exist (SFTP)
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y sshpass
-          sshpass -p "${{ secrets.SFTP_PASS }}" sftp -P "${{ secrets.SFTP_PORT }}" -o StrictHostKeyChecking=no "${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}" <<'SFTP'
-          mkdir /html/wp-content/themes
-          mkdir /html/wp-content/themes/hello-elementor-child-tpb
-          mkdir /html/wp-content/mu-plugins
-          mkdir /html/wp-content/mu-plugins/tpb-quickview
-SFTP
 
       - name: SFTP deploy child theme
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
