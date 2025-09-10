@@ -218,9 +218,11 @@ add_action( 'wp_head', function () {
 			const contentContainer = document.createElement('div');
 			contentContainer.className = 'tpb-qv-content';
 			contentContainer.style.width = '100%';
+			contentContainer.style.maxWidth = '100%';
 			contentContainer.style.boxSizing = 'border-box';
 			contentContainer.style.padding = '0';
 			contentContainer.style.margin = '0';
+			contentContainer.style.display = 'block';
 			
 			// Add only essential elements in a controlled order
 			const summary = product.querySelector('.summary');
@@ -232,6 +234,9 @@ add_action( 'wp_head', function () {
 					titleClone.style.marginBottom = '16px';
 					titleClone.style.fontSize = '24px';
 					titleClone.style.fontWeight = 'bold';
+					titleClone.style.width = '100%';
+					titleClone.style.maxWidth = '100%';
+					titleClone.style.boxSizing = 'border-box';
 					contentContainer.appendChild(titleClone);
 				}
 				
@@ -243,6 +248,9 @@ add_action( 'wp_head', function () {
 					priceClone.style.fontSize = '18px';
 					priceClone.style.fontWeight = 'bold';
 					priceClone.style.color = '#5ac59a';
+					priceClone.style.width = '100%';
+					priceClone.style.maxWidth = '100%';
+					priceClone.style.boxSizing = 'border-box';
 					contentContainer.appendChild(priceClone);
 				}
 				

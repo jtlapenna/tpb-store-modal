@@ -121,6 +121,63 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   box-sizing: border-box !important;
 }
 
+/* Force all form elements to use full width */
+.tpb-qv .tpb-qv-content form,
+.tpb-qv .tpb-qv-content .variations,
+.tpb-qv .tpb-qv-content .single_variation_wrap,
+.tpb-qv .tpb-qv-content .woocommerce-variation,
+.tpb-qv .tpb-qv-content .woocommerce-variation-add-to-cart,
+.tpb-qv .tpb-qv-content .woocommerce-variation-description,
+.tpb-qv .tpb-qv-content .woocommerce-variation-price,
+.tpb-qv .tpb-qv-content .woocommerce-variation-availability,
+.tpb-qv .tpb-qv-content .cart,
+.tpb-qv .tpb-qv-content .quantity,
+.tpb-qv .tpb-qv-content .add_to_cart_button,
+.tpb-qv .tpb-qv-content button,
+.tpb-qv .tpb-qv-content input,
+.tpb-qv .tpb-qv-content select,
+.tpb-qv .tpb-qv-content textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Force headings and text elements to use full width */
+.tpb-qv .tpb-qv-content h1,
+.tpb-qv .tpb-qv-content h2,
+.tpb-qv .tpb-qv-content h3,
+.tpb-qv .tpb-qv-content h4,
+.tpb-qv .tpb-qv-content h5,
+.tpb-qv .tpb-qv-content h6,
+.tpb-qv .tpb-qv-content p,
+.tpb-qv .tpb-qv-content div,
+.tpb-qv .tpb-qv-content span,
+.tpb-qv .tpb-qv-content .price,
+.tpb-qv .tpb-qv-content .woocommerce-Price-amount {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure dropdowns and selects stretch full width */
+.tpb-qv .tpb-qv-content select,
+.tpb-qv .tpb-qv-content .variations select {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Force buttons to use full width */
+.tpb-qv .tpb-qv-content .add_to_cart_button,
+.tpb-qv .tpb-qv-content button[type="submit"],
+.tpb-qv .tpb-qv-content .single_add_to_cart_button {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  display: block !important;
+}
+
 
 /* Ensure right panel content fills full width */
 .tpb-qv .tpb-qv-right-panel .woocommerce,
