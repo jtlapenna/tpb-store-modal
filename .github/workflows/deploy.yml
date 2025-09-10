@@ -1,5 +1,4 @@
 name: Deploy (SFTP)
-# noop change to ensure workflow registration
 
 on:
   push:
@@ -8,12 +7,6 @@ on:
       - 'wp-content/themes/hello-elementor-child-tpb/**'
       - 'wp-content/mu-plugins/tpb-quickview/**'
       - '.github/workflows/deploy.yml'
-  workflow_dispatch:
-    inputs:
-      ref:
-        description: 'Commit SHA, tag, or branch to deploy'
-        required: false
-        default: ''
   workflow_dispatch:
     inputs:
       ref:
