@@ -1,28 +1,17 @@
-# Compiled output
-dist/
-
-# Node
-node_modules/
-.npm/
-.npmrc
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# Editor
-.vscode/
-.idea/
-.DS_Store
-
-# Env
-.env
-.env.*
-
-# Tests
-coverage/
-
-# Mac
 *.DS_Store
+
+# Keep only our theme + mu-plugin; ignore everything else.
+*
+!wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/hello-elementor-child-tpb/**
+
+!wp-content/mu-plugins/
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/tpb-quickview/**
+
+# Node/vendor junk just in case
+node_modules/
+vendor/

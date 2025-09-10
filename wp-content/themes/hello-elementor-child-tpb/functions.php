@@ -32,6 +32,17 @@ add_action( 'wp_enqueue_scripts', function () {
 }, 20 );
 
 
+// Define deploy token constant if provided via environment (for MU-plugin cache flush)
+if ( ! defined( 'TPB_DEPLOY_TOKEN' ) ) {
+	$env = getenv( 'TPB_DEPLOY_TOKEN' );
+	if ( $env ) {
+		define( 'TPB_DEPLOY_TOKEN', $env );
+	} else {
+		define( 'TPB_DEPLOY_TOKEN', '1111100000102400234023024023052050204603406040120425052405603603406303' );
+	}
+}
+
+
 /**
  * Convenience shortcode for adding a Quick View trigger button anywhere:
  * Usage: [tpb_qv_button product="4607" label="Configure Now"]
