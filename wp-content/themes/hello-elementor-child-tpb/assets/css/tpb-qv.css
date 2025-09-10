@@ -17,6 +17,8 @@
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,.35);
   overflow: hidden;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 #tpb-qv-overlay .tpb-qv-iframe {
@@ -50,6 +52,9 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   height: 100%;
   border: 0;
   background: #fff;
+  margin: -24px;
+  width: calc(100% + 48px);
+  height: calc(100% + 48px);
 }
 
 /* Force text colors for better contrast in iframe content */
@@ -61,6 +66,84 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
 .tpb-qv .elementor-element {
   color: #333 !important;
   background: #fff !important;
+  padding: 24px !important;
+  margin: 0 !important;
+}
+
+/* Ensure proper spacing for modal content */
+.tpb-qv .woocommerce div.product {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product .summary {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product .woocommerce-product-gallery {
+  padding: 0 !important;
+  margin: 0 0 20px 0 !important;
+}
+
+/* Improve spacing for product details */
+.tpb-qv .woocommerce div.product .product_title {
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product .price {
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product .woocommerce-product-details__short-description {
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product .cart {
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product .product_meta {
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+}
+
+/* Improve spacing for form elements */
+.tpb-qv .woocommerce div.product form.cart {
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product form.cart .variations {
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product form.cart .variations tr {
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product form.cart .variations td {
+  padding: 0 0 8px 0 !important;
+  margin: 0 !important;
+}
+
+.tpb-qv .woocommerce div.product form.cart .variations label {
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.tpb-qv .woocommerce div.product form.cart .variations select {
+  margin: 0 0 8px 0 !important;
+  padding: 8px 12px !important;
+  width: 100% !important;
+  max-width: 400px !important;
 }
 
 /* Ensure headings are visible */

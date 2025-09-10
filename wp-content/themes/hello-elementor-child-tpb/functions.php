@@ -65,12 +65,62 @@ add_action( 'wp_head', function () {
 		html, body { 
 			background: #fff !important; 
 			color: #333 !important;
+			padding: 24px !important;
+			margin: 0 !important;
 		}
 		/* Ensure all text is visible in iframe mode */
 		body, .woocommerce, .product, .entry-content, 
 		.elementor-widget, .elementor-element {
 			color: #333 !important;
 			background: #fff !important;
+		}
+		/* Improve spacing for modal content */
+		.woocommerce div.product {
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		.woocommerce div.product .summary {
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		.woocommerce div.product .product_title {
+			margin: 0 0 16px 0 !important;
+			padding: 0 !important;
+		}
+		.woocommerce div.product .price {
+			margin: 0 0 16px 0 !important;
+			padding: 0 !important;
+		}
+		.woocommerce div.product .woocommerce-product-details__short-description {
+			margin: 0 0 20px 0 !important;
+			padding: 0 !important;
+		}
+		.woocommerce div.product .cart {
+			margin: 0 0 20px 0 !important;
+			padding: 0 !important;
+		}
+		.woocommerce div.product .product_meta {
+			margin: 0 0 20px 0 !important;
+			padding: 0 !important;
+		}
+		.woocommerce div.product form.cart .variations tr {
+			margin: 0 0 16px 0 !important;
+			padding: 0 !important;
+		}
+		.woocommerce div.product form.cart .variations td {
+			padding: 0 0 8px 0 !important;
+			margin: 0 !important;
+		}
+		.woocommerce div.product form.cart .variations label {
+			margin: 0 0 8px 0 !important;
+			padding: 0 !important;
+			display: block !important;
+		}
+		.woocommerce div.product form.cart .variations select {
+			margin: 0 0 8px 0 !important;
+			padding: 8px 12px !important;
+			width: 100% !important;
+			max-width: 400px !important;
 		}
 		h1, h2, h3, h4, h5, h6 {
 			color: #333 !important;
