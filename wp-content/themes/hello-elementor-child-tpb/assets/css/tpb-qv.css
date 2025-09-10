@@ -195,33 +195,45 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
 }
 
 /* Ensure CPB forms and variations are visible */
-.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart {
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart,
+.tpb-qv .tpb-qv-right-panel form.cart,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form {
   margin: 0 0 20px 0 !important;
   padding: 0 !important;
   width: 100% !important;
+  display: block !important;
 }
 
-.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations {
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations,
+.tpb-qv .tpb-qv-right-panel .variations,
+.tpb-qv .tpb-qv-right-panel form .variations {
   margin: 0 0 20px 0 !important;
   padding: 0 !important;
   width: 100% !important;
+  display: block !important;
 }
 
-.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations tr {
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations tr,
+.tpb-qv .tpb-qv-right-panel .variations tr,
+.tpb-qv .tpb-qv-right-panel form .variations tr {
   margin: 0 0 16px 0 !important;
   padding: 0 !important;
   display: block !important;
   width: 100% !important;
 }
 
-.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations td {
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations td,
+.tpb-qv .tpb-qv-right-panel .variations td,
+.tpb-qv .tpb-qv-right-panel form .variations td {
   padding: 0 0 8px 0 !important;
   margin: 0 !important;
   display: block !important;
   width: 100% !important;
 }
 
-.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations label {
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations label,
+.tpb-qv .tpb-qv-right-panel .variations label,
+.tpb-qv .tpb-qv-right-panel form .variations label {
   margin: 0 0 8px 0 !important;
   padding: 0 !important;
   display: block !important;
@@ -229,7 +241,10 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   color: #333 !important;
 }
 
-.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations select {
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product form.cart .variations select,
+.tpb-qv .tpb-qv-right-panel .variations select,
+.tpb-qv .tpb-qv-right-panel form .variations select,
+.tpb-qv .tpb-qv-right-panel select {
   margin: 0 0 8px 0 !important;
   padding: 8px 12px !important;
   width: 100% !important;
@@ -238,6 +253,19 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   border-radius: 4px !important;
   background: #fff !important;
   color: #333 !important;
+}
+
+/* Ensure all CPB elements are visible */
+.tpb-qv .tpb-qv-right-panel .woocommerce-variation,
+.tpb-qv .tpb-qv-right-panel .woocommerce-variation-add-to-cart,
+.tpb-qv .tpb-qv-right-panel .woocommerce-variation-description,
+.tpb-qv .tpb-qv-right-panel .woocommerce-variation-price,
+.tpb-qv .tpb-qv-right-panel .woocommerce-variation-availability,
+.tpb-qv .tpb-qv-right-panel .single_variation_wrap {
+  display: block !important;
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
 }
 
 /* Ensure proper spacing for modal content */
