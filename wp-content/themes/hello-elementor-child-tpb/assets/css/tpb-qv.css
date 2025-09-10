@@ -42,3 +42,55 @@
 }
 
 html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
+
+/* Ensure text visibility within the modal iframe */
+#tpb-qv-overlay .tpb-qv-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+/* Force text colors for better contrast in iframe content */
+.tpb-qv body,
+.tpb-qv .woocommerce,
+.tpb-qv .product,
+.tpb-qv .entry-content,
+.tpb-qv .elementor-widget,
+.tpb-qv .elementor-element {
+  color: #333 !important;
+  background: #fff !important;
+}
+
+/* Ensure headings are visible */
+.tpb-qv h1,
+.tpb-qv h2,
+.tpb-qv h3,
+.tpb-qv h4,
+.tpb-qv h5,
+.tpb-qv h6 {
+  color: #333 !important;
+}
+
+/* Ensure form elements are visible */
+.tpb-qv input,
+.tpb-qv select,
+.tpb-qv textarea,
+.tpb-qv button {
+  color: #333 !important;
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+}
+
+/* Ensure links are visible */
+.tpb-qv a {
+  color: #5ac59a !important;
+}
+
+/* Ensure product price is visible */
+.tpb-qv .price,
+.tpb-qv .woocommerce-Price-amount {
+  color: #5ac59a !important;
+  font-weight: bold !important;
+}

@@ -62,7 +62,31 @@ add_action( 'wp_head', function () {
 		header, .site-header, .elementor-location-header,
 		footer, .site-footer, .elementor-location-footer,
 		#wpadminbar { display: none !important; }
-		html, body { background: transparent !important; }
+		html, body { 
+			background: #fff !important; 
+			color: #333 !important;
+		}
+		/* Ensure all text is visible in iframe mode */
+		body, .woocommerce, .product, .entry-content, 
+		.elementor-widget, .elementor-element {
+			color: #333 !important;
+			background: #fff !important;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			color: #333 !important;
+		}
+		input, select, textarea, button {
+			color: #333 !important;
+			background: #fff !important;
+			border: 1px solid #ddd !important;
+		}
+		a {
+			color: #5ac59a !important;
+		}
+		.price, .woocommerce-Price-amount {
+			color: #5ac59a !important;
+			font-weight: bold !important;
+		}
 	</style>
 	<?php
 } );
