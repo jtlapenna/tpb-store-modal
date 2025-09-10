@@ -125,6 +125,25 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   display: none !important;
 }
 
+/* Hide duplicate product blocks and repeated content */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary + *,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary ~ * {
+  display: none !important;
+}
+
+/* Keep only the first instance of each element type */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary .price ~ .price,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary .woocommerce-Price-amount ~ .woocommerce-Price-amount,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary button ~ button,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary .add_to_cart_button ~ .add_to_cart_button {
+  display: none !important;
+}
+
+/* Hide duplicate "Choose SKUs" text */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary p:contains("Choose SKUs, Mount, and Finish.") ~ p:contains("Choose SKUs, Mount, and Finish.") {
+  display: none !important;
+}
+
 /* Force text colors for better contrast in iframe content */
 .tpb-qv .woocommerce,
 .tpb-qv .product,

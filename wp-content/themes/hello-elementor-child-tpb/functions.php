@@ -271,22 +271,24 @@ add_action( 'wp_head', function () {
 				});
 			});
 			
-			// Also add any remaining product content that might contain CPB
-			const remainingContent = product.querySelectorAll('*:not(.woocommerce-product-gallery):not(.summary)');
-			remainingContent.forEach(element => {
-				// Check if this element contains CPB-related content
-				if (element.tagName !== 'SCRIPT' && 
-					element.tagName !== 'STYLE' && 
-					!rightPanel.contains(element) &&
-					(element.textContent.includes('SKU') || 
-					 element.textContent.includes('variation') ||
-					 element.textContent.includes('Choose') ||
-					 element.textContent.includes('Select') ||
-					 element.classList.contains('variations') ||
-					 element.classList.contains('cart') ||
-					 element.tagName === 'FORM')) {
-					rightPanel.appendChild(element.cloneNode(true));
-				}
+			// Add only essential CPB configuration elements (avoiding duplicates)
+			const cpbSelectors = [
+				'form.cart .variations',
+				'form.cart .single_variation_wrap',
+				'.woocommerce-variation',
+				'.woocommerce-variation-add-to-cart',
+				'.woocommerce-variation-description',
+				'.woocommerce-variation-price',
+				'.woocommerce-variation-availability'
+			];
+			
+			cpbSelectors.forEach(selector => {
+				const elements = product.querySelectorAll(selector);
+				elements.forEach(element => {
+					if (element && !rightPanel.contains(element)) {
+						rightPanel.appendChild(element.cloneNode(true));
+					}
+				});
 			});
 			
 			// Clear body and add panels
