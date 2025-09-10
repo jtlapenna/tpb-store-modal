@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.SFTP_PASS }}
           sftp_only: true
           local_path:  'wp-content/themes/hello-elementor-child-tpb/*'
-          remote_path: '/html/wp-content/themes/hello-elementor-child-tpb'
+          remote_path: '/html/wp-content/themes/hello-elementor-child-tpb/'
           delete_remote_files: false
 
       - name: Ensure MU-plugin remote directories exist (SFTP)
@@ -56,7 +56,7 @@ SFTP
           password: ${{ secrets.SFTP_PASS }}
           sftp_only: true
           local_path:  'wp-content/mu-plugins/tpb-quickview/*'
-          remote_path: '/html/wp-content/mu-plugins/tpb-quickview'
+          remote_path: '/html/wp-content/mu-plugins/tpb-quickview/'
           delete_remote_files: false
 
       - name: Flush caches (optional)
