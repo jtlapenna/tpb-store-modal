@@ -192,10 +192,19 @@ add_action( 'wp_head', function () {
 			// Create left panel for images
 			const leftPanel = document.createElement('div');
 			leftPanel.className = 'tpb-qv-left-panel';
+			leftPanel.style.width = '45%';
+			leftPanel.style.height = '100vh';
+			leftPanel.style.flexShrink = '0';
+			leftPanel.style.boxSizing = 'border-box';
 			
-			// Create right panel for content
-			const rightPanel = document.createElement('div');
-			rightPanel.className = 'tpb-qv-right-panel';
+				// Create right panel for content
+				const rightPanel = document.createElement('div');
+				rightPanel.className = 'tpb-qv-right-panel';
+				rightPanel.style.width = '55%';
+				rightPanel.style.height = '100vh';
+				rightPanel.style.overflowY = 'auto';
+				rightPanel.style.overflowX = 'hidden';
+				rightPanel.style.boxSizing = 'border-box';
 			
 			// Move product gallery to left panel
 			const gallery = product.querySelector('.woocommerce-product-gallery');

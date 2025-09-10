@@ -89,6 +89,7 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   width: 55% !important;
   background: #fff !important;
   overflow-y: auto !important;
+  overflow-x: hidden !important;
   padding: 24px !important;
   box-sizing: border-box !important;
   position: relative !important;
@@ -101,6 +102,39 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   width: 100% !important;
   padding: 0 !important;
   margin: 0 !important;
+}
+
+/* Ensure right panel content fills full width */
+.tpb-qv .tpb-qv-right-panel .woocommerce,
+.tpb-qv .tpb-qv-right-panel .product,
+.tpb-qv .tpb-qv-right-panel .summary,
+.tpb-qv .tpb-qv-right-panel form,
+.tpb-qv .tpb-qv-right-panel .variations,
+.tpb-qv .tpb-qv-right-panel .single_variation_wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix scrollbar positioning */
+.tpb-qv .tpb-qv-right-panel::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.tpb-qv .tpb-qv-right-panel::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 4px !important;
+}
+
+.tpb-qv .tpb-qv-right-panel::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 4px !important;
+}
+
+.tpb-qv .tpb-qv-right-panel::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
 }
 
 /* Hide noise elements in right panel */
