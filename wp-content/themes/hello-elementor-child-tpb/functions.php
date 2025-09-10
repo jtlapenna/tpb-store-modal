@@ -29,6 +29,12 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	wp_enqueue_style( 'tpb-qv', $css_src, [], $css_ver );
 	wp_enqueue_script( 'tpb-modal', $js_src, [], $js_ver, true );
+
+	// Provide runtime settings to JS (home URL and query param)
+	wp_localize_script( 'tpb-modal', 'TPB_QV_CFG', [
+		'home'     => home_url( '/' ),
+		'qv_param' => 'tpb_qv',
+	] );
 }, 20 );
 
 
@@ -41,6 +47,25 @@ if ( ! defined( 'TPB_DEPLOY_TOKEN' ) ) {
 		define( 'TPB_DEPLOY_TOKEN', '1111100000102400234023024023052050204603406040120425052405603603406303' );
 	}
 }
+
+
+// When ?tpb_qv=1 is present, add a body class and hide chrome in iframe mode
+add_filter( 'body_class', function( $classes ) {
+	if ( isset( $_GET['tpb_qv'] ) ) { $classes[] = 'tpb-qv'; }
+	return $classes;
+} );
+
+add_action( 'wp_head', function () {
+	if ( ! isset( $_GET['tpb_qv'] ) ) return;
+	?>
+	<style id="tpb-qv-inline">
+		header, .site-header, .elementor-location-header,
+		footer, .site-footer, .elementor-location-footer,
+		#wpadminbar { display: none !important; }
+		html, body { background: transparent !important; }
+	</style>
+	<?php
+} );
 
 
 /**
