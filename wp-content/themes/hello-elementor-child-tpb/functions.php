@@ -205,6 +205,8 @@ add_action( 'wp_head', function () {
 				rightPanel.style.overflowY = 'auto';
 				rightPanel.style.overflowX = 'hidden';
 				rightPanel.style.boxSizing = 'border-box';
+				rightPanel.style.display = 'flex';
+				rightPanel.style.flexDirection = 'column';
 			
 			// Move product gallery to left panel
 			const gallery = product.querySelector('.woocommerce-product-gallery');
@@ -260,6 +262,20 @@ add_action( 'wp_head', function () {
 				chooseTexts.forEach((p, index) => {
 					if (p.textContent.includes('Choose SKUs, Mount, and Finish') && index > 0) {
 						p.remove();
+					}
+				});
+				
+				// Remove any remaining duplicate sections or blocks
+				const allElements = cleanSummary.querySelectorAll('*');
+				const seenTexts = new Set();
+				allElements.forEach(element => {
+					const text = element.textContent?.trim();
+					if (text && text.length > 10) {
+						if (seenTexts.has(text)) {
+							element.remove();
+						} else {
+							seenTexts.add(text);
+						}
 					}
 				});
 				

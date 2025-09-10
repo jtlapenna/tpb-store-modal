@@ -95,6 +95,15 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   position: relative !important;
   height: 100vh !important;
   flex-shrink: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Ensure right panel content container fills full width */
+.tpb-qv .tpb-qv-right-panel > * {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 !important;
 }
 
 /* Clean content container */
@@ -110,12 +119,48 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
 .tpb-qv .tpb-qv-right-panel .summary,
 .tpb-qv .tpb-qv-right-panel form,
 .tpb-qv .tpb-qv-right-panel .variations,
-.tpb-qv .tpb-qv-right-panel .single_variation_wrap {
+.tpb-qv .tpb-qv-right-panel .single_variation_wrap,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary > * {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
+}
+
+/* Force all content to use full width */
+.tpb-qv .tpb-qv-right-panel * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove any remaining duplicate content */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary + .woocommerce div.product,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary ~ .woocommerce div.product,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary ~ * {
+  display: none !important;
+}
+
+/* Hide duplicate sections more aggressively */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary h1 ~ h1,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary h2 ~ h2,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary h3 ~ h3,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary h4 ~ h4,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary h5 ~ h5,
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary h6 ~ h6 {
+  display: none !important;
+}
+
+/* Hide duplicate paragraphs */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary p ~ p {
+  display: none !important;
+}
+
+/* Hide duplicate divs */
+.tpb-qv .tpb-qv-right-panel .woocommerce div.product .summary div ~ div {
+  display: none !important;
 }
 
 /* Fix scrollbar positioning */
