@@ -1,0 +1,44 @@
+/* TPB QuickView baseline styles (neutral) */
+#tpb-qv-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(19, 26, 32, .62);
+  z-index: 999999;
+  display: none;
+}
+#tpb-qv-overlay.is-open { display: block; }
+
+#tpb-qv-overlay .tpb-qv-modal {
+  position: relative;
+  width: min(1100px, 92vw);
+  height: min(88vh, 860px);
+  margin: 4vh auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  overflow: hidden;
+}
+
+#tpb-qv-overlay .tpb-qv-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#tpb-qv-overlay .tpb-qv-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: #5ac59a; /* TPB teal */
+  color: #fff;
+  font: 700 20px/36px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(90,197,154,.35);
+}
+
+html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
