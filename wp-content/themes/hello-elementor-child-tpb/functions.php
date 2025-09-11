@@ -260,6 +260,19 @@ add_action( 'wp_head', function () {
 				
 				// Skip stock status - not needed in modal
 				
+				// Aggressively remove any stock indicators that might appear
+				const stockSelectors = [
+					'.stock', '.woocommerce-stock', '.stock-status', '.product-stock',
+					'.availability', '.woocommerce-availability', '.in-stock', '.out-of-stock',
+					'.instock', '.outofstock', '.product-link', '.view-product',
+					'.woocommerce-product-link', '.product-permalink'
+				];
+				
+				stockSelectors.forEach(selector => {
+					const elements = contentContainer.querySelectorAll(selector);
+					elements.forEach(el => el.remove());
+				});
+				
 				// Add "Choose SKUs" instruction (only once)
 				const chooseText = summary.querySelector('p');
 				if (chooseText && chooseText.textContent.includes('Choose SKUs, Mount, and Finish')) {

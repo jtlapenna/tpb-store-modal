@@ -178,13 +178,30 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   display: block !important;
 }
 
-/* Hide stock indicators and view product links */
+/* Hide stock indicators and view product links - AGGRESSIVE */
 .tpb-qv .tpb-qv-content .stock,
 .tpb-qv .tpb-qv-content .woocommerce-stock,
+.tpb-qv .tpb-qv-content .stock-status,
+.tpb-qv .tpb-qv-content .product-stock,
+.tpb-qv .tpb-qv-content .availability,
+.tpb-qv .tpb-qv-content .woocommerce-availability,
+.tpb-qv .tpb-qv-content .in-stock,
+.tpb-qv .tpb-qv-content .out-of-stock,
+.tpb-qv .tpb-qv-content .instock,
+.tpb-qv .tpb-qv-content .outofstock,
 .tpb-qv .tpb-qv-content a[href*="product"],
 .tpb-qv .tpb-qv-content .product-link,
-.tpb-qv .tpb-qv-content .view-product {
+.tpb-qv .tpb-qv-content .view-product,
+.tpb-qv .tpb-qv-content .woocommerce-product-link,
+.tpb-qv .tpb-qv-content .product-permalink {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Aesthetic improvements for better visual hierarchy */
