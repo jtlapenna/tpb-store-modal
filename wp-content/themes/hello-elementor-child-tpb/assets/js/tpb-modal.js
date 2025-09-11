@@ -60,6 +60,10 @@
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
     d.documentElement.classList.add('tpb-qv-locked');
+    
+    // Set up iframe communication for CPB
+    setupIframeCommunication();
+    
     return false;
   }
 
@@ -85,6 +89,95 @@
     e.preventDefault();
     e.stopPropagation();
     open(target);
+  }
+
+  function setupIframeCommunication() {
+    if (!iframe) return;
+    
+    // Listen for messages from iframe
+    w.addEventListener('message', function(event) {
+      // Verify origin for security
+      if (event.origin !== w.location.origin) return;
+      
+      const data = event.data;
+      if (!data || data.type !== 'tpb-qv') return;
+      
+      switch (data.action) {
+        case 'resize':
+          // Auto-resize iframe height
+          if (data.height) {
+            iframe.style.height = data.height + 'px';
+          }
+          break;
+          
+        case 'cpb-selection':
+          // Handle CPB component selections
+          log('CPB Selection:', data.selection);
+          handleCPBSelection(data.selection);
+          break;
+          
+        case 'sku-swap':
+          // Handle SKU swapping for Pre-designed vs Custom
+          log('SKU Swap:', data.sku);
+          handleSKUSwap(data.sku, data.path);
+          break;
+          
+        case 'add-to-cart':
+          // Handle add to cart from iframe
+          log('Add to Cart:', data.productId, data.sku);
+          handleAddToCart(data.productId, data.sku);
+          break;
+      }
+    });
+    
+    // Send configuration to iframe
+    iframe.addEventListener('load', function() {
+      if (iframe.contentWindow) {
+        iframe.contentWindow.postMessage({
+          type: 'tpb-qv-config',
+          action: 'init',
+          config: {
+            home: cfg.home,
+            qvParam: cfg.qv_param,
+            enableSKUSwap: true,
+            enableAnalytics: true
+          }
+        }, w.location.origin);
+      }
+    });
+  }
+  
+  function handleCPBSelection(selection) {
+    // Track CPB component selections for analytics
+    if (w.gtag) {
+      w.gtag('event', 'cpb_selection', {
+        'event_category': 'CPB',
+        'event_label': selection.component,
+        'value': selection.value
+      });
+    }
+  }
+  
+  function handleSKUSwap(sku, path) {
+    // Handle SKU swapping logic
+    log('Swapping to SKU:', sku, 'for path:', path);
+    
+    // Update iframe URL with new SKU if needed
+    const currentUrl = iframe.src;
+    const newUrl = currentUrl.replace(/[?&]sku=[^&]*/, '') + 
+                   (currentUrl.includes('?') ? '&' : '?') + 'sku=' + encodeURIComponent(sku);
+    
+    if (newUrl !== currentUrl) {
+      iframe.src = newUrl;
+    }
+  }
+  
+  function handleAddToCart(productId, sku) {
+    // Handle add to cart from modal
+    log('Adding to cart:', productId, sku);
+    
+    // You can implement custom add-to-cart logic here
+    // or let the iframe handle it natively
   }
 
   function diag() {

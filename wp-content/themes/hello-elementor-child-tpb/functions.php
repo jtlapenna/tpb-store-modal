@@ -20,15 +20,23 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	$css_rel = '/assets/css/tpb-qv.css';
 	$js_rel  = '/assets/js/tpb-modal.js';
+	$iframe_js_rel = '/assets/js/tpb-qv-iframe.js';
 
 	$css_src = $dir . $css_rel;
 	$js_src  = $dir . $js_rel;
+	$iframe_js_src = $dir . $iframe_js_rel;
 
 	$css_ver = file_exists( $path . $css_rel ) ? filemtime( $path . $css_rel ) : '1.0.0';
 	$js_ver  = file_exists( $path . $js_rel )  ? filemtime( $path . $js_rel )  : '1.0.0';
+	$iframe_js_ver = file_exists( $path . $iframe_js_rel ) ? filemtime( $path . $iframe_js_rel ) : '1.0.0';
 
 	wp_enqueue_style( 'tpb-qv', $css_src, [], $css_ver );
 	wp_enqueue_script( 'tpb-modal', $js_src, [], $js_ver, true );
+	
+	// Only load iframe JS when in quick view mode
+	if ( isset( $_GET['tpb_qv'] ) ) {
+		wp_enqueue_script( 'tpb-qv-iframe', $iframe_js_src, [], $iframe_js_ver, true );
+	}
 
 	// Provide runtime settings to JS (home URL and query param)
 	wp_localize_script( 'tpb-modal', 'TPB_QV_CFG', [
