@@ -258,13 +258,7 @@ add_action( 'wp_head', function () {
 					contentContainer.appendChild(priceClone);
 				}
 				
-				// Add stock status
-				const stock = summary.querySelector('.stock, .woocommerce-stock');
-				if (stock) {
-					const stockClone = stock.cloneNode(true);
-					stockClone.style.marginBottom = '16px';
-					contentContainer.appendChild(stockClone);
-				}
+				// Skip stock status - not needed in modal
 				
 				// Add "Choose SKUs" instruction (only once)
 				const chooseText = summary.querySelector('p');

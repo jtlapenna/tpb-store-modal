@@ -121,7 +121,7 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   box-sizing: border-box !important;
 }
 
-/* Force all form elements to use full width */
+/* Force all form elements to use full width - ONLY in modal */
 .tpb-qv .tpb-qv-content form,
 .tpb-qv .tpb-qv-content .variations,
 .tpb-qv .tpb-qv-content .single_variation_wrap,
@@ -142,7 +142,7 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   box-sizing: border-box !important;
 }
 
-/* Force headings and text elements to use full width */
+/* Force headings and text elements to use full width - ONLY in modal */
 .tpb-qv .tpb-qv-content h1,
 .tpb-qv .tpb-qv-content h2,
 .tpb-qv .tpb-qv-content h3,
@@ -159,7 +159,7 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   box-sizing: border-box !important;
 }
 
-/* Ensure dropdowns and selects stretch full width */
+/* Ensure dropdowns and selects stretch full width - ONLY in modal */
 .tpb-qv .tpb-qv-content select,
 .tpb-qv .tpb-qv-content .variations select {
   width: 100% !important;
@@ -168,7 +168,7 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   box-sizing: border-box !important;
 }
 
-/* Force buttons to use full width */
+/* Force buttons to use full width - ONLY in modal */
 .tpb-qv .tpb-qv-content .add_to_cart_button,
 .tpb-qv .tpb-qv-content button[type="submit"],
 .tpb-qv .tpb-qv-content .single_add_to_cart_button {
@@ -176,6 +176,121 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   max-width: 100% !important;
   box-sizing: border-box !important;
   display: block !important;
+}
+
+/* Hide stock indicators and view product links */
+.tpb-qv .tpb-qv-content .stock,
+.tpb-qv .tpb-qv-content .woocommerce-stock,
+.tpb-qv .tpb-qv-content a[href*="product"],
+.tpb-qv .tpb-qv-content .product-link,
+.tpb-qv .tpb-qv-content .view-product {
+  display: none !important;
+}
+
+/* Aesthetic improvements for better visual hierarchy */
+.tpb-qv .tpb-qv-content h1 {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: #2c3e50 !important;
+  margin-bottom: 20px !important;
+  line-height: 1.2 !important;
+}
+
+.tpb-qv .tpb-qv-content .price {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #5ac59a !important;
+  margin-bottom: 24px !important;
+  padding: 12px 0 !important;
+  border-bottom: 2px solid #e9ecef !important;
+}
+
+.tpb-qv .tpb-qv-content p {
+  font-size: 16px !important;
+  color: #6c757d !important;
+  margin-bottom: 20px !important;
+  line-height: 1.5 !important;
+}
+
+/* Enhanced form styling */
+.tpb-qv .tpb-qv-content .variations label {
+  font-weight: 600 !important;
+  color: #495057 !important;
+  margin-bottom: 8px !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.tpb-qv .tpb-qv-content .variations select {
+  border: 2px solid #e9ecef !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  background: #fff !important;
+  transition: border-color 0.3s ease !important;
+}
+
+.tpb-qv .tpb-qv-content .variations select:focus {
+  border-color: #5ac59a !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(90, 197, 154, 0.1) !important;
+}
+
+/* Enhanced button styling */
+.tpb-qv .tpb-qv-content .add_to_cart_button,
+.tpb-qv .tpb-qv-content button[type="submit"] {
+  background: linear-gradient(135deg, #5ac59a 0%, #4a9d7a 100%) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 16px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  margin-top: 20px !important;
+}
+
+.tpb-qv .tpb-qv-content .add_to_cart_button:hover,
+.tpb-qv .tpb-qv-content button[type="submit"]:hover {
+  background: linear-gradient(135deg, #4a9d7a 0%, #3d8b6a 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(90, 197, 154, 0.3) !important;
+}
+
+/* Quantity input styling */
+.tpb-qv .tpb-qv-content .quantity input {
+  border: 2px solid #e9ecef !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  width: 80px !important;
+  text-align: center !important;
+  margin-right: 12px !important;
+}
+
+.tpb-qv .tpb-qv-content .quantity input:focus {
+  border-color: #5ac59a !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(90, 197, 154, 0.1) !important;
+}
+
+/* Section spacing improvements */
+.tpb-qv .tpb-qv-content .variations {
+  margin-bottom: 24px !important;
+  padding: 20px !important;
+  background: #f8f9fa !important;
+  border-radius: 12px !important;
+  border: 1px solid #e9ecef !important;
+}
+
+.tpb-qv .tpb-qv-content .cart {
+  margin-top: 24px !important;
+  padding-top: 24px !important;
+  border-top: 1px solid #e9ecef !important;
 }
 
 
