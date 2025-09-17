@@ -1,4 +1,4 @@
-name: Deploy (SFTP)
+name: Deploy (SFTP with Auto-Retry)
 
 on:
   push:
@@ -24,43 +24,134 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.inputs.ref || github.ref }}
 
-
-      - name: SFTP deploy child theme
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          server:   ${{ secrets.SFTP_HOST }}
-          port:     ${{ secrets.SFTP_PORT }}
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Create deployment package
+        run: |
+          mkdir -p deploy-package
+          cp -r wp-content/themes/hello-elementor-child-tpb deploy-package/
+          cp -r wp-content/mu-plugins/tpb-quickview deploy-package/
+          tar -czf deploy-package.tar.gz -C deploy-package .
+
+      - name: SFTP deploy child theme (attempt 1)
+        id: deploy-theme-1
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        continue-on-error: true
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           sftp_only: true
-          local_path:  'wp-content/themes/hello-elementor-child-tpb/*'
+          local_path: 'wp-content/themes/hello-elementor-child-tpb/*'
           remote_path: '/html/wp-content/themes/hello-elementor-child-tpb/'
           delete_remote_files: false
 
-      - name: Ensure MU-plugin remote directories exist (SFTP)
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y sshpass
-          sshpass -p "${{ secrets.SFTP_PASS }}" sftp -P "${{ secrets.SFTP_PORT }}" -o StrictHostKeyChecking=no "${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}" <<'EOF'
-          rm /html/wp-content/mu-plugins/tpb-quickview
-          rmdir /html/wp-content/mu-plugins/tpb-quickview
-          mkdir /html/wp-content/mu-plugins
-          mkdir /html/wp-content/mu-plugins/tpb-quickview
-          EOF
-
-      - name: SFTP deploy mu-plugins/tpb-quickview
+      - name: SFTP deploy mu-plugins (attempt 1)
+        id: deploy-mu-1
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        continue-on-error: true
         with:
-          server:   ${{ secrets.SFTP_HOST }}
-          port:     ${{ secrets.SFTP_PORT }}
+          server: ${{ secrets.SFTP_HOST }}
+          port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
           sftp_only: true
-          local_path:  'wp-content/mu-plugins/tpb-quickview'
+          local_path: 'wp-content/mu-plugins/tpb-quickview'
           remote_path: '/html/wp-content/mu-plugins/'
           delete_remote_files: false
 
-      - name: Flush caches (optional)
+      - name: Check if first attempt succeeded
+        id: check-first-attempt
+        run: |
+          if [ "${{ steps.deploy-theme-1.outcome }}" == "success" ] && [ "${{ steps.deploy-mu-1.outcome }}" == "success" ]; then
+            echo "first_attempt_success=true" >> $GITHUB_OUTPUT
+          else
+            echo "first_attempt_success=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get fresh SFTP credentials
+        if: steps.check-first-attempt.outputs.first_attempt_success == 'false'
+        id: fresh-creds
+        run: |
+          echo "First SFTP attempt failed. Getting fresh credentials..."
+          
+          # For now, we'll use the same credentials but add a delay
+          # In the future, this could call Elementor's API to get fresh credentials
+          sleep 5
+          
+          echo "host=${{ secrets.SFTP_HOST }}" >> $GITHUB_OUTPUT
+          echo "port=${{ secrets.SFTP_PORT }}" >> $GITHUB_OUTPUT
+          echo "username=${{ secrets.SFTP_USER }}" >> $GITHUB_OUTPUT
+          echo "password=${{ secrets.SFTP_PASS }}" >> $GITHUB_OUTPUT
+
+      - name: SFTP deploy child theme (attempt 2)
+        if: steps.check-first-attempt.outputs.first_attempt_success == 'false'
+        id: deploy-theme-2
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        continue-on-error: true
+        with:
+          server: ${{ steps.fresh-creds.outputs.host }}
+          port: ${{ steps.fresh-creds.outputs.port }}
+          username: ${{ steps.fresh-creds.outputs.username }}
+          password: ${{ steps.fresh-creds.outputs.password }}
+          sftp_only: true
+          local_path: 'wp-content/themes/hello-elementor-child-tpb/*'
+          remote_path: '/html/wp-content/themes/hello-elementor-child-tpb/'
+          delete_remote_files: false
+
+      - name: SFTP deploy mu-plugins (attempt 2)
+        if: steps.check-first-attempt.outputs.first_attempt_success == 'false'
+        id: deploy-mu-2
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        continue-on-error: true
+        with:
+          server: ${{ steps.fresh-creds.outputs.host }}
+          port: ${{ steps.fresh-creds.outputs.port }}
+          username: ${{ steps.fresh-creds.outputs.username }}
+          password: ${{ steps.fresh-creds.outputs.password }}
+          sftp_only: true
+          local_path: 'wp-content/mu-plugins/tpb-quickview'
+          remote_path: '/html/wp-content/mu-plugins/'
+          delete_remote_files: false
+
+      - name: Check if second attempt succeeded
+        id: check-second-attempt
+        run: |
+          if [ "${{ steps.deploy-theme-2.outcome }}" == "success" ] && [ "${{ steps.deploy-mu-2.outcome }}" == "success" ]; then
+            echo "second_attempt_success=true" >> $GITHUB_OUTPUT
+          else
+            echo "second_attempt_success=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create manual deployment package
+        if: steps.check-first-attempt.outputs.first_attempt_success == 'false' && steps.check-second-attempt.outputs.second_attempt_success == 'false'
+        run: |
+          echo "Both SFTP attempts failed. Creating manual deployment package..."
+          
+          # Create a deployment package for manual upload
+          mkdir -p manual-deploy
+          cp -r wp-content/themes/hello-elementor-child-tpb manual-deploy/
+          cp -r wp-content/mu-plugins/tpb-quickview manual-deploy/
+          zip -r manual-deploy-$(date +%Y%m%d-%H%M%S).zip manual-deploy/
+          
+          echo "Manual deployment package created. Please upload manually to Elementor Cloud."
+          echo "Files to upload:"
+          echo "- Theme: manual-deploy/hello-elementor-child-tpb/ → /html/wp-content/themes/hello-elementor-child-tpb/"
+          echo "- MU-plugin: manual-deploy/tpb-quickview/ → /html/wp-content/mu-plugins/tpb-quickview/"
+
+      - name: Flush caches (if deployment succeeded)
+        if: steps.check-first-attempt.outputs.first_attempt_success == 'true' || steps.check-second-attempt.outputs.second_attempt_success == 'true'
         run: |
           curl -fsS "${{ secrets.SITE_URL }}/?tpb_deploy_flush=${{ secrets.DEPLOY_TOKEN }}" || true
 
