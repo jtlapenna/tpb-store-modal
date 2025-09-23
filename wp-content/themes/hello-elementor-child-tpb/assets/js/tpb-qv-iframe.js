@@ -83,22 +83,33 @@
     function observeCPBAndInitialize() {
         const tryInit = () => {
             const components = getAllComponents();
+            console.log('🔍 Checking for components:', components.length);
             if (components.length) {
+                console.log('✅ Components found, establishing initial flow state...');
                 establishInitialFlowState();
                 return true;
             }
+            console.log('❌ No components found yet');
             return false;
         };
 
         // Attempt immediately and shortly after
         if (!tryInit()) {
-            setTimeout(tryInit, 150);
-            setTimeout(tryInit, 400);
+            setTimeout(() => {
+                console.log('🔄 Retry 1 (150ms)...');
+                tryInit();
+            }, 150);
+            setTimeout(() => {
+                console.log('🔄 Retry 2 (400ms)...');
+                tryInit();
+            }, 400);
         }
 
         // Observe Addify container for dynamic renders
         const container = document.querySelector('.af_cp_all_components_content') || document.querySelector('.af_cp_vertical_template') || document.body;
+        console.log('👀 Observing container:', container);
         const observer = new MutationObserver(() => {
+            console.log('🔄 Mutation detected, retrying init...');
             tryInit();
         });
         observer.observe(container, { childList: true, subtree: true });
@@ -108,11 +119,16 @@
         const components = getAllComponents();
         if (!components.length) return;
 
+        console.log('🎯 Establishing initial flow state with', components.length, 'components');
+        
         // Assume first component is SKU count (base). Keep it visible; others collapsed.
         components.forEach((comp, index) => {
+            const title = comp.querySelector('h4.title, h4, .title')?.textContent?.trim() || `Component ${index + 1}`;
             if (index === 0) {
+                console.log('✅ Showing first component:', title);
                 showComponent(comp);
             } else {
+                console.log('❌ Hiding component:', title);
                 clearSelections(comp);
                 hideComponent(comp);
             }
@@ -120,7 +136,12 @@
 
         // Attempt to find Build Strategy and ensure it has no default selected
         const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
-        clearSelections(buildComp);
+        if (buildComp) {
+            console.log('🔧 Found Build Strategy component, clearing selections');
+            clearSelections(buildComp);
+        } else {
+            console.log('⚠️ Build Strategy component not found');
+        }
     }
 
     function setupCPBListeners() {
@@ -144,13 +165,20 @@
     }
     
     function handleCPBSelection(element) {
+        console.log('🎯 CPB Selection detected:', element);
+        
         // Support Addify markup
         const component = element.closest('.cpb-component') || element.closest('.single_component');
-        if (!component) return;
+        if (!component) {
+            console.log('❌ No component found for element');
+            return;
+        }
         
         const titleEl = component.querySelector('h4.title, h4, .title');
         const componentName = (component.dataset.component || (titleEl ? (titleEl.textContent || '').trim().toLowerCase() : 'unknown'));
         const value = element.value || element.textContent || (element.options && element.options[element.selectedIndex]?.text) || 'unknown';
+        
+        console.log('📝 Selection:', { componentName, value });
         
         currentSelections[componentName] = value;
         
@@ -165,11 +193,13 @@
         });
         
         // Progressive disclosure: reveal next components as prerequisites are met
+        console.log('🔄 Triggering progressive reveal...');
         progressiveReveal(component);
 
         // Handle path changes
         if (/build\s*strategy/i.test(componentName)) {
             currentPath = (String(value).toLowerCase().includes('custom')) ? 'custom' : 'predesigned';
+            console.log('🛤️ Path changed to:', currentPath);
             handlePathChange();
         }
         
@@ -178,17 +208,28 @@
     }
 
     function progressiveReveal(changedComponent) {
+        console.log('🔄 Progressive reveal triggered for component:', changedComponent);
+        
         const components = getAllComponents();
-        if (!components.length) return;
+        if (!components.length) {
+            console.log('❌ No components found for progressive reveal');
+            return;
+        }
+
+        console.log('🔍 Found', components.length, 'components for progressive reveal');
 
         // Heuristic ordering based on titles within components
         const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
         const bundleComp = matchComponentByText(components, '(choose\s*your\s*complete\s*bundle|finish\s*material|finish/material|bundle)');
 
+        console.log('🔍 Build Strategy component:', buildComp ? 'found' : 'not found');
+        console.log('🔍 Bundle component:', bundleComp ? 'found' : 'not found');
+
         const hasValue = comp => !!(comp && (comp.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked, select option:checked, .af-cp-selected-product')));
 
         // If first component (SKU count) got a value, show Build Strategy
         if (components[0] && (components[0].contains(changedComponent) || hasValue(components[0]))) {
+            console.log('✅ First component has value, showing Build Strategy');
             showComponent(buildComp);
         }
 
@@ -198,12 +239,17 @@
             if (bsSelected) {
                 const txt = (bsSelected.textContent || bsSelected.value || '').toLowerCase();
                 currentPath = txt.includes('custom') ? 'custom' : 'predesigned';
+                console.log('🛤️ Build Strategy selected, path:', currentPath);
                 if (currentPath === 'predesigned') {
+                    console.log('✅ Showing bundle component for pre-designed path');
                     showComponent(bundleComp);
                 } else {
+                    console.log('❌ Hiding bundle component for custom path');
                     hideComponent(bundleComp);
                     clearSelections(bundleComp);
                 }
+            } else {
+                console.log('⚠️ Build Strategy component found but no selection made');
             }
         }
     }
