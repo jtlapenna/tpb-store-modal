@@ -710,3 +710,32 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   color: #5ac59a !important;
   font-weight: bold !important;
 }
+
+/* Progressive disclosure - hide components initially */
+.tpb-hidden {
+  display: none !important;
+}
+
+/* Collapsed state for progressive disclosure */
+.tpb-collapsed {
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tpb-collapsed::after {
+  content: "Click to expand";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.tpb-collapsed:hover::after {
+  background: rgba(0, 0, 0, 0.9);
+}

@@ -72,12 +72,18 @@
 
     function hideComponent(comp) {
         if (!comp) return;
-        comp.classList.add('tpb-hidden');
+        comp.classList.add('tpb-collapsed');
+        comp.style.maxHeight = '60px';
+        comp.style.overflow = 'hidden';
+        comp.style.opacity = '0.6';
     }
 
     function showComponent(comp) {
         if (!comp) return;
-        comp.classList.remove('tpb-hidden');
+        comp.classList.remove('tpb-collapsed');
+        comp.style.maxHeight = 'none';
+        comp.style.overflow = 'visible';
+        comp.style.opacity = '1';
     }
 
     function observeCPBAndInitialize() {
@@ -128,9 +134,16 @@
                 console.log('✅ Showing first component:', title);
                 showComponent(comp);
             } else {
-                console.log('❌ Hiding component:', title);
+                console.log('📦 Collapsing component:', title);
                 clearSelections(comp);
                 hideComponent(comp);
+                // Make collapsed components clickable to expand
+                comp.addEventListener('click', function() {
+                    if (comp.classList.contains('tpb-collapsed')) {
+                        console.log('🖱️ Clicked to expand:', title);
+                        showComponent(comp);
+                    }
+                });
             }
         });
 
