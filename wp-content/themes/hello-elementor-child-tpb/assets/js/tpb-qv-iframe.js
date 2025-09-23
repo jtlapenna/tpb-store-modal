@@ -111,6 +111,33 @@
             if (index === 0) {
                 console.log('✅ Showing first component:', title);
                 showComponent(comp);
+
+                // Ensure SKU dropdown/radios have no preselection and include a placeholder
+                const select = comp.querySelector('select');
+                if (select) {
+                    // Insert placeholder as first option if missing
+                    const firstOption = select.options[0];
+                    const needsPlaceholder = !firstOption || (firstOption && firstOption.value !== '' && !/select/i.test(firstOption.text));
+                    if (needsPlaceholder) {
+                        const opt = document.createElement('option');
+                        opt.value = '';
+                        opt.textContent = 'Select SKU count…';
+                        opt.disabled = true;
+                        opt.selected = true;
+                        select.insertBefore(opt, firstOption || null);
+                    } else {
+                        // If placeholder exists, ensure it's selected
+                        firstOption.disabled = true;
+                        firstOption.selected = true;
+                        firstOption.textContent = firstOption.textContent || 'Select SKU count…';
+                        firstOption.value = '';
+                    }
+                    select.selectedIndex = 0;
+                    select.value = '';
+                }
+
+                // Clear radios/checkboxes if used
+                comp.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => { el.checked = false; });
             } else {
                 console.log('📦 Collapsing component:', title);
                 hideComponent(comp);
@@ -195,6 +222,8 @@
             if (hasSelection && components[1]) {
                 console.log('✅ SKU count selected, showing Build Strategy');
                 showComponent(components[1]);
+                // Collapse SKU section after valid choice to guide the flow
+                hideComponent(components[0]);
                 return;
             }
         }
