@@ -129,7 +129,7 @@
             const target = event.target;
             
             // Check if it's a CPB component
-            if (target.closest('.cpb-component') || target.closest('.woocommerce-variation')) {
+            if (target.closest('.cpb-component') || target.closest('.woocommerce-variation') || target.closest('.af_cp_all_components_content')) {
                 handleCPBSelection(target);
             }
         });
@@ -137,18 +137,20 @@
         // Listen for radio button changes
         document.addEventListener('click', function(event) {
             const target = event.target;
-            if (target.type === 'radio' && target.closest('.cpb-component')) {
+            if (target.type === 'radio' && (target.closest('.cpb-component') || target.closest('.af_cp_all_components_content'))) {
                 handleCPBSelection(target);
             }
         });
     }
     
     function handleCPBSelection(element) {
-        const component = element.closest('.cpb-component');
+        // Support Addify markup
+        const component = element.closest('.cpb-component') || element.closest('.single_component');
         if (!component) return;
         
-        const componentName = component.dataset.component || 'unknown';
-        const value = element.value || element.textContent || 'unknown';
+        const titleEl = component.querySelector('h4.title, h4, .title');
+        const componentName = (component.dataset.component || (titleEl ? (titleEl.textContent || '').trim().toLowerCase() : 'unknown'));
+        const value = element.value || element.textContent || (element.options && element.options[element.selectedIndex]?.text) || 'unknown';
         
         currentSelections[componentName] = value;
         
@@ -166,8 +168,8 @@
         progressiveReveal(component);
 
         // Handle path changes
-        if (componentName === 'build-strategy') {
-            currentPath = value.toLowerCase().includes('custom') ? 'custom' : 'predesigned';
+        if (/build\s*strategy/i.test(componentName)) {
+            currentPath = (String(value).toLowerCase().includes('custom')) ? 'custom' : 'predesigned';
             handlePathChange();
         }
         
@@ -183,15 +185,19 @@
         const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
         const bundleComp = matchComponentByText(components, '(choose\s*your\s*complete\s*bundle|finish\s*material|finish/material|bundle)');
 
+        const hasValue = comp => !!(comp && (comp.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked, select option:checked, .af-cp-selected-product')));
+
         // If first component (SKU count) got a value, show Build Strategy
-        if (components[0] && (components[0].contains(changedComponent) || currentSelections['sku-count'])) {
+        if (components[0] && (components[0].contains(changedComponent) || hasValue(components[0]))) {
             showComponent(buildComp);
         }
 
         // If Build Strategy is selected
         if (buildComp) {
-            const hasSelection = !!(buildComp.querySelector('input[type="radio"]:checked, select option:checked, .af-cp-selected-product'));
-            if (hasSelection) {
+            const bsSelected = buildComp.querySelector('input[type="radio"]:checked, select option:checked');
+            if (bsSelected) {
+                const txt = (bsSelected.textContent || bsSelected.value || '').toLowerCase();
+                currentPath = txt.includes('custom') ? 'custom' : 'predesigned';
                 if (currentPath === 'predesigned') {
                     showComponent(bundleComp);
                 } else {
