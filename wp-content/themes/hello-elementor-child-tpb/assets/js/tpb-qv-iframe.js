@@ -35,16 +35,32 @@
     
     // Helpers to find CPB components in a resilient way
     function getAllComponents() {
+        // Cache the result to avoid repeated DOM queries
+        if (window._tpbCachedComponents) {
+            return window._tpbCachedComponents;
+        }
+        
         // Prefer Addify CPB structure if present
         let comps = Array.from(document.querySelectorAll('.af_cp_all_components_content .single_component'));
-        if (comps.length) return comps;
+        if (comps.length) {
+            window._tpbCachedComponents = comps;
+            return comps;
+        }
         // Addify toggle/vertical templates
         comps = Array.from(document.querySelectorAll('.af_cp_vertical_template .single_component, .af_cp_toggle_template .single_component'));
-        if (comps.length) return comps;
+        if (comps.length) {
+            window._tpbCachedComponents = comps;
+            return comps;
+        }
         // Generic/legacy fallback (rare)
         comps = Array.from(document.querySelectorAll('.cpb-component'));
-        if (comps.length) return comps;
-        return Array.from(document.querySelectorAll('[data-component], .component'));
+        if (comps.length) {
+            window._tpbCachedComponents = comps;
+            return comps;
+        }
+        comps = Array.from(document.querySelectorAll('[data-component], .component'));
+        window._tpbCachedComponents = comps;
+        return comps;
     }
 
     function matchComponentByText(components, pattern) {
@@ -73,9 +89,9 @@
     function hideComponent(comp) {
         if (!comp) return;
         comp.classList.add('tpb-collapsed');
-        comp.style.maxHeight = '60px';
+        comp.style.maxHeight = '120px';
         comp.style.overflow = 'hidden';
-        comp.style.opacity = '0.6';
+        comp.style.opacity = '0.7';
     }
 
     function showComponent(comp) {
@@ -127,7 +143,12 @@
 
         console.log('🎯 Establishing initial flow state with', components.length, 'components');
         
-        // Assume first component is SKU count (base). Keep it visible; others collapsed.
+        // Clear ALL selections first - no pre-selected options
+        components.forEach(comp => {
+            clearSelections(comp);
+        });
+        
+        // Only show first component (SKU count), collapse all others
         components.forEach((comp, index) => {
             const title = comp.querySelector('h4.title, h4, .title')?.textContent?.trim() || `Component ${index + 1}`;
             if (index === 0) {
@@ -135,7 +156,6 @@
                 showComponent(comp);
             } else {
                 console.log('📦 Collapsing component:', title);
-                clearSelections(comp);
                 hideComponent(comp);
                 // Make collapsed components clickable to expand
                 comp.addEventListener('click', function() {
@@ -146,32 +166,25 @@
                 });
             }
         });
-
-        // Attempt to find Build Strategy and ensure it has no default selected
-        const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
-        if (buildComp) {
-            console.log('🔧 Found Build Strategy component, clearing selections');
-            clearSelections(buildComp);
-        } else {
-            console.log('⚠️ Build Strategy component not found');
-        }
     }
 
     function setupCPBListeners() {
-        // Listen for CPB component changes
+        // More efficient event delegation
         document.addEventListener('change', function(event) {
             const target = event.target;
             
-            // Check if it's a CPB component
-            if (target.closest('.cpb-component') || target.closest('.woocommerce-variation') || target.closest('.af_cp_all_components_content')) {
+            // Only handle form elements in CPB components
+            if (target.matches('input[type="radio"], input[type="checkbox"], select') && 
+                target.closest('.af_cp_all_components_content, .cpb-component')) {
                 handleCPBSelection(target);
             }
         });
         
-        // Listen for radio button changes
+        // Handle clicks on product cards/selections
         document.addEventListener('click', function(event) {
             const target = event.target;
-            if (target.type === 'radio' && (target.closest('.cpb-component') || target.closest('.af_cp_all_components_content'))) {
+            if (target.closest('.af-cp-selected-product, .product-card, .variation') && 
+                target.closest('.af_cp_all_components_content, .cpb-component')) {
                 handleCPBSelection(target);
             }
         });
@@ -224,45 +237,25 @@
         console.log('🔄 Progressive reveal triggered for component:', changedComponent);
         
         const components = getAllComponents();
-        if (!components.length) {
-            console.log('❌ No components found for progressive reveal');
-            return;
+        if (!components.length) return;
+
+        // Fast path: if first component (SKU count) has a selection, show second component (Build Strategy)
+        if (components[0] && components[0].contains(changedComponent)) {
+            const hasSelection = components[0].querySelector('input[type="radio"]:checked, select option:checked, .af-cp-selected-product');
+            if (hasSelection && components[1]) {
+                console.log('✅ SKU count selected, showing Build Strategy');
+                showComponent(components[1]);
+                return;
+            }
         }
 
-        console.log('🔍 Found', components.length, 'components for progressive reveal');
-
-        // Heuristic ordering based on titles within components
-        const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
-        const bundleComp = matchComponentByText(components, '(choose\s*your\s*complete\s*bundle|finish\s*material|finish/material|bundle)');
-
-        console.log('🔍 Build Strategy component:', buildComp ? 'found' : 'not found');
-        console.log('🔍 Bundle component:', bundleComp ? 'found' : 'not found');
-
-        const hasValue = comp => !!(comp && (comp.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked, select option:checked, .af-cp-selected-product')));
-
-        // If first component (SKU count) got a value, show Build Strategy
-        if (components[0] && (components[0].contains(changedComponent) || hasValue(components[0]))) {
-            console.log('✅ First component has value, showing Build Strategy');
-            showComponent(buildComp);
-        }
-
-        // If Build Strategy is selected
-        if (buildComp) {
-            const bsSelected = buildComp.querySelector('input[type="radio"]:checked, select option:checked');
-            if (bsSelected) {
-                const txt = (bsSelected.textContent || bsSelected.value || '').toLowerCase();
-                currentPath = txt.includes('custom') ? 'custom' : 'predesigned';
-                console.log('🛤️ Build Strategy selected, path:', currentPath);
-                if (currentPath === 'predesigned') {
-                    console.log('✅ Showing bundle component for pre-designed path');
-                    showComponent(bundleComp);
-                } else {
-                    console.log('❌ Hiding bundle component for custom path');
-                    hideComponent(bundleComp);
-                    clearSelections(bundleComp);
-                }
-            } else {
-                console.log('⚠️ Build Strategy component found but no selection made');
+        // If Build Strategy component has a selection, show third component (Bundle)
+        if (components[1] && components[1].contains(changedComponent)) {
+            const hasSelection = components[1].querySelector('input[type="radio"]:checked, select option:checked, .af-cp-selected-product');
+            if (hasSelection && components[2]) {
+                console.log('✅ Build Strategy selected, showing Bundle component');
+                showComponent(components[2]);
+                return;
             }
         }
     }
