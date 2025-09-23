@@ -35,10 +35,15 @@
     
     // Helpers to find CPB components in a resilient way
     function getAllComponents() {
-        // Primary selector (Addify typically uses .cpb-component)
-        const comps = Array.from(document.querySelectorAll('.cpb-component'));
+        // Prefer Addify CPB structure if present
+        let comps = Array.from(document.querySelectorAll('.af_cp_all_components_content .single_component'));
         if (comps.length) return comps;
-        // Fallbacks
+        // Addify toggle/vertical templates
+        comps = Array.from(document.querySelectorAll('.af_cp_vertical_template .single_component, .af_cp_toggle_template .single_component'));
+        if (comps.length) return comps;
+        // Generic/legacy fallback (rare)
+        comps = Array.from(document.querySelectorAll('.cpb-component'));
+        if (comps.length) return comps;
         return Array.from(document.querySelectorAll('[data-component], .component'));
     }
 
@@ -56,6 +61,12 @@
             sel.selectedIndex = -1;
             // also clear any value that plugins may have set
             sel.value = '';
+        });
+        // Addify: remove any pre-rendered selected product blocks
+        root.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
+        // Addify: clear hidden selected inputs if present
+        root.querySelectorAll('input[type="hidden"]').forEach(h => {
+            if (/af_cp_selected|selected_product/i.test(h.name || '')) h.value = '';
         });
     }
 
@@ -144,9 +155,9 @@
         const components = getAllComponents();
         if (!components.length) return;
 
-        // Heuristic ordering: [0]=SKU count, then Build Strategy, then the rest
+        // Heuristic ordering based on titles within components
         const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
-        const bundleComp = matchComponentByText(components, '(complete bundle|finish\s*material|finish/material|choose your complete bundle)');
+        const bundleComp = matchComponentByText(components, '(choose\s*your\s*complete\s*bundle|finish\s*material|finish/material|bundle)');
 
         // If first component (SKU count) got a value, show Build Strategy
         if (components[0] && (components[0].contains(changedComponent) || currentSelections['sku-count'])) {
@@ -155,7 +166,7 @@
 
         // If Build Strategy is selected
         if (buildComp) {
-            const hasSelection = !!buildComp.querySelector('input[type="radio"]:checked, select option:checked');
+            const hasSelection = !!(buildComp.querySelector('input[type="radio"]:checked, select option:checked, .af-cp-selected-product'));
             if (hasSelection) {
                 if (currentPath === 'predesigned') {
                     showComponent(bundleComp);
