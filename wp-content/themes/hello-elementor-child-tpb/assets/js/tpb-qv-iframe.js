@@ -146,15 +146,54 @@
                 // Also clear any Addify selected product blocks
                 comp.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
                 
-                // Retry clearing after a short delay in case Addify re-renders
-                setTimeout(() => {
-                    const retrySelect = comp.querySelector('select');
-                    if (retrySelect && retrySelect.selectedIndex !== 0) {
-                        console.log('🔄 Retrying SKU dropdown clear...');
-                        retrySelect.selectedIndex = 0;
-                        retrySelect.value = '';
+                // Watch for Addify re-rendering and force placeholder
+                const forcePlaceholder = () => {
+                    const select = comp.querySelector('select');
+                    if (select) {
+                        // Check if placeholder exists and is selected
+                        const placeholder = select.querySelector('option[value=""]');
+                        if (!placeholder || select.selectedIndex !== 0 || select.value !== '') {
+                            console.log('🔄 Forcing SKU dropdown placeholder...');
+                            
+                            // Clear selection
+                            select.selectedIndex = -1;
+                            select.value = '';
+                            
+                            // Remove existing placeholder
+                            if (placeholder) placeholder.remove();
+                            
+                            // Add new placeholder
+                            const newPlaceholder = document.createElement('option');
+                            newPlaceholder.value = '';
+                            newPlaceholder.textContent = 'Select SKU count…';
+                            newPlaceholder.disabled = true;
+                            newPlaceholder.selected = true;
+                            select.insertBefore(newPlaceholder, select.firstChild);
+                            
+                            // Force selection
+                            select.selectedIndex = 0;
+                            select.value = '';
+                        }
                     }
-                }, 500);
+                };
+                
+                // Force immediately and then watch for changes
+                forcePlaceholder();
+                
+                // Watch for DOM changes in this component
+                const observer = new MutationObserver(() => {
+                    forcePlaceholder();
+                });
+                observer.observe(comp, { childList: true, subtree: true });
+                
+                // Also retry periodically
+                const retryInterval = setInterval(forcePlaceholder, 1000);
+                
+                // Stop watching after 10 seconds
+                setTimeout(() => {
+                    observer.disconnect();
+                    clearInterval(retryInterval);
+                }, 10000);
             } else {
                 console.log('📦 Collapsing component:', title);
                 hideComponent(comp);
