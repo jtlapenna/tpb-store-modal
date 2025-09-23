@@ -35,7 +35,7 @@ function tpb_qv_enqueue_assets() {
         'tpb-qv-iframe-js',
         get_stylesheet_directory_uri() . '/assets/js/tpb-qv-iframe.js',
         [],
-        filemtime(get_stylesheet_directory() . '/assets/js/tpb-qv-iframe.js'),
+        time(), // Force cache bust
         true
     );
     
