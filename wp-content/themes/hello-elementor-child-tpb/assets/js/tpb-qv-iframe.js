@@ -18,10 +18,9 @@
     });
     
     function initializeCPB() {
-        // Establish initial state (after CPB renders) and observe for changes
-        observeCPBAndInitialize();
+        console.log('[TPB-QV] Starting CPB initialization...');
         
-        // Set up CPB component listeners
+        // Set up CPB component listeners first
         setupCPBListeners();
         
         // Set up auto-resize
@@ -30,7 +29,10 @@
         // Set up SKU swapping logic
         setupSKUSwapping();
         
-        console.log('[TPB-QV] CPB initialized with config:', config);
+        // Establish initial state (after CPB renders) and observe for changes
+        observeCPBAndInitialize();
+        
+        console.log('[TPB-QV] CPB initialization setup complete');
     }
     
     // Helpers to find CPB components in a resilient way
@@ -103,38 +105,64 @@
     }
 
     function observeCPBAndInitialize() {
+        let initAttempts = 0;
+        const maxAttempts = 5;
+        
         const tryInit = () => {
+            initAttempts++;
             const components = getAllComponents();
-            console.log('🔍 Checking for components:', components.length);
+            console.log('🔍 Checking for components (attempt', initAttempts, '):', components.length);
+            
             if (components.length) {
                 console.log('✅ Components found, establishing initial flow state...');
                 establishInitialFlowState();
                 return true;
             }
-            console.log('❌ No components found yet');
+            
+            if (initAttempts < maxAttempts) {
+                console.log('❌ No components found yet, retrying...');
+                return false;
+            }
+            
+            console.log('⚠️ Max attempts reached, giving up');
             return false;
         };
 
-        // Attempt immediately and shortly after
-        if (!tryInit()) {
-            setTimeout(() => {
-                console.log('🔄 Retry 1 (150ms)...');
-                tryInit();
-            }, 150);
-            setTimeout(() => {
-                console.log('🔄 Retry 2 (400ms)...');
-                tryInit();
-            }, 400);
-        }
+        // Attempt immediately
+        if (tryInit()) return;
 
-        // Observe Addify container for dynamic renders
-        const container = document.querySelector('.af_cp_all_components_content') || document.querySelector('.af_cp_vertical_template') || document.body;
-        console.log('👀 Observing container:', container);
-        const observer = new MutationObserver(() => {
-            console.log('🔄 Mutation detected, retrying init...');
-            tryInit();
+        // Retry with increasing delays
+        const retryDelays = [100, 300, 600, 1000];
+        retryDelays.forEach((delay, index) => {
+            setTimeout(() => {
+                if (tryInit()) return;
+            }, delay);
         });
-        observer.observe(container, { childList: true, subtree: true });
+
+        // Only observe specific Addify containers, not the entire body
+        const container = document.querySelector('.af_cp_all_components_content') || document.querySelector('.af_cp_vertical_template');
+        if (container) {
+            console.log('👀 Observing Addify container:', container);
+            const observer = new MutationObserver((mutations) => {
+                // Only process if we haven't initialized yet
+                if (initAttempts >= maxAttempts) return;
+                
+                const hasRelevantChanges = mutations.some(mutation => 
+                    mutation.type === 'childList' && 
+                    Array.from(mutation.addedNodes).some(node => 
+                        node.nodeType === 1 && 
+                        (node.classList?.contains('single_component') || 
+                         node.querySelector?.('.single_component'))
+                    )
+                );
+                
+                if (hasRelevantChanges) {
+                    console.log('🔄 Relevant mutation detected, retrying init...');
+                    tryInit();
+                }
+            });
+            observer.observe(container, { childList: true, subtree: true });
+        }
     }
 
     function establishInitialFlowState() {
@@ -376,11 +404,22 @@
         }
     }
     
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeCPB);
-    } else {
+    // Initialize when DOM is ready with timeout
+    const initWithTimeout = () => {
         initializeCPB();
+        
+        // Fallback timeout - if nothing happens in 10 seconds, give up
+        setTimeout(() => {
+            if (!window._tpbCachedComponents || window._tpbCachedComponents.length === 0) {
+                console.log('⚠️ CPB initialization timeout - components not found after 10 seconds');
+            }
+        }, 10000);
+    };
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initWithTimeout);
+    } else {
+        initWithTimeout();
     }
     
 })(window, document);
