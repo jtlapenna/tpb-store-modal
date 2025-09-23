@@ -36,25 +36,6 @@ jobs:
       - name: Build TypeScript
         run: npm run build
 
-      - name: Validate SFTP credentials
-        run: |
-          echo "🔍 Validating SFTP credentials..."
-          echo "Host: ${{ secrets.SFTP_HOST }}"
-          echo "Port: ${{ secrets.SFTP_PORT }}"
-          echo "Username: ${{ secrets.SFTP_USER }}"
-          echo "Password: [HIDDEN]"
-          echo ""
-          
-          # Test SFTP connection with a simple command
-          echo "Testing SFTP connection..."
-          timeout 30 sftp -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no -P ${{ secrets.SFTP_PORT }} ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }} <<< "pwd" || {
-            echo "❌ SFTP connection test failed!"
-            echo "This likely means credentials are invalid or expired."
-            echo "Please check Elementor Cloud for updated credentials."
-            exit 1
-          }
-          echo "✅ SFTP connection test passed!"
-
       - name: Create deployment package
         run: |
           mkdir -p deploy-package
