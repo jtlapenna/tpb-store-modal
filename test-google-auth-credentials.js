@@ -103,3 +103,4 @@ async function testGoogleAuthCredentialRetrieval() {
 
 // Run the test
 testGoogleAuthCredentialRetrieval();
+
