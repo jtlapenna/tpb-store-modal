@@ -325,8 +325,9 @@
 
         // Fast path: if first component (SKU count) has a selection, show second component (Build Strategy)
         if (components[0] && components[0].contains(changedComponent)) {
-            const hasSelection = components[0].querySelector('input[type="radio"]:checked, select option:checked, .af-cp-selected-product');
-            if (hasSelection && components[1]) {
+            const select = components[0].querySelector('select');
+            const hasRealSelection = select && select.value && select.value !== '' && !select.querySelector('option[value=""]:checked');
+            if (hasRealSelection && components[1]) {
                 console.log('✅ SKU count selected, showing Build Strategy');
                 showComponent(components[1]);
                 // Collapse SKU section after valid choice to guide the flow
@@ -337,8 +338,9 @@
 
         // If Build Strategy component has a selection, show third component (Bundle)
         if (components[1] && components[1].contains(changedComponent)) {
-            const hasSelection = components[1].querySelector('input[type="radio"]:checked, select option:checked, .af-cp-selected-product');
-            if (hasSelection && components[2]) {
+            const select = components[1].querySelector('select');
+            const hasRealSelection = select && select.value && select.value !== '' && !select.querySelector('option[value=""]:checked');
+            if (hasRealSelection && components[2]) {
                 console.log('✅ Build Strategy selected, showing Bundle component');
                 showComponent(components[2]);
                 return;
