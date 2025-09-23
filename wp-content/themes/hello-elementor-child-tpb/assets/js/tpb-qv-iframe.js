@@ -112,32 +112,49 @@
                 console.log('✅ Showing first component:', title);
                 showComponent(comp);
 
-                // Ensure SKU dropdown/radios have no preselection and include a placeholder
+                // Force clear all selections and add placeholder
                 const select = comp.querySelector('select');
                 if (select) {
-                    // Insert placeholder as first option if missing
-                    const firstOption = select.options[0];
-                    const needsPlaceholder = !firstOption || (firstOption && firstOption.value !== '' && !/select/i.test(firstOption.text));
-                    if (needsPlaceholder) {
-                        const opt = document.createElement('option');
-                        opt.value = '';
-                        opt.textContent = 'Select SKU count…';
-                        opt.disabled = true;
-                        opt.selected = true;
-                        select.insertBefore(opt, firstOption || null);
-                    } else {
-                        // If placeholder exists, ensure it's selected
-                        firstOption.disabled = true;
-                        firstOption.selected = true;
-                        firstOption.textContent = firstOption.textContent || 'Select SKU count…';
-                        firstOption.value = '';
+                    // Clear all selections first
+                    select.selectedIndex = -1;
+                    select.value = '';
+                    
+                    // Remove any existing placeholder
+                    const existingPlaceholder = select.querySelector('option[value=""]');
+                    if (existingPlaceholder) {
+                        existingPlaceholder.remove();
                     }
+                    
+                    // Add new placeholder as first option
+                    const placeholder = document.createElement('option');
+                    placeholder.value = '';
+                    placeholder.textContent = 'Select SKU count…';
+                    placeholder.disabled = true;
+                    placeholder.selected = true;
+                    select.insertBefore(placeholder, select.firstChild);
+                    
+                    // Force selection to placeholder
                     select.selectedIndex = 0;
                     select.value = '';
                 }
 
-                // Clear radios/checkboxes if used
-                comp.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => { el.checked = false; });
+                // Clear all radios/checkboxes
+                comp.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => { 
+                    el.checked = false; 
+                });
+                
+                // Also clear any Addify selected product blocks
+                comp.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
+                
+                // Retry clearing after a short delay in case Addify re-renders
+                setTimeout(() => {
+                    const retrySelect = comp.querySelector('select');
+                    if (retrySelect && retrySelect.selectedIndex !== 0) {
+                        console.log('🔄 Retrying SKU dropdown clear...');
+                        retrySelect.selectedIndex = 0;
+                        retrySelect.value = '';
+                    }
+                }, 500);
             } else {
                 console.log('📦 Collapsing component:', title);
                 hideComponent(comp);
