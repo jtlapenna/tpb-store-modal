@@ -191,6 +191,8 @@ add_action( 'wp_head', function () {
 			border-radius: 8px !important;
 			box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
 		}
+		/* Utility: hidden class for progressive disclosure */
+		.tpb-qv .tpb-hidden { display: none !important; }
 	</style>
 	
 	<script>
@@ -329,6 +331,30 @@ add_action( 'wp_head', function () {
 			// Append content container to right panel
 			rightPanel.appendChild(contentContainer);
 			
+			// Initialize progressive flow: collapse later sections and clear defaults
+			(function initProgressiveFlow(root){
+				if (!root) return;
+				const rows = Array.from(root.querySelectorAll('form.cart .variations tr'))
+					.filter(tr => tr.querySelector('select, input[type="radio"], input[type="checkbox"]'));
+				// Clear all defaults
+				rows.forEach(tr => {
+					tr.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => el.checked = false);
+					tr.querySelectorAll('select').forEach(sel => { sel.selectedIndex = -1; sel.value = ''; });
+				});
+				// Collapse all except the first
+				rows.forEach((tr, idx) => { if (idx > 0) tr.classList.add('tpb-hidden'); else tr.classList.remove('tpb-hidden'); });
+				// Reveal next row when current gets a value
+				rows.forEach((tr, idx) => {
+					const controls = tr.querySelectorAll('select, input[type="radio"], input[type="checkbox"]');
+					controls.forEach(ctrl => {
+						ctrl.addEventListener('change', () => {
+							const hasValue = (ctrl.type === 'select-one') ? !!ctrl.value : (ctrl.type === 'radio' || ctrl.type === 'checkbox') ? tr.querySelector('input:checked') : false;
+							if (hasValue && rows[idx+1]) rows[idx+1].classList.remove('tpb-hidden');
+						});
+					});
+				});
+			})(contentContainer);
+
 			// Clear body and add panels
 			body.innerHTML = '';
 			body.appendChild(leftPanel);
