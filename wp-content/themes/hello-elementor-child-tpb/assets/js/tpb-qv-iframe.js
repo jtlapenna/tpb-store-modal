@@ -48,8 +48,20 @@
     
     // Helpers to find CPB components in a resilient way
     function getAllComponents() {
-        // Simple, fast component detection
-        const comps = document.querySelectorAll('.af_cp_all_components_content .single_component');
+        // More flexible component detection
+        let comps = document.querySelectorAll('.af_cp_all_components_content .single_component');
+        
+        // If no Addify components found, look for WooCommerce variations
+        if (comps.length === 0) {
+            comps = document.querySelectorAll('.woocommerce-variation, .variations select, form.cart .variations');
+        }
+        
+        // If still nothing, look for any form elements that might be CPB
+        if (comps.length === 0) {
+            comps = document.querySelectorAll('form.cart, .woocommerce-variation, select[name*="attribute"]');
+        }
+        
+        console.log('🔍 Found components:', comps.length, 'types:', Array.from(comps).map(c => c.className));
         return Array.from(comps);
     }
 

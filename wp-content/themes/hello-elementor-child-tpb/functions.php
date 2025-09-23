@@ -127,6 +127,20 @@ add_action('wp_footer', function() {
                     rightPanel.appendChild(summary.cloneNode(true));
                 }
                 
+                // Also move any CPB components that might be outside summary
+                const cpbComponents = product.querySelectorAll(".af_cp_all_components_content, .woocommerce-variation, form.cart");
+                cpbComponents.forEach(comp => {
+                    if (!rightPanel.contains(comp)) {
+                        rightPanel.appendChild(comp.cloneNode(true));
+                    }
+                });
+                
+                // Debug: Log what we found
+                console.log("🔍 Gallery found:", !!gallery);
+                console.log("🔍 Summary found:", !!summary);
+                console.log("🔍 CPB components found:", cpbComponents.length);
+                console.log("🔍 Right panel content:", rightPanel.innerHTML.substring(0, 200) + "...");
+                
                 // Clear body and add panels
                 body.innerHTML = "";
                 body.appendChild(leftPanel);
