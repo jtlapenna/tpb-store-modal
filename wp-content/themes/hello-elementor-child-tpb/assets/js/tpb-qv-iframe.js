@@ -18,6 +18,9 @@
     });
     
     function initializeCPB() {
+        // Establish initial state: only first component active; clear defaults elsewhere
+        establishInitialFlowState();
+        
         // Set up CPB component listeners
         setupCPBListeners();
         
@@ -30,6 +33,61 @@
         console.log('[TPB-QV] CPB initialized with config:', config);
     }
     
+    // Helpers to find CPB components in a resilient way
+    function getAllComponents() {
+        // Primary selector (Addify typically uses .cpb-component)
+        const comps = Array.from(document.querySelectorAll('.cpb-component'));
+        if (comps.length) return comps;
+        // Fallbacks
+        return Array.from(document.querySelectorAll('[data-component], .component'));
+    }
+
+    function matchComponentByText(components, pattern) {
+        const regex = new RegExp(pattern, 'i');
+        return components.find(c => regex.test(c.textContent || '')) || null;
+    }
+
+    function clearSelections(root) {
+        if (!root) return;
+        root.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => {
+            el.checked = false;
+        });
+        root.querySelectorAll('select').forEach(sel => {
+            sel.selectedIndex = -1;
+            // also clear any value that plugins may have set
+            sel.value = '';
+        });
+    }
+
+    function hideComponent(comp) {
+        if (!comp) return;
+        comp.style.display = 'none';
+    }
+
+    function showComponent(comp) {
+        if (!comp) return;
+        comp.style.display = '';
+    }
+
+    function establishInitialFlowState() {
+        const components = getAllComponents();
+        if (!components.length) return;
+
+        // Assume first component is SKU count (base). Keep it visible; others collapsed.
+        components.forEach((comp, index) => {
+            if (index === 0) {
+                showComponent(comp);
+            } else {
+                clearSelections(comp);
+                hideComponent(comp);
+            }
+        });
+
+        // Attempt to find Build Strategy and ensure it has no default selected
+        const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
+        clearSelections(buildComp);
+    }
+
     function setupCPBListeners() {
         // Listen for CPB component changes
         document.addEventListener('change', function(event) {
@@ -69,6 +127,9 @@
             }
         });
         
+        // Progressive disclosure: reveal next components as prerequisites are met
+        progressiveReveal(component);
+
         // Handle path changes
         if (componentName === 'build-strategy') {
             currentPath = value.toLowerCase().includes('custom') ? 'custom' : 'predesigned';
@@ -78,19 +139,44 @@
         // Handle SKU swapping
         handleSKUSwapping();
     }
+
+    function progressiveReveal(changedComponent) {
+        const components = getAllComponents();
+        if (!components.length) return;
+
+        // Heuristic ordering: [0]=SKU count, then Build Strategy, then the rest
+        const buildComp = matchComponentByText(components, '(build\s*strategy|pre-?designed|custom build)');
+        const bundleComp = matchComponentByText(components, '(complete bundle|finish\s*material|finish/material|choose your complete bundle)');
+
+        // If first component (SKU count) got a value, show Build Strategy
+        if (components[0] && (components[0].contains(changedComponent) || currentSelections['sku-count'])) {
+            showComponent(buildComp);
+        }
+
+        // If Build Strategy is selected
+        if (buildComp) {
+            const hasSelection = !!buildComp.querySelector('input[type="radio"]:checked, select option:checked');
+            if (hasSelection) {
+                if (currentPath === 'predesigned') {
+                    showComponent(bundleComp);
+                } else {
+                    hideComponent(bundleComp);
+                    clearSelections(bundleComp);
+                }
+            }
+        }
+    }
     
     function handlePathChange() {
+        // Backward-compatible show/hide for legacy markup if present
         const mountComponent = document.querySelector('[data-component="mount-type"]');
         const finishComponent = document.querySelector('[data-component="finish-material"]');
-        
         if (currentPath === 'custom') {
-            // Hide mount and finish components for custom build
-            if (mountComponent) mountComponent.style.display = 'none';
-            if (finishComponent) finishComponent.style.display = 'none';
+            hideComponent(mountComponent);
+            hideComponent(finishComponent);
         } else {
-            // Show mount and finish components for pre-designed
-            if (mountComponent) mountComponent.style.display = 'block';
-            if (finishComponent) finishComponent.style.display = 'block';
+            showComponent(mountComponent);
+            showComponent(finishComponent);
         }
     }
     
