@@ -115,7 +115,8 @@
                 // Force clear all selections and add placeholder
                 const select = comp.querySelector('select');
                 if (select) {
-                    // Clear all selections first
+                    // Clear all selections first (remove selected attrs too)
+                    Array.from(select.options).forEach(opt => { opt.removeAttribute('selected'); opt.selected = false; });
                     select.selectedIndex = -1;
                     select.value = '';
                     
@@ -133,9 +134,17 @@
                     placeholder.selected = true;
                     select.insertBefore(placeholder, select.firstChild);
                     
-                    // Force selection to placeholder
+                    // Force selection to placeholder and dispatch events
                     select.selectedIndex = 0;
                     select.value = '';
+                    ['input','change'].forEach(evt => select.dispatchEvent(new Event(evt, { bubbles: true }))); 
+                    
+                    // If Select2 is used, trigger its change as well
+                    const select2 = comp.querySelector('.select2-hidden-accessible');
+                    if (select2) {
+                        select2.value = '';
+                        ['input','change'].forEach(evt => select2.dispatchEvent(new Event(evt, { bubbles: true })));
+                    }
                 }
 
                 // Clear all radios/checkboxes
@@ -156,6 +165,7 @@
                             console.log('🔄 Forcing SKU dropdown placeholder...');
                             
                             // Clear selection
+                            Array.from(select.options).forEach(opt => { opt.removeAttribute('selected'); opt.selected = false; });
                             select.selectedIndex = -1;
                             select.value = '';
                             
@@ -173,6 +183,12 @@
                             // Force selection
                             select.selectedIndex = 0;
                             select.value = '';
+                            ['input','change'].forEach(evt => select.dispatchEvent(new Event(evt, { bubbles: true })));
+                            const select2 = comp.querySelector('.select2-hidden-accessible');
+                            if (select2) {
+                                select2.value = '';
+                                ['input','change'].forEach(evt => select2.dispatchEvent(new Event(evt, { bubbles: true })));
+                            }
                         }
                     }
                 };
