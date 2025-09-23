@@ -18,8 +18,8 @@
     });
     
     function initializeCPB() {
-        // Establish initial state: only first component active; clear defaults elsewhere
-        establishInitialFlowState();
+        // Establish initial state (after CPB renders) and observe for changes
+        observeCPBAndInitialize();
         
         // Set up CPB component listeners
         setupCPBListeners();
@@ -72,12 +72,36 @@
 
     function hideComponent(comp) {
         if (!comp) return;
-        comp.style.display = 'none';
+        comp.classList.add('tpb-hidden');
     }
 
     function showComponent(comp) {
         if (!comp) return;
-        comp.style.display = '';
+        comp.classList.remove('tpb-hidden');
+    }
+
+    function observeCPBAndInitialize() {
+        const tryInit = () => {
+            const components = getAllComponents();
+            if (components.length) {
+                establishInitialFlowState();
+                return true;
+            }
+            return false;
+        };
+
+        // Attempt immediately and shortly after
+        if (!tryInit()) {
+            setTimeout(tryInit, 150);
+            setTimeout(tryInit, 400);
+        }
+
+        // Observe Addify container for dynamic renders
+        const container = document.querySelector('.af_cp_all_components_content') || document.querySelector('.af_cp_vertical_template') || document.body;
+        const observer = new MutationObserver(() => {
+            tryInit();
+        });
+        observer.observe(container, { childList: true, subtree: true });
     }
 
     function establishInitialFlowState() {

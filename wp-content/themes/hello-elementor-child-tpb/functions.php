@@ -193,6 +193,8 @@ add_action( 'wp_head', function () {
 		}
 		/* Utility: hidden class for progressive disclosure */
 		.tpb-qv .tpb-hidden { display: none !important; }
+		/* Hide Addify components when marked */
+		.tpb-qv .af_cp_all_components_content .tpb-hidden { display: none !important; }
 	</style>
 	
 	<script>
