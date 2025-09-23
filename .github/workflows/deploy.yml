@@ -36,6 +36,25 @@ jobs:
       - name: Build TypeScript
         run: npm run build
 
+      - name: Validate SFTP credentials
+        run: |
+          echo "🔍 Validating SFTP credentials..."
+          echo "Host: ${{ secrets.SFTP_HOST }}"
+          echo "Port: ${{ secrets.SFTP_PORT }}"
+          echo "Username: ${{ secrets.SFTP_USER }}"
+          echo "Password: [HIDDEN]"
+          echo ""
+          
+          # Test SFTP connection with a simple command
+          echo "Testing SFTP connection..."
+          timeout 30 sftp -o ConnectTimeout=10 -o BatchMode=yes -o StrictHostKeyChecking=no -P ${{ secrets.SFTP_PORT }} ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }} <<< "pwd" || {
+            echo "❌ SFTP connection test failed!"
+            echo "This likely means credentials are invalid or expired."
+            echo "Please check Elementor Cloud for updated credentials."
+            exit 1
+          }
+          echo "✅ SFTP connection test passed!"
+
       - name: Create deployment package
         run: |
           mkdir -p deploy-package
@@ -76,15 +95,30 @@ jobs:
         run: |
           if [ "${{ steps.deploy-theme-1.outcome }}" == "success" ] && [ "${{ steps.deploy-mu-1.outcome }}" == "success" ]; then
             echo "first_attempt_success=true" >> $GITHUB_OUTPUT
+            echo "✅ First SFTP attempt succeeded!"
           else
             echo "first_attempt_success=false" >> $GITHUB_OUTPUT
+            echo "❌ First SFTP attempt failed!"
+            echo "Theme deployment: ${{ steps.deploy-theme-1.outcome }}"
+            echo "MU-plugin deployment: ${{ steps.deploy-mu-1.outcome }}"
           fi
 
       - name: Get fresh SFTP credentials
         if: steps.check-first-attempt.outputs.first_attempt_success == 'false'
         id: fresh-creds
         run: |
-          echo "First SFTP attempt failed. Getting fresh credentials..."
+          echo "🔄 First SFTP attempt failed. Getting fresh credentials..."
+          echo "This usually indicates:"
+          echo "1. SFTP credentials have expired (most common)"
+          echo "2. Server is temporarily unavailable"
+          echo "3. Network connectivity issues"
+          echo ""
+          echo "Current credentials being used:"
+          echo "Host: ${{ secrets.SFTP_HOST }}"
+          echo "Port: ${{ secrets.SFTP_PORT }}"
+          echo "Username: ${{ secrets.SFTP_USER }}"
+          echo "Password: [HIDDEN]"
+          echo ""
           
           # For now, we'll use the same credentials but add a delay
           # In the future, this could call Elementor's API to get fresh credentials
@@ -130,14 +164,27 @@ jobs:
         run: |
           if [ "${{ steps.deploy-theme-2.outcome }}" == "success" ] && [ "${{ steps.deploy-mu-2.outcome }}" == "success" ]; then
             echo "second_attempt_success=true" >> $GITHUB_OUTPUT
+            echo "✅ Second SFTP attempt succeeded!"
           else
             echo "second_attempt_success=false" >> $GITHUB_OUTPUT
+            echo "❌ Second SFTP attempt also failed!"
+            echo "Theme deployment: ${{ steps.deploy-theme-2.outcome }}"
+            echo "MU-plugin deployment: ${{ steps.deploy-mu-2.outcome }}"
+            echo ""
+            echo "🚨 LIKELY CREDENTIAL ISSUE: Both SFTP attempts failed with the same credentials."
+            echo "Please check Elementor Cloud for updated SFTP credentials and update GitHub secrets."
           fi
 
       - name: Create manual deployment package
         if: steps.check-first-attempt.outputs.first_attempt_success == 'false' && steps.check-second-attempt.outputs.second_attempt_success == 'false'
         run: |
-          echo "Both SFTP attempts failed. Creating manual deployment package..."
+          echo "📦 Both SFTP attempts failed. Creating manual deployment package..."
+          echo ""
+          echo "🔧 NEXT STEPS:"
+          echo "1. Check Elementor Cloud for updated SFTP credentials"
+          echo "2. Update GitHub secrets: SFTP_USER and SFTP_PASS"
+          echo "3. Re-run this workflow or manually upload the package below"
+          echo ""
           
           # Create a deployment package for manual upload
           mkdir -p manual-deploy
@@ -145,7 +192,7 @@ jobs:
           cp -r wp-content/mu-plugins/tpb-quickview manual-deploy/
           zip -r manual-deploy-$(date +%Y%m%d-%H%M%S).zip manual-deploy/
           
-          echo "Manual deployment package created. Please upload manually to Elementor Cloud."
+          echo "📁 Manual deployment package created: manual-deploy-$(date +%Y%m%d-%H%M%S).zip"
           echo "Files to upload:"
           echo "- Theme: manual-deploy/hello-elementor-child-tpb/ → /html/wp-content/themes/hello-elementor-child-tpb/"
           echo "- MU-plugin: manual-deploy/tpb-quickview/ → /html/wp-content/mu-plugins/tpb-quickview/"
