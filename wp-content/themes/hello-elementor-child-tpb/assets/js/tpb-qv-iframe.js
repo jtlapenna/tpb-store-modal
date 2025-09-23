@@ -112,11 +112,39 @@
                 console.log('✅ Showing first component:', title);
                 showComponent(comp);
 
-                // Force clear all selections and add placeholder
-                const select = comp.querySelector('select');
+                // Debug: Log what we find in the component
+                console.log('🔍 SKU Component HTML:', comp.innerHTML);
+                
+                // Try multiple selectors for Addify dropdowns
+                const selectors = [
+                    'select',
+                    'select[name*="variation"]',
+                    'select[name*="attribute"]',
+                    '.variations select',
+                    '.woocommerce-variation select',
+                    '.af_cp_all_components_content select'
+                ];
+                
+                let select = null;
+                for (const selector of selectors) {
+                    select = comp.querySelector(selector);
+                    if (select) {
+                        console.log('✅ Found select with selector:', selector);
+                        break;
+                    }
+                }
+                
                 if (select) {
+                    console.log('🎯 Select found:', select);
+                    console.log('🎯 Current value:', select.value);
+                    console.log('🎯 Selected index:', select.selectedIndex);
+                    console.log('🎯 Options:', Array.from(select.options).map(opt => ({ value: opt.value, text: opt.text, selected: opt.selected })));
+                    
                     // Clear all selections first (remove selected attrs too)
-                    Array.from(select.options).forEach(opt => { opt.removeAttribute('selected'); opt.selected = false; });
+                    Array.from(select.options).forEach(opt => { 
+                        opt.removeAttribute('selected'); 
+                        opt.selected = false; 
+                    });
                     select.selectedIndex = -1;
                     select.value = '';
                     
@@ -139,12 +167,9 @@
                     select.value = '';
                     ['input','change'].forEach(evt => select.dispatchEvent(new Event(evt, { bubbles: true }))); 
                     
-                    // If Select2 is used, trigger its change as well
-                    const select2 = comp.querySelector('.select2-hidden-accessible');
-                    if (select2) {
-                        select2.value = '';
-                        ['input','change'].forEach(evt => select2.dispatchEvent(new Event(evt, { bubbles: true })));
-                    }
+                    console.log('🎯 After reset - value:', select.value, 'selectedIndex:', select.selectedIndex);
+                } else {
+                    console.log('❌ No select found in component');
                 }
 
                 // Clear all radios/checkboxes
