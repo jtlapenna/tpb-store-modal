@@ -20,49 +20,37 @@
     function initializeCPB() {
         console.log('[TPB-QV] Starting CPB initialization...');
         
-        // Set up CPB component listeners first
+        // Set up basic listeners immediately
         setupCPBListeners();
-        
-        // Set up auto-resize
         setupAutoResize();
-        
-        // Set up SKU swapping logic
         setupSKUSwapping();
         
-        // Establish initial state (after CPB renders) and observe for changes
-        observeCPBAndInitialize();
+        // Simple component setup with minimal delay
+        setTimeout(() => {
+            const components = getAllComponents();
+            if (components.length > 0) {
+                console.log('✅ Components found, setting up flow...');
+                establishInitialFlowState();
+            } else {
+                console.log('⚠️ No components found, will retry...');
+                // Simple retry after 1 second
+                setTimeout(() => {
+                    const retryComponents = getAllComponents();
+                    if (retryComponents.length > 0) {
+                        establishInitialFlowState();
+                    }
+                }, 1000);
+            }
+        }, 100);
         
-        console.log('[TPB-QV] CPB initialization setup complete');
+        console.log('[TPB-QV] CPB initialization complete');
     }
     
     // Helpers to find CPB components in a resilient way
     function getAllComponents() {
-        // Cache the result to avoid repeated DOM queries
-        if (window._tpbCachedComponents) {
-            return window._tpbCachedComponents;
-        }
-        
-        // Prefer Addify CPB structure if present
-        let comps = Array.from(document.querySelectorAll('.af_cp_all_components_content .single_component'));
-        if (comps.length) {
-            window._tpbCachedComponents = comps;
-            return comps;
-        }
-        // Addify toggle/vertical templates
-        comps = Array.from(document.querySelectorAll('.af_cp_vertical_template .single_component, .af_cp_toggle_template .single_component'));
-        if (comps.length) {
-            window._tpbCachedComponents = comps;
-            return comps;
-        }
-        // Generic/legacy fallback (rare)
-        comps = Array.from(document.querySelectorAll('.cpb-component'));
-        if (comps.length) {
-            window._tpbCachedComponents = comps;
-            return comps;
-        }
-        comps = Array.from(document.querySelectorAll('[data-component], .component'));
-        window._tpbCachedComponents = comps;
-        return comps;
+        // Simple, fast component detection
+        const comps = document.querySelectorAll('.af_cp_all_components_content .single_component');
+        return Array.from(comps);
     }
 
     function matchComponentByText(components, pattern) {
@@ -104,66 +92,7 @@
         comp.style.opacity = '1';
     }
 
-    function observeCPBAndInitialize() {
-        let initAttempts = 0;
-        const maxAttempts = 5;
-        
-        const tryInit = () => {
-            initAttempts++;
-            const components = getAllComponents();
-            console.log('🔍 Checking for components (attempt', initAttempts, '):', components.length);
-            
-            if (components.length) {
-                console.log('✅ Components found, establishing initial flow state...');
-                establishInitialFlowState();
-                return true;
-            }
-            
-            if (initAttempts < maxAttempts) {
-                console.log('❌ No components found yet, retrying...');
-                return false;
-            }
-            
-            console.log('⚠️ Max attempts reached, giving up');
-            return false;
-        };
-
-        // Attempt immediately
-        if (tryInit()) return;
-
-        // Retry with increasing delays
-        const retryDelays = [100, 300, 600, 1000];
-        retryDelays.forEach((delay, index) => {
-            setTimeout(() => {
-                if (tryInit()) return;
-            }, delay);
-        });
-
-        // Only observe specific Addify containers, not the entire body
-        const container = document.querySelector('.af_cp_all_components_content') || document.querySelector('.af_cp_vertical_template');
-        if (container) {
-            console.log('👀 Observing Addify container:', container);
-            const observer = new MutationObserver((mutations) => {
-                // Only process if we haven't initialized yet
-                if (initAttempts >= maxAttempts) return;
-                
-                const hasRelevantChanges = mutations.some(mutation => 
-                    mutation.type === 'childList' && 
-                    Array.from(mutation.addedNodes).some(node => 
-                        node.nodeType === 1 && 
-                        (node.classList?.contains('single_component') || 
-                         node.querySelector?.('.single_component'))
-                    )
-                );
-                
-                if (hasRelevantChanges) {
-                    console.log('🔄 Relevant mutation detected, retrying init...');
-                    tryInit();
-                }
-            });
-            observer.observe(container, { childList: true, subtree: true });
-        }
-    }
+    // Removed complex MutationObserver - using simple timeouts instead
 
     function establishInitialFlowState() {
         const components = getAllComponents();
@@ -197,23 +126,16 @@
     }
 
     function setupCPBListeners() {
-        // More efficient event delegation
+        // Simple, fast event delegation
         document.addEventListener('change', function(event) {
-            const target = event.target;
-            
-            // Only handle form elements in CPB components
-            if (target.matches('input[type="radio"], input[type="checkbox"], select') && 
-                target.closest('.af_cp_all_components_content, .cpb-component')) {
-                handleCPBSelection(target);
+            if (event.target.closest('.af_cp_all_components_content')) {
+                handleCPBSelection(event.target);
             }
         });
         
-        // Handle clicks on product cards/selections
         document.addEventListener('click', function(event) {
-            const target = event.target;
-            if (target.closest('.af-cp-selected-product, .product-card, .variation') && 
-                target.closest('.af_cp_all_components_content, .cpb-component')) {
-                handleCPBSelection(target);
+            if (event.target.closest('.af_cp_all_components_content')) {
+                handleCPBSelection(event.target);
             }
         });
     }
@@ -404,22 +326,11 @@
         }
     }
     
-    // Initialize when DOM is ready with timeout
-    const initWithTimeout = () => {
-        initializeCPB();
-        
-        // Fallback timeout - if nothing happens in 10 seconds, give up
-        setTimeout(() => {
-            if (!window._tpbCachedComponents || window._tpbCachedComponents.length === 0) {
-                console.log('⚠️ CPB initialization timeout - components not found after 10 seconds');
-            }
-        }, 10000);
-    };
-    
+    // Simple initialization
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initWithTimeout);
+        document.addEventListener('DOMContentLoaded', initializeCPB);
     } else {
-        initWithTimeout();
+        initializeCPB();
     }
     
 })(window, document);
