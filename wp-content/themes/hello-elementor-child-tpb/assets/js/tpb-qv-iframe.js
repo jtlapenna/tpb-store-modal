@@ -90,18 +90,16 @@
 
     function hideComponent(comp) {
         if (!comp) return;
-        comp.classList.add('tpb-collapsed');
-        comp.style.maxHeight = '120px';
-        comp.style.overflow = 'hidden';
-        comp.style.opacity = '0.7';
+        console.log('📦 Hiding component:', comp.querySelector('.title')?.textContent || 'Unknown');
+        comp.classList.add('tpb-hidden');
+        comp.style.display = 'none';
     }
 
     function showComponent(comp) {
         if (!comp) return;
-        comp.classList.remove('tpb-collapsed');
-        comp.style.maxHeight = 'none';
-        comp.style.overflow = 'visible';
-        comp.style.opacity = '1';
+        console.log('📦 Showing component:', comp.querySelector('.title')?.textContent || 'Unknown');
+        comp.classList.remove('tpb-hidden');
+        comp.style.display = 'block';
     }
 
     // Removed complex MutationObserver - using simple timeouts instead
