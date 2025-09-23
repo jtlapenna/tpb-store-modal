@@ -33,7 +33,7 @@ function tpb_qv_enqueue_assets() {
     // Enqueue iframe JS
     wp_enqueue_script(
         'tpb-qv-iframe-js',
-        get_stylesheet_directory_uri() . '/assets/js/tpb-qv-iframe.js',
+        get_stylesheet_directory_uri() . '/assets/js/tpb-qv-iframe.js?v=' . time() . '&r=' . rand(1000, 9999),
         [],
         time(), // Force cache bust
         true
