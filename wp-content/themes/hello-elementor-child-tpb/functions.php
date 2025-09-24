@@ -51,7 +51,7 @@ add_action('wp_enqueue_scripts', 'tpb_qv_enqueue_assets');
  * Add body class for quick view mode
  */
 function tpb_qv_body_class($classes) {
-    if (isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') {
+    if ((isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') || (isset($_GET['tpb_qv_staging']) && $_GET['tpb_qv_staging'] == '1')) {
         $classes[] = 'tpb-qv';
     }
     return $classes;
@@ -62,7 +62,7 @@ add_filter('body_class', 'tpb_qv_body_class');
  * Hide header/footer in iframe mode
  */
 add_action('wp_head', function() {
-    if (isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') {
+    if ((isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') || (isset($_GET['tpb_qv_staging']) && $_GET['tpb_qv_staging'] == '1')) {
         echo '<style>
             .tpb-qv .site-header,
             .tpb-qv .site-footer,
@@ -101,7 +101,7 @@ add_action('wp_head', function() {
  * Simple iframe setup for quick view
  */
 add_action('wp_footer', function() {
-    if (isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') {
+    if ((isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') || (isset($_GET['tpb_qv_staging']) && $_GET['tpb_qv_staging'] == '1')) {
         echo '<script>
         document.addEventListener("DOMContentLoaded", function() {
             const body = document.body;
