@@ -61,6 +61,27 @@
     overlay.setAttribute('aria-hidden', 'false');
     d.documentElement.classList.add('tpb-qv-locked');
     
+    // Diagnostic logging for two-tone issue
+    log('Modal opened, checking z-index...');
+    const computedStyle = window.getComputedStyle(overlay);
+    log('Overlay z-index:', computedStyle.zIndex);
+    log('Overlay position:', computedStyle.position);
+    log('Overlay display:', computedStyle.display);
+    
+    // Check for elements with higher z-index
+    const allElements = d.querySelectorAll('*');
+    const highZIndexElements = Array.from(allElements).filter(el => {
+      const zIndex = parseInt(window.getComputedStyle(el).zIndex);
+      return zIndex > 999999;
+    });
+    if (highZIndexElements.length > 0) {
+      log('⚠️ Found elements with higher z-index:', highZIndexElements.map(el => ({
+        tag: el.tagName,
+        zIndex: window.getComputedStyle(el).zIndex,
+        className: el.className
+      })));
+    }
+    
     // Set up iframe communication for CPB
     setupIframeCommunication();
     

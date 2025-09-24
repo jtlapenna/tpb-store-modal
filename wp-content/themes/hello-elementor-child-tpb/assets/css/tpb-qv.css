@@ -1,10 +1,10 @@
 /* TPB QuickView baseline styles (neutral) */
 #tpb-qv-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(19, 26, 32, .62);
-  z-index: 999999;
-  display: none;
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(19, 26, 32, .62) !important;
+  z-index: 999999 !important;
+  display: none !important;
 }
 #tpb-qv-overlay.is-open { display: block; }
 
