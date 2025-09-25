@@ -849,3 +849,68 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   font-weight: 600;
   z-index: 11;
 }
+
+/* Fallback component styling for when CPB is not available */
+.tpb-fallback-component {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  position: relative;
+}
+
+.tpb-fallback-component::before {
+  content: "⚠️ CPB Not Available - Using Fallback";
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background: #ffc107;
+  color: #856404;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tpb-fallback-component .title {
+  color: #6c757d;
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.tpb-fallback-component .component-content {
+  margin-top: 10px;
+}
+
+.tpb-fallback-component label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.tpb-fallback-component select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #495057;
+  transition: border-color 0.3s ease;
+}
+
+.tpb-fallback-component select:focus {
+  border-color: #5ac59a;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(90, 197, 154, 0.1);
+}
+
+.tpb-fallback-component select:hover {
+  border-color: #5ac59a;
+}

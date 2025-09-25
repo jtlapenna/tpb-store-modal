@@ -66,8 +66,66 @@
             comps = document.querySelectorAll('form.cart, .woocommerce-variation, select[name*="attribute"]');
         }
         
+        // If still nothing, look for any select elements as fallback
+        if (comps.length === 0) {
+            const selects = document.querySelectorAll('select:not([name="quantity"])');
+            if (selects.length > 0) {
+                // Create wrapper components for individual selects
+                comps = Array.from(selects).map(select => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'single_component tpb-fallback-component';
+                    wrapper.innerHTML = `
+                        <h4 class="title">${select.name || 'Configuration Option'}</h4>
+                        <div class="component-content">
+                            <label for="${select.id || 'select-' + Math.random()}">${select.name || 'Select Option'}</label>
+                            ${select.outerHTML}
+                        </div>
+                    `;
+                    return wrapper;
+                });
+            }
+        }
+        
         console.log('🔍 Found components:', comps.length, 'types:', Array.from(comps).map(c => c.className));
+        
+        // If no components found, run diagnostics
+        if (comps.length === 0) {
+            runCPBDiagnostics();
+        }
+        
         return Array.from(comps);
+    }
+
+    function runCPBDiagnostics() {
+        console.log('🔍 CPB Diagnostics:');
+        console.log('  - Addify CPB container:', document.querySelector('.af_cp_all_components_content'));
+        console.log('  - WooCommerce product:', document.querySelector('.woocommerce div.product'));
+        console.log('  - Product summary:', document.querySelector('.woocommerce div.product .summary'));
+        console.log('  - All forms:', document.querySelectorAll('form').length);
+        console.log('  - All selects:', document.querySelectorAll('select').length);
+        console.log('  - All variations:', document.querySelectorAll('.variations').length);
+        console.log('  - Cart form:', document.querySelector('form.cart'));
+        console.log('  - Addify scripts loaded:', !!document.querySelector('script[src*="af-comp-product"]'));
+        console.log('  - WooCommerce scripts loaded:', !!document.querySelector('script[src*="woocommerce"]'));
+        
+        // Check for Addify CPB plugin
+        const addifyScript = document.querySelector('script[src*="af-comp-product"]');
+        if (addifyScript) {
+            console.log('  - Addify script found:', addifyScript.src);
+        } else {
+            console.log('  - ❌ Addify CPB script not found - plugin may not be active');
+        }
+        
+        // Check for WooCommerce product data
+        const productData = document.querySelector('script[type="application/json"]');
+        if (productData) {
+            try {
+                const data = JSON.parse(productData.textContent);
+                console.log('  - Product data found:', data);
+            } catch (e) {
+                console.log('  - Product data parse error:', e);
+            }
+        }
     }
 
     function matchComponentByText(components, pattern) {
