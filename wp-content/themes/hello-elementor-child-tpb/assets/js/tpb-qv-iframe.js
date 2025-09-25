@@ -1,6 +1,7 @@
 /**
- * TPB Quick View Iframe Handler
+ * TPB Quick View Iframe Handler - Phase 1 Optimized
  * Handles CPB interactions and communication with parent window
+ * Fixed: Progressive disclosure, pre-selection issues, smooth interactions
  */
 (function(window, document) {
     'use strict';
@@ -8,6 +9,7 @@
     let config = {};
     let currentSelections = {};
     let currentPath = 'custom'; // 'custom' or 'predesigned'
+    let isInitialized = false;
     
     // Listen for configuration from parent
     window.addEventListener('message', function(event) {
@@ -18,6 +20,7 @@
     });
     
     function initializeCPB() {
+        if (isInitialized) return;
         console.log('[TPB-QV] Starting CPB initialization...');
         
         // Set up basic listeners immediately
@@ -25,12 +28,13 @@
         setupAutoResize();
         setupSKUSwapping();
         
-        // Simple component setup with minimal delay
+        // Initialize with proper progressive disclosure
         setTimeout(() => {
             const components = getAllComponents();
             if (components.length > 0) {
                 console.log('✅ Components found, setting up flow...');
                 establishInitialFlowState();
+                isInitialized = true;
             } else {
                 console.log('⚠️ No components found, will retry...');
                 // Simple retry after 1 second
@@ -38,6 +42,7 @@
                     const retryComponents = getAllComponents();
                     if (retryComponents.length > 0) {
                         establishInitialFlowState();
+                        isInitialized = true;
                     }
                 }, 1000);
             }
@@ -121,140 +126,157 @@
             if (index === 0) {
                 console.log('✅ Showing first component:', title);
                 showComponent(comp);
-
-                // Debug: Log what we find in the component
-                console.log('🔍 SKU Component HTML:', comp.innerHTML);
-                
-                // Try multiple selectors for Addify dropdowns
-                const selectors = [
-                    'select',
-                    'select[name*="variation"]',
-                    'select[name*="attribute"]',
-                    '.variations select',
-                    '.woocommerce-variation select',
-                    '.af_cp_all_components_content select'
-                ];
-                
-                let select = null;
-                for (const selector of selectors) {
-                    select = comp.querySelector(selector);
-                    if (select) {
-                        console.log('✅ Found select with selector:', selector);
-                        break;
-                    }
-                }
-                
-                if (select) {
-                    console.log('🎯 Select found:', select);
-                    console.log('🎯 Current value:', select.value);
-                    console.log('🎯 Selected index:', select.selectedIndex);
-                    console.log('🎯 Options:', Array.from(select.options).map(opt => ({ value: opt.value, text: opt.text, selected: opt.selected })));
-                    
-                    // Clear all selections first (remove selected attrs too)
-                    Array.from(select.options).forEach(opt => { 
-                        opt.removeAttribute('selected'); 
-                        opt.selected = false; 
-                    });
-                    select.selectedIndex = -1;
-                    select.value = '';
-                    
-                    // Remove any existing placeholder
-                    const existingPlaceholder = select.querySelector('option[value=""]');
-                    if (existingPlaceholder) {
-                        existingPlaceholder.remove();
-                    }
-                    
-                    // Add new placeholder as first option
-                    const placeholder = document.createElement('option');
-                    placeholder.value = '';
-                    placeholder.textContent = 'Select SKU count…';
-                    placeholder.disabled = true;
-                    placeholder.selected = true;
-                    select.insertBefore(placeholder, select.firstChild);
-                    
-                    // Force selection to placeholder and dispatch events
-                    select.selectedIndex = 0;
-                    select.value = '';
-                    ['input','change'].forEach(evt => select.dispatchEvent(new Event(evt, { bubbles: true }))); 
-                    
-                    console.log('🎯 After reset - value:', select.value, 'selectedIndex:', select.selectedIndex);
-                } else {
-                    console.log('❌ No select found in component');
-                }
-
-                // Clear all radios/checkboxes
-                comp.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => { 
-                    el.checked = false; 
-                });
-                
-                // Also clear any Addify selected product blocks
-                comp.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
-                
-                // Watch for Addify re-rendering and force placeholder
-                const forcePlaceholder = () => {
-                    const select = comp.querySelector('select');
-                    if (select) {
-                        // Check if placeholder exists and is selected
-                        const placeholder = select.querySelector('option[value=""]');
-                        if (!placeholder || select.selectedIndex !== 0 || select.value !== '') {
-                            console.log('🔄 Forcing SKU dropdown placeholder...');
-                            
-                            // Clear selection
-                            Array.from(select.options).forEach(opt => { opt.removeAttribute('selected'); opt.selected = false; });
-                            select.selectedIndex = -1;
-                            select.value = '';
-                            
-                            // Remove existing placeholder
-                            if (placeholder) placeholder.remove();
-                            
-                            // Add new placeholder
-                            const newPlaceholder = document.createElement('option');
-                            newPlaceholder.value = '';
-                            newPlaceholder.textContent = 'Select SKU count…';
-                            newPlaceholder.disabled = true;
-                            newPlaceholder.selected = true;
-                            select.insertBefore(newPlaceholder, select.firstChild);
-                            
-                            // Force selection
-                            select.selectedIndex = 0;
-                            select.value = '';
-                            ['input','change'].forEach(evt => select.dispatchEvent(new Event(evt, { bubbles: true })));
-                            const select2 = comp.querySelector('.select2-hidden-accessible');
-                            if (select2) {
-                                select2.value = '';
-                                ['input','change'].forEach(evt => select2.dispatchEvent(new Event(evt, { bubbles: true })));
-                            }
-                        }
-                    }
-                };
-                
-                // Force immediately and then watch for changes
-                forcePlaceholder();
-                
-                // Watch for DOM changes in this component
-                const observer = new MutationObserver(() => {
-                    forcePlaceholder();
-                });
-                observer.observe(comp, { childList: true, subtree: true });
-                
-                // Also retry periodically
-                const retryInterval = setInterval(forcePlaceholder, 1000);
-                
-                // Stop watching after 10 seconds
-                setTimeout(() => {
-                    observer.disconnect();
-                    clearInterval(retryInterval);
-                }, 10000);
+                setupFirstComponent(comp);
             } else {
                 console.log('📦 Collapsing component:', title);
                 hideComponent(comp);
-                // Make collapsed components clickable to expand
-                comp.addEventListener('click', function() {
-                    if (comp.classList.contains('tpb-collapsed')) {
-                        console.log('🖱️ Clicked to expand:', title);
-                        showComponent(comp);
+                setupCollapsedComponent(comp, index);
+            }
+        });
+    }
+
+    function setupFirstComponent(comp) {
+        // Try multiple selectors for Addify dropdowns
+        const selectors = [
+            'select',
+            'select[name*="variation"]',
+            'select[name*="attribute"]',
+            '.variations select',
+            '.woocommerce-variation select',
+            '.af_cp_all_components_content select'
+        ];
+        
+        let select = null;
+        for (const selector of selectors) {
+            select = comp.querySelector(selector);
+            if (select) {
+                console.log('✅ Found select with selector:', selector);
+                break;
+            }
+        }
+        
+        if (select) {
+            setupSelectWithPlaceholder(select);
+        } else {
+            console.log('❌ No select found in component');
+        }
+
+        // Clear all radios/checkboxes
+        comp.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => { 
+            el.checked = false; 
+        });
+        
+        // Also clear any Addify selected product blocks
+        comp.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
+    }
+
+    function setupSelectWithPlaceholder(select) {
+        console.log('🎯 Setting up select with placeholder:', select);
+        
+        // Clear all selections first (remove selected attrs too)
+        Array.from(select.options).forEach(opt => { 
+            opt.removeAttribute('selected'); 
+            opt.selected = false; 
+        });
+        select.selectedIndex = -1;
+        select.value = '';
+        
+        // Remove any existing placeholder
+        const existingPlaceholder = select.querySelector('option[value=""]');
+        if (existingPlaceholder) {
+            existingPlaceholder.remove();
+        }
+        
+        // Add new placeholder as first option
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Select SKU count…';
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        select.insertBefore(placeholder, select.firstChild);
+        
+        // Force selection to placeholder and dispatch events
+        select.selectedIndex = 0;
+        select.value = '';
+        ['input','change'].forEach(evt => select.dispatchEvent(new Event(evt, { bubbles: true }))); 
+        
+        console.log('🎯 After reset - value:', select.value, 'selectedIndex:', select.selectedIndex);
+        
+        // Watch for Addify re-rendering and force placeholder
+        const forcePlaceholder = () => {
+            const currentSelect = comp.querySelector('select');
+            if (currentSelect) {
+                // Check if placeholder exists and is selected
+                const placeholder = currentSelect.querySelector('option[value=""]');
+                if (!placeholder || currentSelect.selectedIndex !== 0 || currentSelect.value !== '') {
+                    console.log('🔄 Forcing SKU dropdown placeholder...');
+                    
+                    // Clear selection
+                    Array.from(currentSelect.options).forEach(opt => { opt.removeAttribute('selected'); opt.selected = false; });
+                    currentSelect.selectedIndex = -1;
+                    currentSelect.value = '';
+                    
+                    // Remove existing placeholder
+                    if (placeholder) placeholder.remove();
+                    
+                    // Add new placeholder
+                    const newPlaceholder = document.createElement('option');
+                    newPlaceholder.value = '';
+                    newPlaceholder.textContent = 'Select SKU count…';
+                    newPlaceholder.disabled = true;
+                    newPlaceholder.selected = true;
+                    currentSelect.insertBefore(newPlaceholder, currentSelect.firstChild);
+                    
+                    // Force selection
+                    currentSelect.selectedIndex = 0;
+                    currentSelect.value = '';
+                    ['input','change'].forEach(evt => currentSelect.dispatchEvent(new Event(evt, { bubbles: true })));
+                    const select2 = comp.querySelector('.select2-hidden-accessible');
+                    if (select2) {
+                        select2.value = '';
+                        ['input','change'].forEach(evt => select2.dispatchEvent(new Event(evt, { bubbles: true })));
                     }
-                });
+                }
+            }
+        };
+        
+        // Force immediately and then watch for changes
+        forcePlaceholder();
+        
+        // Watch for DOM changes in this component
+        const observer = new MutationObserver(() => {
+            forcePlaceholder();
+        });
+        observer.observe(comp, { childList: true, subtree: true });
+        
+        // Also retry periodically
+        const retryInterval = setInterval(forcePlaceholder, 1000);
+        
+        // Stop watching after 10 seconds
+        setTimeout(() => {
+            observer.disconnect();
+            clearInterval(retryInterval);
+        }, 10000);
+    }
+
+    function setupCollapsedComponent(comp, index) {
+        // Make collapsed components clickable to expand
+        comp.addEventListener('click', function(e) {
+            // Only expand if clicking on the component itself, not on form elements
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'BUTTON') {
+                return;
+            }
+            
+            if (comp.classList.contains('tpb-collapsed')) {
+                console.log('🖱️ Clicked to expand component:', index);
+                showComponent(comp);
+                // Add smooth transition
+                comp.style.opacity = '0';
+                comp.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    comp.style.opacity = '1';
+                    comp.style.transform = 'translateY(0)';
+                }, 50);
             }
         });
     }
@@ -330,8 +352,13 @@
             if (hasRealSelection && components[1]) {
                 console.log('✅ SKU count selected, showing Build Strategy');
                 showComponent(components[1]);
-                // Collapse SKU section after valid choice to guide the flow
-                hideComponent(components[0]);
+                // Add smooth transition
+                components[1].style.opacity = '0';
+                components[1].style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    components[1].style.opacity = '1';
+                    components[1].style.transform = 'translateY(0)';
+                }, 50);
                 return;
             }
         }
@@ -343,6 +370,13 @@
             if (hasRealSelection && components[2]) {
                 console.log('✅ Build Strategy selected, showing Bundle component');
                 showComponent(components[2]);
+                // Add smooth transition
+                components[2].style.opacity = '0';
+                components[2].style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    components[2].style.opacity = '1';
+                    components[2].style.transform = 'translateY(0)';
+                }, 50);
                 return;
             }
         }

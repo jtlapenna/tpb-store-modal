@@ -721,6 +721,20 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   position: relative;
   transition: all 0.3s ease;
   cursor: pointer;
+  opacity: 0.6;
+  transform: scale(0.98);
+  border: 2px dashed #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px 0;
+  background: #f8f9fa;
+}
+
+.tpb-collapsed:hover {
+  opacity: 0.8;
+  transform: scale(1);
+  border-color: #5ac59a;
+  background: #f0fdf4;
 }
 
 .tpb-collapsed::after {
@@ -728,14 +742,110 @@ html.tpb-qv-locked, html.tpb-qv-locked body { overflow: hidden !important; }
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(90, 197, 154, 0.9);
   color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
   font-size: 12px;
+  font-weight: 600;
   pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .tpb-collapsed:hover::after {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(90, 197, 154, 1);
+}
+
+/* Smooth transitions for component reveals */
+.single_component {
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.single_component.tpb-revealing {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Enhanced section styling for better visual hierarchy */
+.single_component {
+  margin: 20px 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.single_component:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-color: #5ac59a;
+}
+
+.single_component h4.title,
+.single_component h4,
+.single_component .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.single_component select {
+  transition: all 0.3s ease;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.single_component select:focus {
+  border-color: #5ac59a;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(90, 197, 154, 0.1);
+}
+
+.single_component select:hover {
+  border-color: #5ac59a;
+}
+
+/* Loading state for better UX */
+.tpb-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.tpb-loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.tpb-loading::after {
+  content: "Loading...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #5ac59a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 11;
 }
