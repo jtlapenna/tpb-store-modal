@@ -141,10 +141,54 @@ add_action('wp_footer', function() {
                 console.log("🔍 CPB components found:", cpbComponents.length);
                 console.log("🔍 Right panel content:", rightPanel.innerHTML.substring(0, 200) + "...");
                 
+                // Additional debugging for CPB
+                const allForms = document.querySelectorAll('form');
+                const allSelects = document.querySelectorAll('select');
+                const allVariations = document.querySelectorAll('.variations');
+                console.log("🔍 All forms found:", allForms.length);
+                console.log("🔍 All selects found:", allSelects.length);
+                console.log("🔍 All variations found:", allVariations.length);
+                
+                // Check for Addify CPB specifically
+                const addifyCPB = document.querySelectorAll('.af_cp_all_components_content');
+                console.log("🔍 Addify CPB found:", addifyCPB.length);
+                
+                // Check for WooCommerce variations
+                const wcVariations = document.querySelectorAll('.woocommerce-variation');
+                console.log("🔍 WooCommerce variations found:", wcVariations.length);
+                
                 // Clear body and add panels
                 body.innerHTML = "";
                 body.appendChild(leftPanel);
                 body.appendChild(rightPanel);
+                
+                // Wait for CPB components to load if they're not immediately available
+                if (cpbComponents.length === 0) {
+                    console.log("⏳ No CPB components found immediately, waiting for them to load...");
+                    
+                    const checkForCPB = setInterval(() => {
+                        const newCPBComponents = document.querySelectorAll(".af_cp_all_components_content, .woocommerce-variation, form.cart");
+                        console.log("⏳ Checking for CPB components again, found:", newCPBComponents.length);
+                        
+                        if (newCPBComponents.length > 0) {
+                            console.log("✅ CPB components loaded, adding to right panel");
+                            newCPBComponents.forEach(comp => {
+                                if (!rightPanel.contains(comp)) {
+                                    rightPanel.appendChild(comp.cloneNode(true));
+                                }
+                            });
+                            clearInterval(checkForCPB);
+                        }
+                    }, 500);
+                    
+                    // Stop checking after 10 seconds
+                    setTimeout(() => {
+                        clearInterval(checkForCPB);
+                        console.log("⏰ Stopped waiting for CPB components");
+                    }, 10000);
+                }
+            } else {
+                console.log("❌ No product found on page");
             }
         });
         </script>';

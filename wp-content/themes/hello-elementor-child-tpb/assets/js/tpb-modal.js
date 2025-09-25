@@ -55,7 +55,13 @@
     ensureDOM();
     const base = normalizeUrl(urlOrId);
     if (!base) return false;
-    const url = paramJoin(base, cfg.qv_param, '1');
+    
+    // Check if this is a staging URL and use appropriate parameter
+    const isStaging = base.includes('staging') || base.includes('tpb_qv_staging');
+    const qvParam = isStaging ? 'tpb_qv_staging' : cfg.qv_param;
+    const url = paramJoin(base, qvParam, '1');
+    
+    log('Opening modal with URL:', url);
     iframe.src = url;
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
