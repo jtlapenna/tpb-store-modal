@@ -53,45 +53,59 @@
     
     // Helpers to find CPB components in a resilient way
     function getAllComponents() {
+        console.log('🔍 Starting component search...');
+        
         // More flexible component detection
         let comps = document.querySelectorAll('.af_cp_all_components_content .single_component');
+        console.log('🔍 Addify CPB components found:', comps.length);
         
         // If no Addify components found, look for WooCommerce variations
         if (comps.length === 0) {
             comps = document.querySelectorAll('.woocommerce-variation, .variations select, form.cart .variations');
+            console.log('🔍 WooCommerce variations found:', comps.length);
         }
         
         // If still nothing, look for any form elements that might be CPB
         if (comps.length === 0) {
             comps = document.querySelectorAll('form.cart, .woocommerce-variation, select[name*="attribute"]');
+            console.log('🔍 Form elements found:', comps.length);
         }
         
         // If still nothing, look for any select elements as fallback
         if (comps.length === 0) {
             const selects = document.querySelectorAll('select:not([name="quantity"])');
+            console.log('🔍 Select elements found:', selects.length);
+            
             if (selects.length > 0) {
+                console.log('🔍 Creating fallback components from selects...');
                 // Create wrapper components for individual selects
-                comps = Array.from(selects).map(select => {
+                comps = Array.from(selects).map((select, index) => {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'single_component tpb-fallback-component';
                     wrapper.innerHTML = `
-                        <h4 class="title">${select.name || 'Configuration Option'}</h4>
+                        <h4 class="title">${select.name || 'Configuration Option ' + (index + 1)}</h4>
                         <div class="component-content">
                             <label for="${select.id || 'select-' + Math.random()}">${select.name || 'Select Option'}</label>
                             ${select.outerHTML}
                         </div>
                     `;
+                    
+                    // Add the wrapper to the page near the original select
+                    const parent = select.parentNode;
+                    if (parent) {
+                        parent.insertBefore(wrapper, select.nextSibling);
+                    }
+                    
                     return wrapper;
                 });
+                console.log('🔍 Created and added fallback components:', comps.length);
             }
         }
         
-        console.log('🔍 Found components:', comps.length, 'types:', Array.from(comps).map(c => c.className));
+        console.log('🔍 Final components found:', comps.length, 'types:', Array.from(comps).map(c => c.className));
         
-        // If no components found, run diagnostics
-        if (comps.length === 0) {
-            runCPBDiagnostics();
-        }
+        // Always run diagnostics to help debug
+        runCPBDiagnostics();
         
         return Array.from(comps);
     }
