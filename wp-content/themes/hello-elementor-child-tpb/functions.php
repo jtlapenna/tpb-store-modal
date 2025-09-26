@@ -1,4 +1,8 @@
 <?php
+// THIS IS A TEST LINE TO SEE IF FUNCTIONS.PHP IS EXECUTING
+echo '<!-- TPB DEBUG: functions.php started execution -->';
+// END TEST LINE
+
 /**
  * TPB Quick View Modal Functions
  * Child theme functions for the TPB Store Modal
