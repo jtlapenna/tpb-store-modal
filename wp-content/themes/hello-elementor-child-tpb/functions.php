@@ -101,7 +101,17 @@ add_action('wp_head', function() {
  * Simple iframe setup for quick view
  */
 add_action('wp_footer', function() {
+    // Always log for debugging
+    error_log('TPB DEBUG: wp_footer action triggered');
+    error_log('TPB DEBUG: tpb_qv = ' . (isset($_GET['tpb_qv']) ? $_GET['tpb_qv'] : 'not set'));
+    error_log('TPB DEBUG: tpb_qv_staging = ' . (isset($_GET['tpb_qv_staging']) ? $_GET['tpb_qv_staging'] : 'not set'));
+    
+    // Always output a test script to verify wp_footer is working
+    echo '<!-- TPB TEST: wp_footer is working -->';
+    echo '<script>console.log("🧪 TPB TEST: wp_footer script loaded");</script>';
+    
     if ((isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') || (isset($_GET['tpb_qv_staging']) && $_GET['tpb_qv_staging'] == '1')) {
+        error_log('TPB DEBUG: Iframe setup condition met, outputting script');
         echo '<!-- TPB IFRAME SETUP SCRIPT LOADING -->';
         echo '<script>
         console.log("🚀 TPB IFRAME SETUP: Script loaded and executing!");
