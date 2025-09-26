@@ -9,6 +9,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// CRITICAL TEST - This should appear in HTML source if functions.php loads
+echo '<!-- TPB CRITICAL TEST: functions.php is executing -->';
+
 /**
  * Enqueue modal assets
  */
