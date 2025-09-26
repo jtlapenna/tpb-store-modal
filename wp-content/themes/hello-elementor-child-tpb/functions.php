@@ -104,6 +104,7 @@ add_action('wp_footer', function() {
     if ((isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') || (isset($_GET['tpb_qv_staging']) && $_GET['tpb_qv_staging'] == '1')) {
         echo '<script>
         console.log("🚀 TPB IFRAME SETUP: Script loaded and executing!");
+        console.log("🧪 DEPLOYMENT TEST: This should appear if SFTP deployment is working!");
         document.addEventListener("DOMContentLoaded", function() {
             console.log("🔍 IFRAME SETUP: Starting iframe content analysis...");
             
