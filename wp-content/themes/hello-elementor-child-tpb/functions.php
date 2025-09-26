@@ -9,6 +9,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Test if child theme is loading
+add_action('wp_head', function() {
+    echo '<!-- TPB CHILD THEME: functions.php is loaded -->';
+    echo '<script>console.log("🧪 TPB CHILD THEME: functions.php loaded successfully");</script>';
+});
+
 /**
  * Enqueue modal assets
  */
