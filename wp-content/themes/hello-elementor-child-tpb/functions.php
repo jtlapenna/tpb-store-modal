@@ -104,10 +104,29 @@ add_action('wp_footer', function() {
     if ((isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') || (isset($_GET['tpb_qv_staging']) && $_GET['tpb_qv_staging'] == '1')) {
         echo '<script>
         document.addEventListener("DOMContentLoaded", function() {
+            console.log("🔍 IFRAME SETUP: Starting iframe content analysis...");
+            
             const body = document.body;
             const product = document.querySelector(".woocommerce div.product");
             
+            // Enhanced debugging
+            console.log("🔍 IFRAME SETUP: Body HTML length:", body.innerHTML.length);
+            console.log("🔍 IFRAME SETUP: All .woocommerce elements:", document.querySelectorAll(".woocommerce").length);
+            console.log("🔍 IFRAME SETUP: All .product elements:", document.querySelectorAll(".product").length);
+            console.log("🔍 IFRAME SETUP: All .single-product elements:", document.querySelectorAll(".single-product").length);
+            console.log("🔍 IFRAME SETUP: All .woocommerce-product elements:", document.querySelectorAll(".woocommerce-product").length);
+            
+            // Check for any product-related content
+            const productContent = document.querySelector(".woocommerce-product, .product, .single-product, .woocommerce");
+            console.log("🔍 IFRAME SETUP: Product content found:", !!productContent);
+            
+            if (productContent) {
+                console.log("🔍 IFRAME SETUP: Product content HTML preview:", productContent.innerHTML.substring(0, 500) + "...");
+            }
+            
             if (product) {
+                console.log("🔍 IFRAME SETUP: Product element found, setting up panels...");
+                
                 // Create panels
                 const leftPanel = document.createElement("div");
                 leftPanel.className = "tpb-qv-left-panel";
@@ -188,7 +207,16 @@ add_action('wp_footer', function() {
                     }, 10000);
                 }
             } else {
-                console.log("❌ No product found on page");
+                console.log("❌ No product found on page - this is the problem!");
+                console.log("🔍 IFRAME SETUP: Page content analysis:");
+                console.log("  - Body classes:", body.className);
+                console.log("  - Page title:", document.title);
+                console.log("  - All elements with \'product\' in class:", document.querySelectorAll("[class*=\'product\']").length);
+                console.log("  - All elements with \'woocommerce\' in class:", document.querySelectorAll("[class*=\'woocommerce\']").length);
+                console.log("  - All main content areas:", document.querySelectorAll("main, .content, .site-content, .entry-content").length);
+                
+                // Show the actual page content
+                console.log("🔍 IFRAME SETUP: Full body HTML:", body.innerHTML.substring(0, 1000) + "...");
             }
         });
         </script>';
