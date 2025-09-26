@@ -102,7 +102,10 @@ add_action('wp_head', function() {
  */
 add_action('wp_footer', function() {
     if ((isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') || (isset($_GET['tpb_qv_staging']) && $_GET['tpb_qv_staging'] == '1')) {
+        echo '<!-- TPB IFRAME SETUP SCRIPT LOADING -->';
         echo '<script>
+        console.log("🚀 TPB IFRAME SETUP: Script loaded and executing!");
+        console.log("🚀 TPB IFRAME SETUP: URL params - tpb_qv:", "' . (isset($_GET['tpb_qv']) ? $_GET['tpb_qv'] : 'not set') . '", "tpb_qv_staging:", "' . (isset($_GET['tpb_qv_staging']) ? $_GET['tpb_qv_staging'] : 'not set') . '");
         document.addEventListener("DOMContentLoaded", function() {
             console.log("🔍 IFRAME SETUP: Starting iframe content analysis...");
             
