@@ -99,6 +99,18 @@
                     return wrapper;
                 });
                 console.log('🔍 Created and added fallback components:', comps.length);
+                
+                // Set up fallback component interactions
+                comps.forEach((wrapper, index) => {
+                    const select = wrapper.querySelector('select');
+                    if (select) {
+                        select.addEventListener('change', function() {
+                            console.log('🔍 Fallback component changed:', select.name, select.value);
+                            // Trigger any necessary updates
+                            wrapper.classList.add('tpb-component-changed');
+                        });
+                    }
+                });
             }
         }
         
