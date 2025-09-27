@@ -72,7 +72,8 @@
         }
         
         // If still nothing, look for any select elements as fallback
-        if (comps.length === 0) {
+        console.log('🔍 Checking fallback condition - comps.length:', comps ? comps.length : 'undefined');
+        if (!comps || comps.length === 0) {
             const selects = document.querySelectorAll('select:not([name="quantity"])');
             console.log('🔍 Select elements found:', selects.length);
             
