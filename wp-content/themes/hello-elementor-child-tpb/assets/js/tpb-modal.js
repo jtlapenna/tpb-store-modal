@@ -81,7 +81,22 @@
         overlay.style.setProperty('display', 'block', 'important');
         overlay.style.display = 'block';
         overlay.classList.add('is-open');
+        // Force again after a delay
+        setTimeout(() => {
+            overlay.style.setProperty('display', 'block', 'important');
+            overlay.style.display = 'block';
+            overlay.classList.add('is-open');
+        }, 50);
     };
+    
+    // Multiple timeouts to force display
+    [50, 100, 200, 500].forEach(delay => {
+        setTimeout(() => {
+            overlay.style.setProperty('display', 'block', 'important');
+            overlay.style.display = 'block';
+            overlay.classList.add('is-open');
+        }, delay);
+    });
     d.documentElement.classList.add('tpb-qv-locked');
     
     // Diagnostic logging for two-tone issue
