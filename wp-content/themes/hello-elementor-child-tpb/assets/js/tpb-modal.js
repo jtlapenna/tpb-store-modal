@@ -65,6 +65,7 @@
     iframe.src = url;
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
+    overlay.style.display = 'block';
     d.documentElement.classList.add('tpb-qv-locked');
     
     // Diagnostic logging for two-tone issue

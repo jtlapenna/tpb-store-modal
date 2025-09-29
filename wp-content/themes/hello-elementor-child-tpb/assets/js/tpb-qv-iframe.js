@@ -30,6 +30,11 @@
         
         // Initialize with proper progressive disclosure
         setTimeout(() => {
+            if (isInitialized) {
+                console.log('✅ Already initialized, skipping...');
+                return;
+            }
+            
             const components = getAllComponents();
             if (components.length > 0) {
                 console.log('✅ Components found, setting up flow...');
@@ -289,7 +294,7 @@
         
         // Watch for Addify re-rendering and force placeholder
         const forcePlaceholder = () => {
-            const currentSelect = comp.querySelector('select');
+            const currentSelect = component.querySelector('select');
             if (currentSelect) {
                 // Check if placeholder exists and is selected
                 const placeholder = currentSelect.querySelector('option[value=""]');
