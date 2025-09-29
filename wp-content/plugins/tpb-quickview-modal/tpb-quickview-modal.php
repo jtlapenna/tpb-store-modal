@@ -79,7 +79,7 @@ class TPB_QuickView_Modal {
             'tpb-qv-modal-js',
             TPB_QV_PLUGIN_URL . 'assets/js/modal.js',
             array('jquery'),
-            TPB_QV_VERSION,
+            time(), // Use timestamp for cache busting
             true
         );
         
