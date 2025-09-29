@@ -35,10 +35,9 @@ function tpb_qv_enqueue_assets() {
         }
     }
 
-    $js_files = [
-        'assets/js/tpb-modal.js',
-        'assets/js/tpb-qv-iframe.js',
-    ];
+             $js_files = [
+                 'assets/js/tpb-modal-simple.js',
+             ];
     foreach ($js_files as $rel) {
         $path = $theme_dir . '/' . $rel;
         if (file_exists($path)) {
