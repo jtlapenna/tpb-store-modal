@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPB Modal Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-button {
+            background: #007cba;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .test-button:hover {
+            background: #005a87;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 999999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 1200px;
+            height: 90%;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000000;
+            font-size: 18px;
+            line-height: 1;
+        }
+        .modal-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TPB Modal Test</h1>
+    <p>This is a direct test of the modal functionality.</p>
+    
+    <button class="test-button" onclick="openModal()">Test Modal</button>
+    <button class="test-button" onclick="openProductModal()">Test Product Modal</button>
+    
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <iframe id="modal-iframe" class="modal-iframe" src="about:blank"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            console.log('Opening test modal...');
+            const overlay = document.getElementById('modal-overlay');
+            const iframe = document.getElementById('modal-iframe');
+            
+            overlay.style.display = 'flex';
+            iframe.src = 'https://cannabis-kiosks.com/product/flower-station-configure-now/?tpb_qv=1';
+            document.body.style.overflow = 'hidden';
+            
+            console.log('Modal should be visible now');
+        }
+        
+        function openProductModal() {
+            console.log('Opening product modal...');
+            const overlay = document.getElementById('modal-overlay');
+            const iframe = document.getElementById('modal-iframe');
+            
+            overlay.style.display = 'flex';
+            iframe.src = 'https://cannabis-kiosks.com/product/flower-station-configure-now/';
+            document.body.style.overflow = 'hidden';
+            
+            console.log('Product modal should be visible now');
+        }
+        
+        function closeModal() {
+            console.log('Closing modal...');
+            const overlay = document.getElementById('modal-overlay');
+            const iframe = document.getElementById('modal-iframe');
+            
+            overlay.style.display = 'none';
+            iframe.src = 'about:blank';
+            document.body.style.overflow = '';
+        }
+        
+        // Close on overlay click
+        document.getElementById('modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close on ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        console.log('Test page loaded');
+    </script>
+</body>
+</html>
