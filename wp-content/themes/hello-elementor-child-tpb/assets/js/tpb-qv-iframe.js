@@ -246,7 +246,7 @@
         }
         
         if (select) {
-            setupSelectWithPlaceholder(select);
+            setupSelectWithPlaceholder(select, component);
         } else {
             console.log('❌ No select found in component');
         }
@@ -260,7 +260,7 @@
         component.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
     }
 
-    function setupSelectWithPlaceholder(select) {
+    function setupSelectWithPlaceholder(select, component) {
         console.log('🎯 Setting up select with placeholder:', select);
         
         // Clear all selections first (remove selected attrs too)

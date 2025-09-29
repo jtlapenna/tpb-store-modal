@@ -95,6 +95,10 @@
             overlay.style.setProperty('display', 'block', 'important');
             overlay.style.display = 'block';
             overlay.classList.add('is-open');
+            // Also add CSS rule to override any conflicting styles
+            const style = document.createElement('style');
+            style.textContent = `.tpb-qv-overlay { display: block !important; visibility: visible !important; opacity: 1 !important; }`;
+            document.head.appendChild(style);
         }, delay);
     });
     d.documentElement.classList.add('tpb-qv-locked');
