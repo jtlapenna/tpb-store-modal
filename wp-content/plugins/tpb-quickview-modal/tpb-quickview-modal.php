@@ -75,6 +75,15 @@ class TPB_QuickView_Modal {
             TPB_QV_VERSION
         );
         
+        // Enqueue blocking script first (runs before other scripts)
+        wp_enqueue_script(
+            'tpb-qv-blocker-js',
+            TPB_QV_PLUGIN_URL . 'assets/js/modal-blocker.js',
+            array(),
+            time(),
+            false // Load in header, not footer
+        );
+        
         // Enqueue JavaScript
         wp_enqueue_script(
             'tpb-qv-modal-js',

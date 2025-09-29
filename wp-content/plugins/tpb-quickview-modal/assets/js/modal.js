@@ -198,8 +198,41 @@
         }
     };
     
+    // Disable old modal immediately
+    function disableOldModal() {
+        console.log('🚫 Disabling old modal...');
+        
+        // Override old modal functions
+        if (typeof window.TPB_QV !== 'undefined') {
+            window.TPB_QV = {
+                open: function() { console.log('🚫 Old TPB_QV blocked'); },
+                close: function() { console.log('🚫 Old TPB_QV close blocked'); }
+            };
+        }
+        
+        if (typeof window.tpbOpenModal !== 'undefined') {
+            window.tpbOpenModal = function() { console.log('🚫 Old tpbOpenModal blocked'); };
+        }
+        
+        // Remove old modal elements
+        $('.tpb-qv-overlay').not('#tpb-qv-overlay').remove();
+        $('.tpb-modal').remove();
+        
+        // Block old modal scripts
+        $('script[src*="tpb-modal.js"]').each(function() {
+            if (!$(this).attr('src').includes('modal.js')) {
+                $(this).remove();
+            }
+        });
+    }
+    
+    // Disable old modal immediately
+    disableOldModal();
+    
     // Initialize when document is ready
     $(document).ready(function() {
+        // Disable old modal again
+        disableOldModal();
         Modal.init();
     });
     
