@@ -294,7 +294,7 @@
         
         // Watch for Addify re-rendering and force placeholder
         const forcePlaceholder = () => {
-            const currentSelect = comp.querySelector('select');
+            const currentSelect = component.querySelector('select');
             if (currentSelect) {
                 // Check if placeholder exists and is selected
                 const placeholder = currentSelect.querySelector('option[value=""]');

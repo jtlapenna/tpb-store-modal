@@ -75,6 +75,13 @@
         overlay.style.display = 'block';
         overlay.classList.add('is-open');
     }, 100);
+    
+    // Additional force after iframe loads
+    iframe.onload = () => {
+        overlay.style.setProperty('display', 'block', 'important');
+        overlay.style.display = 'block';
+        overlay.classList.add('is-open');
+    };
     d.documentElement.classList.add('tpb-qv-locked');
     
     // Diagnostic logging for two-tone issue
