@@ -14,6 +14,25 @@
         qv_param: 'tpb_qv'
     };
     
+    // Immediate click interception to block old modal
+    document.addEventListener('click', function(e) {
+        const target = e.target;
+        if (target && (target.textContent.includes('Configure') || target.textContent.includes('Customize'))) {
+            const href = target.href || target.closest('a')?.href;
+            if (href && href.includes('/product/')) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                console.log('🚀 IMMEDIATE INTERCEPTION for:', href);
+                // Open our modal immediately
+                if (window.tpbOpenModal) {
+                    window.tpbOpenModal(href);
+                }
+                return false;
+            }
+        }
+    }, true); // Capture phase
+    
     // Create modal HTML
     function createModalHTML() {
         return `
@@ -182,21 +201,51 @@
         });
     }
     
+    // Completely disable old modal
+    function disableOldModal() {
+        console.log('🚫 Disabling old modal...');
+        
+        // Override old modal functions
+        window.TPB_QV = {
+            open: function() { console.log('🚫 Old modal blocked'); },
+            close: function() { console.log('🚫 Old modal close blocked'); }
+        };
+        
+        // Remove old modal elements
+        const oldOverlays = document.querySelectorAll('.tpb-qv-overlay');
+        oldOverlays.forEach(overlay => {
+            if (overlay.id !== 'tpb-qv-overlay') {
+                overlay.remove();
+            }
+        });
+        
+        // Block old modal initialization
+        if (window.tpbOpenModal && window.tpbOpenModal.toString().includes('TPB_QV')) {
+            window.tpbOpenModal = function() { console.log('🚫 Old tpbOpenModal blocked'); };
+        }
+    }
+    
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
+            disableOldModal();
             initModal();
             wireUpButtons();
         });
     } else {
+        disableOldModal();
         initModal();
         wireUpButtons();
     }
     
     // Also try after a delay for dynamic content
     setTimeout(() => {
+        disableOldModal();
         wireUpButtons();
     }, 2000);
+    
+    // Keep disabling old modal periodically
+    setInterval(disableOldModal, 1000);
     
     console.log('🎉 TPB Simple Modal loaded');
 })();
