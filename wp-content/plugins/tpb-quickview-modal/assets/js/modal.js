@@ -14,7 +14,7 @@
         iframeSelector: '#tpb-qv-iframe',
         closeSelector: '.tpb-qv-close',
         triggerSelector: '[data-tpb-modal="true"], a[href*="/product/"]',
-        qvParam: 'tpb_qv',
+        qvParam: 'tpb_qv_iframe',
         debug: true
     };
     
@@ -128,8 +128,16 @@
             
             // Show modal
             $overlay.addClass('is-open');
+            $overlay.show(); // Force display
             $iframe.attr('src', iframeUrl);
             $('body').addClass('tpb-qv-locked');
+            
+            // Force visibility with multiple approaches
+            setTimeout(() => {
+                $overlay.css('display', 'flex');
+                $overlay.css('visibility', 'visible');
+                $overlay.css('opacity', '1');
+            }, 100);
             
             // Debug info
             if (config.debug) {
