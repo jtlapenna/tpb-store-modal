@@ -28,6 +28,45 @@
   border: 0;
 }
 
+/* Two-panel layout inside iframe: gallery left, CPB right */
+body.tpb-qv-iframe .product {
+  display: grid !important;            /* enforce grid regardless of theme */
+  grid-template-columns: 1fr 1fr !important;
+  gap: 24px !important;
+  align-items: start !important;
+  background: #fff !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* Left panel - image gallery fills left side */
+body.tpb-qv-iframe .woocommerce-product-gallery,
+body.tpb-qv-iframe .product .woocommerce-product-gallery {
+  grid-column: 1 / 2 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+body.tpb-qv-iframe .woocommerce-product-gallery__image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+}
+
+/* Right panel - CPB summary/content */
+body.tpb-qv-iframe .summary.entry-summary {
+  grid-column: 2 / 3 !important;
+  background: #fff !important;
+  margin: 0 !important;
+  padding: 0 8px !important;
+}
+
+/* Make CPB cards stretch full width */
+body.tpb-qv-iframe .af_cp_all_components_content,
+body.tpb-qv-iframe .single_component {
+  background: #fff !important;
+}
+
 #tpb-qv-overlay .tpb-qv-close {
   position: absolute;
   top: 10px;
