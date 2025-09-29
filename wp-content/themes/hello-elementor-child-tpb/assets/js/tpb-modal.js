@@ -113,9 +113,15 @@
     const target = url || pid;
     if (!target) return;
 
+    // Validate and normalize before cancelling the native navigation
+    const normalized = normalizeUrl(target);
+    if (!normalized || normalized === '#' || /javascript:/i.test(normalized)) {
+      return; // let the click behave normally if we don't have a valid URL
+    }
+
     e.preventDefault();
     e.stopPropagation();
-    open(target);
+    open(normalized);
   }
 
   function setupIframeCommunication() {
@@ -222,15 +228,18 @@
     // Auto-mark common "Configure" CTAs as triggers
     try {
       const markTriggers = () => {
-        const candidates = d.querySelectorAll('a, button');
+        const candidates = d.querySelectorAll('a');
         candidates.forEach((el) => {
           if (el.classList.contains('tpb-qv-trigger') || el.hasAttribute('data-tpb-quickview') || el.hasAttribute('data-product-url')) return;
           const text = (el.textContent || '').trim().toLowerCase();
-          if (text && (text.includes('configure now') || text === 'configure' || text.includes('customize'))) {
+          const href = el.getAttribute('href') || '';
+          const looksLikeProduct = /\/product\//.test(href) || /[?&]p=\d+/.test(href);
+          const isValidHref = href && href !== '#' && !/^javascript:/i.test(href);
+          if (!text) return;
+          const isConfigureCta = text.includes('configure now') || text === 'configure' || text.includes('customize');
+          if (isConfigureCta && isValidHref && looksLikeProduct) {
             el.classList.add('tpb-qv-trigger');
-            if (el.tagName === 'A' && el.getAttribute('href')) {
-              el.setAttribute('data-product-url', el.getAttribute('href'));
-            }
+            el.setAttribute('data-product-url', href);
           }
         });
       };
