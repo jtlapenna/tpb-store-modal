@@ -47,6 +47,7 @@ class TPB_QuickView_Modal {
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
         add_action('wp_footer', array($this, 'add_modal_html'));
         add_action('admin_menu', array($this, 'add_admin_menu'));
+        add_action('template_redirect', array($this, 'handle_iframe_content'));
     }
     
     /**
@@ -107,6 +108,117 @@ class TPB_QuickView_Modal {
             </div>
         </div>
         <?php
+    }
+    
+    /**
+     * Handle iframe content layout
+     */
+    public function handle_iframe_content() {
+        // Check if this is an iframe request
+        if (isset($_GET['tpb_qv_iframe']) && $_GET['tpb_qv_iframe'] === '1') {
+            // Add iframe-specific styles and scripts
+            add_action('wp_head', array($this, 'add_iframe_styles'), 99);
+            add_action('wp_footer', array($this, 'add_iframe_scripts'), 99);
+            add_filter('body_class', array($this, 'add_iframe_body_class'));
+        }
+    }
+    
+    /**
+     * Add iframe-specific styles
+     */
+    public function add_iframe_styles() {
+        ?>
+        <style>
+            /* Hide header and footer in iframe */
+            header, footer, .site-header, .site-footer {
+                display: none !important;
+            }
+            
+            /* Set body styles for iframe */
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                background-color: #fff !important;
+            }
+            
+            /* Two-panel layout for iframe mode */
+            body.tpb-qv-iframe .product {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                height: 100vh;
+                background-color: #fff;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            
+            /* Gallery takes left column */
+            body.tpb-qv-iframe .woocommerce-product-gallery {
+                grid-column: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            /* Summary takes right column */
+            body.tpb-qv-iframe .summary.entry-summary {
+                grid-column: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            /* Ensure images are responsive */
+            body.tpb-qv-iframe .woocommerce-product-gallery img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+        <?php
+    }
+    
+    /**
+     * Add iframe-specific scripts
+     */
+    public function add_iframe_scripts() {
+        ?>
+        <script>
+            console.log('🔧 TPB QuickView iframe layout script loading...');
+            
+            // Add iframe body class
+            document.body.classList.add('tpb-qv-iframe');
+            
+            // Ensure proper layout
+            document.addEventListener('DOMContentLoaded', function() {
+                const product = document.querySelector('.product');
+                if (product) {
+                    console.log('✅ Product container found, applying iframe layout');
+                    
+                    // Ensure gallery and summary are direct children
+                    const gallery = product.querySelector('.woocommerce-product-gallery');
+                    const summary = product.querySelector('.summary.entry-summary');
+                    
+                    if (gallery && summary) {
+                        console.log('✅ Gallery and summary found, layout should be applied');
+                    } else {
+                        console.log('⚠️ Gallery or summary not found');
+                    }
+                } else {
+                    console.log('❌ Product container not found');
+                }
+            });
+        </script>
+        <?php
+    }
+    
+    /**
+     * Add iframe body class
+     */
+    public function add_iframe_body_class($classes) {
+        if (isset($_GET['tpb_qv_iframe']) && $_GET['tpb_qv_iframe'] === '1') {
+            $classes[] = 'tpb-qv-iframe';
+        }
+        return $classes;
     }
     
     /**
