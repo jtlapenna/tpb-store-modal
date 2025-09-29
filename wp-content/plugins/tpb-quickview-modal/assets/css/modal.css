@@ -1,0 +1,176 @@
+/**
+ * TPB QuickView Modal Styles
+ * Clean, modern modal design
+ */
+
+/* Modal Overlay */
+.tpb-qv-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tpb-qv-overlay.is-open {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal Container */
+.tpb-qv-modal {
+    background: white;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.tpb-qv-overlay.is-open .tpb-qv-modal {
+    transform: scale(1);
+}
+
+/* Close Button */
+.tpb-qv-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #333;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000000;
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.tpb-qv-close:hover {
+    background: #555;
+}
+
+.tpb-qv-close:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* Iframe */
+.tpb-qv-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    background: white;
+}
+
+/* Modal Trigger Buttons */
+.tpb-modal-trigger {
+    display: inline-block;
+    background: #007cba;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.tpb-modal-trigger:hover {
+    background: #005a87;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 124, 186, 0.3);
+}
+
+.tpb-modal-trigger:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* Loading State */
+.tpb-qv-overlay.loading .tpb-qv-iframe {
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tpb-qv-overlay.loading .tpb-qv-iframe::before {
+    content: "Loading...";
+    color: #666;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tpb-qv-modal {
+        width: 95%;
+        height: 95%;
+        margin: 10px;
+    }
+    
+    .tpb-qv-close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tpb-qv-modal {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    
+    .tpb-qv-iframe {
+        border-radius: 0;
+    }
+}
+
+/* Animation for body scroll lock */
+body.tpb-qv-locked {
+    overflow: hidden;
+}
+
+/* Ensure modal is always on top */
+.tpb-qv-overlay {
+    z-index: 999999 !important;
+}
+
+/* Debug styles (remove in production) */
+.tpb-qv-debug {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+    z-index: 10000000;
+    max-width: 300px;
+}
