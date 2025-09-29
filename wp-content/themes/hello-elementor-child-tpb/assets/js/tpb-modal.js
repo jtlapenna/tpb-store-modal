@@ -219,6 +219,26 @@
   function wire() {
     if (QV._wired) { log('already wired', cfg); return; }
     ensureDOM();
+    // Auto-mark common "Configure" CTAs as triggers
+    try {
+      const markTriggers = () => {
+        const candidates = d.querySelectorAll('a, button');
+        candidates.forEach((el) => {
+          if (el.classList.contains('tpb-qv-trigger') || el.hasAttribute('data-tpb-quickview') || el.hasAttribute('data-product-url')) return;
+          const text = (el.textContent || '').trim().toLowerCase();
+          if (text && (text.includes('configure now') || text === 'configure' || text.includes('customize'))) {
+            el.classList.add('tpb-qv-trigger');
+            if (el.tagName === 'A' && el.getAttribute('href')) {
+              el.setAttribute('data-product-url', el.getAttribute('href'));
+            }
+          }
+        });
+      };
+      markTriggers();
+      // Observe DOM for dynamically injected CTAs
+      const mo = new MutationObserver(() => markTriggers());
+      mo.observe(d.documentElement, { childList: true, subtree: true });
+    } catch(_){}
     d.addEventListener('click', onDocClick, true);
     QV._wired = true;
     log('wired', cfg);
