@@ -68,6 +68,13 @@
     overlay.style.setProperty('display', 'block', 'important');
     overlay.style.display = 'block';
     overlay.classList.add('is-open');
+    
+    // Force visibility with multiple approaches
+    setTimeout(() => {
+        overlay.style.setProperty('display', 'block', 'important');
+        overlay.style.display = 'block';
+        overlay.classList.add('is-open');
+    }, 100);
     d.documentElement.classList.add('tpb-qv-locked');
     
     // Diagnostic logging for two-tone issue

@@ -396,7 +396,7 @@
             return;
         }
         
-        const titleEl = comp.querySelector('h4.title, h4, .title');
+        const titleEl = component.querySelector('h4.title, h4, .title');
         const componentName = (component.dataset.component || (titleEl ? (titleEl.textContent || '').trim().toLowerCase() : 'unknown'));
         const value = element.value || element.textContent || (element.options && element.options[element.selectedIndex]?.text) || 'unknown';
         
