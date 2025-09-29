@@ -185,14 +185,14 @@
 
     function hideComponent(comp) {
         if (!comp) return;
-        console.log('📦 Hiding component:', component.querySelector('.title')?.textContent || 'Unknown');
+        console.log('📦 Hiding component:', comp.querySelector('.title')?.textContent || 'Unknown');
         comp.classList.add('tpb-hidden');
         comp.style.display = 'none';
     }
 
     function showComponent(comp) {
         if (!comp) return;
-        console.log('📦 Showing component:', component.querySelector('.title')?.textContent || 'Unknown');
+        console.log('📦 Showing component:', comp.querySelector('.title')?.textContent || 'Unknown');
         comp.classList.remove('tpb-hidden');
         comp.style.display = 'block';
     }
@@ -212,7 +212,7 @@
         
         // Only show first component (SKU count), collapse all others
         components.forEach((comp, index) => {
-            const title = component.querySelector('h4.title, h4, .title')?.textContent?.trim() || `Component ${index + 1}`;
+            const title = comp.querySelector('h4.title, h4, .title')?.textContent?.trim() || `Component ${index + 1}`;
             if (index === 0) {
                 console.log('✅ Showing first component:', title);
                 showComponent(comp);
@@ -238,7 +238,7 @@
         
         let select = null;
         for (const selector of selectors) {
-            select = component.querySelector(selector);
+            select = comp.querySelector(selector);
             if (select) {
                 console.log('✅ Found select with selector:', selector);
                 break;
@@ -252,12 +252,12 @@
         }
 
         // Clear all radios/checkboxes
-        component.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => { 
+        comp.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => { 
             el.checked = false; 
         });
         
         // Also clear any Addify selected product blocks
-        component.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
+        comp.querySelectorAll('.af-cp-selected-product').forEach(el => el.remove());
     }
 
     function setupSelectWithPlaceholder(select) {
@@ -294,7 +294,7 @@
         
         // Watch for Addify re-rendering and force placeholder
         const forcePlaceholder = () => {
-            const currentSelect = component.querySelector('select');
+            const currentSelect = comp.querySelector('select');
             if (currentSelect) {
                 // Check if placeholder exists and is selected
                 const placeholder = currentSelect.querySelector('option[value=""]');
@@ -321,7 +321,7 @@
                     currentSelect.selectedIndex = 0;
                     currentSelect.value = '';
                     ['input','change'].forEach(evt => currentSelect.dispatchEvent(new Event(evt, { bubbles: true })));
-                    const select2 = component.querySelector('.select2-hidden-accessible');
+                    const select2 = comp.querySelector('.select2-hidden-accessible');
                     if (select2) {
                         select2.value = '';
                         ['input','change'].forEach(evt => select2.dispatchEvent(new Event(evt, { bubbles: true })));
@@ -396,7 +396,7 @@
             return;
         }
         
-        const titleEl = component.querySelector('h4.title, h4, .title');
+        const titleEl = comp.querySelector('h4.title, h4, .title');
         const componentName = (component.dataset.component || (titleEl ? (titleEl.textContent || '').trim().toLowerCase() : 'unknown'));
         const value = element.value || element.textContent || (element.options && element.options[element.selectedIndex]?.text) || 'unknown';
         

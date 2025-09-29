@@ -66,6 +66,8 @@
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
     overlay.style.setProperty('display', 'block', 'important');
+    overlay.style.display = 'block';
+    overlay.classList.add('is-open');
     d.documentElement.classList.add('tpb-qv-locked');
     
     // Diagnostic logging for two-tone issue
