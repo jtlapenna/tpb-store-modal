@@ -68,10 +68,21 @@
     function initModal() {
         console.log('🔧 Initializing simple modal...');
         
-        // Remove existing modal if any
+        // Remove existing modals if any
         const existing = document.getElementById('tpb-qv-overlay');
         if (existing) {
             existing.remove();
+        }
+        
+        // Remove old modal elements
+        const oldOverlay = document.querySelector('.tpb-qv-overlay');
+        if (oldOverlay) {
+            oldOverlay.remove();
+        }
+        
+        // Remove old modal event listeners by overriding the old function
+        if (window.tpbOpenModal) {
+            console.log('🔄 Overriding old tpbOpenModal function');
         }
         
         // Add modal HTML
@@ -120,8 +131,25 @@
             }
         });
         
-        // Expose open function globally
+        // Override any existing modal functions
         window.tpbOpenModal = openModal;
+        window.TPB_QV = { open: openModal };
+        
+        // Prevent old modal from interfering
+        document.addEventListener('click', function(e) {
+            const target = e.target;
+            if (target && (target.textContent.includes('Configure') || target.textContent.includes('Customize'))) {
+                const href = target.href || target.closest('a')?.href;
+                if (href && href.includes('/product/')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    console.log('🚀 Intercepting click for:', href);
+                    openModal(href);
+                    return false;
+                }
+            }
+        }, true); // Use capture phase to intercept before other handlers
         
         console.log('✅ Simple modal initialized');
     }
