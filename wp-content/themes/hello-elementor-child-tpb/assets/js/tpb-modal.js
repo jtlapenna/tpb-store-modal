@@ -240,6 +240,17 @@
           if (isConfigureCta && isValidHref && looksLikeProduct) {
             el.classList.add('tpb-qv-trigger');
             el.setAttribute('data-product-url', href);
+            if (!el.hasAttribute('data-tpb-bound')) {
+              el.setAttribute('data-tpb-bound', '1');
+              el.addEventListener('click', function(ev){
+                const targetUrl = this.getAttribute('data-product-url') || this.getAttribute('href');
+                const normalized = normalizeUrl(targetUrl);
+                if (!normalized || normalized === '#' || /^javascript:/i.test(normalized)) return;
+                ev.preventDefault();
+                ev.stopPropagation();
+                open(normalized);
+              }, true);
+            }
           }
         });
       };
