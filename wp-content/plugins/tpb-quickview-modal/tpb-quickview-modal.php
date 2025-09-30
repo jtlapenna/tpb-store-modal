@@ -129,7 +129,21 @@ class TPB_QuickView_Modal {
             add_action('wp_head', array($this, 'add_iframe_styles'), 99);
             add_action('wp_footer', array($this, 'add_iframe_scripts'), 99);
             add_filter('body_class', array($this, 'add_iframe_body_class'));
+            
+            // Debug: Add a visible indicator
+            add_action('wp_head', array($this, 'add_iframe_debug'), 100);
         }
+    }
+    
+    /**
+     * Add iframe debug indicator
+     */
+    public function add_iframe_debug() {
+        ?>
+        <div style="position: fixed; top: 0; left: 0; background: red; color: white; padding: 10px; z-index: 999999;">
+            IFRAME MODE ACTIVE - TPB QuickView
+        </div>
+        <?php
     }
     
     /**

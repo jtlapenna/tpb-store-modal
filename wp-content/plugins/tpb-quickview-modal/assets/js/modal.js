@@ -39,12 +39,15 @@
             // Close button
             $(document).on('click', config.closeSelector, function(e) {
                 e.preventDefault();
+                e.stopPropagation();
+                console.log('🔴 Close button clicked');
                 self.close();
             });
             
             // Overlay click to close
             $(document).on('click', config.overlaySelector, function(e) {
                 if (e.target === this) {
+                    console.log('🔴 Overlay clicked to close');
                     self.close();
                 }
             });
@@ -52,6 +55,7 @@
             // ESC key to close
             $(document).on('keydown', function(e) {
                 if (e.key === 'Escape' && self.isOpen()) {
+                    console.log('🔴 ESC key pressed to close');
                     self.close();
                 }
             });
@@ -61,9 +65,12 @@
                 const href = $(this).attr('href');
                 if (href && href.includes('/product/')) {
                     e.preventDefault();
+                    console.log('🔴 Modal trigger clicked:', href);
                     self.open(href);
                 }
             });
+            
+            console.log('✅ Event listeners bound');
         },
         
         // Detect Configure Now buttons
@@ -158,7 +165,13 @@
             const $overlay = $(config.overlaySelector);
             const $iframe = $(config.iframeSelector);
             
+            if ($overlay.length === 0) {
+                console.error('❌ Modal overlay not found for closing');
+                return;
+            }
+            
             $overlay.removeClass('is-open');
+            $overlay.hide();
             $iframe.attr('src', 'about:blank');
             $('body').removeClass('tpb-qv-locked');
             
