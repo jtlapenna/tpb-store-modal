@@ -233,15 +233,16 @@ class TPB_QuickView_Modal {
                 // Progressive disclosure: no pre-select + step-by-step reveal
                 console.log('🎯 Setting up progressive disclosure...');
                 
-                // Debug: Check if CPB plugin is active
-                console.log('🔍 CPB Plugin Debug:', {
-                    addifyScript: !!document.querySelector('script[src*="af-comp-product"]'),
-                    addifyContainer: !!document.querySelector('.af_cp_all_components_content'),
-                    woocommerce: !!document.querySelector('.woocommerce'),
-                    product: !!document.querySelector('.product'),
-                    bodyClasses: document.body.className,
-                    allScripts: Array.from(document.querySelectorAll('script[src]')).map(s => s.src).filter(s => s.includes('af') || s.includes('cpb') || s.includes('addify'))
-                });
+                       // Debug: Check if CPB plugin is active
+                       console.log('🔍 CPB Plugin Debug:', {
+                           addifyScript: !!document.querySelector('script[src*="af-comp-product"]'),
+                           addifyContainer: !!document.querySelector('.afcpb-wrapper'),
+                           addifyContainerOld: !!document.querySelector('.af_cp_all_components_content'),
+                           woocommerce: !!document.querySelector('.woocommerce'),
+                           product: !!document.querySelector('.product'),
+                           bodyClasses: document.body.className,
+                           allScripts: Array.from(document.querySelectorAll('script[src]')).map(s => s.src).filter(s => s.includes('af') || s.includes('cpb') || s.includes('addify'))
+                       });
                 
                 function q(sel, root) { return (root || document).querySelector(sel); }
                 function qa(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
@@ -273,15 +274,20 @@ class TPB_QuickView_Modal {
                     });
                 }
 
-                function initProgressive() {
-                    // Find CPB components - try multiple selectors
-                    let components = qa('.af_cp_all_components_content .single_component');
-                    console.log('🔍 Addify CPB components found:', components.length);
-                    
-                    if (!components.length) { 
-                        components = qa('.variations, .woocommerce-variation, form.cart .variations'); 
-                        console.log('🔍 WooCommerce variations found:', components.length);
-                    }
+                       function initProgressive() {
+                           // Find CPB components - try multiple selectors
+                           let components = qa('.afcpb-wrapper .afcpb-component');
+                           console.log('🔍 Addify CPB components found:', components.length);
+                           
+                           if (!components.length) { 
+                               components = qa('.af_cp_all_components_content .single_component');
+                               console.log('🔍 Addify CPB components (old selector) found:', components.length);
+                           }
+                           
+                           if (!components.length) { 
+                               components = qa('.variations, .woocommerce-variation, form.cart .variations'); 
+                               console.log('🔍 WooCommerce variations found:', components.length);
+                           }
                     
                     if (!components.length) { 
                         components = qa('form.cart, .woocommerce-variation, select[name*="attribute"]'); 
@@ -294,14 +300,16 @@ class TPB_QuickView_Modal {
                     }
                     
                     if (!components.length) { 
-                        console.log('⚠️ No components found for progressive disclosure');
-                        console.log('🔍 Available elements:', {
-                            addify: qa('.af_cp_all_components_content').length,
-                            variations: qa('.variations').length,
-                            forms: qa('form.cart').length,
-                            selects: qa('select').length,
-                            allDivs: qa('div').length
-                        });
+                           console.log('⚠️ No components found for progressive disclosure');
+                           console.log('🔍 Available elements:', {
+                               addifyWrapper: qa('.afcpb-wrapper').length,
+                               addifyComponents: qa('.afcpb-component').length,
+                               addifyOld: qa('.af_cp_all_components_content').length,
+                               variations: qa('.variations').length,
+                               forms: qa('form.cart').length,
+                               selects: qa('select').length,
+                               allDivs: qa('div').length
+                           });
                         return; 
                     }
 
