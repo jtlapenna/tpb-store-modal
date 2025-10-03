@@ -70,4 +70,38 @@ function tpb_qv_iframe_chrome() {
     </style>';
 }
 add_action('wp_head', 'tpb_qv_iframe_chrome', 99);
+
+// Dequeue any legacy TPB modal plugin assets so only child-theme modal runs
+function tpb_qv_dequeue_legacy_assets() {
+    if (!function_exists('wp_scripts') || !function_exists('wp_styles')) { return; }
+
+    $patterns = [
+        '/wp-content/plugins/tpb-quickview-modal/',
+        'modal.js',
+        'modal-blocker.js'
+    ];
+
+    $scripts = wp_scripts();
+    if ($scripts && is_array($scripts->queue)) {
+        foreach ($scripts->queue as $handle) {
+            if (empty($scripts->registered[$handle])) { continue; }
+            $src = $scripts->registered[$handle]->src;
+            foreach ($patterns as $pat) {
+                if (strpos($src, $pat) !== false) { wp_dequeue_script($handle); break; }
+            }
+        }
+    }
+
+    $styles = wp_styles();
+    if ($styles && is_array($styles->queue)) {
+        foreach ($styles->queue as $handle) {
+            if (empty($styles->registered[$handle])) { continue; }
+            $src = $styles->registered[$handle]->src;
+            foreach ($patterns as $pat) {
+                if (strpos($src, $pat) !== false) { wp_dequeue_style($handle); break; }
+            }
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'tpb_qv_dequeue_legacy_assets', 999);
 ?>
