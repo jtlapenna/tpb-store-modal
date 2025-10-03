@@ -241,8 +241,17 @@ class TPB_QuickView_Modal {
                            woocommerce: !!document.querySelector('.woocommerce'),
                            product: !!document.querySelector('.product'),
                            bodyClasses: document.body.className,
+                           productType: document.querySelector('.product')?.className,
                            allScripts: Array.from(document.querySelectorAll('script[src]')).map(s => s.src).filter(s => s.includes('af') || s.includes('cpb') || s.includes('addify'))
                        });
+                       
+                       // Check if CPB is supposed to render but isn't
+                       const product = document.querySelector('.product');
+                       if (product && product.className.includes('af_composite_product')) {
+                           console.log('🎯 Product is configured as CPB but container not found!');
+                           console.log('🔍 Looking for CPB elements in DOM...');
+                           console.log('🔍 All elements with "af" in class:', Array.from(document.querySelectorAll('*')).filter(el => el.className && el.className.includes('af')).map(el => ({tag: el.tagName, class: el.className, id: el.id})));
+                       }
                 
                 function q(sel, root) { return (root || document).querySelector(sel); }
                 function qa(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
@@ -355,14 +364,22 @@ class TPB_QuickView_Modal {
                     }, true);
                 }
 
-                // Initialize progressive disclosure with retries for dynamic content
-                initProgressive();
-                
-                // Retry after delays to catch dynamically loaded content
-                setTimeout(function() {
-                    console.log('🔄 Retrying component detection after 1s...');
-                    initProgressive();
-                }, 1000);
+                       // Check if CPB script is running
+                       console.log('🔍 Checking CPB script execution...');
+                       if (typeof window.af_cp_calculate_validate_product === 'function') {
+                           console.log('✅ CPB script functions are available');
+                       } else {
+                           console.log('❌ CPB script functions not found');
+                       }
+                       
+                       // Initialize progressive disclosure with retries for dynamic content
+                       initProgressive();
+                       
+                       // Retry after delays to catch dynamically loaded content
+                       setTimeout(function() {
+                           console.log('🔄 Retrying component detection after 1s...');
+                           initProgressive();
+                       }, 1000);
                 
                 setTimeout(function() {
                     console.log('🔄 Retrying component detection after 3s...');
