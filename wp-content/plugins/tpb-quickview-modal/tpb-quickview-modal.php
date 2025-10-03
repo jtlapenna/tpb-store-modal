@@ -311,10 +311,10 @@ class TPB_QuickView_Modal {
                     components.forEach(function(c, i) { 
                         if (i === 0) {
                             show(c);
-                            console.log('✅ Showing first component');
+                            console.log('✅ Showing first component:', c.tagName, c.className, c.id);
                         } else {
                             hide(c);
-                            console.log('📦 Hiding component', i + 1);
+                            console.log('📦 Hiding component', i + 1, ':', c.tagName, c.className, c.id);
                         }
                     });
 
@@ -322,8 +322,11 @@ class TPB_QuickView_Modal {
                     const first = components[0];
                     const sel = firstSelectIn(first);
                     if (sel) {
+                        console.log('🎯 First select found:', sel.name, sel.id, sel.className);
                         ensurePlaceholder(sel, 'Select SKU count…');
                         console.log('✅ Set placeholder on first select');
+                    } else {
+                        console.log('❌ No select found in first component');
                     }
 
                     // On change in any component, reveal next if a non-empty value is chosen
