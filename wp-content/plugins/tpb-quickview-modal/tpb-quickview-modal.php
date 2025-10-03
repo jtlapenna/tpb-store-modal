@@ -233,6 +233,16 @@ class TPB_QuickView_Modal {
                 // Progressive disclosure: no pre-select + step-by-step reveal
                 console.log('🎯 Setting up progressive disclosure...');
                 
+                // Debug: Check if CPB plugin is active
+                console.log('🔍 CPB Plugin Debug:', {
+                    addifyScript: !!document.querySelector('script[src*="af-comp-product"]'),
+                    addifyContainer: !!document.querySelector('.af_cp_all_components_content'),
+                    woocommerce: !!document.querySelector('.woocommerce'),
+                    product: !!document.querySelector('.product'),
+                    bodyClasses: document.body.className,
+                    allScripts: Array.from(document.querySelectorAll('script[src]')).map(s => s.src).filter(s => s.includes('af') || s.includes('cpb') || s.includes('addify'))
+                });
+                
                 function q(sel, root) { return (root || document).querySelector(sel); }
                 function qa(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
                 function hide(el) { if (!el) return; el.classList.add('tpb-hidden'); el.style.display = 'none'; }
