@@ -252,7 +252,40 @@ class TPB_QuickView_Modal {
                        if (tpbProduct && tpbProduct.className.includes('af_composite_product')) {
                            console.log('🎯 Product is configured as CPB but container not found!');
                            console.log('🔍 Looking for CPB elements in DOM...');
-                           console.log('🔍 All elements with "af" in class:', Array.from(document.querySelectorAll('*')).filter(el => el.className && el.className.includes('af')).map(el => ({tag: el.tagName, class: el.className, id: el.id})));
+                           
+                           // Check for various CPB selectors
+                           const cpbSelectors = [
+                               '.afcpb-wrapper',
+                               '.af_cp_all_components_content',
+                               '.afcpb-component',
+                               '.single_component',
+                               '[class*="afcpb"]',
+                               '[class*="af_cp"]',
+                               '[id*="afcpb"]',
+                               '[id*="af_cp"]'
+                           ];
+                           
+                           cpbSelectors.forEach(selector => {
+                               const elements = document.querySelectorAll(selector);
+                               if (elements.length > 0) {
+                                   console.log(`✅ Found ${elements.length} elements for selector: ${selector}`);
+                                   elements.forEach((el, i) => {
+                                       console.log(`  [${i}] ${el.tagName}.${el.className || 'no-class'}#${el.id || 'no-id'}`);
+                                   });
+                               } else {
+                                   console.log(`❌ No elements found for selector: ${selector}`);
+                               }
+                           });
+                           
+                           // Check for any elements with "af" in class name
+                           const afElements = Array.from(document.querySelectorAll('*')).filter(el => 
+                               el.className && typeof el.className === 'string' && el.className.includes('af')
+                           );
+                           console.log('🔍 All elements with "af" in class:', afElements.map(el => ({
+                               tag: el.tagName, 
+                               class: el.className, 
+                               id: el.id || 'no-id'
+                           })));
                        }
                 
                 function q(sel, root) { return (root || document).querySelector(sel); }
