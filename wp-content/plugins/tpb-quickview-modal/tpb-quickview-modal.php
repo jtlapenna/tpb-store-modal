@@ -206,20 +206,22 @@ class TPB_QuickView_Modal {
     public function add_iframe_scripts() {
         ?>
         <script>
-            console.log('🔧 TPB QuickView iframe layout script loading...');
-            
-            // Add iframe body class
-            document.body.classList.add('tpb-qv-iframe');
+            (function() {
+                'use strict';
+                console.log('🔧 TPB QuickView iframe layout script loading...');
+                
+                // Add iframe body class
+                document.body.classList.add('tpb-qv-iframe');
             
             // Ensure proper layout
             document.addEventListener('DOMContentLoaded', function() {
-                const product = document.querySelector('.product');
-                if (product) {
-                    console.log('✅ Product container found, applying iframe layout');
+                   const tpbProductContainer = document.querySelector('.product');
+                   if (tpbProductContainer) {
+                       console.log('✅ Product container found, applying iframe layout');
                     
                     // Ensure gallery and summary are direct children
-                    const gallery = product.querySelector('.woocommerce-product-gallery');
-                    const summary = product.querySelector('.summary.entry-summary');
+                    const gallery = tpbProductContainer.querySelector('.woocommerce-product-gallery');
+                    const summary = tpbProductContainer.querySelector('.summary.entry-summary');
                     
                     if (gallery && summary) {
                         console.log('✅ Gallery and summary found, layout should be applied');
@@ -246,8 +248,8 @@ class TPB_QuickView_Modal {
                        });
                        
                        // Check if CPB is supposed to render but isn't
-                       const product = document.querySelector('.product');
-                       if (product && product.className.includes('af_composite_product')) {
+                       const tpbProduct = document.querySelector('.product');
+                       if (tpbProduct && tpbProduct.className.includes('af_composite_product')) {
                            console.log('🎯 Product is configured as CPB but container not found!');
                            console.log('🔍 Looking for CPB elements in DOM...');
                            console.log('🔍 All elements with "af" in class:', Array.from(document.querySelectorAll('*')).filter(el => el.className && el.className.includes('af')).map(el => ({tag: el.tagName, class: el.className, id: el.id})));
@@ -391,6 +393,7 @@ class TPB_QuickView_Modal {
                     initProgressive();
                 }, 5000);
             });
+            })(); // End IIFE
         </script>
         <?php
     }
