@@ -229,6 +229,92 @@ class TPB_QuickView_Modal {
                 } else {
                     console.log('❌ Product container not found');
                 }
+                
+                // Progressive disclosure: no pre-select + step-by-step reveal
+                console.log('🎯 Setting up progressive disclosure...');
+                
+                function q(sel, root) { return (root || document).querySelector(sel); }
+                function qa(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
+                function hide(el) { if (!el) return; el.classList.add('tpb-hidden'); el.style.display = 'none'; }
+                function show(el) { if (!el) return; el.classList.remove('tpb-hidden'); el.style.display = ''; }
+                function firstSelectIn(el) { return el && el.querySelector('select'); }
+
+                function ensurePlaceholder(select, text) {
+                    if (!select) return;
+                    // Clear all selections
+                    Array.from(select.options).forEach(function(o) { 
+                        o.selected = false; 
+                        o.removeAttribute('selected'); 
+                    });
+                    // Remove existing placeholder
+                    const existing = select.querySelector('option[value=""]');
+                    if (existing) existing.remove();
+                    // Add new placeholder
+                    const ph = document.createElement('option');
+                    ph.value = '';
+                    ph.textContent = text || 'Select an option…';
+                    ph.disabled = true;
+                    ph.selected = true;
+                    select.insertBefore(ph, select.firstChild);
+                    select.selectedIndex = 0;
+                    select.value = '';
+                    ['input', 'change'].forEach(function(e) { 
+                        select.dispatchEvent(new Event(e, {bubbles: true})); 
+                    });
+                }
+
+                function initProgressive() {
+                    // Find CPB components
+                    let components = qa('.af_cp_all_components_content .single_component');
+                    if (!components.length) { 
+                        components = qa('.variations, .woocommerce-variation, form.cart .variations'); 
+                    }
+                    if (!components.length) { 
+                        console.log('⚠️ No components found for progressive disclosure');
+                        return; 
+                    }
+
+                    console.log('✅ Found', components.length, 'components for progressive disclosure');
+
+                    // Step 1: Only first visible, rest hidden
+                    components.forEach(function(c, i) { 
+                        if (i === 0) {
+                            show(c);
+                            console.log('✅ Showing first component');
+                        } else {
+                            hide(c);
+                            console.log('📦 Hiding component', i + 1);
+                        }
+                    });
+
+                    // Clear and set placeholder on first select
+                    const first = components[0];
+                    const sel = firstSelectIn(first);
+                    if (sel) {
+                        ensurePlaceholder(sel, 'Select SKU count…');
+                        console.log('✅ Set placeholder on first select');
+                    }
+
+                    // On change in any component, reveal next if a non-empty value is chosen
+                    document.addEventListener('change', function(ev) {
+                        const el = ev.target;
+                        const comp = el.closest('.single_component, .variations, .woocommerce-variation');
+                        if (!comp) return;
+                        const idx = components.indexOf(comp);
+                        if (idx === -1) return;
+                        const val = (el.value || '').trim();
+                        if (val === '') return;
+                        
+                        const next = components[idx + 1];
+                        if (next) { 
+                            show(next);
+                            console.log('✅ Revealed next component after selection');
+                        }
+                    }, true);
+                }
+
+                // Initialize progressive disclosure
+                initProgressive();
             });
         </script>
         <?php
