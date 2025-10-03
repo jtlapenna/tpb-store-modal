@@ -334,8 +334,24 @@ class TPB_QuickView_Modal {
                     }, true);
                 }
 
-                // Initialize progressive disclosure
+                // Initialize progressive disclosure with retries for dynamic content
                 initProgressive();
+                
+                // Retry after delays to catch dynamically loaded content
+                setTimeout(function() {
+                    console.log('🔄 Retrying component detection after 1s...');
+                    initProgressive();
+                }, 1000);
+                
+                setTimeout(function() {
+                    console.log('🔄 Retrying component detection after 3s...');
+                    initProgressive();
+                }, 3000);
+                
+                setTimeout(function() {
+                    console.log('🔄 Final retry after 5s...');
+                    initProgressive();
+                }, 5000);
             });
         </script>
         <?php
