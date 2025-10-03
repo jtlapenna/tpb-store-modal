@@ -264,13 +264,34 @@ class TPB_QuickView_Modal {
                 }
 
                 function initProgressive() {
-                    // Find CPB components
+                    // Find CPB components - try multiple selectors
                     let components = qa('.af_cp_all_components_content .single_component');
+                    console.log('🔍 Addify CPB components found:', components.length);
+                    
                     if (!components.length) { 
                         components = qa('.variations, .woocommerce-variation, form.cart .variations'); 
+                        console.log('🔍 WooCommerce variations found:', components.length);
                     }
+                    
+                    if (!components.length) { 
+                        components = qa('form.cart, .woocommerce-variation, select[name*="attribute"]'); 
+                        console.log('🔍 Form elements found:', components.length);
+                    }
+                    
+                    if (!components.length) { 
+                        components = qa('select:not([name="quantity"])'); 
+                        console.log('🔍 Select elements found:', components.length);
+                    }
+                    
                     if (!components.length) { 
                         console.log('⚠️ No components found for progressive disclosure');
+                        console.log('🔍 Available elements:', {
+                            addify: qa('.af_cp_all_components_content').length,
+                            variations: qa('.variations').length,
+                            forms: qa('form.cart').length,
+                            selects: qa('select').length,
+                            allDivs: qa('div').length
+                        });
                         return; 
                     }
 
