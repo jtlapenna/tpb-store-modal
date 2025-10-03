@@ -1,0 +1,59 @@
+name: Deploy with LFTP (Elementor Cloud)
+
+on:
+  push:
+    branches: [ modal-clean-rebuild ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup LFTP
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y lftp
+        
+    - name: Deploy with LFTP
+      env:
+        HOST: sftp.elementor.cloud
+        PORT: 32022
+        USERNAME: Pi0d7vXc
+        PASSWORD: 95lD6Qwju57cytk4
+      run: |
+        echo "🚀 Starting LFTP deployment..."
+        
+        # Create lftp script
+        cat > deploy.lftp << 'EOF'
+        set sftp:auto-confirm yes
+        set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no"
+        open sftp://$USERNAME:$PASSWORD@sftp.elementor.cloud:32022
+        
+        # Test connection
+        ls
+        echo "✅ Connection successful"
+        
+        # Deploy theme files
+        echo "📁 Deploying theme files..."
+        mirror -R wp-content/themes/hello-elementor-child-tpb/ /wp-content/themes/hello-elementor-child-tpb/
+        
+        # Deploy plugin files  
+        echo "🔌 Deploying plugin files..."
+        mirror -R wp-content/plugins/tpb-quickview-modal/ /wp-content/plugins/tpb-quickview-modal/
+        
+        # Deploy MU plugin files
+        echo "⚡ Deploying MU plugin files..."
+        mirror -R wp-content/mu-plugins/tpb-quickview/ /wp-content/mu-plugins/tpb-quickview/
+        
+        echo "✅ Deployment complete"
+        quit
+        EOF
+        
+        # Execute lftp script
+        lftp -f deploy.lftp
+        
+        echo "🎉 LFTP deployment completed successfully!"
