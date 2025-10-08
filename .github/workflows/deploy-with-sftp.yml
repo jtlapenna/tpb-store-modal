@@ -49,7 +49,7 @@ jobs:
         EOF
         
         # Execute SFTP with expect to handle password
-        expect << 'EXPECT_EOF'
+        expect << EXPECT_EOF
         spawn sftp -P $PORT -o StrictHostKeyChecking=no $USERNAME@$HOST
         expect "password:"
         send "$PASSWORD\r"
