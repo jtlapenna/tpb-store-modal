@@ -22,8 +22,8 @@ jobs:
       env:
         HOST: sftp.elementor.cloud
         PORT: 32022
-        USERNAME: ZCXbRYH4
-        PASSWORD: 42HLwurbFUzozT0c
+        USERNAME: dcPiEKDb
+        PASSWORD: ivqWvPYFk2eDeKER
       run: |
         echo "🚀 Starting rsync deployment..."
         
