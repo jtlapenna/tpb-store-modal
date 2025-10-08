@@ -195,6 +195,71 @@ add_action( 'wp_head', function () {
 	
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
+		// Force CPB initialization first
+		console.log('🔧 Forcing CPB initialization in iframe...');
+		
+		// Wait for CPB scripts to load
+		setTimeout(function() {
+			// Check if CPB is available
+			if (typeof window.af_comp_product !== 'undefined') {
+				console.log('✅ CPB script loaded, initializing...');
+				
+				// Force CPB initialization
+				if (typeof window.afcpb_init !== 'undefined') {
+					window.afcpb_init();
+				}
+				
+				// Trigger CPB hooks manually
+				if (typeof jQuery !== 'undefined') {
+					jQuery(document).trigger('afcpb_ready');
+					jQuery(document).trigger('woocommerce_variation_has_changed');
+				}
+			} else {
+				console.log('⚠️ CPB script not loaded, retrying...');
+				// Retry after a longer delay
+				setTimeout(function() {
+					if (typeof window.af_comp_product !== 'undefined') {
+						console.log('✅ CPB script loaded on retry');
+						if (typeof window.afcpb_init !== 'undefined') {
+							window.afcpb_init();
+						}
+						if (typeof jQuery !== 'undefined') {
+							jQuery(document).trigger('afcpb_ready');
+							jQuery(document).trigger('woocommerce_variation_has_changed');
+						}
+					}
+				}, 2000);
+			}
+		}, 1000);
+		
+		// Additional CPB initialization check
+		setTimeout(function() {
+			console.log('🔍 Checking for CPB container after initialization...');
+			const cpbContainer = document.querySelector('.afcpb-wrapper, .af_cp_all_components_content');
+			if (!cpbContainer) {
+				console.log('⚠️ CPB container still not found, attempting manual creation...');
+				
+				// Try to trigger WooCommerce product initialization
+				if (typeof jQuery !== 'undefined') {
+					jQuery(document.body).trigger('wc_fragment_refresh');
+					jQuery(document.body).trigger('woocommerce_variation_has_changed');
+					jQuery(document.body).trigger('woocommerce_update_variation_values');
+				}
+				
+				// Check again after triggering events
+				setTimeout(function() {
+					const cpbContainer2 = document.querySelector('.afcpb-wrapper, .af_cp_all_components_content');
+					if (cpbContainer2) {
+						console.log('✅ CPB container found after manual trigger');
+					} else {
+						console.log('❌ CPB container still not found - CPB may not be properly configured for this product');
+					}
+				}, 1000);
+			} else {
+				console.log('✅ CPB container found:', cpbContainer);
+			}
+		}, 3000);
+		
 		// Create two-panel layout
 		const body = document.body;
 		const product = document.querySelector('.woocommerce div.product');
