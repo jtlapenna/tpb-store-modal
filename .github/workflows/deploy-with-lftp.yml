@@ -27,15 +27,14 @@ jobs:
       run: |
         echo "🚀 Starting LFTP deployment..."
         
-        # Create lftp script with proper authentication
+        # Create lftp script with proper SFTP authentication
         cat > deploy.lftp << 'EOF'
         set sftp:auto-confirm yes
-        set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no"
         set net:timeout 30
         set net:reconnect-interval-base 5
         set net:max-retries 3
         
-        # Connect with proper authentication
+        # Connect with pure SFTP (no SSH wrapper)
         open -u $USERNAME,$PASSWORD sftp://sftp.elementor.cloud:32022
         
         # Test connection
