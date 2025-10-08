@@ -1,0 +1,71 @@
+name: Deploy with SFTP (Elementor Cloud)
+
+on:
+  push:
+    branches: [ modal-clean-rebuild ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup SFTP and expect
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y openssh-client expect
+        
+    - name: Deploy with SFTP
+      env:
+        HOST: sftp.elementor.cloud
+        PORT: 32022
+        USERNAME: dcPiEKDb
+        PASSWORD: ivqWvPYFk2eDeKER
+      run: |
+        echo "🚀 Starting SFTP deployment..."
+        
+        # Create SFTP batch file
+        cat > deploy.sftp << 'EOF'
+        ls
+        echo "✅ Connection successful"
+        
+        # Deploy theme files
+        echo "📁 Deploying theme files..."
+        put -r wp-content/themes/hello-elementor-child-tpb/ /wp-content/themes/hello-elementor-child-tpb/
+        
+        # Deploy plugin files
+        echo "🔌 Deploying plugin files..."
+        put -r wp-content/plugins/tpb-quickview-modal/ /wp-content/plugins/tpb-quickview-modal/
+        
+        # Deploy MU plugin files
+        echo "⚡ Deploying MU plugin files..."
+        put -r wp-content/mu-plugins/tpb-quickview/ /wp-content/mu-plugins/tpb-quickview/
+        
+        echo "✅ Deployment complete"
+        quit
+        EOF
+        
+        # Execute SFTP with expect to handle password
+        expect << 'EXPECT_EOF'
+        spawn sftp -P $PORT -o StrictHostKeyChecking=no $USERNAME@$HOST
+        expect "password:"
+        send "$PASSWORD\r"
+        expect "sftp>"
+        
+        # Execute commands
+        send "ls\r"
+        expect "sftp>"
+        send "put -r wp-content/themes/hello-elementor-child-tpb/ /wp-content/themes/hello-elementor-child-tpb/\r"
+        expect "sftp>"
+        send "put -r wp-content/plugins/tpb-quickview-modal/ /wp-content/plugins/tpb-quickview-modal/\r"
+        expect "sftp>"
+        send "put -r wp-content/mu-plugins/tpb-quickview/ /wp-content/mu-plugins/tpb-quickview/\r"
+        expect "sftp>"
+        send "quit\r"
+        expect eof
+        EXPECT_EOF
+        
+        echo "🎉 SFTP deployment completed successfully!"
