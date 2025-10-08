@@ -58,6 +58,16 @@ jobs:
         # Execute commands
         send "ls\r"
         expect "sftp>"
+        
+        # Create directories first
+        send "mkdir -p /wp-content/themes/hello-elementor-child-tpb\r"
+        expect "sftp>"
+        send "mkdir -p /wp-content/plugins/tpb-quickview-modal\r"
+        expect "sftp>"
+        send "mkdir -p /wp-content/mu-plugins/tpb-quickview\r"
+        expect "sftp>"
+        
+        # Upload files
         send "put -r wp-content/themes/hello-elementor-child-tpb/ /wp-content/themes/hello-elementor-child-tpb/\r"
         expect "sftp>"
         send "put -r wp-content/plugins/tpb-quickview-modal/ /wp-content/plugins/tpb-quickview-modal/\r"
