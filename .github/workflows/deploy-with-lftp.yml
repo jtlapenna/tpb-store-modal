@@ -27,11 +27,16 @@ jobs:
       run: |
         echo "🚀 Starting LFTP deployment..."
         
-        # Create lftp script
+        # Create lftp script with proper authentication
         cat > deploy.lftp << 'EOF'
         set sftp:auto-confirm yes
         set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no"
-        open sftp://$USERNAME:$PASSWORD@sftp.elementor.cloud:32022
+        set net:timeout 30
+        set net:reconnect-interval-base 5
+        set net:max-retries 3
+        
+        # Connect with proper authentication
+        open -u $USERNAME,$PASSWORD sftp://sftp.elementor.cloud:32022
         
         # Test connection
         ls
@@ -39,21 +44,21 @@ jobs:
         
         # Deploy theme files
         echo "📁 Deploying theme files..."
-        mirror -R wp-content/themes/hello-elementor-child-tpb/ /wp-content/themes/hello-elementor-child-tpb/
+        mirror -R --verbose wp-content/themes/hello-elementor-child-tpb/ /wp-content/themes/hello-elementor-child-tpb/
         
         # Deploy plugin files  
         echo "🔌 Deploying plugin files..."
-        mirror -R wp-content/plugins/tpb-quickview-modal/ /wp-content/plugins/tpb-quickview-modal/
+        mirror -R --verbose wp-content/plugins/tpb-quickview-modal/ /wp-content/plugins/tpb-quickview-modal/
         
         # Deploy MU plugin files
         echo "⚡ Deploying MU plugin files..."
-        mirror -R wp-content/mu-plugins/tpb-quickview/ /wp-content/mu-plugins/tpb-quickview/
+        mirror -R --verbose wp-content/mu-plugins/tpb-quickview/ /wp-content/mu-plugins/tpb-quickview/
         
         echo "✅ Deployment complete"
         quit
         EOF
         
-        # Execute lftp script
-        lftp -f deploy.lftp
+        # Execute lftp script with environment variables
+        LFTP_PASSWORD="$PASSWORD" lftp -f deploy.lftp
         
         echo "🎉 LFTP deployment completed successfully!"
