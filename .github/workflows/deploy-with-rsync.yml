@@ -1,0 +1,66 @@
+name: Deploy with rsync (Elementor Cloud)
+
+on:
+  push:
+    branches: [ modal-clean-rebuild ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup rsync and sshpass
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y rsync sshpass
+        
+    - name: Deploy with rsync
+      env:
+        HOST: sftp.elementor.cloud
+        PORT: 32022
+        USERNAME: Pi0d7vXc
+        PASSWORD: 95lD6Qwju57cytk4
+      run: |
+        echo "🚀 Starting rsync deployment..."
+        
+        # Create SSH config
+        mkdir -p ~/.ssh
+        cat > ~/.ssh/config << EOF
+        Host elementor
+            HostName $HOST
+            Port $PORT
+            User $USERNAME
+            StrictHostKeyChecking no
+            UserKnownHostsFile /dev/null
+        EOF
+        
+        # Test connection
+        echo "🧪 Testing SSH connection..."
+        sshpass -p "$PASSWORD" ssh -o ConnectTimeout=10 elementor "echo 'SSH connection successful'"
+        
+        # Deploy theme files
+        echo "📁 Deploying theme files..."
+        sshpass -p "$PASSWORD" rsync -avz --progress \
+          -e "ssh -p $PORT -o StrictHostKeyChecking=no" \
+          wp-content/themes/hello-elementor-child-tpb/ \
+          $USERNAME@$HOST:/wp-content/themes/hello-elementor-child-tpb/
+        
+        # Deploy plugin files
+        echo "🔌 Deploying plugin files..."
+        sshpass -p "$PASSWORD" rsync -avz --progress \
+          -e "ssh -p $PORT -o StrictHostKeyChecking=no" \
+          wp-content/plugins/tpb-quickview-modal/ \
+          $USERNAME@$HOST:/wp-content/plugins/tpb-quickview-modal/
+        
+        # Deploy MU plugin files
+        echo "⚡ Deploying MU plugin files..."
+        sshpass -p "$PASSWORD" rsync -avz --progress \
+          -e "ssh -p $PORT -o StrictHostKeyChecking=no" \
+          wp-content/mu-plugins/tpb-quickview/ \
+          $USERNAME@$HOST:/wp-content/mu-plugins/tpb-quickview/
+        
+        echo "🎉 rsync deployment completed successfully!"
