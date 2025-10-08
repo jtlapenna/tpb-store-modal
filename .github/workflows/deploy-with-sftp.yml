@@ -59,28 +59,32 @@ jobs:
         send "ls\r"
         expect "sftp>"
         
-        # Create directories first (SFTP mkdir doesn't support -p)
-        send "mkdir /wp-content\r"
-        expect "sftp>"
-        send "mkdir /wp-content/themes\r"
-        expect "sftp>"
-        send "mkdir /wp-content/themes/hello-elementor-child-tpb\r"
-        expect "sftp>"
-        send "mkdir /wp-content/plugins\r"
-        expect "sftp>"
-        send "mkdir /wp-content/plugins/tpb-quickview-modal\r"
-        expect "sftp>"
-        send "mkdir /wp-content/mu-plugins\r"
-        expect "sftp>"
-        send "mkdir /wp-content/mu-plugins/tpb-quickview\r"
+        # Change to html directory (where we have permissions)
+        send "cd html\r"
         expect "sftp>"
         
-        # Upload files
-        send "put -r wp-content/themes/hello-elementor-child-tpb/ /wp-content/themes/hello-elementor-child-tpb/\r"
+        # Create directories in html directory
+        send "mkdir wp-content\r"
         expect "sftp>"
-        send "put -r wp-content/plugins/tpb-quickview-modal/ /wp-content/plugins/tpb-quickview-modal/\r"
+        send "mkdir wp-content/themes\r"
         expect "sftp>"
-        send "put -r wp-content/mu-plugins/tpb-quickview/ /wp-content/mu-plugins/tpb-quickview/\r"
+        send "mkdir wp-content/themes/hello-elementor-child-tpb\r"
+        expect "sftp>"
+        send "mkdir wp-content/plugins\r"
+        expect "sftp>"
+        send "mkdir wp-content/plugins/tpb-quickview-modal\r"
+        expect "sftp>"
+        send "mkdir wp-content/mu-plugins\r"
+        expect "sftp>"
+        send "mkdir wp-content/mu-plugins/tpb-quickview\r"
+        expect "sftp>"
+        
+        # Upload files to html directory
+        send "put -r wp-content/themes/hello-elementor-child-tpb/ wp-content/themes/hello-elementor-child-tpb/\r"
+        expect "sftp>"
+        send "put -r wp-content/plugins/tpb-quickview-modal/ wp-content/plugins/tpb-quickview-modal/\r"
+        expect "sftp>"
+        send "put -r wp-content/mu-plugins/tpb-quickview/ wp-content/mu-plugins/tpb-quickview/\r"
         expect "sftp>"
         send "quit\r"
         expect eof
