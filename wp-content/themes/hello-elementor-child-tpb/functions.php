@@ -195,6 +195,11 @@ add_action( 'wp_head', function () {
 	
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
+		// TEMPORARILY DISABLED: Theme CPB initialization code
+		// This was conflicting with the TPB modal plugin's CPB initialization
+		console.log('🔧 Theme CPB initialization disabled for testing...');
+		
+		/*
 		// Force CPB initialization first
 		console.log('🔧 Forcing CPB initialization in iframe...');
 		
@@ -259,29 +264,7 @@ add_action( 'wp_head', function () {
 				console.log('✅ CPB container found:', cpbContainer);
 			}
 		}, 3000);
-			if (!cpbContainer) {
-				console.log('⚠️ CPB container still not found, attempting manual creation...');
-				
-				// Try to trigger WooCommerce product initialization
-				if (typeof jQuery !== 'undefined') {
-					jQuery(document.body).trigger('wc_fragment_refresh');
-					jQuery(document.body).trigger('woocommerce_variation_has_changed');
-					jQuery(document.body).trigger('woocommerce_update_variation_values');
-				}
-				
-				// Check again after triggering events
-				setTimeout(function() {
-					const cpbContainer2 = document.querySelector('.afcpb-wrapper, .af_cp_all_components_content');
-					if (cpbContainer2) {
-						console.log('✅ CPB container found after manual trigger');
-					} else {
-						console.log('❌ CPB container still not found - CPB may not be properly configured for this product');
-					}
-				}, 1000);
-			} else {
-				console.log('✅ CPB container found:', cpbContainer);
-			}
-		}, 3000);
+		*/
 		
 		// Create two-panel layout
 		const body = document.body;
