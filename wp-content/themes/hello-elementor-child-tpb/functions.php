@@ -209,76 +209,81 @@ add_action( 'wp_head', function () {
 	
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
-		// Force CPB initialization first
-		console.log('🔧 Forcing CPB initialization in iframe...');
+		console.log('🔧 CPB JavaScript Fix - Starting with improved timing...');
 		
-		// Wait for CPB scripts to load
-		setTimeout(function() {
-			// Check if CPB is available
-			if (typeof window.af_comp_product !== 'undefined') {
-				console.log('✅ CPB script loaded, initializing...');
-				
-				// Force CPB initialization
-				if (typeof window.afcpb_init !== 'undefined') {
-					window.afcpb_init();
-				}
-				
-				// Trigger CPB hooks manually
-				if (typeof jQuery !== 'undefined') {
-					jQuery(document).trigger('afcpb_ready');
-					jQuery(document).trigger('woocommerce_variation_has_changed');
+		// Wait for CPB content to be fully rendered
+		function waitForCPBContent(callback, maxAttempts = 20, attempt = 1) {
+			console.log('🔍 Attempt ' + attempt + ': Looking for CPB content...');
+			
+			// Check for CPB containers
+			const cpbContainers = document.querySelectorAll('.afcpb-wrapper, .af_cp_all_components_content, .af_cp_content');
+			
+			if (cpbContainers.length > 0) {
+				console.log('✅ CPB content found!', cpbContainers);
+				callback(cpbContainers);
+				return;
+			}
+			
+			// Check for WooCommerce product content
+			const productContent = document.querySelector('.woocommerce div.product, .woocommerce .product, div.product, .product');
+			
+			if (productContent && attempt < maxAttempts) {
+				console.log('⏳ Product found but no CPB yet, waiting...');
+				setTimeout(function() {
+					waitForCPBContent(callback, maxAttempts, attempt + 1);
+				}, 500);
+			} else if (attempt >= maxAttempts) {
+				console.log('❌ CPB content not found after ' + maxAttempts + ' attempts');
+				// Try to create layout anyway with whatever content is available
+				if (productContent) {
+					console.log('🔧 Creating layout with available content...');
+					callback([]);
 				}
 			} else {
-				console.log('⚠️ CPB script not loaded, retrying...');
-				// Retry after a longer delay
-				setTimeout(function() {
-					if (typeof window.af_comp_product !== 'undefined') {
-						console.log('✅ CPB script loaded on retry');
-						if (typeof window.afcpb_init !== 'undefined') {
-							window.afcpb_init();
-						}
-						if (typeof jQuery !== 'undefined') {
-							jQuery(document).trigger('afcpb_ready');
-							jQuery(document).trigger('woocommerce_variation_has_changed');
-						}
-					}
-				}, 2000);
+				console.log('❌ No product content found');
 			}
-		}, 1000);
+		}
 		
-		// Additional CPB initialization check
-		setTimeout(function() {
-			console.log('🔍 Checking for CPB container after initialization...');
-			const cpbContainer = document.querySelector('.afcpb-wrapper, .af_cp_all_components_content');
-			if (!cpbContainer) {
-				console.log('⚠️ CPB container still not found, attempting manual creation...');
-				
-				// Try to trigger WooCommerce product initialization
-				if (typeof jQuery !== 'undefined') {
-					jQuery(document.body).trigger('wc_fragment_refresh');
-					jQuery(document.body).trigger('woocommerce_variation_has_changed');
-					jQuery(document.body).trigger('woocommerce_update_variation_values');
+		// Wait for CPB content to be ready
+		waitForCPBContent(function(cpbContainers) {
+			console.log('🎯 CPB content ready, creating layout...');
+			
+			// Try multiple selectors to find the product element
+			const productSelectors = [
+				'.woocommerce div.product',
+				'.woocommerce .product', 
+				'div.product',
+				'.product',
+				'.single-product .product',
+				'.type-product',
+				'.af_composite_product'
+			];
+			
+			let product = null;
+			for (let selector of productSelectors) {
+				product = document.querySelector(selector);
+				if (product) {
+					console.log('✅ Found product element with selector:', selector);
+					break;
 				}
-				
-				// Check again after triggering events
-				setTimeout(function() {
-					const cpbContainer2 = document.querySelector('.afcpb-wrapper, .af_cp_all_components_content');
-					if (cpbContainer2) {
-						console.log('✅ CPB container found after manual trigger');
-					} else {
-						console.log('❌ CPB container still not found - CPB may not be properly configured for this product');
-					}
-				}, 1000);
-			} else {
-				console.log('✅ CPB container found:', cpbContainer);
 			}
-		}, 3000);
+			
+			if (!product) {
+				console.log('❌ No product element found with any selector');
+				return;
+			}
+			
+			console.log('✅ Product element found:', product);
+			
+			// Create the two-panel layout
+			createTwoPanelLayout(product, cpbContainers);
+		});
 		
-		// Create two-panel layout
-		const body = document.body;
-		const product = document.querySelector('.woocommerce div.product');
-		
-		if (product) {
+		function createTwoPanelLayout(product, cpbContainers) {
+			console.log('🔧 Creating two-panel layout...');
+			
+			const body = document.body;
+			
 			// Create left panel for images
 			const leftPanel = document.createElement('div');
 			leftPanel.className = 'tpb-qv-left-panel';
@@ -305,7 +310,7 @@ add_action( 'wp_head', function () {
 				leftPanel.appendChild(gallery.cloneNode(true));
 			}
 			
-			// Create a clean content container for right panel
+			// Create content container for right panel
 			const contentContainer = document.createElement('div');
 			contentContainer.className = 'tpb-qv-content';
 			contentContainer.style.width = '100%';
@@ -315,123 +320,197 @@ add_action( 'wp_head', function () {
 			contentContainer.style.margin = '0';
 			contentContainer.style.display = 'block';
 			
-			// Add only essential elements in a controlled order
-			const summary = product.querySelector('.summary');
-			if (summary) {
-				// Add product title (h1)
-				const title = summary.querySelector('h1, h2, h3, h4, h5, h6');
-				if (title) {
-					const titleClone = title.cloneNode(true);
-					titleClone.style.marginBottom = '16px';
-					titleClone.style.fontSize = '24px';
-					titleClone.style.fontWeight = 'bold';
-					titleClone.style.width = '100%';
-					titleClone.style.maxWidth = '100%';
-					titleClone.style.boxSizing = 'border-box';
-					contentContainer.appendChild(titleClone);
-				}
-				
-				// Add price (only first instance)
-				const price = summary.querySelector('.price, .woocommerce-Price-amount');
-				if (price) {
-					const priceClone = price.cloneNode(true);
-					priceClone.style.marginBottom = '16px';
-					priceClone.style.fontSize = '18px';
-					priceClone.style.fontWeight = 'bold';
-					priceClone.style.color = '#5ac59a';
-					priceClone.style.width = '100%';
-					priceClone.style.maxWidth = '100%';
-					priceClone.style.boxSizing = 'border-box';
-					contentContainer.appendChild(priceClone);
-				}
-				
-				// Skip stock status - not needed in modal
-				
-				// Aggressively remove any stock indicators that might appear
-				const stockSelectors = [
-					'.stock', '.woocommerce-stock', '.stock-status', '.product-stock',
-					'.availability', '.woocommerce-availability', '.in-stock', '.out-of-stock',
-					'.instock', '.outofstock', '.product-link', '.view-product',
-					'.woocommerce-product-link', '.product-permalink'
-				];
-				
-				stockSelectors.forEach(selector => {
-					const elements = contentContainer.querySelectorAll(selector);
-					elements.forEach(el => el.remove());
-				});
-				
-				// Add "Choose SKUs" instruction (only once)
-				const chooseText = summary.querySelector('p');
-				if (chooseText && chooseText.textContent.includes('Choose SKUs, Mount, and Finish')) {
-					const chooseTextClone = chooseText.cloneNode(true);
-					chooseTextClone.style.marginBottom = '16px';
-					chooseTextClone.style.fontStyle = 'italic';
-					chooseTextClone.style.color = '#666';
-					contentContainer.appendChild(chooseTextClone);
-				}
+			// Add product title
+			const title = product.querySelector('h1, h2, h3, h4, h5, h6, .product_title');
+			if (title) {
+				const titleClone = title.cloneNode(true);
+				titleClone.style.marginBottom = '16px';
+				titleClone.style.fontSize = '24px';
+				titleClone.style.fontWeight = 'bold';
+				titleClone.style.width = '100%';
+				contentContainer.appendChild(titleClone);
 			}
 			
-			// Add CPB configuration elements
-			// First, check for CPB composite product elements
-			const cpbContainer = product.querySelector('.afcpb-wrapper, .af_cp_all_components_content, .af_cp_content');
+			// Add price
+			const price = product.querySelector('.price, .woocommerce-Price-amount');
+			if (price) {
+				const priceClone = price.cloneNode(true);
+				priceClone.style.marginBottom = '16px';
+				priceClone.style.fontSize = '18px';
+				priceClone.style.fontWeight = 'bold';
+				priceClone.style.color = '#5ac59a';
+				contentContainer.appendChild(priceClone);
+			}
 			
-			if (cpbContainer) {
-				console.log('✅ Found CPB container, adding to layout');
-				const cpbClone = cpbContainer.cloneNode(true);
-				cpbClone.style.marginBottom = '16px';
-				cpbClone.style.width = '100%';
-				cpbClone.style.boxSizing = 'border-box';
-				contentContainer.appendChild(cpbClone);
+			// Add CPB content - use the containers we found
+			if (cpbContainers.length > 0) {
+				console.log('✅ Adding CPB content to layout');
+				cpbContainers.forEach(function(container) {
+					const cpbClone = container.cloneNode(true);
+					cpbClone.style.marginBottom = '16px';
+					cpbClone.style.width = '100%';
+					cpbClone.style.boxSizing = 'border-box';
+					contentContainer.appendChild(cpbClone);
+				});
 			} else {
-				console.log('⚠️ No CPB container found, trying WooCommerce variations');
-				// Fallback to WooCommerce variation elements for non-CPB products
-				const cpbElements = [
-					'form.cart .variations',
-					'form.cart .single_variation_wrap',
-					'.woocommerce-variation',
-					'.woocommerce-variation-add-to-cart',
-					'.woocommerce-variation-description',
-					'.woocommerce-variation-price',
-					'.woocommerce-variation-availability'
-				];
-				
-				cpbElements.forEach(selector => {
-					const elements = product.querySelectorAll(selector);
-					elements.forEach(element => {
-						if (element) {
-							const elementClone = element.cloneNode(true);
-							elementClone.style.marginBottom = '16px';
-							elementClone.style.width = '100%';
-							elementClone.style.boxSizing = 'border-box';
-							contentContainer.appendChild(elementClone);
-						}
-					});
-				});
+				console.log('⚠️ No CPB containers found, trying to find them again...');
+				// Try to find CPB content again
+				const cpbContainer = product.querySelector('.afcpb-wrapper, .af_cp_all_components_content, .af_cp_content');
+				if (cpbContainer) {
+					console.log('✅ Found CPB container on second attempt');
+					const cpbClone = cpbContainer.cloneNode(true);
+					cpbClone.style.marginBottom = '16px';
+					cpbClone.style.width = '100%';
+					cpbClone.style.boxSizing = 'border-box';
+					contentContainer.appendChild(cpbClone);
+				} else {
+					console.log('❌ Still no CPB container found');
+				}
 			}
 			
-			// Add cart form (quantity and add to cart button)
+			// Add cart form
 			const cartForm = product.querySelector('form.cart');
 			if (cartForm) {
 				const cartFormClone = cartForm.cloneNode(true);
 				cartFormClone.style.marginTop = '20px';
 				cartFormClone.style.width = '100%';
-				cartFormClone.style.boxSizing = 'border-box';
 				contentContainer.appendChild(cartFormClone);
 			}
 			
-			// Append content container to right panel
+			// Append content to right panel
 			rightPanel.appendChild(contentContainer);
 			
 			// Clear body and add panels
 			body.innerHTML = '';
 			body.appendChild(leftPanel);
 			body.appendChild(rightPanel);
+			
+			console.log('✅ Two-panel layout created successfully');
 		}
 	});
 	</script>
 	<?php
 } );
 
+
+// Better iframe context fix for CPB
+add_action('init', 'better_fix_iframe_product_context', 1);
+function better_fix_iframe_product_context() {
+    if (isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') {
+        // Extract product ID from URL
+        $url_parts = parse_url($_SERVER['REQUEST_URI']);
+        $path_parts = explode('/', trim($url_parts['path'], '/'));
+        
+        $product_id = null;
+        foreach ($path_parts as $part) {
+            if ($part === 'product') {
+                $product_slug = $path_parts[array_search($part, $path_parts) + 1] ?? null;
+                if ($product_slug) {
+                    $product_post = get_page_by_path($product_slug, OBJECT, 'product');
+                    if ($product_post) {
+                        $product_id = $product_post->ID;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if (!$product_id) {
+            $product_id = 4607; // Default to our known product
+        }
+        
+        // Set the post and product globals early
+        global $post, $product;
+        $post = get_post($product_id);
+        $product = wc_get_product($product_id);
+        
+        // Force WordPress to recognize this as a product page
+        add_filter('is_product', '__return_true');
+        add_filter('is_single', '__return_true');
+        add_filter('is_singular', '__return_true');
+        add_filter('is_page', '__return_false');
+        add_filter('is_home', '__return_false');
+        add_filter('is_archive', '__return_false');
+        add_filter('is_search', '__return_false');
+        add_filter('is_feed', '__return_false');
+        add_filter('is_comment_feed', '__return_false');
+        add_filter('is_trackback', '__return_false');
+        add_filter('is_404', '__return_false');
+        add_filter('is_paged', '__return_false');
+        add_filter('is_admin', '__return_false');
+        add_filter('is_attachment', '__return_false');
+        
+        // Set up WooCommerce context
+        add_action('wp', function() use ($product_id) {
+            global $woocommerce_loop;
+            $woocommerce_loop = array(
+                'is_shortcode' => false,
+                'is_paginated' => false,
+                'columns' => 1,
+                'name' => 'single-product'
+            );
+        }, 5);
+    }
+}
+
+// Force CPB to render in iframe
+add_action('wp', 'force_cpb_render_in_iframe', 10);
+function force_cpb_render_in_iframe() {
+    if (isset($_GET['tpb_qv']) && $_GET['tpb_qv'] == '1') {
+        // Force CPB to render by hooking into the right place
+        add_action('woocommerce_after_single_product_summary', function() {
+            if (class_exists('ADF_Composite_Product_Front')) {
+                $cpb_frontend = new ADF_Composite_Product_Front();
+                $cpb_frontend->afcpb_after_composite_product_summary();
+            }
+        }, 10);
+    }
+}
+
+// CPB Context Fix - Ensure product context is available
+add_action('wp', 'setup_cpb_product_context', 6);
+function setup_cpb_product_context() {
+    if (is_product()) {
+        global $product, $post;
+        
+        // Ensure product is set
+        if (!$product || !is_object($product)) {
+            $product = wc_get_product($post->ID);
+        }
+        
+        // Set up WooCommerce context
+        global $woocommerce_loop;
+        $woocommerce_loop = array(
+            'is_shortcode' => false,
+            'is_paginated' => false,
+            'columns' => 1,
+            'name' => 'single-product'
+        );
+    }
+}
+
+// Force CPB Script Enqueuing Fix
+add_action('wp_enqueue_scripts', 'force_cpb_scripts', 20);
+function force_cpb_scripts() {
+    // Only on product pages
+    if (is_product()) {
+        global $product;
+        if ($product && $product->get_type() === 'af_composite_product') {
+            // Force enqueue WooCommerce scripts
+            if (function_exists('wc_enqueue_scripts')) {
+                wc_enqueue_scripts();
+            }
+            
+            // Force enqueue CPB scripts
+            if (class_exists('ADF_Composite_Product_Front')) {
+                $cpb_frontend = new ADF_Composite_Product_Front();
+                if (method_exists($cpb_frontend, 'afcpb_front_scripts')) {
+                    $cpb_frontend->afcpb_front_scripts();
+                }
+            }
+        }
+    }
+}
 
 /**
  * Convenience shortcode for adding a Quick View trigger button anywhere:
