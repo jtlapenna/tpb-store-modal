@@ -43,6 +43,20 @@ add_action( 'wp_enqueue_scripts', function () {
 		'home'     => home_url( '/' ),
 		'qv_param' => 'tpb_qv',
 	] );
+	
+	// Add inline script to auto-convert Configure Now buttons to modal triggers
+	wp_add_inline_script( 'tpb-modal', "
+		document.addEventListener('DOMContentLoaded', function() {
+			// Find all 'Configure Now' buttons that link to the flower station product
+			const buttons = document.querySelectorAll('a[href*=\"flower-station-configure-now\"]');
+			buttons.forEach(function(btn) {
+				// Add modal trigger attributes
+				btn.setAttribute('data-product-url', btn.href);
+				btn.classList.add('tpb-qv-trigger');
+				console.log('✅ Converted Configure Now button to modal trigger:', btn.href);
+			});
+		});
+	", 'after' );
 }, 20 );
 
 
@@ -195,11 +209,6 @@ add_action( 'wp_head', function () {
 	
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
-		// TEMPORARILY DISABLED: Theme CPB initialization code
-		// This was conflicting with the TPB modal plugin's CPB initialization
-		console.log('🔧 Theme CPB initialization disabled for testing...');
-		
-		/*
 		// Force CPB initialization first
 		console.log('🔧 Forcing CPB initialization in iframe...');
 		
@@ -264,7 +273,6 @@ add_action( 'wp_head', function () {
 				console.log('✅ CPB container found:', cpbContainer);
 			}
 		}, 3000);
-		*/
 		
 		// Create two-panel layout
 		const body = document.body;
@@ -363,29 +371,43 @@ add_action( 'wp_head', function () {
 				}
 			}
 			
-			// Add CPB configuration elements (variations, forms, etc.)
-			const cpbElements = [
-				'form.cart .variations',
-				'form.cart .single_variation_wrap',
-				'.woocommerce-variation',
-				'.woocommerce-variation-add-to-cart',
-				'.woocommerce-variation-description',
-				'.woocommerce-variation-price',
-				'.woocommerce-variation-availability'
-			];
+			// Add CPB configuration elements
+			// First, check for CPB composite product elements
+			const cpbContainer = product.querySelector('.afcpb-wrapper, .af_cp_all_components_content, .af_cp_content');
 			
-			cpbElements.forEach(selector => {
-				const elements = product.querySelectorAll(selector);
-				elements.forEach(element => {
-					if (element) {
-						const elementClone = element.cloneNode(true);
-						elementClone.style.marginBottom = '16px';
-						elementClone.style.width = '100%';
-						elementClone.style.boxSizing = 'border-box';
-						contentContainer.appendChild(elementClone);
-					}
+			if (cpbContainer) {
+				console.log('✅ Found CPB container, adding to layout');
+				const cpbClone = cpbContainer.cloneNode(true);
+				cpbClone.style.marginBottom = '16px';
+				cpbClone.style.width = '100%';
+				cpbClone.style.boxSizing = 'border-box';
+				contentContainer.appendChild(cpbClone);
+			} else {
+				console.log('⚠️ No CPB container found, trying WooCommerce variations');
+				// Fallback to WooCommerce variation elements for non-CPB products
+				const cpbElements = [
+					'form.cart .variations',
+					'form.cart .single_variation_wrap',
+					'.woocommerce-variation',
+					'.woocommerce-variation-add-to-cart',
+					'.woocommerce-variation-description',
+					'.woocommerce-variation-price',
+					'.woocommerce-variation-availability'
+				];
+				
+				cpbElements.forEach(selector => {
+					const elements = product.querySelectorAll(selector);
+					elements.forEach(element => {
+						if (element) {
+							const elementClone = element.cloneNode(true);
+							elementClone.style.marginBottom = '16px';
+							elementClone.style.width = '100%';
+							elementClone.style.boxSizing = 'border-box';
+							contentContainer.appendChild(elementClone);
+						}
+					});
 				});
-			});
+			}
 			
 			// Add cart form (quantity and add to cart button)
 			const cartForm = product.querySelector('form.cart');
