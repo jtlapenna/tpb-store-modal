@@ -1,9 +1,0 @@
-/* tpb-quickview.css – minimal, safe baseline */
-:root{ --tpb-teal:#5ac59a; }
-
-/* Buttons & accents (very light touch, can be removed later) */
-button, .button, .wp-element-button, .add_to_cart_button {
-  border-radius: 8px;
-}
-a { color: var(--tpb-teal); }
-a:hover, a:focus { color: #3aa87d; }
