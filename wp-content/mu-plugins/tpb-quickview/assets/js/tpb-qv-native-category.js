@@ -104,136 +104,69 @@
     var s2=el('div',{className:'tpb-step'}); 
     s2.appendChild(el('div',{className:'tpb-title',text:'Display Configuration'})); 
     s2.appendChild(el('div',{className:'tpb-hint',text:'Choose your preferred display setup for the category station.'})); 
-    var formFactorContainer=el('div',{className:'tpb-form-factor-buttons'}); 
+    
+    // Create form factor container with inline styles to prevent any CSS interference
+    var formFactorContainer=el('div'); 
+    formFactorContainer.style.cssText = 'display: flex !important; gap: 40px !important; margin-top: 20px !important; flex-wrap: wrap !important; justify-content: flex-start !important; opacity: 1 !important; visibility: visible !important; position: relative !important; z-index: 999 !important;';
+    
     ['counter-top','free-standing','wall-mounted'].forEach(function(factor){ 
-      var btn=el('button',{className:'tpb-form-factor-btn'}); 
+      // Create button with completely inline styles to avoid any CSS class conflicts
+      var btn=el('button'); 
       btn.textContent=factor.split('-').map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(' '); 
       btn.dataset.factor=factor; 
+      
+      // Apply all styles inline to prevent any external CSS from interfering
+      btn.style.cssText = 'flex: 0 0 auto !important; padding: 10px 16px !important; border: 2px solid #e3e6ea !important; border-radius: 25px !important; background: #fff !important; color: #374151 !important; font-size: 13px !important; font-weight: 600 !important; cursor: pointer !important; transition: all 0.3s ease !important; text-align: center !important; box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important; white-space: nowrap !important; opacity: 1 !important; visibility: visible !important; display: flex !important; position: relative !important; z-index: 999 !important; margin: 0 !important; outline: none !important;';
+      
       formFactorContainer.appendChild(btn); 
     }); 
     s2.appendChild(formFactorContainer);
     
-    // Force apply CSS to form-factor buttons immediately after creation
-    setTimeout(function() {
-      var buttons = formFactorContainer.querySelectorAll('.tpb-form-factor-btn');
-      console.log('Category Stations - Applying form-factor button styling to', buttons.length, 'buttons');
-      buttons.forEach(function(btn) {
-        btn.style.setProperty('display', 'flex', 'important');
-        btn.style.setProperty('flex', '0 0 auto', 'important');
-        btn.style.setProperty('white-space', 'nowrap', 'important');
-        btn.style.setProperty('padding', '10px 16px', 'important');
-        btn.style.setProperty('border', '2px solid #e3e6ea', 'important');
-        btn.style.setProperty('border-radius', '25px', 'important');
-        btn.style.setProperty('background', '#fff', 'important');
-        btn.style.setProperty('color', '#374151', 'important');
-        btn.style.setProperty('font-size', '13px', 'important');
-        btn.style.setProperty('font-weight', '600', 'important');
-        btn.style.setProperty('cursor', 'pointer', 'important');
-        btn.style.setProperty('transition', 'all 0.3s ease', 'important');
-        btn.style.setProperty('text-align', 'center', 'important');
-        btn.style.setProperty('box-shadow', '0 1px 3px rgba(0,0,0,0.1)', 'important');
-        btn.style.setProperty('opacity', '1', 'important');
-        btn.style.setProperty('visibility', 'visible', 'important');
-        btn.style.setProperty('position', 'relative', 'important');
-        btn.style.setProperty('z-index', '1', 'important');
+    // Get all buttons (now without CSS classes)
+    var buttons = formFactorContainer.querySelectorAll('button');
+    console.log('Category Stations - Created', buttons.length, 'form factor buttons with inline styles');
+    
+    // Add event listeners and ensure visibility
+    buttons.forEach(function(btn) {
+      // Add hover effects
+      btn.addEventListener('mouseenter', function() {
+        this.style.setProperty('border-color', 'rgb(79,176,137)', 'important');
+        this.style.setProperty('background', '#f0fdf4', 'important');
+        this.style.setProperty('color', 'rgb(79,176,137)', 'important');
+        this.style.setProperty('transform', 'translateY(-2px)', 'important');
+        this.style.setProperty('box-shadow', '0 4px 12px rgba(79,176,137,0.15)', 'important');
       });
       
-      formFactorContainer.style.setProperty('display', 'flex', 'important');
-      formFactorContainer.style.setProperty('gap', '40px', 'important');
-      formFactorContainer.style.setProperty('margin-top', '20px', 'important');
-      formFactorContainer.style.setProperty('flex-wrap', 'wrap', 'important');
-      formFactorContainer.style.setProperty('justify-content', 'flex-start', 'important');
-      
-      // NO ANIMATION - Keep buttons always visible
-      console.log('Category Stations - Form factor buttons created and should be visible');
-      
-      // Continuous monitoring to ensure buttons stay visible
-      var visibilityMonitor = setInterval(function() {
-        var currentButtons = formFactorContainer.querySelectorAll('.tpb-form-factor-btn');
-        if (currentButtons.length > 0) {
-          currentButtons.forEach(function(btn) {
-            // Force visibility with multiple approaches
-            btn.style.setProperty('opacity', '1', 'important');
-            btn.style.setProperty('visibility', 'visible', 'important');
-            btn.style.setProperty('display', 'flex', 'important');
-            btn.style.setProperty('position', 'relative', 'important');
-            btn.style.setProperty('z-index', '999', 'important');
-            
-            // Remove any problematic classes
-            btn.classList.remove('entering', 'exiting');
-          });
-          
-          // Also ensure container is visible
-          formFactorContainer.style.setProperty('opacity', '1', 'important');
-          formFactorContainer.style.setProperty('visibility', 'visible', 'important');
-          formFactorContainer.style.setProperty('display', 'flex', 'important');
-        }
-      }, 50); // Check every 50ms for more aggressive monitoring
-      
-      // Use MutationObserver to watch for any changes to the buttons
-      if (window.MutationObserver) {
-        var observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-              var target = mutation.target;
-              if (target.classList.contains('tpb-form-factor-btn')) {
-                // Immediately fix any style changes that might hide the button
-                target.style.setProperty('opacity', '1', 'important');
-                target.style.setProperty('visibility', 'visible', 'important');
-                target.style.setProperty('display', 'flex', 'important');
-                console.log('Category Stations - Fixed button visibility via MutationObserver');
-              }
-            }
-          });
-        });
-        
-        // Observe all form factor buttons
-        currentButtons.forEach(function(btn) {
-          observer.observe(btn, { attributes: true, attributeFilter: ['style', 'class'] });
-        });
-      }
-      
-      // Add hover and active state handlers
-      buttons.forEach(function(btn) {
-        btn.addEventListener('mouseenter', function() {
-          this.style.setProperty('border-color', 'rgb(79,176,137)', 'important');
-          this.style.setProperty('background', '#f0fdf4', 'important');
-          this.style.setProperty('color', 'rgb(79,176,137)', 'important');
-          this.style.setProperty('transform', 'translateY(-2px)', 'important');
-          this.style.setProperty('box-shadow', '0 4px 12px rgba(79,176,137,0.15)', 'important');
-        });
-        
-        btn.addEventListener('mouseleave', function() {
-          if (!this.classList.contains('active')) {
-            this.style.setProperty('border-color', '#e3e6ea', 'important');
-            this.style.setProperty('background', '#fff', 'important');
-            this.style.setProperty('color', '#374151', 'important');
-            this.style.setProperty('transform', 'translateY(0)', 'important');
-            this.style.setProperty('box-shadow', '0 1px 3px rgba(0,0,0,0.1)', 'important');
-          }
-        });
-        
-        btn.addEventListener('click', function() {
-          // Remove active class from all buttons
-          buttons.forEach(function(b) {
-            b.classList.remove('active');
-            b.style.setProperty('border-color', '#e3e6ea', 'important');
-            b.style.setProperty('background', '#fff', 'important');
-            b.style.setProperty('color', '#374151', 'important');
-            b.style.setProperty('transform', 'translateY(0)', 'important');
-            b.style.setProperty('box-shadow', '0 1px 3px rgba(0,0,0,0.1)', 'important');
-          });
-          
-          // Add active class to clicked button
-          this.classList.add('active');
-          this.style.setProperty('border-color', 'rgb(79,176,137)', 'important');
-          this.style.setProperty('background', 'rgb(79,176,137)', 'important');
-          this.style.setProperty('color', '#fff', 'important');
-          this.style.setProperty('transform', 'translateY(-1px)', 'important');
-          this.style.setProperty('box-shadow', '0 6px 16px rgba(79,176,137,0.25)', 'important');
-        });
+      btn.addEventListener('mouseleave', function() {
+        this.style.setProperty('border-color', '#e3e6ea', 'important');
+        this.style.setProperty('background', '#fff', 'important');
+        this.style.setProperty('color', '#374151', 'important');
+        this.style.setProperty('transform', 'translateY(0)', 'important');
+        this.style.setProperty('box-shadow', '0 1px 3px rgba(0,0,0,0.1)', 'important');
       });
-    }, 50);
+      
+      // Add click handler
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        buttons.forEach(function(b) {
+          b.style.setProperty('border-color', '#e3e6ea', 'important');
+          b.style.setProperty('background', '#fff', 'important');
+          b.style.setProperty('color', '#374151', 'important');
+        });
+        
+        // Add active class to clicked button
+        this.style.setProperty('border-color', 'rgb(79,176,137)', 'important');
+        this.style.setProperty('background', 'rgb(79,176,137)', 'important');
+        this.style.setProperty('color', '#fff', 'important');
+        this.style.setProperty('transform', 'translateY(-1px)', 'important');
+        this.style.setProperty('box-shadow', '0 6px 16px rgba(79,176,137,0.25)', 'important');
+        
+        console.log('Category Stations - Selected form factor:', this.dataset.factor);
+      });
+    });
+    
+    console.log('Category Stations - Form factor buttons created with inline styles and should be visible');
+      
     
     // Step 3: Results
     var s3=el('div',{className:'tpb-step'}); 
