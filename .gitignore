@@ -16,6 +16,10 @@ wp-content/themes/*
 wp-content/mu-plugins/*
 !wp-content/mu-plugins/tpb-quickview/**
 
+!wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/tpb-quickview-modal/**
+
 # Node/vendor junk just in case
 node_modules/
 vendor/
