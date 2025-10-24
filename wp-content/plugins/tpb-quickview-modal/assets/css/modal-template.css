@@ -33,6 +33,19 @@ body {
     transition: opacity 0.3s ease-out;
 }
 
+/* Ensure modal overlay doesn't interfere with cart elements */
+.tpb-qv-overlay.is-open {
+    z-index: 999999;
+}
+
+/* Force cart elements to appear above modal overlay */
+body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="cart"],
+body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="woocommerce-cart"],
+body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="elementor-cart"] {
+    z-index: 99999999 !important;
+    position: fixed !important;
+}
+
 .tpb-qv-overlay.show,
 .tpb-qv-overlay.is-open {
     opacity: 1;
@@ -971,6 +984,28 @@ button:hover {
 [data-widget_type*="cart"],
 .elementor-widget[data-widget_type*="cart"] {
     z-index: 9999999 !important;
+}
+
+/* Force cart elements above modal overlay when modal is open */
+body.tpb-modal-open [class*="cart"],
+body.tpb-modal-open [class*="woocommerce-cart"],
+body.tpb-modal-open [class*="elementor-cart"],
+body.tpb-modal-open [data-widget_type*="cart"],
+body.tpb-modal-open .elementor-widget[data-widget_type*="cart"],
+body.tpb-modal-open .woocommerce-cart-widget,
+body.tpb-modal-open .elementor-widget-woocommerce-cart,
+body.tpb-modal-open .floating-cart,
+body.tpb-modal-open .cart-widget,
+body.tpb-modal-open .woocommerce-mini-cart,
+body.tpb-modal-open .elementor-cart-widget,
+body.tpb-modal-open .elementor-widget-container [class*="cart"],
+body.tpb-modal-open .elementor-widget-container [class*="woocommerce-cart"],
+body.tpb-modal-open .elementor-widget-container [class*="elementor-cart"] {
+    z-index: 99999999 !important;
+    position: fixed !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Ensure toast notifications stay above modal overlay */
