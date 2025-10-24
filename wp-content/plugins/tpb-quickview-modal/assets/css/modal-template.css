@@ -910,7 +910,19 @@ button:hover {
 .floating-cart,
 .cart-widget,
 .woocommerce-mini-cart,
-.elementor-cart-widget {
+.elementor-cart-widget,
+.elementor-widget-container .woocommerce-cart-widget,
+.elementor-widget-container .elementor-widget-woocommerce-cart,
+.elementor-widget-container .floating-cart,
+.elementor-widget-container .cart-widget,
+.elementor-widget-container .woocommerce-mini-cart,
+.elementor-widget-container .elementor-cart-widget,
+.elementor-widget .woocommerce-cart-widget,
+.elementor-widget .elementor-widget-woocommerce-cart,
+.elementor-widget .floating-cart,
+.elementor-widget .cart-widget,
+.elementor-widget .woocommerce-mini-cart,
+.elementor-widget .elementor-cart-widget {
     z-index: 1000000 !important;
     position: relative !important;
 }
@@ -920,8 +932,48 @@ button:hover {
 .cart-counter,
 .woocommerce-cart-count,
 .elementor-cart-count,
-.woocommerce-cart-count-badge {
+.woocommerce-cart-count-badge,
+.elementor-widget-container .cart-count,
+.elementor-widget-container .cart-counter,
+.elementor-widget-container .woocommerce-cart-count,
+.elementor-widget-container .elementor-cart-count,
+.elementor-widget-container .woocommerce-cart-count-badge,
+.elementor-widget .cart-count,
+.elementor-widget .cart-counter,
+.elementor-widget .woocommerce-cart-count,
+.elementor-widget .elementor-cart-count,
+.elementor-widget .woocommerce-cart-count-badge {
     z-index: 1000001 !important;
+    position: relative !important;
+}
+
+/* Ensure cart icons and buttons stay above modal overlay */
+.cart-icon,
+.cart-button,
+.woocommerce-cart-icon,
+.elementor-cart-icon,
+.elementor-cart-button,
+.elementor-widget-container .cart-icon,
+.elementor-widget-container .cart-button,
+.elementor-widget-container .woocommerce-cart-icon,
+.elementor-widget-container .elementor-cart-icon,
+.elementor-widget-container .elementor-cart-button,
+.elementor-widget .cart-icon,
+.elementor-widget .cart-button,
+.elementor-widget .woocommerce-cart-icon,
+.elementor-widget .elementor-cart-icon,
+.elementor-widget .elementor-cart-button {
+    z-index: 1000001 !important;
+    position: relative !important;
+}
+
+/* General rule for any cart-related elements */
+[class*="cart"],
+[class*="woocommerce-cart"],
+[class*="elementor-cart"],
+[data-widget_type*="cart"],
+.elementor-widget[data-widget_type*="cart"] {
+    z-index: 1000000 !important;
     position: relative !important;
 }
 
