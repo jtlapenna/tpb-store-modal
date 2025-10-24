@@ -280,8 +280,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                                 'width': '100%',
                                 'height': '100%',
                                 'object-fit': 'cover',
-                                'border-radius': '0',
-                                'display': 'block'
+                                'border-radius': '0'
                             });
                         
                         // Add load event handler before inserting
@@ -329,8 +328,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                             'width': '100%',
                             'height': '100%',
                             'object-fit': 'cover',
-                            'border-radius': '0',
-                            'display': 'block'
+                            'border-radius': '0'
                         });
                     
                     // Add load event handler before inserting
@@ -363,8 +361,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                     'width': '100%',
                     'height': '100%',
                     'object-fit': 'cover',
-                    'border-radius': '0',
-                    'display': 'block'
+                    'border-radius': '0'
                 });
             
             // Add load event handler before inserting
