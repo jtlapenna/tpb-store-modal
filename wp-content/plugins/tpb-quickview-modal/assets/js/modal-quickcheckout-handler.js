@@ -157,18 +157,13 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
         
         // Extract product image
         extractProductImage: function(url, $leftPanel) {
-            console.log('🚨🚨🚨 QUICK CHECKOUT IMAGE EXTRACTION CALLED 🚨🚨🚨');
             console.log('⚡ Extracting Quick Checkout Station product image from URL:', url);
             
             const $img = $leftPanel.find('#tpb-qv-product-image');
-            console.log('🚨 Image container found:', $img.length);
+            console.log('⚡ Image container found:', $img.length);
             
             if ($img.length) {
-                console.log('🚨 About to call fetchProductImage with ID 2190');
-                
-                // IMMEDIATE FALLBACK TEST - Set a simple image first
-                console.log('🚨 Setting immediate fallback image for testing');
-                $img.html('<img src="http://the-peak-beyond-modal.local/wp-content/uploads/2025/04/27-qco-hk-300x300.jpg" alt="Test Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; background: red;">');
+                console.log('⚡ Fetching Quick Checkout Station product image for ID 4842');
                 
                 // Fetch image dynamically from Quick Checkout Station product (ID: 4842)
                 this.fetchProductImage(4842, $img);
@@ -179,7 +174,6 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
         
         // Fetch product image from WordPress REST API (same as Flower Station)
         fetchProductImage: function(productId, $imgContainer) {
-            console.log('🚨🚨🚨 FETCH PRODUCT IMAGE CALLED 🚨🚨🚨');
             console.log('⚡ Fetching product image for ID:', productId);
             
             // Use WordPress REST API (same as Flower Station)
