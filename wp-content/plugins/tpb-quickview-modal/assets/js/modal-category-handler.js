@@ -275,13 +275,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                         // Create image element but don't insert it yet
                         const $img = $('<img>')
                             .attr('src', imageUrl)
-                            .attr('alt', product.images[0].alt || 'Category Station')
-                            .css({
-                                'width': '100%',
-                                'height': '100%',
-                                'object-fit': 'cover',
-                                'border-radius': '0'
-                            });
+                            .attr('alt', product.images[0].alt || 'Category Station');
                         
                         // Add load event handler before inserting
                         $img.on('load', function() {
@@ -323,13 +317,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                     // Create image element but don't insert it yet
                     const $img = $('<img>')
                         .attr('src', data.data.image_url)
-                        .attr('alt', 'Category Station')
-                        .css({
-                            'width': '100%',
-                            'height': '100%',
-                            'object-fit': 'cover',
-                            'border-radius': '0'
-                        });
+                        .attr('alt', 'Category Station');
                     
                     // Add load event handler before inserting
                     $img.on('load', function() {
@@ -356,13 +344,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
             // Create fallback image element but don't insert it yet
             const $img = $('<img>')
                 .attr('src', fallbackUrl)
-                .attr('alt', 'Category Station')
-                .css({
-                    'width': '100%',
-                    'height': '100%',
-                    'object-fit': 'cover',
-                    'border-radius': '0'
-                });
+                .attr('alt', 'Category Station');
             
             // Add load event handler before inserting
             $img.on('load', function() {
