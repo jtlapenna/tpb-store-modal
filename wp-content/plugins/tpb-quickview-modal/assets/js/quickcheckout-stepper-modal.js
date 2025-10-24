@@ -201,7 +201,7 @@
         gap: 20px !important;
       }
       
-      .tpb-card {
+      .tpb-qv-modal .tpb-card {
         border: 1px solid #e3e6ea;
         border-radius: 12px;
         padding: 16px;
@@ -215,12 +215,12 @@
         transform-origin: top left !important;
       }
       
-      .tpb-card:hover {
+      .tpb-qv-modal .tpb-card:hover {
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         transform: scale(0.85) translateY(-2px) !important;
       }
       
-      .tpb-card-image {
+      .tpb-qv-modal .tpb-card-image {
         position: relative;
         padding-bottom: 75%;
         overflow: hidden;
@@ -228,7 +228,7 @@
         margin-bottom: 12px;
       }
       
-      .tpb-card-image img {
+      .tpb-qv-modal .tpb-card-image img {
         position: absolute;
         top: 0;
         left: 0;
@@ -237,7 +237,7 @@
         object-fit: cover;
       }
       
-      .tpb-card-title {
+      .tpb-qv-modal .tpb-card-title {
         font-weight: 600;
         font-size: 16px;
         margin-bottom: 8px;
@@ -247,7 +247,7 @@
         color: #333 !important;
       }
       
-      .tpb-card-price {
+      .tpb-qv-modal .tpb-card-price {
         color: rgb(79 176 137) !important;
         font-weight: 600;
         font-size: 16px;
