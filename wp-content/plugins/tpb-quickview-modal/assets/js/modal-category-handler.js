@@ -275,7 +275,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                         $imgContainer.html(`
                             <img src="${imageUrl}" 
                                  alt="${product.images[0].alt || 'Category Station'}" 
-                                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block; opacity: 0;">
+                                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
                         `);
                         
                         // Add fade-in effect
@@ -316,7 +316,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                     $imgContainer.html(`
                         <img src="${data.data.image_url}" 
                              alt="Category Station" 
-                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block; opacity: 0;">
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
                     `);
                     
                     // Add fade-in effect for AJAX fallback
@@ -342,7 +342,7 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
             $imgContainer.html(`
                 <img src="${fallbackUrl}" 
                      alt="Category Station" 
-                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block; opacity: 0;">
+                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
             `);
             
             // Add fade-in effect for fallback
