@@ -187,12 +187,12 @@ body {
 
 .tpb-qv-base-price {
     padding: 0 30px 10px 55px;
-    font-size: 18px;
+    font-size: 16px;
     color: #6b7280;
     margin-bottom: 20px;
     margin-top: -5px;
     margin-left: 3px;
-    line-height: 1.5;
+    line-height: 1.25;
     transition: none; /* Let JavaScript handle all transitions */
     min-height: 60px;
     height: 60px;
@@ -213,7 +213,7 @@ body {
 }
 
 .tpb-qv-base-price.has-price {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: #4fb08f;
 }
