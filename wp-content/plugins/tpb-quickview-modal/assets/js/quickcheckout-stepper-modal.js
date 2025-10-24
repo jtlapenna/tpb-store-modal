@@ -375,8 +375,6 @@
       // Create the main step
       var step = el('div', { className: 'tpb-step' });
       step.innerHTML = `
-        <div class="tpb-title">Choose Your Quick Checkout Station</div>
-        <div class="tpb-hint">Quick checkout stations provide our awesome shopping user interface without the physical product interaction. Mounting and furniture choices are subject to the designs of your store, and purchased separately from the electronics hardware-only kits below.</div>
         <div class="tpb-grid" id="tpb-products-grid">
           <!-- Products will be loaded here -->
         </div>
