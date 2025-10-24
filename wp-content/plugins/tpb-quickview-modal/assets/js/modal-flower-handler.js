@@ -186,27 +186,33 @@ console.log('🌸 TPB Flower Station Modal Handler LOADED - Version:', Date.now(
                     const imageUrl = `${baseImageUrl}?v=${Date.now()}`;
                     const altText = media.alt_text || 'Flower Station Product';
                     
-                    $imgContainer.html(`<img src="${imageUrl}" alt="${altText}">`);
-                    console.log('✅ Flower Station product image loaded dynamically:', imageUrl);
+                    // Create image element but don't insert it yet
+                    const $img = $('<img>').attr('src', imageUrl).attr('alt', altText);
                     
-                    // Add fade-in effect
-                    const $img = $imgContainer.find('img');
+                    // Add load event handler before inserting
                     $img.on('load', function() {
                         $(this).addClass('loaded');
                     });
+                    
+                    // Now insert the image
+                    $imgContainer.html($img);
+                    console.log('✅ Flower Station product image loaded dynamically:', imageUrl);
                 })
                 .catch(error => {
                     console.error('❌ Failed to fetch product image:', error);
                     // Fallback to a default image with cache busting
                     const fallbackUrl = `http://the-peak-beyond-modal.local/wp-content/uploads/2025/09/16-COUNT-JAR_Comp-fs-1-web-scaled.jpg?v=${Date.now()}`;
-                    $imgContainer.html(`<img src="${fallbackUrl}" alt="Flower Station Product">`);
-                    console.log('🔄 Using fallback image:', fallbackUrl);
+                    // Create fallback image element but don't insert it yet
+                    const $img = $('<img>').attr('src', fallbackUrl).attr('alt', 'Flower Station Product');
                     
-                    // Add fade-in effect for fallback
-                    const $img = $imgContainer.find('img');
+                    // Add load event handler before inserting
                     $img.on('load', function() {
                         $(this).addClass('loaded');
                     });
+                    
+                    // Now insert the image
+                    $imgContainer.html($img);
+                    console.log('🔄 Using fallback image:', fallbackUrl);
                 });
         },
         

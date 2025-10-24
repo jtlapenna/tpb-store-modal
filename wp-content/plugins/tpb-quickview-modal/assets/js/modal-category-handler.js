@@ -272,17 +272,25 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                         const imageUrl = product.images[0].src;
                         console.log('📦 Setting Category Station image:', imageUrl);
                         
-                        $imgContainer.html(`
-                            <img src="${imageUrl}" 
-                                 alt="${product.images[0].alt || 'Category Station'}" 
-                                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
-                        `);
+                        // Create image element but don't insert it yet
+                        const $img = $('<img>')
+                            .attr('src', imageUrl)
+                            .attr('alt', product.images[0].alt || 'Category Station')
+                            .css({
+                                'width': '100%',
+                                'height': '100%',
+                                'object-fit': 'cover',
+                                'border-radius': '0',
+                                'display': 'block'
+                            });
                         
-                        // Add fade-in effect
-                        const $img = $imgContainer.find('img');
+                        // Add load event handler before inserting
                         $img.on('load', function() {
                             $(this).addClass('loaded');
                         });
+                        
+                        // Now insert the image
+                        $imgContainer.html($img);
                     } else {
                         console.warn('📦 No images found for product, using fallback');
                         this.setFallbackImage($imgContainer);
@@ -313,17 +321,25 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
             .then(data => {
                 if (data.success && data.data.image_url) {
                     console.log('📦 Setting Category Station image via AJAX:', data.data.image_url);
-                    $imgContainer.html(`
-                        <img src="${data.data.image_url}" 
-                             alt="Category Station" 
-                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
-                    `);
+                    // Create image element but don't insert it yet
+                    const $img = $('<img>')
+                        .attr('src', data.data.image_url)
+                        .attr('alt', 'Category Station')
+                        .css({
+                            'width': '100%',
+                            'height': '100%',
+                            'object-fit': 'cover',
+                            'border-radius': '0',
+                            'display': 'block'
+                        });
                     
-                    // Add fade-in effect for AJAX fallback
-                    const $img = $imgContainer.find('img');
+                    // Add load event handler before inserting
                     $img.on('load', function() {
                         $(this).addClass('loaded');
                     });
+                    
+                    // Now insert the image
+                    $imgContainer.html($img);
                 } else {
                     console.warn('📦 AJAX fallback failed, using static image');
                     this.setFallbackImage($imgContainer);
@@ -339,17 +355,25 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
         setFallbackImage: function($imgContainer) {
             const fallbackUrl = '/wp-content/uploads/2024/01/category-station-hero.jpg';
             console.log('📦 Using fallback image:', fallbackUrl);
-            $imgContainer.html(`
-                <img src="${fallbackUrl}" 
-                     alt="Category Station" 
-                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
-            `);
+            // Create fallback image element but don't insert it yet
+            const $img = $('<img>')
+                .attr('src', fallbackUrl)
+                .attr('alt', 'Category Station')
+                .css({
+                    'width': '100%',
+                    'height': '100%',
+                    'object-fit': 'cover',
+                    'border-radius': '0',
+                    'display': 'block'
+                });
             
-            // Add fade-in effect for fallback
-            const $img = $imgContainer.find('img');
+            // Add load event handler before inserting
             $img.on('load', function() {
                 $(this).addClass('loaded');
             });
+            
+            // Now insert the image
+            $imgContainer.html($img);
         },
         
         // Close modal
