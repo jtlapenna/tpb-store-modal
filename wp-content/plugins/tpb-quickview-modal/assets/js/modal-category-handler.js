@@ -245,6 +245,10 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
             
             const $img = $leftPanel.find('#tpb-qv-product-image');
             if ($img.length) {
+                // Clear any existing content first
+                $img.empty();
+                console.log('📦 Cleared existing image content');
+                
                 // Fetch image dynamically from Category Station product (ID: 4833)
                 this.fetchProductImage(4833, $img);
             } else {
@@ -255,6 +259,13 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
         // Fetch product image from WordPress REST API
         fetchProductImage: function(productId, $imgContainer) {
             console.log('📦 Fetching product image for ID:', productId);
+            
+            // Prevent multiple simultaneous loads
+            if ($imgContainer.data('loading')) {
+                console.log('📦 Image already loading, skipping');
+                return;
+            }
+            $imgContainer.data('loading', true);
             
             // Use WordPress REST API to get product details
             fetch(`/wp-json/wc/v3/products/${productId}?consumer_key=ck_123&consumer_secret=cs_123`)
@@ -279,7 +290,9 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                         
                         // Add load event handler before inserting
                         $img.on('load', function() {
+                            console.log('📦 Category Station image loaded successfully');
                             $(this).addClass('loaded');
+                            $imgContainer.data('loading', false);
                         });
                         
                         // Now insert the image
@@ -321,7 +334,9 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                     
                     // Add load event handler before inserting
                     $img.on('load', function() {
+                        console.log('📦 Category Station image loaded via AJAX');
                         $(this).addClass('loaded');
+                        $imgContainer.data('loading', false);
                     });
                     
                     // Now insert the image
@@ -348,7 +363,9 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
             
             // Add load event handler before inserting
             $img.on('load', function() {
+                console.log('📦 Category Station fallback image loaded');
                 $(this).addClass('loaded');
+                $imgContainer.data('loading', false);
             });
             
             // Now insert the image
