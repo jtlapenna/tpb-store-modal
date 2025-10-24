@@ -659,15 +659,22 @@ body {
    LANDING PAGE PRODUCT CARDS - NO HOVER EFFECTS
    ========================================================================== */
 
-/* Landing page product cards - remove all hover effects */
+/* Landing page product cards - remove all hover effects and borders */
 .elementor-widget .tpb-card,
 .elementor-widget-container .tpb-card,
-.landing-page .tpb-card,
+.landing-page .tpb-card {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Landing page product cards - no hover effects */
 [data-tpb-quickview]:focus,
 [data-tpb-quickview]:active,
 [data-tpb-quickview]:hover {
     outline: none !important;
-    border: 1px solid #e3e6ea !important;
+    border: none !important;
     box-shadow: none !important;
     transform: none !important;
 }
@@ -677,6 +684,18 @@ button:focus,
 button:active,
 button:hover {
     outline: none !important;
+}
+
+/* Remove white border from Flower Station Configure Now button */
+[href*="flower-station-configure-now"]:focus,
+[href*="flower-station-configure-now"]:active,
+[href*="flower-station-configure-now"]:hover,
+[data-tpb-modal="flower-station"]:focus,
+[data-tpb-modal="flower-station"]:active,
+[data-tpb-modal="flower-station"]:hover {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* ==========================================================================

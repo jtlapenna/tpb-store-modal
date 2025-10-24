@@ -197,7 +197,7 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
                         const imageUrl = media.source_url;
                         console.log('⚡ Setting Quick Checkout Station image URL:', imageUrl);
                         
-                        $imgContainer.html(`<img src="${imageUrl}" alt="Quick Checkout Station" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">`);
+                        $imgContainer.html(`<img src="${imageUrl}" alt="Quick Checkout Station" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; opacity: 0;">`);
                         
                         // Add error handling for image load
                         const $img = $imgContainer.find('img');
@@ -223,7 +223,7 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
                         .then(data => {
                             if (data.success && data.data && data.data.image_url) {
                                 console.log('⚡ Setting Quick Checkout Station image via AJAX:', data.data.image_url);
-                                $imgContainer.html(`<img src="${data.data.image_url}" alt="Quick Checkout Station" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">`);
+                                $imgContainer.html(`<img src="${data.data.image_url}" alt="Quick Checkout Station" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; opacity: 0;">`);
                                 
                                 // Add fade-in effect for AJAX fallback
                                 const $img = $imgContainer.find('img');
