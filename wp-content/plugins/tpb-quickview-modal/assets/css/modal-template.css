@@ -656,6 +656,35 @@ body {
 }
 
 /* ==========================================================================
+   REMOVE TEAL BORDER FROM SELECTED PRODUCT CARDS
+   ========================================================================== */
+
+/* Remove any teal border that appears when product cards are selected */
+[data-tpb-quickview]:focus,
+[data-tpb-quickview]:active,
+[data-tpb-quickview]:hover {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove any teal border from buttons that might be selected */
+button:focus,
+button:active,
+button:hover {
+    outline: none !important;
+}
+
+/* Remove any teal border from product cards */
+.tpb-card:focus,
+.tpb-card:active,
+.tpb-card:hover {
+    outline: none !important;
+    border: 1px solid #e3e6ea !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
 
