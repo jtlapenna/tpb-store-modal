@@ -924,7 +924,6 @@ button:hover {
 .elementor-widget .woocommerce-mini-cart,
 .elementor-widget .elementor-cart-widget {
     z-index: 1000000 !important;
-    position: relative !important;
 }
 
 /* Ensure cart count badges stay above modal overlay */
@@ -944,7 +943,6 @@ button:hover {
 .elementor-widget .elementor-cart-count,
 .elementor-widget .woocommerce-cart-count-badge {
     z-index: 1000001 !important;
-    position: relative !important;
 }
 
 /* Ensure cart icons and buttons stay above modal overlay */
@@ -964,7 +962,6 @@ button:hover {
 .elementor-widget .elementor-cart-icon,
 .elementor-widget .elementor-cart-button {
     z-index: 1000001 !important;
-    position: relative !important;
 }
 
 /* General rule for any cart-related elements */
@@ -974,7 +971,6 @@ button:hover {
 [data-widget_type*="cart"],
 .elementor-widget[data-widget_type*="cart"] {
     z-index: 1000000 !important;
-    position: relative !important;
 }
 
 /* Ensure toast notifications stay above modal overlay */
