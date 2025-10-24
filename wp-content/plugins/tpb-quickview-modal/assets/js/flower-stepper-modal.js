@@ -1061,7 +1061,7 @@
                             if (priceEl) {
                                 // Strip any color styling from price HTML to prevent color flashing
                                 var cleanPriceHtml = items[0].price_html.replace(/style="[^"]*"/gi, '').replace(/<span[^>]*>/gi, '<span>');
-                                var newContent = 'Base Price: ' + cleanPriceHtml;
+                                var newContent = 'Base Price:  ' + cleanPriceHtml;
                                 
                                 // Fade out first
                                 priceEl.style.transition = 'opacity ' + (560/2) + 'ms ease-in-out';

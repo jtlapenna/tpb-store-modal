@@ -590,7 +590,7 @@ function build(){
             var priceEl = document.getElementById('tpb-qv-base-price');
             if (priceEl) {
               var cleanPriceHtml = items[0].price_html.replace(/style="[^"]*"/gi, '').replace(/<span[^>]*>/gi, '<span>');
-              var newContent = 'Base Price: ' + cleanPriceHtml;
+              var newContent = 'Base Price:  ' + cleanPriceHtml;
               
               fadeTransition(priceEl, newContent, 'has-price', 560);
             }
