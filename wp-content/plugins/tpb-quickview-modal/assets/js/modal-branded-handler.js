@@ -120,6 +120,12 @@ console.log('🏷️ TPB Branded Stations Modal Handler LOADED - Version:', Date
                 
                 $img.html(`<img src="${imageUrl}" alt="Branded Stations Product" style="width: 100%; height: auto; border-radius: 8px; max-width: 100%;">`);
                 console.log('✅ Branded Stations product image loaded:', imageUrl);
+                
+                // Add fade-in effect
+                const $imgElement = $img.find('img');
+                $imgElement.on('load', function() {
+                    $(this).addClass('loaded');
+                });
             }
         },
         

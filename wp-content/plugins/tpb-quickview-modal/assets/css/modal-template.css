@@ -139,6 +139,12 @@ body {
     object-fit: cover;
     object-position: center;
     border-radius: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#tpb-qv-product-image img.loaded {
+    opacity: 1;
 }
 
 /* ==========================================================================

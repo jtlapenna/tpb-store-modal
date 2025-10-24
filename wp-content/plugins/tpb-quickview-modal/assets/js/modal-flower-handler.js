@@ -188,6 +188,12 @@ console.log('🌸 TPB Flower Station Modal Handler LOADED - Version:', Date.now(
                     
                     $imgContainer.html(`<img src="${imageUrl}" alt="${altText}">`);
                     console.log('✅ Flower Station product image loaded dynamically:', imageUrl);
+                    
+                    // Add fade-in effect
+                    const $img = $imgContainer.find('img');
+                    $img.on('load', function() {
+                        $(this).addClass('loaded');
+                    });
                 })
                 .catch(error => {
                     console.error('❌ Failed to fetch product image:', error);
@@ -195,6 +201,12 @@ console.log('🌸 TPB Flower Station Modal Handler LOADED - Version:', Date.now(
                     const fallbackUrl = `http://the-peak-beyond-modal.local/wp-content/uploads/2025/09/16-COUNT-JAR_Comp-fs-1-web-scaled.jpg?v=${Date.now()}`;
                     $imgContainer.html(`<img src="${fallbackUrl}" alt="Flower Station Product">`);
                     console.log('🔄 Using fallback image:', fallbackUrl);
+                    
+                    // Add fade-in effect for fallback
+                    const $img = $imgContainer.find('img');
+                    $img.on('load', function() {
+                        $(this).addClass('loaded');
+                    });
                 });
         },
         

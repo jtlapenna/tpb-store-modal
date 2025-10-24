@@ -203,6 +203,7 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
                         const $img = $imgContainer.find('img');
                         $img.on('load', function() {
                             console.log('✅ Quick Checkout Station product image loaded successfully');
+                            $(this).addClass('loaded');
                         });
                         
                         $img.on('error', function() {
@@ -223,6 +224,12 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
                             if (data.success && data.data && data.data.image_url) {
                                 console.log('⚡ Setting Quick Checkout Station image via AJAX:', data.data.image_url);
                                 $imgContainer.html(`<img src="${data.data.image_url}" alt="Quick Checkout Station" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">`);
+                                
+                                // Add fade-in effect for AJAX fallback
+                                const $img = $imgContainer.find('img');
+                                $img.on('load', function() {
+                                    $(this).addClass('loaded');
+                                });
                             } else {
                                 console.error('❌ No image data in AJAX response');
                             }

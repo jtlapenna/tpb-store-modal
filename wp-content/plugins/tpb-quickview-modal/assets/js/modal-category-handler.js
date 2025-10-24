@@ -277,6 +277,12 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                                  alt="${product.images[0].alt || 'Category Station'}" 
                                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
                         `);
+                        
+                        // Add fade-in effect
+                        const $img = $imgContainer.find('img');
+                        $img.on('load', function() {
+                            $(this).addClass('loaded');
+                        });
                     } else {
                         console.warn('📦 No images found for product, using fallback');
                         this.setFallbackImage($imgContainer);
@@ -312,6 +318,12 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                              alt="Category Station" 
                              style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
                     `);
+                    
+                    // Add fade-in effect for AJAX fallback
+                    const $img = $imgContainer.find('img');
+                    $img.on('load', function() {
+                        $(this).addClass('loaded');
+                    });
                 } else {
                     console.warn('📦 AJAX fallback failed, using static image');
                     this.setFallbackImage($imgContainer);
@@ -332,6 +344,12 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                      alt="Category Station" 
                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block;">
             `);
+            
+            // Add fade-in effect for fallback
+            const $img = $imgContainer.find('img');
+            $img.on('load', function() {
+                $(this).addClass('loaded');
+            });
         },
         
         // Close modal
