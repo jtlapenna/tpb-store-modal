@@ -74,11 +74,16 @@
             var cartObserver = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
                     // Check if cart drawer/panel is opening with more generic selectors
-                    var hasOpenDrawer = document.querySelectorAll('[class*="cart"][class*="open"], [class*="drawer"][class*="open"], [class*="panel"][class*="open"]');
+                    var hasOpenDrawer = document.querySelectorAll('[class*="cart"][class*="open"], [class*="drawer"][class*="open"], [class*="panel"][class*="open"], [aria-expanded="true"][class*="cart"], .elementor-menu-cart__toggle_button[aria-expanded="true"]');
                     if (hasOpenDrawer.length > 0) {
                         console.log('🛒 Cart drawer is open, resetting cart z-index');
                         console.log('🛒 Found open cart elements:', hasOpenDrawer.length);
                         self.resetCartZIndex();
+                    } else {
+                        // If drawer is not open and modal is open, raise z-index
+                        if (self.isOpen) {
+                            self.raiseCartZIndex();
+                        }
                     }
                 });
             });
