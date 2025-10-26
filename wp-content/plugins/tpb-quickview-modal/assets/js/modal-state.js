@@ -119,12 +119,17 @@
                         fullClassString.indexOf('menu-cart__product') !== -1 ||
                         fullClassString.indexOf('menu-cart__footer') !== -1 ||
                         fullClassString.indexOf('menu-cart__close') !== -1 ||
+                        fullClassString.indexOf('menu-cart__toggle') !== -1 || // Exclude toggle button
+                        fullClassString.indexOf('elementor-menu-cart__toggle_button') !== -1 || // Exclude toggle button
                         (fullClassString.indexOf('drawer') !== -1 && fullClassString.indexOf('toggle') === -1) ||
                         (fullClassString.indexOf('panel') !== -1 && fullClassString.indexOf('toggle') === -1) ||
                         fullClassString.indexOf('slideout') !== -1 ||
                         fullClassString.indexOf('side-panel') !== -1 ||
-                        // Also exclude if parent has menu-cart__main
-                        (el.closest && el.closest('.elementor-menu-cart__main'));
+                        // Also exclude if parent has menu-cart__main or menu-cart__toggle
+                        (el.closest && (
+                            el.closest('.elementor-menu-cart__main') ||
+                            el.closest('.elementor-menu-cart__toggle')
+                        ));
                     
                     // Only include cart elements that are NOT drawers/panels
                     if (hasCartClass && !isExcluded) {
