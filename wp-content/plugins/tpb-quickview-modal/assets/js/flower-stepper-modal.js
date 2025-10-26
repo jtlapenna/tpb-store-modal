@@ -189,6 +189,38 @@
         function updateProductsOnly() {
             console.log('updateProductsOnly() called - strategy:', state.strategy, 'sku:', state.sku);
             
+            // Animate out existing cards before updating
+            var existingCards = grid.querySelectorAll('.tpb-card');
+            var existingEmptyState = grid.querySelector('.tpb-empty-state');
+            
+            if ((existingCards.length > 0 || existingEmptyState) && grid.innerHTML.trim() !== '') {
+                console.log('Animating out existing content...');
+                
+                // Add exit animation
+                existingCards.forEach(function(card) {
+                    card.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(-10px)';
+                });
+                
+                if (existingEmptyState) {
+                    existingEmptyState.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+                    existingEmptyState.style.opacity = '0';
+                    existingEmptyState.style.transform = 'translateY(-10px)';
+                }
+                
+                // Wait for animation then proceed
+                setTimeout(function() {
+                    proceedWithUpdate();
+                }, 350);
+                return;
+            }
+            
+            // No existing content, proceed directly
+            proceedWithUpdate();
+        }
+        
+        function proceedWithUpdate() {
             // Update Step 3 heading based on strategy
             var newTitle = state.strategy === 'custom' ? 'Here\'s Your Hardware-Only Kit' : 'Choose Your Bundle';
             if (resH.textContent !== newTitle) {
@@ -315,7 +347,7 @@
                     grid.appendChild(emptyState);
                 } else {
                     // Use the same rendering logic as the original fetchProductsAndRender
-                    products.forEach(function(p) {
+                    products.forEach(function(p, index) {
                         var card = el('div', {className: 'tpb-card'});
                         
                         if (state.strategy === 'custom') {
@@ -447,7 +479,17 @@
                             card.appendChild(actions);
                         }
                         
+                        // Set initial state for entry animation
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
                         grid.appendChild(card);
+                        
+                        // Trigger entry animation with staggered delay
+                        setTimeout(function() {
+                            card.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50 + (index * 50)); // Stagger by 50ms per card
                     });
                 }
                 
