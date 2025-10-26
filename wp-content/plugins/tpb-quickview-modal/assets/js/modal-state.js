@@ -69,6 +69,26 @@
                 attributes: true,
                 attributeFilter: ['class']
             });
+            
+            // Also watch for cart drawer opening/closing
+            var cartObserver = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    // Check if cart drawer/panel is opening
+                    var hasOpenDrawer = document.querySelector('.cart-drawer-open, .cart-panel-open, [class*="cart-drawer"][class*="open"], [class*="cart-panel"][class*="open"]');
+                    if (hasOpenDrawer) {
+                        console.log('🛒 Cart drawer is open, resetting cart z-index');
+                        self.resetCartZIndex();
+                    }
+                });
+            });
+            
+            // Observe all elements for cart drawer changes
+            cartObserver.observe(document.body, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['class']
+            });
         },
         
         /**
