@@ -54,7 +54,7 @@
                 mutations.forEach(function(mutation) {
                     if (mutation.attributeName === 'class') {
                         var isModalOpen = document.body.classList.contains('tpb-modal-open');
-                        if (isModalOpen && state.isOpen) {
+                        if (isModalOpen && self.isOpen) {
                             setTimeout(function() {
                                 self.raiseCartZIndex();
                             }, 50);
@@ -115,8 +115,12 @@
                     // Check if this is a drawer, panel, or menu (and we don't want those)
                     var isExcluded = classes.some(function(cls) {
                         var lowerClass = cls.toLowerCase();
-                        return lowerClass.indexOf('drawer') !== -1 ||
-                               lowerClass.indexOf('panel') !== -1 ||
+                        return lowerClass.indexOf('menu-cart__main') !== -1 ||
+                               lowerClass.indexOf('menu-cart__product') !== -1 ||
+                               lowerClass.indexOf('menu-cart__footer') !== -1 ||
+                               lowerClass.indexOf('menu-cart__close') !== -1 ||
+                               (lowerClass.indexOf('drawer') !== -1 && lowerClass.indexOf('toggle') === -1) ||
+                               (lowerClass.indexOf('panel') !== -1 && lowerClass.indexOf('toggle') === -1) ||
                                lowerClass.indexOf('slideout') !== -1 ||
                                lowerClass.indexOf('side-panel') !== -1;
                     });
