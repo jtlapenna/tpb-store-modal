@@ -25,6 +25,100 @@
         init: function() {
             console.log('🔧 TPB Modal State Management initialized');
             this.reset();
+            this.setupCartZIndexHandling();
+        },
+        
+        /**
+         * Setup cart z-index handling for modal overlay
+         */
+        setupCartZIndexHandling: function() {
+            var self = this;
+            
+            // Listen for modal state changes
+            this.addListener(function(event, data, state) {
+                if (event === 'opened') {
+                    // Modal just opened - raise cart z-index
+                    self.raiseCartZIndex();
+                } else if (event === 'closed') {
+                    // Modal just closed - reset cart z-index
+                    self.resetCartZIndex();
+                }
+            });
+        },
+        
+        /**
+         * Raise cart z-index to appear above modal overlay
+         */
+        raiseCartZIndex: function() {
+            console.log('🛒 Raising cart z-index above modal overlay');
+            
+            // Find all possible cart elements
+            var cartSelectors = [
+                '[class*="cart"]',
+                '[class*="woocommerce-cart"]',
+                '[class*="elementor-cart"]',
+                '.cart-icon',
+                '.cart-button',
+                '.woocommerce-cart-icon',
+                '.elementor-cart-icon'
+            ];
+            
+            var allElements = document.querySelectorAll('*');
+            var cartElements = [];
+            
+            // Find elements matching cart selectors
+            cartSelectors.forEach(function(selector) {
+                try {
+                    var elements = document.querySelectorAll(selector);
+                    elements.forEach(function(el) {
+                        if (!cartElements.includes(el)) {
+                            cartElements.push(el);
+                        }
+                    });
+                } catch (e) {
+                    // Skip invalid selectors
+                }
+            });
+            
+            // Also find by class name pattern
+            Array.prototype.forEach.call(allElements, function(el) {
+                if (el.className && typeof el.className === 'string') {
+                    var classes = el.className.split(' ');
+                    if (classes.some(function(cls) { return cls.toLowerCase().indexOf('cart') !== -1; })) {
+                        if (!cartElements.includes(el)) {
+                            cartElements.push(el);
+                        }
+                    }
+                }
+            });
+            
+            // Set high z-index on cart elements
+            cartElements.forEach(function(el) {
+                var currentZIndex = parseInt(window.getComputedStyle(el).zIndex) || 1;
+                if (currentZIndex < 99999999) {
+                    el.style.zIndex = '99999999';
+                    el.dataset.originalZIndex = currentZIndex.toString();
+                    console.log('🛒 Raised z-index for cart element:', el);
+                }
+            });
+            
+            console.log('🛒 Found and raised z-index for', cartElements.length, 'cart elements');
+        },
+        
+        /**
+         * Reset cart z-index to original values
+         */
+        resetCartZIndex: function() {
+            console.log('🛒 Resetting cart z-index to original values');
+            
+            // Find all elements with original z-index stored
+            var allElements = document.querySelectorAll('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                if (el.dataset && el.dataset.originalZIndex) {
+                    el.style.zIndex = el.dataset.originalZIndex;
+                    delete el.dataset.originalZIndex;
+                }
+            });
         },
         
         /**
