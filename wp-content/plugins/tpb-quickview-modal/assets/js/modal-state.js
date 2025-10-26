@@ -77,53 +77,31 @@
         raiseCartZIndex: function() {
             console.log('🛒 Raising cart z-index above modal overlay');
             
-            // Find all possible cart elements (exclude drawer/panel)
-            var cartSelectors = [
-                '[class*="cart-icon"]',
-                '[class*="cart-button"]',
-                '[class*="woocommerce-cart-icon"]',
-                '[class*="elementor-cart-icon"]',
-                '[class*="cart-count"]',
-                '[class*="cart-counter"]',
-                '.cart-icon',
-                '.cart-button',
-                '.woocommerce-cart-icon',
-                '.elementor-cart-icon',
-                '.cart-count',
-                '.cart-counter'
-            ];
-            
+            // Find all cart elements, then filter to exclude drawer/panel
             var allElements = document.querySelectorAll('*');
             var cartElements = [];
             
-            // Find elements matching cart selectors
-            cartSelectors.forEach(function(selector) {
-                try {
-                    var elements = document.querySelectorAll(selector);
-                    elements.forEach(function(el) {
-                        if (!cartElements.includes(el)) {
-                            cartElements.push(el);
-                        }
-                    });
-                } catch (e) {
-                    // Skip invalid selectors
-                }
-            });
-            
-            // Also find by class name pattern (but exclude drawer/panel/dropdown/menu)
+            // Find all elements with cart-related classes
             Array.prototype.forEach.call(allElements, function(el) {
                 if (el.className && typeof el.className === 'string') {
                     var classes = el.className.split(' ');
-                    var hasCartClass = classes.some(function(cls) { return cls.toLowerCase().indexOf('cart') !== -1; });
-                    var isDrawerPanel = classes.some(function(cls) {
+                    var hasCartClass = classes.some(function(cls) { 
+                        return cls.toLowerCase().indexOf('cart') !== -1 ||
+                               cls.toLowerCase().indexOf('woocommerce-cart') !== -1 ||
+                               cls.toLowerCase().indexOf('elementor-cart') !== -1;
+                    });
+                    
+                    // Check if this is a drawer, panel, or menu (and we don't want those)
+                    var isExcluded = classes.some(function(cls) {
                         var lowerClass = cls.toLowerCase();
                         return lowerClass.indexOf('drawer') !== -1 ||
                                lowerClass.indexOf('panel') !== -1 ||
-                               lowerClass.indexOf('dropdown') !== -1 ||
-                               lowerClass.indexOf('menu') !== -1;
+                               lowerClass.indexOf('slideout') !== -1 ||
+                               lowerClass.indexOf('side-panel') !== -1;
                     });
                     
-                    if (hasCartClass && !isDrawerPanel) {
+                    // Only include cart elements that are NOT drawers/panels
+                    if (hasCartClass && !isExcluded) {
                         if (!cartElements.includes(el)) {
                             cartElements.push(el);
                         }
