@@ -73,10 +73,11 @@
             // Also watch for cart drawer opening/closing
             var cartObserver = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                    // Check if cart drawer/panel is opening
-                    var hasOpenDrawer = document.querySelector('.cart-drawer-open, .cart-panel-open, [class*="cart-drawer"][class*="open"], [class*="cart-panel"][class*="open"]');
-                    if (hasOpenDrawer) {
+                    // Check if cart drawer/panel is opening with more generic selectors
+                    var hasOpenDrawer = document.querySelectorAll('[class*="cart"][class*="open"], [class*="drawer"][class*="open"], [class*="panel"][class*="open"]');
+                    if (hasOpenDrawer.length > 0) {
                         console.log('🛒 Cart drawer is open, resetting cart z-index');
+                        console.log('🛒 Found open cart elements:', hasOpenDrawer.length);
                         self.resetCartZIndex();
                     }
                 });
