@@ -19,12 +19,16 @@ define('TPB_QV_MU_PLUGIN_PATH', plugin_dir_path(__FILE__));
  */
 function tpb_qv_enqueue_modal_state() {
     if (is_admin()) return;
+    
+    // Use plugins_url for proper path resolution
+    $plugin_dir = plugin_dir_url(__FILE__) . '../plugins/tpb-quickview-modal/assets/js/modal-state.js';
+    $plugin_path = plugin_dir_path(__FILE__) . '../plugins/tpb-quickview-modal/assets/js/modal-state.js';
 
     wp_enqueue_script(
         'tpb-modal-state',
-        TPB_QV_MU_PLUGIN_URL . '../plugins/tpb-quickview-modal/assets/js/modal-state.js',
+        $plugin_dir,
         [],
-        filemtime(TPB_QV_MU_PLUGIN_PATH . '../plugins/tpb-quickview-modal/assets/js/modal-state.js'),
+        file_exists($plugin_path) ? filemtime($plugin_path) : time(),
         false // Load in header, before modals
     );
 }
