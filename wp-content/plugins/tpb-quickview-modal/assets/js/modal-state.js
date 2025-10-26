@@ -37,12 +37,37 @@
             // Listen for modal state changes
             this.addListener(function(event, data, state) {
                 if (event === 'opened') {
-                    // Modal just opened - raise cart z-index
-                    self.raiseCartZIndex();
+                    // Modal just opened - raise cart z-index with a slight delay
+                    // to ensure cart elements are rendered
+                    setTimeout(function() {
+                        self.raiseCartZIndex();
+                    }, 50);
                 } else if (event === 'closed') {
                     // Modal just closed - reset cart z-index
                     self.resetCartZIndex();
                 }
+            });
+            
+            // Also listen to DOM changes for body.tpb-modal-open class
+            // This provides an additional trigger for when modal opens
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'class') {
+                        var isModalOpen = document.body.classList.contains('tpb-modal-open');
+                        if (isModalOpen && state.isOpen) {
+                            setTimeout(function() {
+                                self.raiseCartZIndex();
+                            }, 50);
+                        } else if (!isModalOpen) {
+                            self.resetCartZIndex();
+                        }
+                    }
+                });
+            });
+            
+            observer.observe(document.body, {
+                attributes: true,
+                attributeFilter: ['class']
             });
         },
         
@@ -60,7 +85,9 @@
                 '.cart-icon',
                 '.cart-button',
                 '.woocommerce-cart-icon',
-                '.elementor-cart-icon'
+                '.elementor-cart-icon',
+                '.elementor-widget-woocommerce-cart',
+                '[data-widget_type*="cart"]'
             ];
             
             var allElements = document.querySelectorAll('*');
@@ -92,13 +119,33 @@
                 }
             });
             
-            // Set high z-index on cart elements
+            // Set extremely high z-index on cart elements and their parents
             cartElements.forEach(function(el) {
                 var currentZIndex = parseInt(window.getComputedStyle(el).zIndex) || 1;
+                
+                // Set on the element itself
                 if (currentZIndex < 99999999) {
                     el.style.zIndex = '99999999';
                     el.dataset.originalZIndex = currentZIndex.toString();
+                    el.dataset.cartZIndexed = 'true';
                     console.log('🛒 Raised z-index for cart element:', el);
+                }
+                
+                // Also set on parent elements up to 3 levels deep
+                var parent = el.parentElement;
+                var levels = 0;
+                while (parent && parent !== document.body && levels < 3) {
+                    var parentZIndex = parseInt(window.getComputedStyle(parent).zIndex);
+                    if (!parentZIndex || parentZIndex < 99999999) {
+                        parent.style.zIndex = '99999999';
+                        if (!parent.dataset.originalZIndex) {
+                            parent.dataset.originalZIndex = parentZIndex ? parentZIndex.toString() : 'auto';
+                        }
+                        parent.dataset.cartZIndexed = 'true';
+                        console.log('🛒 Raised z-index for parent element:', parent);
+                    }
+                    parent = parent.parentElement;
+                    levels++;
                 }
             });
             
@@ -114,9 +161,14 @@
             // Find all elements with original z-index stored
             var allElements = document.querySelectorAll('*');
             Array.prototype.forEach.call(allElements, function(el) {
-                if (el.dataset && el.dataset.originalZIndex) {
-                    el.style.zIndex = el.dataset.originalZIndex;
+                if (el.dataset && el.dataset.cartZIndexed) {
+                    if (el.dataset.originalZIndex && el.dataset.originalZIndex !== 'auto') {
+                        el.style.zIndex = el.dataset.originalZIndex;
+                    } else {
+                        el.style.zIndex = '';
+                    }
                     delete el.dataset.originalZIndex;
+                    delete el.dataset.cartZIndexed;
                 }
             });
         },
