@@ -121,6 +121,11 @@ console.log('🌸 TPB Flower Station Modal Handler LOADED - Version:', Date.now(
             }, 10);
             $('body').addClass('tpb-modal-open');
             
+            // Notify modal state that modal is opened
+            if (window.TPBModalState) {
+                window.TPBModalState.setOpened('flower-station');
+            }
+            
             // Focus management
             $overlay.find(config.closeSelector).focus();
         },

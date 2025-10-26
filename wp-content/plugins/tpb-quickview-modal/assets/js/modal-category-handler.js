@@ -188,6 +188,11 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
             $overlay.removeAttr('style').addClass('is-open');
             $('body').addClass('tpb-modal-open');
             
+            // Notify modal state that modal is opened
+            if (window.TPBModalState) {
+                window.TPBModalState.setOpened('category-station');
+            }
+            
             // Debug modal visibility
             console.log('📦 Modal opening step 5: Modal visibility after show:', {
                 overlayDisplay: $overlay.css('display'),
