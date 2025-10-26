@@ -190,27 +190,21 @@
             console.log('updateProductsOnly() called - strategy:', state.strategy, 'sku:', state.sku);
             
             // Animate out existing cards before updating
-            var existingCards = grid.querySelectorAll('.tpb-card');
-            var existingEmptyState = grid.querySelector('.tpb-empty-state');
+            var existingCards = grid.querySelectorAll('.tpb-card, .tpb-empty-state');
             
-            if ((existingCards.length > 0 || existingEmptyState) && grid.innerHTML.trim() !== '') {
+            if (existingCards.length > 0 && grid.innerHTML.trim() !== '') {
                 console.log('Animating out existing content...');
                 
                 // Add exit animation
-                existingCards.forEach(function(card) {
-                    card.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(-10px)';
+                existingCards.forEach(function(card, index) {
+                    card.style.setProperty('transition', 'opacity 0.3s ease-out, transform 0.3s ease-out', 'important');
+                    card.style.setProperty('opacity', '0', 'important');
+                    card.style.setProperty('transform', 'translateY(-10px)', 'important');
                 });
-                
-                if (existingEmptyState) {
-                    existingEmptyState.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
-                    existingEmptyState.style.opacity = '0';
-                    existingEmptyState.style.transform = 'translateY(-10px)';
-                }
                 
                 // Wait for animation then proceed
                 setTimeout(function() {
+                    grid.innerHTML = ''; // Clear before adding new content
                     proceedWithUpdate();
                 }, 350);
                 return;
@@ -480,15 +474,15 @@
                         }
                         
                         // Set initial state for entry animation
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(15px)';
+                        card.style.setProperty('opacity', '0', 'important');
+                        card.style.setProperty('transform', 'translateY(15px)', 'important');
                         grid.appendChild(card);
                         
                         // Trigger entry animation with staggered delay
                         setTimeout(function() {
-                            card.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
+                            card.style.setProperty('transition', 'opacity 0.4s ease-out, transform 0.4s ease-out', 'important');
+                            card.style.setProperty('opacity', '1', 'important');
+                            card.style.setProperty('transform', 'translateY(0)', 'important');
                         }, 50 + (index * 50)); // Stagger by 50ms per card
                     });
                 }
