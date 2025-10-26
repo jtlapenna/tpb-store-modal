@@ -121,6 +121,7 @@
                         fullClassString.indexOf('menu-cart__close') !== -1 ||
                         fullClassString.indexOf('menu-cart__toggle') !== -1 || // Exclude toggle button
                         fullClassString.indexOf('elementor-menu-cart__toggle_button') !== -1 || // Exclude toggle button
+                        fullClassString.indexOf('eicon-cart') !== -1 || // Exclude cart icons (e.g., eicon-cart-medium)
                         (fullClassString.indexOf('drawer') !== -1 && fullClassString.indexOf('toggle') === -1) ||
                         (fullClassString.indexOf('panel') !== -1 && fullClassString.indexOf('toggle') === -1) ||
                         fullClassString.indexOf('slideout') !== -1 ||
