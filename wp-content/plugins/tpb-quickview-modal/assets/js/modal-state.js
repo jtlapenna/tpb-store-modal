@@ -80,13 +80,24 @@
                     if (toggleButton || hasOpenDrawer.length > 0) {
                         console.log('🛒 Cart drawer is open');
                         // Hide the toggle button icon when drawer is open
-                        var cartIcons = document.querySelectorAll('.eicon-cart, [class*="cart-icon"], [class*="woocommerce-cart-icon"]');
+                        var cartIcons = document.querySelectorAll('.eicon-cart, .eicon-cart-medium, [class*="cart-icon"], [class*="woocommerce-cart-icon"], .elementor-button-icon');
                         cartIcons.forEach(function(icon) {
+                            // Hide icons that are part of the toggle button but not in the drawer
                             if (!icon.closest('.elementor-menu-cart__main')) {
-                                icon.style.visibility = 'hidden';
-                                icon.style.opacity = '0';
+                                icon.style.display = 'none';
+                                console.log('🛒 Hiding cart icon:', icon);
                             }
                         });
+                        
+                        // Also hide the parent button if it has the icon
+                        var toggleBtn = document.querySelector('.elementor-menu-cart__toggle_button');
+                        if (toggleBtn) {
+                            var iconInside = toggleBtn.querySelector('.eicon-cart, .eicon-cart-medium');
+                            if (iconInside) {
+                                iconInside.style.display = 'none';
+                                console.log('🛒 Hiding icon inside toggle button');
+                            }
+                        }
                         
                         // Ensure drawer itself has high z-index
                         var drawer = document.querySelector('.elementor-menu-cart__main');
@@ -95,10 +106,9 @@
                         }
                     } else {
                         // If drawer is not open, show icons and raise z-index for modal
-                        var cartIcons = document.querySelectorAll('.eicon-cart, [class*="cart-icon"], [class*="woocommerce-cart-icon"]');
+                        var cartIcons = document.querySelectorAll('.eicon-cart, .eicon-cart-medium, [class*="cart-icon"], [class*="woocommerce-cart-icon"], .elementor-button-icon');
                         cartIcons.forEach(function(icon) {
-                            icon.style.visibility = '';
-                            icon.style.opacity = '';
+                            icon.style.display = '';
                         });
                         
                         // If drawer is not open and modal is open, raise z-index
