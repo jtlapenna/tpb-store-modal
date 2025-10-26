@@ -113,17 +113,18 @@
                     });
                     
                     // Check if this is a drawer, panel, or menu (and we don't want those)
-                    var isExcluded = classes.some(function(cls) {
-                        var lowerClass = cls.toLowerCase();
-                        return lowerClass.indexOf('menu-cart__main') !== -1 ||
-                               lowerClass.indexOf('menu-cart__product') !== -1 ||
-                               lowerClass.indexOf('menu-cart__footer') !== -1 ||
-                               lowerClass.indexOf('menu-cart__close') !== -1 ||
-                               (lowerClass.indexOf('drawer') !== -1 && lowerClass.indexOf('toggle') === -1) ||
-                               (lowerClass.indexOf('panel') !== -1 && lowerClass.indexOf('toggle') === -1) ||
-                               lowerClass.indexOf('slideout') !== -1 ||
-                               lowerClass.indexOf('side-panel') !== -1;
-                    });
+                    var fullClassString = el.className.toLowerCase();
+                    var isExcluded = 
+                        fullClassString.indexOf('menu-cart__main') !== -1 ||
+                        fullClassString.indexOf('menu-cart__product') !== -1 ||
+                        fullClassString.indexOf('menu-cart__footer') !== -1 ||
+                        fullClassString.indexOf('menu-cart__close') !== -1 ||
+                        (fullClassString.indexOf('drawer') !== -1 && fullClassString.indexOf('toggle') === -1) ||
+                        (fullClassString.indexOf('panel') !== -1 && fullClassString.indexOf('toggle') === -1) ||
+                        fullClassString.indexOf('slideout') !== -1 ||
+                        fullClassString.indexOf('side-panel') !== -1 ||
+                        // Also exclude if parent has menu-cart__main
+                        (el.closest && el.closest('.elementor-menu-cart__main'));
                     
                     // Only include cart elements that are NOT drawers/panels
                     if (hasCartClass && !isExcluded) {
