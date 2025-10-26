@@ -14,6 +14,23 @@ define('TPB_QV_MU_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('TPB_QV_MU_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
 /**
+ * Enqueue modal state management script
+ * Must be loaded first to manage z-index for cart elements
+ */
+function tpb_qv_enqueue_modal_state() {
+    if (is_admin()) return;
+
+    wp_enqueue_script(
+        'tpb-modal-state',
+        TPB_QV_MU_PLUGIN_URL . '../plugins/tpb-quickview-modal/assets/js/modal-state.js',
+        [],
+        filemtime(TPB_QV_MU_PLUGIN_PATH . '../plugins/tpb-quickview-modal/assets/js/modal-state.js'),
+        false // Load in header, before modals
+    );
+}
+add_action('wp_enqueue_scripts', 'tpb_qv_enqueue_modal_state', 5); // Early priority
+
+/**
  * Enqueue cart integration script
  * Universal cart update functionality for all modals
  */
