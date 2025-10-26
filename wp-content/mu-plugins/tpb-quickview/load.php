@@ -20,9 +20,9 @@ define('TPB_QV_MU_PLUGIN_PATH', plugin_dir_path(__FILE__));
 function tpb_qv_enqueue_modal_state() {
     if (is_admin()) return;
     
-    // Get the correct path - go up from mu-plugins/tpb-quickview to plugins
-    $plugin_url = plugins_url('../plugins/tpb-quickview-modal/assets/js/modal-state.js', __FILE__);
-    $plugin_path = plugin_dir_path(__FILE__) . '../plugins/tpb-quickview-modal/assets/js/modal-state.js';
+    // Get the correct path using WP_PLUGIN_URL
+    $plugin_url = WP_PLUGIN_URL . '/tpb-quickview-modal/assets/js/modal-state.js';
+    $plugin_path = WP_PLUGIN_DIR . '/tpb-quickview-modal/assets/js/modal-state.js';
 
     wp_enqueue_script(
         'tpb-modal-state',
