@@ -77,17 +77,20 @@
         raiseCartZIndex: function() {
             console.log('🛒 Raising cart z-index above modal overlay');
             
-            // Find all possible cart elements
+            // Find all possible cart elements (exclude drawer/panel)
             var cartSelectors = [
-                '[class*="cart"]',
-                '[class*="woocommerce-cart"]',
-                '[class*="elementor-cart"]',
+                '[class*="cart-icon"]',
+                '[class*="cart-button"]',
+                '[class*="woocommerce-cart-icon"]',
+                '[class*="elementor-cart-icon"]',
+                '[class*="cart-count"]',
+                '[class*="cart-counter"]',
                 '.cart-icon',
                 '.cart-button',
                 '.woocommerce-cart-icon',
                 '.elementor-cart-icon',
-                '.elementor-widget-woocommerce-cart',
-                '[data-widget_type*="cart"]'
+                '.cart-count',
+                '.cart-counter'
             ];
             
             var allElements = document.querySelectorAll('*');
@@ -107,11 +110,20 @@
                 }
             });
             
-            // Also find by class name pattern
+            // Also find by class name pattern (but exclude drawer/panel/dropdown/menu)
             Array.prototype.forEach.call(allElements, function(el) {
                 if (el.className && typeof el.className === 'string') {
                     var classes = el.className.split(' ');
-                    if (classes.some(function(cls) { return cls.toLowerCase().indexOf('cart') !== -1; })) {
+                    var hasCartClass = classes.some(function(cls) { return cls.toLowerCase().indexOf('cart') !== -1; });
+                    var isDrawerPanel = classes.some(function(cls) {
+                        var lowerClass = cls.toLowerCase();
+                        return lowerClass.indexOf('drawer') !== -1 ||
+                               lowerClass.indexOf('panel') !== -1 ||
+                               lowerClass.indexOf('dropdown') !== -1 ||
+                               lowerClass.indexOf('menu') !== -1;
+                    });
+                    
+                    if (hasCartClass && !isDrawerPanel) {
                         if (!cartElements.includes(el)) {
                             cartElements.push(el);
                         }
