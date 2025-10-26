@@ -43,7 +43,6 @@ body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="cart"],
 body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="woocommerce-cart"],
 body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="elementor-cart"] {
     z-index: 99999999 !important;
-    position: fixed !important;
 }
 
 .tpb-qv-overlay.show,
@@ -1002,7 +1001,6 @@ body.tpb-modal-open .elementor-widget-container [class*="cart"],
 body.tpb-modal-open .elementor-widget-container [class*="woocommerce-cart"],
 body.tpb-modal-open .elementor-widget-container [class*="elementor-cart"] {
     z-index: 99999999 !important;
-    position: fixed !important;
     pointer-events: auto !important;
     visibility: visible !important;
     opacity: 1 !important;
