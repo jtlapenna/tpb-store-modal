@@ -990,10 +990,9 @@ body.tpb-modal-open > *:not(.tpb-qv-overlay):not([class*="cart"]) {
     z-index: auto !important;
 }
 
-/* Force all nested elements below modal too */
-body.tpb-modal-open *:not(.tpb-qv-overlay):not([class*="cart"]) {
-    z-index: auto !important;
-    position: relative !important;
+/* Force buttons specifically below modal */
+body.tpb-modal-open button:not([class*="cart"]) {
+    z-index: 1 !important;
 }
 
 /* Force cart elements above modal overlay when modal is open */
