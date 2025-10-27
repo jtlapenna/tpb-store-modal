@@ -1182,6 +1182,12 @@
         // Single event listener for strategy selection
         r.addEventListener('change', function(e) {
             if (e.target && e.target.name === 'tpb-strategy') {
+                // Save current scroll position IMMEDIATELY before doing anything else
+                var modalContent = document.querySelector('.tpb-qv-right-panel');
+                var scrollPosition = modalContent ? modalContent.scrollTop : 0;
+                window.tpbSavedScrollPosition = scrollPosition;
+                console.log('Strategy change - saved scroll position:', scrollPosition);
+                
                 // Only hide/show Step 3 when transitioning between no strategy and strategy
                 var hadStrategy = !!state.strategy;
                 var hasStrategy = !!e.target.value;
