@@ -1123,10 +1123,10 @@ body.tpb-modal-open .elementor-widget-container [class*="elementor-cart"] {
 .woocommerce-cart-item__remove a,
 .elementor-menu-cart__toggle_button .remove {
     width: auto !important;
-    min-width: 40px !important;
+    min-width: 32px !important;
     height: auto !important;
-    min-height: 40px !important;
-    padding: 5px !important;
+    min-height: 32px !important;
+    padding: 4px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
