@@ -163,10 +163,10 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
             console.log('⚡ Image container found:', $img.length);
             
             if ($img.length) {
-                console.log('⚡ Fetching Quick Checkout Station product image for ID 4842');
+                console.log('⚡ Fetching Quick Checkout Station product image for ID 4849');
                 
-                // Fetch image dynamically from Quick Checkout Station product (ID: 4842)
-                this.fetchProductImage(4842, $img);
+                // Fetch image dynamically from Quick Checkout Station product (ID: 4849)
+                this.fetchProductImage(4849, $img);
             } else {
                 console.error('❌ Quick Checkout Station image container not found');
             }
@@ -176,15 +176,16 @@ console.log('⚡ TPB Quick Checkout Station Modal Handler LOADED - Version:', Da
         fetchProductImage: function(productId, $imgContainer) {
             console.log('⚡ Fetching product image for ID:', productId);
             
-            // Use WordPress REST API (same as Flower Station)
-            fetch(`http://the-peak-beyond-modal.local/wp-json/wp/v2/product/${productId}?_=${Date.now()}`)
+            // Use WordPress REST API with dynamic base URL
+            const baseUrl = window.location.origin;
+            fetch(`${baseUrl}/wp-json/wp/v2/product/${productId}?_=${Date.now()}`)
                 .then(response => response.json())
                 .then(product => {
                     console.log('⚡ Product data received:', product);
                     
                     if (product.featured_media) {
                         // Get the featured media details
-                        return fetch(`http://the-peak-beyond-modal.local/wp-json/wp/v2/media/${product.featured_media}?_=${Date.now()}`);
+                        return fetch(`${baseUrl}/wp-json/wp/v2/media/${product.featured_media}?_=${Date.now()}`);
                     } else {
                         throw new Error('No featured media found for product');
                     }
