@@ -280,7 +280,8 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
             $imgContainer.data('loading', true);
             
             // Use WordPress REST API to get product details
-            fetch(`/wp-json/wc/v3/products/${productId}?consumer_key=ck_123&consumer_secret=cs_123`)
+            const baseUrl = window.location.origin;
+            fetch(`${baseUrl}/wp-json/wp/v2/product/${productId}?_=${Date.now()}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
@@ -290,15 +291,26 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
                 .then(product => {
                     console.log('📦 Product data received:', product);
                     
+                    // Get the featured image from featured_media
+                    if (product.featured_media) {
+                        return fetch(`${baseUrl}/wp-json/wp/v2/media/${product.featured_media}?_=${Date.now()}`);
+                    } else {
+                        throw new Error('No featured media found');
+                    }
+                })
+                .then(response => response.json())
+                .then(media => {
+                    console.log('📦 Media data received:', media);
+                    const imageUrl = media.source_url || media.media_details.sizes.full.source_url;
+                    
                     // Get the featured image
-                    if (product.images && product.images.length > 0) {
-                        const imageUrl = product.images[0].src;
+                    if (imageUrl) {
                         console.log('📦 Setting Category Station image:', imageUrl);
                         
                         // Create image element but don't insert it yet
                         const $img = $('<img>')
                             .attr('src', imageUrl)
-                            .attr('alt', product.images[0].alt || 'Category Station');
+                            .attr('alt', media.alt_text || 'Category Station');
                         
                         // Add load event handler before inserting
                         $img.on('load', function() {

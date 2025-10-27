@@ -174,12 +174,13 @@ console.log('🌸 TPB Flower Station Modal Handler LOADED - Version:', Date.now(
             console.log('🌸 Fetching featured image for product ID:', productId);
             
             // First get the product to find the featured media ID
-            fetch(`http://the-peak-beyond-modal.local/wp-json/wp/v2/product/${productId}?_=${Date.now()}`)
+            const baseUrl = window.location.origin;
+            fetch(`${baseUrl}/wp-json/wp/v2/product/${productId}?_=${Date.now()}`)
                 .then(response => response.json())
                 .then(product => {
                     if (product.featured_media) {
                         // Get the featured media details
-                        return fetch(`http://the-peak-beyond-modal.local/wp-json/wp/v2/media/${product.featured_media}?_=${Date.now()}`);
+                        return fetch(`${baseUrl}/wp-json/wp/v2/media/${product.featured_media}?_=${Date.now()}`);
                     } else {
                         throw new Error('No featured media found for product');
                     }
