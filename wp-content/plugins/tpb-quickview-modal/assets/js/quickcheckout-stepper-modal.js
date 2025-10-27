@@ -90,22 +90,19 @@
   
   // Update cart count in floating cart
   function updateCartCount() {
-    // Try to update cart count in various cart widgets
-    const cartCounts = document.querySelectorAll('.cart-count, .cart-counter, .woocommerce-cart-count');
-    cartCounts.forEach(function(count) {
-      // Trigger a refresh of the cart widget
-      if (typeof jQuery !== 'undefined') {
-        jQuery(count).trigger('wc_fragment_refresh');
-      }
-    });
-    
-    // Also try to refresh the entire cart widget
-    const cartWidgets = document.querySelectorAll('.woocommerce-cart-widget, .cart-widget');
-    cartWidgets.forEach(function(widget) {
-      if (typeof jQuery !== 'undefined') {
-        jQuery(widget).trigger('wc_fragment_refresh');
-      }
-    });
+    // Trigger WooCommerce cart fragments update
+    if (typeof jQuery !== 'undefined' && jQuery(document.body).trigger) {
+      // Trigger the standard WooCommerce cart update event
+      jQuery(document.body).trigger('wc_fragment_refresh');
+      jQuery(document.body).trigger('updated_wc_div');
+      jQuery(document.body).trigger('added_to_cart');
+      
+      // Also try to update specific cart elements
+      const cartElements = document.querySelectorAll('[class*="cart"], [class*="woocommerce-cart"], [class*="elementor-cart"]');
+      cartElements.forEach(function(element) {
+        jQuery(element).trigger('wc_fragment_refresh');
+      });
+    }
   }
   
   function addQuote(id, btn) {

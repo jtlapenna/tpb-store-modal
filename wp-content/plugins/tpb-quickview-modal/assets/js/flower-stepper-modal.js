@@ -105,21 +105,6 @@
                 jQuery(element).trigger('wc_fragment_refresh');
             });
         }
-        
-        // Force a page refresh if that's what the cart widget expects
-        // This is a fallback for stubborn cart widgets
-        setTimeout(function() {
-            // Re-fetch the cart fragment from WooCommerce
-            if (typeof jQuery !== 'undefined') {
-                jQuery.get('/cart/', function(response) {
-                    var $response = jQuery(response);
-                    var $newCart = $response.find('[class*="cart"], [class*="woocommerce"]');
-                    if ($newCart.length > 0) {
-                        jQuery('[class*="cart"], [class*="woocommerce"]').replaceWith($newCart);
-                    }
-                });
-            }
-        }, 500);
     }
     
     function addQuote(id, btn) { 
