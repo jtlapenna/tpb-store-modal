@@ -189,6 +189,12 @@
         function updateProductsOnly() {
             console.log('updateProductsOnly() called - strategy:', state.strategy, 'sku:', state.sku);
             
+            // Save scroll position
+            var modalContent = document.querySelector('.tpb-qv-modal-content');
+            var scrollPosition = modalContent ? modalContent.scrollTop : 0;
+            window.tpbSavedScrollPosition = scrollPosition;
+            console.log('Saved scroll position:', scrollPosition);
+            
             // Animate out existing cards before updating
             var existingCards = grid.querySelectorAll('.tpb-card, .tpb-empty-state');
             
@@ -205,6 +211,11 @@
                 // Wait for animation then proceed
                 setTimeout(function() {
                     grid.innerHTML = ''; // Clear before adding new content
+                    // Restore scroll position after clearing
+                    if (modalContent) {
+                        modalContent.scrollTop = window.tpbSavedScrollPosition;
+                        console.log('Restored scroll position to:', window.tpbSavedScrollPosition);
+                    }
                     proceedWithUpdate();
                 }, 350);
                 return;
@@ -884,6 +895,15 @@
                     setTimeout(function() {
                         scrollToShowContent(s3);
                     }, 300);
+                } else {
+                    // Restore scroll position after cards are loaded
+                    setTimeout(function() {
+                        var modalContent = document.querySelector('.tpb-qv-modal-content');
+                        if (modalContent && window.tpbSavedScrollPosition !== undefined) {
+                            modalContent.scrollTop = window.tpbSavedScrollPosition;
+                            console.log('Restored scroll position to:', window.tpbSavedScrollPosition);
+                        }
+                    }, 100);
                 }
             }).catch(function() { 
                 console.log('🌸 API failed, using mock data for testing');
