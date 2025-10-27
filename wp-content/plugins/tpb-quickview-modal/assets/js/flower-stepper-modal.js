@@ -142,7 +142,7 @@
         live.setAttribute('aria-live', 'polite');
         root.appendChild(live);
         
-        var state = {sku: null, strategy: null, hardwarePrice: null, priceUpdateTimeout: null};
+        var state = {sku: null, strategy: null, hardwarePrice: null, priceUpdateTimeout: null, shouldScroll: true};
         
         // Step 1: SKU Selection
         var s1 = el('div', {className: 'tpb-step'});
@@ -879,10 +879,12 @@
                     }
                 });
                 focusResults();
-                // Auto-scroll to show new content after cards are loaded
-                setTimeout(function() {
-                    scrollToShowContent(s3);
-                }, 300);
+                // Auto-scroll to show new content after cards are loaded (only if shouldScroll is true)
+                if (state.shouldScroll) {
+                    setTimeout(function() {
+                        scrollToShowContent(s3);
+                    }, 300);
+                }
             }).catch(function() { 
                 console.log('🌸 API failed, using mock data for testing');
                 var items = mockData[state.strategy] || [];
@@ -1168,6 +1170,7 @@
                     
                     // Update state and use updateProductsOnly() to prevent Step 1 reload
                     state.strategy = e.target.value;
+                    state.shouldScroll = true; // Allow scroll when first selecting a strategy
                     updateProductsOnly();
                     return; // Exit early to prevent calling update()
                 } else if (hadStrategy && !hasStrategy) {
@@ -1182,6 +1185,7 @@
                     
                     // Update state first
                     state.strategy = e.target.value;
+                    state.shouldScroll = false; // Don't scroll when switching strategies
                     
                     // Update products directly without calling update()
                     updateProductsOnly();
