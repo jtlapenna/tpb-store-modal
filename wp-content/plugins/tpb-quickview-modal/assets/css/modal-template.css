@@ -985,6 +985,11 @@ button:hover {
     z-index: 9999999 !important;
 }
 
+/* Force page content below modal when modal is open */
+body.tpb-modal-open > *:not(.tpb-qv-overlay):not([class*="cart"]) {
+    z-index: auto !important;
+}
+
 /* Force cart elements above modal overlay when modal is open */
 body.tpb-modal-open [class*="cart"],
 body.tpb-modal-open [class*="woocommerce-cart"],
