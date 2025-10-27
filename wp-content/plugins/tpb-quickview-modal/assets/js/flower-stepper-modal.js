@@ -888,20 +888,31 @@
                         scrollToShowContent(s3);
                     }, 300);
                 } else {
-                    // Restore scroll position multiple times to ensure it sticks
-                    var restoreScroll = function() {
-                        var modalContent = document.querySelector('.tpb-qv-right-panel');
-                        if (modalContent && window.tpbSavedScrollPosition !== undefined) {
+                    // Lock scroll position during all DOM updates
+                    var modalContent = document.querySelector('.tpb-qv-right-panel');
+                    if (modalContent && window.tpbSavedScrollPosition !== undefined) {
+                        console.log('Locking scroll position at:', window.tpbSavedScrollPosition);
+                        
+                        // Create a scroll lock that maintains position
+                        var lockScroll = function() {
                             modalContent.scrollTop = window.tpbSavedScrollPosition;
-                            console.log('Restored scroll position to:', window.tpbSavedScrollPosition);
-                        }
-                    };
-                    // Restore immediately
-                    restoreScroll();
-                    // And again after a delay to catch any updates
-                    setTimeout(restoreScroll, 50);
-                    setTimeout(restoreScroll, 100);
-                    setTimeout(restoreScroll, 300);
+                        };
+                        
+                        // Lock scroll continuously for 500ms
+                        var startTime = Date.now();
+                        var lockInterval = setInterval(function() {
+                            lockScroll();
+                            if (Date.now() - startTime > 500) {
+                                clearInterval(lockInterval);
+                                console.log('Released scroll lock after 500ms');
+                            }
+                        }, 10); // Lock every 10ms
+                        
+                        // Also restore after delays
+                        setTimeout(lockScroll, 100);
+                        setTimeout(lockScroll, 200);
+                        setTimeout(lockScroll, 400);
+                    }
                 }
             }).catch(function() { 
                 console.log('🌸 API failed, using mock data for testing');
