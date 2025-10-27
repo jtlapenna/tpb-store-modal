@@ -189,8 +189,8 @@
         function updateProductsOnly() {
             console.log('updateProductsOnly() called - strategy:', state.strategy, 'sku:', state.sku);
             
-            // Save scroll position
-            var modalContent = document.querySelector('.tpb-qv-modal-content');
+            // Save scroll position from the right panel
+            var modalContent = document.querySelector('.tpb-qv-right-panel');
             var scrollPosition = modalContent ? modalContent.scrollTop : 0;
             window.tpbSavedScrollPosition = scrollPosition;
             console.log('Saved scroll position:', scrollPosition);
@@ -898,7 +898,7 @@
                 } else {
                     // Restore scroll position after cards are loaded
                     setTimeout(function() {
-                        var modalContent = document.querySelector('.tpb-qv-modal-content');
+                        var modalContent = document.querySelector('.tpb-qv-right-panel');
                         if (modalContent && window.tpbSavedScrollPosition !== undefined) {
                             modalContent.scrollTop = window.tpbSavedScrollPosition;
                             console.log('Restored scroll position to:', window.tpbSavedScrollPosition);
