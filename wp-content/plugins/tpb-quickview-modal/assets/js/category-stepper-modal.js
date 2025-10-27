@@ -1070,6 +1070,7 @@ function build(){
     // Show Step 1 immediately with force visibility
     console.log('📦 Showing Step 1 - before:', s1.hidden, s1.style.display);
     s1.hidden = false;
+    s1.classList.add('visible'); // Add visible class to prevent CSS transitions
     s1.style.display = 'block !important';
     s1.style.visibility = 'visible !important';
     s1.style.opacity = '1 !important';

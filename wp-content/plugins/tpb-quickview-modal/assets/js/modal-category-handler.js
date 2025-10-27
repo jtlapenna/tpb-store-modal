@@ -212,6 +212,13 @@ console.log('📦 TPB Category Station Modal Handler LOADED - Version:', Date.no
         loadStepper: function($container) {
             console.log('📦 Modal opening step 7: Loading Category Station stepper');
             
+            // Check if stepper content already exists
+            const existingStepper = $container.find('.tpb-qv-native').length > 0;
+            if (existingStepper) {
+                console.log('📦 Category Station stepper already loaded, skipping');
+                return;
+            }
+            
             // Clear container
             $container.empty();
             
