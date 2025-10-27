@@ -210,13 +210,19 @@
                 
                 // Wait for animation then proceed
                 setTimeout(function() {
-                    grid.innerHTML = ''; // Clear before adding new content
-                    // Restore scroll position after clearing
+                    // Clear the grid content without using innerHTML
+                    while (grid.firstChild) {
+                        grid.removeChild(grid.firstChild);
+                    }
+                    // Restore scroll position immediately after clearing
                     if (modalContent) {
                         modalContent.scrollTop = window.tpbSavedScrollPosition;
                         console.log('Restored scroll position to:', window.tpbSavedScrollPosition);
                     }
-                    proceedWithUpdate();
+                    // Small delay to ensure DOM updates
+                    requestAnimationFrame(function() {
+                        proceedWithUpdate();
+                    });
                 }, 350);
                 return;
             }
@@ -269,8 +275,10 @@
                 grid.style.cssText = 'display:block!important;width:100%!important;max-width:none!important;box-sizing:border-box!important;margin-top:16px!important';
             }
             
-            // Clear existing content
-            grid.innerHTML = '';
+            // Clear existing content without using innerHTML
+            while (grid.firstChild) {
+                grid.removeChild(grid.firstChild);
+            }
             
             // Fetch and display products
             if (!state.sku || !state.strategy) { 
