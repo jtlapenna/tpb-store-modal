@@ -990,8 +990,17 @@ body.tpb-modal-open > *:not(.tpb-qv-overlay):not([class*="cart"]) {
     z-index: auto !important;
 }
 
-/* Force buttons specifically below modal */
-body.tpb-modal-open button:not([class*="cart"]) {
+/* Force buttons specifically below modal (exclude modal close button) */
+body.tpb-modal-open button:not([class*="cart"]):not(.tpb-qv-close) {
+    z-index: 1 !important;
+}
+
+/* Force Elementor containers below modal */
+body.tpb-modal-open .elementor-widget:not([class*="cart"]),
+body.tpb-modal-open .elementor-element:not([class*="cart"]),
+body.tpb-modal-open .elementor-section,
+body.tpb-modal-open .elementor-container,
+body.tpb-modal-open .elementor-column {
     z-index: 1 !important;
 }
 
