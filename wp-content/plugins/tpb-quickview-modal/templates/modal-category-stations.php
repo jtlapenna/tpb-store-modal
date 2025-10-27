@@ -5,7 +5,7 @@
  */
 
 $modal_type = 'category-station';
-$title = 'Configure Your Category Stations';
+$title = 'Configure Your Category Stations (Hardware Only)';
 $description = 'Please choose a build strategy and form factor for your category station.';
 
 include plugin_dir_path(__FILE__) . 'parts/modal-base.php';

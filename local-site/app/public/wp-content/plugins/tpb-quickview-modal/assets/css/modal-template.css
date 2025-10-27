@@ -985,6 +985,25 @@ button:hover {
     z-index: 9999999 !important;
 }
 
+/* Force page content below modal when modal is open */
+body.tpb-modal-open > *:not(.tpb-qv-overlay):not([class*="cart"]) {
+    z-index: auto !important;
+}
+
+/* Force buttons specifically below modal (exclude modal close button) */
+body.tpb-modal-open button:not([class*="cart"]):not(.tpb-qv-close) {
+    z-index: 1 !important;
+}
+
+/* Force Elementor containers below modal */
+body.tpb-modal-open .elementor-widget:not([class*="cart"]),
+body.tpb-modal-open .elementor-element:not([class*="cart"]),
+body.tpb-modal-open .elementor-section,
+body.tpb-modal-open .elementor-container,
+body.tpb-modal-open .elementor-column {
+    z-index: 1 !important;
+}
+
 /* Force cart elements above modal overlay when modal is open */
 body.tpb-modal-open [class*="cart"],
 body.tpb-modal-open [class*="woocommerce-cart"],
@@ -1114,4 +1133,21 @@ body.tpb-modal-open .elementor-widget-container [class*="elementor-cart"] {
 .cart-modal,
 .checkout-modal {
     z-index: 1000004 !important;
+}
+
+/* Fix squished remove buttons in cart drawer */
+.elementor-menu-cart__product-remove,
+.elementor-menu-cart__product-remove button,
+.woocommerce-cart-item__remove,
+.woocommerce-cart-item__remove a,
+.elementor-menu-cart__toggle_button .remove {
+    width: auto !important;
+    min-width: 32px !important;
+    height: auto !important;
+    min-height: 32px !important;
+    padding: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
 }

@@ -38,6 +38,36 @@ $custom_classes = $custom_classes ?? [];
         </div>
     </div>
     
+    <!-- What's Included Information Section -->
+    <div class="tpb-components-info" style="background: #f8f9fa; border: 1px solid #e3e6ea; border-radius: 8px; padding: 20px; margin: 0 55px 30px 55px; max-width: 600px;">
+        <h3 style="margin: 0 0 15px 0; font-size: 16px; color: #2c3e50; font-weight: 600;">What You're Purchasing</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 12px;">
+            <div style="display: flex; align-items: start;">
+                <span style="color: #4fb089; font-size: 18px; margin-right: 8px;">✓</span>
+                <div>
+                    <strong style="display: block; font-size: 14px; color: #2c3e50;">Electronics</strong>
+                    <span style="font-size: 13px; color: #6c757d;">Touch screens, PCs, readers</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: start;">
+                <span style="color: #4fb089; font-size: 18px; margin-right: 8px;">✓</span>
+                <div>
+                    <strong style="display: block; font-size: 14px; color: #2c3e50;">Software</strong>
+                    <span style="font-size: 13px; color: #6c757d;">Custom TPB platform</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: start; padding-top: 12px; border-top: 1px solid #dee2e6;">
+            <span style="color: #ffc107; font-size: 18px; margin-right: 8px;">ℹ</span>
+            <div style="font-size: 13px; color: #6c757d;">
+                <strong style="color: #2c3e50;">Fixtures sold separately.</strong> You'll need to purchase furniture, mounting brackets, and enclosures from your preferred retail supplier.
+            </div>
+        </div>
+    </div>
+    
     <!-- Stepper container for direct DOM integration -->
     <div id="tpb-qv-stepper-container" 
          class="tpb-qv-stepper-container" 
