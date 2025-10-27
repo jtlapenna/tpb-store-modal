@@ -195,39 +195,23 @@
             window.tpbSavedScrollPosition = scrollPosition;
             console.log('Saved scroll position:', scrollPosition);
             
-            // Animate out existing cards before updating
+            // Skip exit animation to preserve scroll position
+            // Clear the grid content immediately
             var existingCards = grid.querySelectorAll('.tpb-card, .tpb-empty-state');
-            
-            if (existingCards.length > 0 && grid.innerHTML.trim() !== '') {
-                console.log('Animating out existing content...');
-                
-                // Add exit animation
-                existingCards.forEach(function(card, index) {
-                    card.style.setProperty('transition', 'opacity 0.3s ease-out, transform 0.3s ease-out', 'important');
-                    card.style.setProperty('opacity', '0', 'important');
-                    card.style.setProperty('transform', 'translateY(-10px)', 'important');
-                });
-                
-                // Wait for animation then proceed
-                setTimeout(function() {
-                    // Clear the grid content without using innerHTML
-                    while (grid.firstChild) {
-                        grid.removeChild(grid.firstChild);
-                    }
-                    // Restore scroll position immediately after clearing
-                    if (modalContent) {
-                        modalContent.scrollTop = window.tpbSavedScrollPosition;
-                        console.log('Restored scroll position to:', window.tpbSavedScrollPosition);
-                    }
-                    // Small delay to ensure DOM updates
-                    requestAnimationFrame(function() {
-                        proceedWithUpdate();
-                    });
-                }, 350);
-                return;
+            if (existingCards.length > 0) {
+                console.log('Clearing existing content without animation...');
+                while (grid.firstChild) {
+                    grid.removeChild(grid.firstChild);
+                }
             }
             
-            // No existing content, proceed directly
+            // Restore scroll position immediately after clearing
+            if (modalContent) {
+                modalContent.scrollTop = scrollPosition;
+                console.log('Restored scroll position to:', scrollPosition);
+            }
+            
+            // Proceed with update
             proceedWithUpdate();
         }
         
@@ -904,14 +888,20 @@
                         scrollToShowContent(s3);
                     }, 300);
                 } else {
-                    // Restore scroll position after cards are loaded
-                    setTimeout(function() {
+                    // Restore scroll position multiple times to ensure it sticks
+                    var restoreScroll = function() {
                         var modalContent = document.querySelector('.tpb-qv-right-panel');
                         if (modalContent && window.tpbSavedScrollPosition !== undefined) {
                             modalContent.scrollTop = window.tpbSavedScrollPosition;
                             console.log('Restored scroll position to:', window.tpbSavedScrollPosition);
                         }
-                    }, 100);
+                    };
+                    // Restore immediately
+                    restoreScroll();
+                    // And again after a delay to catch any updates
+                    setTimeout(restoreScroll, 50);
+                    setTimeout(restoreScroll, 100);
+                    setTimeout(restoreScroll, 300);
                 }
             }).catch(function() { 
                 console.log('🌸 API failed, using mock data for testing');
