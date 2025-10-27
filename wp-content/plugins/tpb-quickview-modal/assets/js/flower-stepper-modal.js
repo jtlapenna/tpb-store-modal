@@ -1158,6 +1158,7 @@
                 if (!hadStrategy && hasStrategy) {
                     // Transitioning from no strategy to strategy - show Step 3 with animation
                     s3.hidden = false;
+                    s3.classList.add('visible');
                     s3.classList.add('entering');
                     setTimeout(function() {
                         s3.classList.remove('entering');
@@ -1177,6 +1178,7 @@
                 } else if (hasStrategy) {
                     // Already had strategy and still has strategy - just update products without rebuilding
                     s3.hidden = false;
+                    s3.classList.add('visible');
                     
                     // Update state first
                     state.strategy = e.target.value;
