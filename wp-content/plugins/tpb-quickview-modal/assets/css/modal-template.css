@@ -990,6 +990,12 @@ body.tpb-modal-open > *:not(.tpb-qv-overlay):not([class*="cart"]) {
     z-index: auto !important;
 }
 
+/* Force all nested elements below modal too */
+body.tpb-modal-open *:not(.tpb-qv-overlay):not([class*="cart"]) {
+    z-index: auto !important;
+    position: relative !important;
+}
+
 /* Force cart elements above modal overlay when modal is open */
 body.tpb-modal-open [class*="cart"],
 body.tpb-modal-open [class*="woocommerce-cart"],
