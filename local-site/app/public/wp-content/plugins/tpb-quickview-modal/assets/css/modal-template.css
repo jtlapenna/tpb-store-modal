@@ -18,6 +18,7 @@ body {
     overflow-x: hidden;
 }
 
+/* SIMPLIFIED: Basic overlay styling - let browser handle stacking naturally */
 .tpb-qv-overlay {
     position: fixed;
     top: 0;
@@ -25,24 +26,129 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 999999;
+    z-index: 999998;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease-out;
+    /* CRITICAL: Ensure overlay is direct child of body for proper stacking */
+    margin: 0;
+    padding: 0;
 }
 
-/* Ensure modal overlay doesn't interfere with cart elements */
+/* Ensure overlay z-index is high enough */
+body.tpb-modal-open .tpb-qv-overlay,
+body.tpb-modal-open .tpb-qv-overlay.is-open,
 .tpb-qv-overlay.is-open {
-    z-index: 999999;
+    z-index: 999998 !important;
+}
+
+/* CRITICAL: Ensure overlay is ALWAYS below cart - maximum specificity */
+/* REMOVED DUPLICATE - already defined above */
+
+/* SIMPLIFIED: Modal - basic styling */
+.tpb-qv-modal {
+    position: relative;
+    z-index: 1; /* Relative to overlay parent (overlay has 999998) */
+    background: white;
+    border-radius: 8px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+/* CRITICAL: Lower Elementor page container - MAXIMUM SPECIFICITY to override Elementor's inline styles */
+/* NOTE: position MUST be relative/absolute/fixed for z-index to work (not static) */
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open .elementor.elementor-page,
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open .elementor[class*="elementor-"],
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open .elementor[data-elementor-type="wp-page"],
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open .elementor.elementor-3995,
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open .elementor.elementor-3995[data-elementor-type="wp-page"],
+body.tpb-modal-open body.tpb-modal-open .elementor-section[style*="z-index"]:not([class*="cart"]):not(.elementor-element-94cf9e0),
+body.tpb-modal-open body.tpb-modal-open .elementor-widget[style*="z-index"]:not([class*="cart"]),
+body.tpb-modal-open body.tpb-modal-open [style*="z-index"]:not(.tpb-qv-overlay):not(.tpb-qv-modal):not([class*="cart"]):not(.elementor-menu-cart__main):not(.elementor-menu-cart__container) {
+    z-index: 999997 !important; /* Below overlay (999998) */
+    position: relative !important; /* CRITICAL: Must NOT be static for z-index to work */
 }
 
 /* Force cart elements to appear above modal overlay */
+/* Note: JavaScript will override these with higher z-index */
 body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="cart"],
 body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="woocommerce-cart"],
 body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="elementor-cart"] {
-    z-index: 99999999 !important;
+    z-index: 2147483646 !important;
+}
+
+/* Ensure header containing cart stays above modal overlay */
+/* Note: JavaScript handles position changes to preserve fixed/absolute */
+body.tpb-modal-open .elementor-location-header,
+body.tpb-modal-open header,
+body.tpb-modal-open .site-header,
+body.tpb-modal-open .elementor-sticky--active {
+    z-index: 2147483646 !important;
+}
+
+/* Ensure cart toggle button and wrapper stay above overlay */
+/* Note: JavaScript handles position changes to preserve fixed/absolute */
+/* Note: JavaScript will lower this when drawer is open */
+/* CRITICAL: Maximum specificity to override Elementor's inline styles */
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open .elementor-menu-cart__toggle_button,
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open a.elementor-menu-cart__toggle_button,
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open button.elementor-menu-cart__toggle_button,
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open .elementor-menu-cart__toggle_wrapper,
+body.tpb-modal-open body.tpb-modal-open body.tpb-modal-open div.elementor-menu-cart__toggle_wrapper,
+body.tpb-modal-open .elementor-menu-cart__toggle_button.tpb-cart-force-z-index,
+body.tpb-modal-open .elementor-menu-cart__toggle_wrapper.tpb-cart-force-z-index,
+body.tpb-modal-open .elementor-menu-cart__toggle_button,
+body.tpb-modal-open .elementor-menu-cart__toggle_wrapper {
+    z-index: 2147483647 !important;
+}
+
+/* CRITICAL: Cart drawer must be above everything when open */
+.elementor-menu-cart__main,
+.elementor-menu-cart__container.elementor-lightbox {
+    z-index: 999999999 !important;
+}
+
+/* Ensure cart widget container stays above overlay */
+body.tpb-modal-open .elementor-menu-cart__wrapper {
+    z-index: 2147483646 !important;
+}
+
+/* Ensure entire cart widget stays above overlay */
+body.tpb-modal-open .elementor-widget-woocommerce-menu-cart {
+    z-index: 2147483646 !important;
+}
+
+/* Ensure cart widget parent containers stay above overlay */
+body.tpb-modal-open .elementor-element.elementor-widget-woocommerce-menu-cart,
+body.tpb-modal-open .elementor-element[data-widget_type="woocommerce-menu-cart.default"] {
+    z-index: 2147483646 !important;
+}
+
+/* CRITICAL: Ensure fixed cart widget container is above overlay */
+body.tpb-modal-open .elementor-element.elementor-fixed.elementor-widget-woocommerce-menu-cart {
+    z-index: 2147483647 !important;
+    position: fixed !important; /* Preserve fixed positioning */
+}
+
+/* Ensure all parents of fixed cart widget stay above overlay */
+body.tpb-modal-open .elementor-element.elementor-fixed.elementor-widget-woocommerce-menu-cart ~ *,
+body.tpb-modal-open .elementor-section:has(.elementor-element.elementor-fixed.elementor-widget-woocommerce-menu-cart) {
+    z-index: 2147483646 !important;
+}
+
+/* Prevent landing page content from getting high z-index when modal is open */
+/* This prevents images from appearing above the cart */
+body.tpb-modal-open .elementor-section:not(.elementor-location-header):not(.elementor-sticky--active):not(:has(.elementor-menu-cart__toggle_button)),
+body.tpb-modal-open .elementor-widget-image:not(:has(.elementor-menu-cart__toggle_button)),
+body.tpb-modal-open .wp-block-image,
+body.tpb-modal-open .elementor-section img,
+body.tpb-modal-open .elementor-widget-image img,
+body.tpb-modal-open img:not([class*="cart"]):not([class*="menu"]) {
+    z-index: auto !important;
+    position: relative !important; /* Prevent stacking context issues */
 }
 
 .tpb-qv-overlay.show,
@@ -56,6 +162,7 @@ body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="elementor-cart"] {
 
 .tpb-qv-modal {
     position: relative;
+    z-index: 1 !important; /* Relative to overlay parent (overlay has 999998) */
     width: 85%;
     max-width: min(1400px, 95vw);
     height: 75vh;
@@ -666,7 +773,7 @@ body.tpb-modal-open .tpb-qv-overlay.is-open ~ * [class*="elementor-cart"] {
     padding: 10px 14px;
     border-radius: 8px;
     opacity: .95;
-    z-index: 99999;
+    z-index: 2147483647; /* topmost */
 }
 
 /* ==========================================================================
@@ -935,7 +1042,7 @@ button:hover {
 .elementor-widget .cart-widget,
 .elementor-widget .woocommerce-mini-cart,
 .elementor-widget .elementor-cart-widget {
-    z-index: 9999999 !important;
+    z-index: 2147483646 !important; /* Updated to match cart hierarchy */
 }
 
 /* Ensure cart count badges stay above modal overlay */
@@ -954,7 +1061,7 @@ button:hover {
 .elementor-widget .woocommerce-cart-count,
 .elementor-widget .elementor-cart-count,
 .elementor-widget .woocommerce-cart-count-badge {
-    z-index: 99999999 !important;
+    z-index: 2147483646 !important;
 }
 
 /* Ensure cart icons and buttons stay above modal overlay */
@@ -973,16 +1080,16 @@ button:hover {
 .elementor-widget .woocommerce-cart-icon,
 .elementor-widget .elementor-cart-icon,
 .elementor-widget .elementor-cart-button {
-    z-index: 99999999 !important;
+    z-index: 2147483646 !important;
 }
 
-/* General rule for any cart-related elements */
-[class*="cart"],
-[class*="woocommerce-cart"],
-[class*="elementor-cart"],
-[data-widget_type*="cart"],
-.elementor-widget[data-widget_type*="cart"] {
-    z-index: 9999999 !important;
+/* General rule for any cart-related elements (when modal is open) */
+body.tpb-modal-open [class*="cart"]:not(.elementor-menu-cart__main):not(.elementor-menu-cart__container),
+body.tpb-modal-open [class*="woocommerce-cart"]:not(.elementor-menu-cart__main):not(.elementor-menu-cart__container),
+body.tpb-modal-open [class*="elementor-cart"]:not(.elementor-menu-cart__main):not(.elementor-menu-cart__container),
+body.tpb-modal-open [data-widget_type*="cart"]:not(.elementor-menu-cart__main):not(.elementor-menu-cart__container),
+body.tpb-modal-open .elementor-widget[data-widget_type*="cart"]:not(.elementor-menu-cart__main):not(.elementor-menu-cart__container) {
+    z-index: 2147483646 !important; /* Updated to match cart hierarchy */
 }
 
 /* Force page content below modal when modal is open */
@@ -995,19 +1102,22 @@ body.tpb-modal-open button:not([class*="cart"]):not(.tpb-qv-close) {
     z-index: 1 !important;
 }
 
-/* Force Elementor containers below modal */
-body.tpb-modal-open .elementor-widget:not([class*="cart"]),
-body.tpb-modal-open .elementor-element:not([class*="cart"]),
-body.tpb-modal-open .elementor-section,
-body.tpb-modal-open .elementor-container,
-body.tpb-modal-open .elementor-column {
-    z-index: 1 !important;
+/* Force Elementor containers below modal - CRITICAL: Higher specificity */
+body.tpb-modal-open body.tpb-modal-open .elementor-widget:not([class*="cart"]):not(.elementor-menu-cart__wrapper):not(.elementor-widget-woocommerce-menu-cart):not(.elementor-element-94cf9e0),
+body.tpb-modal-open body.tpb-modal-open .elementor-element:not([class*="cart"]):not(.elementor-menu-cart__wrapper):not(.elementor-widget-woocommerce-menu-cart):not(.elementor-element-94cf9e0),
+body.tpb-modal-open body.tpb-modal-open .elementor-section:not(.elementor-menu-cart__wrapper):not(.elementor-widget-woocommerce-menu-cart):not(.elementor-element-94cf9e0),
+body.tpb-modal-open body.tpb-modal-open .elementor-container:not([class*="cart"]),
+body.tpb-modal-open body.tpb-modal-open .elementor-column:not([class*="cart"]),
+body.tpb-modal-open body.tpb-modal-open .e-con:not([class*="cart"]):not(.elementor-element-94cf9e0),
+body.tpb-modal-open body.tpb-modal-open .e-con-inner:not([class*="cart"]) {
+    z-index: 999997 !important; /* Below overlay (999998) and modal (z-index: 1 relative to overlay) */
 }
 
 /* Force cart elements above modal overlay when modal is open */
-body.tpb-modal-open [class*="cart"],
-body.tpb-modal-open [class*="woocommerce-cart"],
-body.tpb-modal-open [class*="elementor-cart"],
+/* Note: JavaScript will set specific z-index values for toggle button/wrapper */
+body.tpb-modal-open [class*="cart"]:not(.elementor-menu-cart__toggle_button):not(.elementor-menu-cart__toggle_wrapper),
+body.tpb-modal-open [class*="woocommerce-cart"]:not(.elementor-menu-cart__toggle_button):not(.elementor-menu-cart__toggle_wrapper),
+body.tpb-modal-open [class*="elementor-cart"]:not(.elementor-menu-cart__toggle_button):not(.elementor-menu-cart__toggle_wrapper),
 body.tpb-modal-open [data-widget_type*="cart"],
 body.tpb-modal-open .elementor-widget[data-widget_type*="cart"],
 body.tpb-modal-open .woocommerce-cart-widget,
@@ -1016,10 +1126,10 @@ body.tpb-modal-open .floating-cart,
 body.tpb-modal-open .cart-widget,
 body.tpb-modal-open .woocommerce-mini-cart,
 body.tpb-modal-open .elementor-cart-widget,
-body.tpb-modal-open .elementor-widget-container [class*="cart"],
-body.tpb-modal-open .elementor-widget-container [class*="woocommerce-cart"],
-body.tpb-modal-open .elementor-widget-container [class*="elementor-cart"] {
-    z-index: 99999999 !important;
+body.tpb-modal-open .elementor-widget-container [class*="cart"]:not(.elementor-menu-cart__toggle_button):not(.elementor-menu-cart__toggle_wrapper),
+body.tpb-modal-open .elementor-widget-container [class*="woocommerce-cart"]:not(.elementor-menu-cart__toggle_button):not(.elementor-menu-cart__toggle_wrapper),
+body.tpb-modal-open .elementor-widget-container [class*="elementor-cart"]:not(.elementor-menu-cart__toggle_button):not(.elementor-menu-cart__toggle_wrapper) {
+    z-index: 2147483646 !important;
     pointer-events: auto !important;
     visibility: visible !important;
     opacity: 1 !important;
