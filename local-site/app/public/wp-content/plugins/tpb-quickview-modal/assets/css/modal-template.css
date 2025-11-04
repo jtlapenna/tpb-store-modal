@@ -26,7 +26,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 999998;
+    z-index: 2147483644;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,7 @@ body {
 body.tpb-modal-open .tpb-qv-overlay,
 body.tpb-modal-open .tpb-qv-overlay.is-open,
 .tpb-qv-overlay.is-open {
-    z-index: 999998 !important;
+    z-index: 2147483644 !important;
 }
 
 /* CRITICAL: Ensure overlay is ALWAYS below cart - maximum specificity */
@@ -50,7 +50,7 @@ body.tpb-modal-open .tpb-qv-overlay.is-open,
 /* SIMPLIFIED: Modal - basic styling */
 .tpb-qv-modal {
     position: relative;
-    z-index: 1; /* Relative to overlay parent (overlay has 999998) */
+    z-index: 2147483645 !important; /* Sits just above overlay (2147483644) */
     background: white;
     border-radius: 8px;
     max-width: 90vw;
@@ -105,10 +105,23 @@ body.tpb-modal-open .elementor-menu-cart__toggle_wrapper {
     z-index: 2147483647 !important;
 }
 
+/* Ensure cart toggle/button remain above the overlay even before classes are toggled */
+.elementor-menu-cart__toggle_wrapper {
+    z-index: 2147483646;
+}
+
+.elementor-menu-cart__toggle_button,
+.elementor-menu-cart__toggle_button .elementor-screen-only,
+.elementor-menu-cart__toggle_button .elementor-button-icon,
+.elementor-menu-cart__toggle_button .elementor-button-text {
+    position: relative;
+    z-index: 2147483646;
+}
+
 /* CRITICAL: Cart drawer must be above everything when open */
 .elementor-menu-cart__main,
 .elementor-menu-cart__container.elementor-lightbox {
-    z-index: 999999999 !important;
+    z-index: 2147483647 !important;
 }
 
 /* Ensure cart widget container stays above overlay */
