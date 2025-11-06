@@ -20,6 +20,30 @@ wp-content/mu-plugins/*
 wp-content/plugins/*
 !wp-content/plugins/tpb-quickview-modal/**
 
+# Allow local-site paths for the same structure
+!local-site/
+local-site/*
+!local-site/app/
+local-site/app/*
+!local-site/app/public/
+local-site/app/public/*
+!local-site/app/public/wp-content/
+local-site/app/public/wp-content/*
+!local-site/app/public/wp-content/themes/
+local-site/app/public/wp-content/themes/**
+!local-site/app/public/wp-content/themes/hello-elementor-child-tpb/
+!local-site/app/public/wp-content/themes/hello-elementor-child-tpb/**
+
+!local-site/app/public/wp-content/mu-plugins/
+local-site/app/public/wp-content/mu-plugins/**
+!local-site/app/public/wp-content/mu-plugins/tpb-quickview/
+!local-site/app/public/wp-content/mu-plugins/tpb-quickview/**
+
+!local-site/app/public/wp-content/plugins/
+local-site/app/public/wp-content/plugins/**
+!local-site/app/public/wp-content/plugins/tpb-quickview-modal/
+!local-site/app/public/wp-content/plugins/tpb-quickview-modal/**
+
 # Node/vendor junk just in case
 node_modules/
 vendor/

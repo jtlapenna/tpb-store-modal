@@ -1,0 +1,14 @@
+/*
+ Theme Name: Hello Elementor Child (TPB)
+ Theme URI: https://cannabis-kiosks.com/
+ Description: Minimal, safe child theme to stage TPB modal/quickview work.
+ Author: TPB
+ Template: hello-elementor
+ Version: 1.0.0
+ Text Domain: hello-elementor-child-tpb
+*/
+
+/* Base design tokens */
+:root{
+  --tpb-teal:#5ac59a;
+}

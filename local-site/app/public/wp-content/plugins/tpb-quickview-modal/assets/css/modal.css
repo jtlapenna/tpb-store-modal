@@ -1,0 +1,93 @@
+/**
+ * TPB Modal CSS v4.3 - STACKING CONTEXT FIX
+ * 
+ * Problem: Cart trapped inside .elementor-3995 with z-index 1
+ * Solution: Lift .elementor-3995 above overlay when modal opens
+ */
+
+:root {
+  --z-page:        1;
+  --z-overlay:     2147483600;
+  --z-dialog:      2147483601;
+  --z-header:      2147483646;
+  --z-cart:        2147483647;
+}
+
+html.tpb-modal-open,
+body.tpb-modal-open {
+  overflow: hidden !important;
+}
+
+.tpb-qv-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: var(--z-overlay) !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  pointer-events: auto !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out;
+}
+
+.tpb-qv-overlay.is-open,
+.tpb-qv-overlay.show,
+.tpb-qv-overlay.tpb-qv-visible {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.tpb-qv-overlay.closing {
+  opacity: 0 !important;
+}
+
+body.elementor-menu-cart--shown .tpb-qv-overlay {
+  pointer-events: none !important;
+}
+
+.tpb-qv-modal {
+  position: relative !important;
+  z-index: var(--z-dialog) !important;
+  pointer-events: auto !important;
+}
+
+/* Lower page content below overlay */
+body.tpb-modal-open .elementor:not(.elementor-location-header):not(.elementor-3995) {
+  position: relative !important;
+  z-index: var(--z-page) !important;
+}
+
+/* CRITICAL FIX: Lift .elementor-3995 (contains cart) above overlay */
+body.tpb-modal-open .elementor-3995,
+body.tpb-qv-open .elementor-3995 {
+  position: relative !important;
+  z-index: var(--z-cart) !important;
+}
+
+/* Cart elements - ensure they stay at max z-index */
+body.tpb-modal-open .elementor-element-d17a0b3,
+body.tpb-modal-open .elementor-element-94cf9e0,
+body.tpb-qv-open .elementor-element-d17a0b3,
+body.tpb-qv-open .elementor-element-94cf9e0 {
+  z-index: var(--z-cart) !important;
+}
+
+body.tpb-modal-open .elementor-menu-cart__toggle_wrapper,
+body.tpb-modal-open .elementor-menu-cart__toggle_button,
+body.tpb-qv-open .elementor-menu-cart__toggle_wrapper,
+body.tpb-qv-open .elementor-menu-cart__toggle_button {
+  z-index: var(--z-cart) !important;
+  pointer-events: auto !important;
+}
+
+/* Header lift */
+body.tpb-modal-open .site-header,
+body.tpb-modal-open header:not(.tpb-qv-header),
+body.tpb-modal-open [data-elementor-type="header"] {
+  z-index: var(--z-header) !important;
+  transform: none !important;
+  filter: none !important;
+}
