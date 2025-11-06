@@ -1,0 +1,8 @@
+<?php
+
+namespace UpsProVendor;
+
+if (!\defined('ABSPATH')) {
+    die;
+}
+require __DIR__ . '/../../wp-plugin-flow-common/src/plugin-init-php52.php';

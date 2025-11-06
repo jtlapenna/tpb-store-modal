@@ -1,0 +1,9 @@
+<wpml-config>
+  <custom-fields>
+    <custom-field action="translate">af_comp_product_text</custom-field>
+    <custom-field action="translate">af_comp_product_component_name</custom-field>
+    <custom-field action="translate">af_comp_product_component_desc</custom-field>
+    <custom-field action="translate">af_comp_product_scenario_name</custom-field>
+    <custom-field action="translate">af_comp_product_scenario_desc</custom-field>
+  </custom-fields>
+</wpml-config>

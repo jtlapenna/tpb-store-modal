@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Modal Debug</title>
+    <link rel="stylesheet" href="wp-content/plugins/tpb-quickview-modal/assets/css/modal.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        .debug-info { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>CSS Modal Debug Test</h1>
+    
+    <div class="debug-info">
+        <strong>Test Steps:</strong><br>
+        1. Click "Show Modal" to add the is-open class<br>
+        2. Click "Hide Modal" to remove the is-open class<br>
+        3. Check if the modal appears/disappears
+    </div>
+    
+    <button class="test-button" onclick="showModal()">Show Modal</button>
+    <button class="test-button" onclick="hideModal()">Hide Modal</button>
+    <button class="test-button" onclick="toggleModal()">Toggle Modal</button>
+    
+    <div class="debug-info" id="debug-info">
+        Modal state: <span id="modal-state">Hidden</span><br>
+        Modal classes: <span id="modal-classes">tpb-qv-overlay</span><br>
+        Modal display: <span id="modal-display">none</span>
+    </div>
+
+    <!-- Modal HTML (exact same as store page) -->
+    <div id="tpb-qv-flower-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" onclick="hideModal()">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/white?text=Flower+Station" alt="Flower Station" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Configure Your Flower Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Please choose a SKU-count to see the base-price for electronics hardware.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="flower-station">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            modal.style.display = 'flex';
+            modal.classList.add('is-open');
+            updateDebugInfo();
+        }
+        
+        function hideModal() {
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            modal.classList.remove('is-open');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+            updateDebugInfo();
+        }
+        
+        function toggleModal() {
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            if (modal.classList.contains('is-open')) {
+                hideModal();
+            } else {
+                showModal();
+            }
+        }
+        
+        function updateDebugInfo() {
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            const computedStyle = window.getComputedStyle(modal);
+            
+            document.getElementById('modal-state').textContent = 
+                modal.classList.contains('is-open') ? 'Open' : 'Hidden';
+            document.getElementById('modal-classes').textContent = 
+                modal.className;
+            document.getElementById('modal-display').textContent = 
+                computedStyle.display;
+        }
+        
+        // Update debug info every second
+        setInterval(updateDebugInfo, 1000);
+        
+        // Initial update
+        updateDebugInfo();
+    </script>
+</body>
+</html>

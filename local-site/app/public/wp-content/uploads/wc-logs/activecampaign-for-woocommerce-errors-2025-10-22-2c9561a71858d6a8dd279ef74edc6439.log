@@ -1,0 +1,40 @@
+2025-10-22T14:18:20+00:00 ERROR Graphql returned errors:
+Context: {
+    "response_array": {
+        "errors": [
+            {
+                "message": "Exception: Connection sync failed for woocommerce http:\/\/the-peak-beyond-modal.local RequestId: cd1aec1c-ddfd-4d28-96f1-4525932daca3",
+                "extensions": {
+                    "classification": "ValidationError",
+                    "errorType": "BAD_REQUEST"
+                }
+            }
+        ],
+        "data": []
+    },
+    "response_body": {},
+    "ac_code": "APIGQL_195",
+    "source": "activecampaign-for-woocommerce-errors",
+    "version": "2.10.1",
+    "request_id": "ac_woocommerce_68f8e7ab40faa8.19977986"
+} CONTEXT: {"response_array":{"errors":[{"message":"Exception: Connection sync failed for woocommerce http://the-peak-beyond-modal.local RequestId: cd1aec1c-ddfd-4d28-96f1-4525932daca3","extensions":{"classification":"ValidationError","errorType":"BAD_REQUEST"}}],"data":[]},"response_body":{},"ac_code":"APIGQL_195","version":"2.10.1","request_id":"ac_woocommerce_68f8e7ab40faa8.19977986"}
+2025-10-22T21:30:04+00:00 ERROR Graphql returned errors:
+Context: {
+    "response_array": {
+        "errors": [
+            {
+                "message": "Exception: Connection sync failed for woocommerce http:\/\/the-peak-beyond-modal.local RequestId: 52d8d235-6882-4b9b-ba23-fa13b6caf430",
+                "extensions": {
+                    "classification": "ValidationError",
+                    "errorType": "BAD_REQUEST"
+                }
+            }
+        ],
+        "data": []
+    },
+    "response_body": {},
+    "ac_code": "APIGQL_195",
+    "source": "activecampaign-for-woocommerce-errors",
+    "version": "2.10.1",
+    "request_id": "ac_woocommerce_68f94cdabf76f6.49270056"
+} CONTEXT: {"response_array":{"errors":[{"message":"Exception: Connection sync failed for woocommerce http://the-peak-beyond-modal.local RequestId: 52d8d235-6882-4b9b-ba23-fa13b6caf430","extensions":{"classification":"ValidationError","errorType":"BAD_REQUEST"}}],"data":[]},"response_body":{},"ac_code":"APIGQL_195","version":"2.10.1","request_id":"ac_woocommerce_68f94cdabf76f6.49270056"}

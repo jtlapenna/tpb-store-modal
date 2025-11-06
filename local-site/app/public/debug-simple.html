@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Modal Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+    </style>
+    <link rel="stylesheet" href="wp-content/plugins/tpb-quickview-modal/assets/css/modal.css">
+</head>
+<body>
+    <h1>Simple Modal Debug Test</h1>
+    
+    <button class="test-button" onclick="openModal()">Open Modal (Direct)</button>
+    <button class="test-button" data-tpb-modal="true" href="flower-station-configure-now">Open Modal (Handler)</button>
+    
+    <div id="tpb-qv-flower-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" onclick="closeModal()">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/white?text=Flower+Station" alt="Flower Station" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Configure Your Flower Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Please choose a SKU-count to see the base-price for electronics hardware.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="flower-station">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="wp-content/plugins/tpb-quickview-modal/assets/js/modal-flower-handler.js"></script>
+    
+    <script>
+        // Test configuration
+        window.TPB_QV_CONFIG = {
+            home_url: 'http://the-peak-beyond-modal.local/',
+            qv_param: 'tpb_qv_iframe',
+            ajax_url: '/wp-admin/admin-ajax.php',
+            nonce: 'test-nonce',
+            cpb_enabled: false,
+            plugin_url: 'wp-content/plugins/tpb-quickview-modal/',
+            debug: true
+        };
+        
+        function openModal() {
+            console.log('Direct modal open clicked');
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            modal.style.display = 'flex';
+            // Small delay to ensure display change takes effect
+            setTimeout(() => {
+                modal.classList.add('is-open');
+            }, 10);
+        }
+        
+        function closeModal() {
+            console.log('Modal close clicked');
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            modal.classList.remove('is-open');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        
+        // Debug info
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+            console.log('jQuery available:', typeof $ !== 'undefined');
+            console.log('TPBFlowerModal available:', typeof window.TPBFlowerModal !== 'undefined');
+            console.log('TPB_QV_CONFIG available:', typeof window.TPB_QV_CONFIG !== 'undefined');
+            
+            // Test if handler is working
+            if (window.TPBFlowerModal) {
+                console.log('FlowerModal object:', window.TPBFlowerModal);
+            }
+        });
+        
+        // Listen for clicks on handler buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('[data-tpb-modal="true"]')) {
+                console.log('Handler button clicked:', e.target);
+                console.log('Button href:', e.target.getAttribute('href'));
+            }
+        });
+    </script>
+</body>
+</html>

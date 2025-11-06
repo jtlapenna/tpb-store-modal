@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Test</title>
+    <link rel="stylesheet" href="wp-content/plugins/tpb-quickview-modal/assets/css/modal.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>CSS Test</h1>
+    
+    <button class="test-button" onclick="toggleModal()">Toggle Modal</button>
+    
+    <div id="tpb-qv-flower-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" onclick="toggleModal()">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/white?text=Flower+Station" alt="Flower Station" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Configure Your Flower Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Please choose a SKU-count to see the base-price for electronics hardware.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="flower-station">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            if (modal.style.display === 'none') {
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.classList.add('is-open');
+                }, 10);
+            } else {
+                modal.classList.remove('is-open');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            }
+        }
+    </script>
+</body>
+</html>

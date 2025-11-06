@@ -1,0 +1,241 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: UPS Live Rates and Access Points PRO\n"
+"POT-Creation-Date: 2025-05-30 10:00+0000\n"
+"PO-Revision-Date: 2025-05-30 11:21+0000\n"
+"Last-Translator: Sebastian Pisula <sebastian.pisula@gmail.com>\n"
+"Language-Team: Maciej Swoboda <maciej.swoboda@gmail.com>\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: flexible-shipping-ups-pro.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: classes/wpdesk\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+"X-Poedit-SearchPathExcluded-3: vendor_prefixed\n"
+"X-Poedit-SearchPathExcluded-4: node_modules\n"
+
+#: src/FlexibleShippingUpsPro/Legacy/PackedPackagesAdminMetaDataInterpreter.php:31
+msgid "Packages"
+msgstr "Paczki"
+
+#: src/FlexibleShippingUpsPro/Plugin/Plugin.php:231
+msgid "Select pickup point"
+msgstr ""
+
+#: src/FlexibleShippingUpsPro/Plugin/Plugin.php:334
+msgid "UPS Access Point"
+msgstr "UPS Access Point"
+
+#: src/FlexibleShippingUpsPro/Plugin/Plugin.php:335
+msgid "Access point unavailable for selected shipping address!"
+msgstr "Access point niedostępny dla wybranego adresu wysyłki!"
+
+#: src/FlexibleShippingUpsPro/Plugin/Plugin.php:336
+msgid "The closest point based on the billing address or shipping address."
+msgstr "Lista najbliższych punktów na podstawie adresu płatnika lub wysyłki."
+
+#: src/FlexibleShippingUpsPro/Plugin/Plugin.php:454
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/FlexibleShippingUpsPro/Plugin/Plugin.php:455
+msgid "Docs"
+msgstr "Docs"
+
+#: src/FlexibleShippingUpsPro/Plugin/Plugin.php:456
+msgid "Support"
+msgstr "Wsparcie"
+
+#: src/FlexibleShippingUpsPro/Plugin/RateNotice.php:49
+#, php-format
+msgid "%1$sOk, you deserved it%2$s"
+msgstr "%1$sOk, zasługujesz na to%2$s"
+
+#: src/FlexibleShippingUpsPro/Plugin/RateNotice.php:55
+#, php-format
+msgid "%1$sNope, maybe later%2$s"
+msgstr "%1$sMoże później%2$s"
+
+#: src/FlexibleShippingUpsPro/Plugin/RateNotice.php:61
+#, php-format
+msgid "%1$sI already did%2$s"
+msgstr "%1$sJuż to zrobiłem/zrobiłam%2$s"
+
+#: src/FlexibleShippingUpsPro/Plugin/RateNotice.php:74
+#, fuzzy
+#| msgid ""
+#| "Awesome, you just crossed the 100 orders with UPS rates by UPS Live Rates "
+#| "and Access Points. Could you please do me a BIG favor and give it a 5-"
+#| "star rating on WordPress? ~ Peter"
+msgid ""
+"Awesome, you just crossed the 100 orders with UPS rates by Flexible Shipping "
+"UPS. Could you please do me a BIG favor and give it a 5-star rating on "
+"WordPress? ~ Peter"
+msgstr ""
+"Fantastycznie, korzystasz z UPS Stawki live i punkty odbioru już ponad 2 "
+"tygodnie. Czy możesz wyświadczyć mi wielką przysługę i wystawić 5-gwiazdkową "
+"ocenę? ~ Piotr"
+
+#: src/FlexibleShippingUpsPro/Plugin/UpgradeOnboarding.php:32
+msgid "New way to use REST API"
+msgstr "Nowy sposób połączenia z REST API"
+
+#: src/FlexibleShippingUpsPro/Plugin/UpgradeOnboarding.php:35
+#, php-format
+msgid ""
+"We're excited to announce a new method for accessing real-time shipping "
+"rates through the UPS REST API. From now on, you can use your own UPS "
+"application to connect to API and retrieve accurate live rates. This feature "
+"requires additional configuration. For more information, please %1$svisit "
+"our documentation%2$s."
+msgstr ""
+"Mamy przyjemność poinformować o nowej metodzie dostępu do stawek live za "
+"pośrednictwem UPS REST API. Od teraz możesz wykorzystać własną aplikację UPS "
+"do połączenia z API i uzyskania dokładnych, aktualnych cen. Ta funkcja "
+"wymaga dodatkowej konfiguracji. Więcej informacji znajdziesz w %1$snaszej "
+"dokumentacji%2$s."
+
+#: src/FlexibleShippingUpsPro/Plugin/views/settings-sidebar-html.php:13
+#, fuzzy
+#| msgid "Make everything easier with UPS Labels and Tracking!"
+msgid "Make everything easier with Flexible Shipping UPS Labels!"
+msgstr "Teraz możesz jeszcze więcej z UPS Etykiety nadawcze!"
+
+#: src/FlexibleShippingUpsPro/Plugin/views/settings-sidebar-html.php:16
+msgid "Extend the current UPS PRO functionalities and:"
+msgstr "Rozszerz dotychczasowe możliwości wtyczki UPS PRO o:"
+
+#: src/FlexibleShippingUpsPro/Plugin/views/settings-sidebar-html.php:19
+msgid "Create the shipments"
+msgstr "Tworzenie przesyłek"
+
+#: src/FlexibleShippingUpsPro/Plugin/views/settings-sidebar-html.php:22
+msgid "Generate the UPS shipping labels"
+msgstr "Generowanie etykiet nadawczych"
+
+#: src/FlexibleShippingUpsPro/Plugin/views/settings-sidebar-html.php:25
+msgid "Add the tracking links"
+msgstr "Linki trackingowe"
+
+#: src/FlexibleShippingUpsPro/Plugin/views/settings-sidebar-html.php:29
+msgid "Now you can do it all directly from your WooCommerce store!"
+msgstr ""
+"Nadawaj paczki, drukuj etykiety i śledź przesyłki bezpośrednio z poziomu "
+"Twojego sklepu WooCommerce!"
+
+#: src/FlexibleShippingUpsPro/Plugin/views/settings-sidebar-html.php:32
+msgid "Buy now UPS Labels →"
+msgstr "Kup UPS Etykiety →"
+
+#: src/PluginDisabler/UpsFreeDisabler.php:56
+#, fuzzy, php-format
+#| msgid ""
+#| "\"UPS Live Rates and Access Points\" plugin can be removed now since the "
+#| "PRO version took over its functionalities.%1$s%2$sClick here%3$s to "
+#| "deactivate \"UPS Live Rates and Access Points\" plugin."
+msgid ""
+"\"Flexible Shipping for UPS\" plugin can be removed now since the PRO "
+"version took over its functionalities.%1$s%2$sClick here%3$s to deactivate "
+"\"Flexible Shipping For UPS\" plugin."
+msgstr ""
+"Wtyczka \"UPS Stawki live i punkty odbioru\" może zostać usunięta - jej "
+"funkcjonalność została zastąpiona wtyczką PRO. %1$s%2$sKliknij tutaj%3$s, "
+"aby wyłączyć wtyczkę \"UPS Stawki live i punkty odbioru\"."
+
+#: templates/after-shipping-rate-days-to-arrival.php:16
+msgid "(Delivery Days: 0 days)"
+msgstr "(Dni do dostawy: 0 dni)"
+
+#: templates/after-shipping-rate-days-to-arrival.php:20
+#, php-format
+msgid "(Delivery Days: %1$d day)"
+msgid_plural "(Delivery Days: %1$d days)"
+msgstr[0] "(Dni do dostawy: %1$d dzień)"
+msgstr[1] "(Dni do dostawy: %1$d dni)"
+msgstr[2] "(Dni do dostawy: %1$d dni)"
+
+#: templates/after-shipping-rate-delivery-date.php:16
+#, php-format
+msgid "(Delivery Date: %1$s)"
+msgstr "(Data dostawy: %1$s)"
+
+#. Plugin Name of the plugin/theme
+msgid "Shipping Live Rates and Access Points for UPS for WooCommerce PRO"
+msgstr "Stawki wysyłki live dla UPS w WooCommerce PRO"
+
+#. Plugin URI of the plugin/theme
+msgid "https://octol.io/ups-plugin-site/"
+msgstr "https://octol.io/ups-plugin-site-pl"
+
+#. Description of the plugin/theme
+msgid ""
+"WooCommerce UPS integration packed with many advanced features. Display the "
+"dynamically calculated live rates for UPS shipping methods and adjust them "
+"to your needs."
+msgstr ""
+"Integracja WooCommerce z UPS. Udostępnij swoim klientom dynamicznie "
+"obliczane stawki dla metod wysyłki UPS i dostosuj je do swoich potrzeb za "
+"pomocą zaawansowanych opcji."
+
+#. Author of the plugin/theme
+msgid "Octolize"
+msgstr "Octolize"
+
+#. Author URI of the plugin/theme
+msgid "https://octol.io/ups-author"
+msgstr "https://octol.io/ups-author-pl"
+
+#~ msgid "Extensions"
+#~ msgstr "Rozszerzenia"
+
+#, fuzzy
+#~| msgid "https://flexibleshipping.com/products/flexible-shipping-ups-pro/"
+#~ msgid ""
+#~ "https://flexibleshipping.com/products/flexible-shipping-ups-pro//?"
+#~ "utm_source=ups-pro&utm_medium=link&utm_campaign=plugin-list-page/"
+#~ msgstr "https://www.wpdesk.pl/sklep/ups-woocommerce/"
+
+#~ msgid "Hide UPS shipping method based on:"
+#~ msgstr "Ukrywaj metody wysyłki na podstawie:"
+
+#~ msgid "Products"
+#~ msgstr "Produktów"
+
+#~ msgid "Shipping Class"
+#~ msgstr "Klasy wysyłkowej"
+
+#~ msgid "Cart weight"
+#~ msgstr "Wagi koszyka"
+
+#~ msgid "Cart value"
+#~ msgstr "Wartości koszyka"
+
+#~ msgid "Time (Day/Hour)"
+#~ msgstr "Czasu (dnia oraz godziny)"
+
+#~ msgid "Location"
+#~ msgstr "Lokalizacji"
+
+#~ msgid "Get Conditional Shipping Methods →"
+#~ msgstr "Kup Conditional Shipping Methods →"
+
+#~ msgid ""
+#~ "Extends the free version of UPS Live Rates and Access Points by adding "
+#~ "advanced pro features."
+#~ msgstr ""
+#~ "Rozszerza bezpłatną wersję UPS Stawki live i punkty odbioru poprzez "
+#~ "dodanie zaawansowanych ustawień."
+
+#~ msgid "https://www.wpdesk.net/"
+#~ msgstr "https://flexibleshipping.com/"

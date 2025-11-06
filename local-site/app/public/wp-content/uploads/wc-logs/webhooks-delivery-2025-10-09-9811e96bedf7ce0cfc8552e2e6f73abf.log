@@ -1,0 +1,1166 @@
+2025-10-09T03:22:06+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 937e74d479cd4fcb402aa1e3613964c8
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.20467
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => dZtlVwj94q2RG5xybFrTqswWtbrpeF8FngW7kBz4J9A=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => 937e74d479cd4fcb402aa1e3613964c8
+                        )
+
+                )
+
+            [Body] => {\"id\":4760}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:06 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac06ceb4003f7-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:07+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 937e74d479cd4fcb402aa1e3613964c8
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.20267
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => xXpVfjR0Ohrnaw7n4PTO7W/LsYt3n5qnGkS+53ZNTPs=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => 937e74d479cd4fcb402aa1e3613964c8
+                        )
+
+                )
+
+            [Body] => {\"id\":4766}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:07 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac0713e6bd152-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:07+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => dc0faaa9e18cd25820a53dbef4492f70
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.18322
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => wgIIrDR74EvC4k6Rx8q+qSJwt3ctOju56HO+lsPVVn0=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => dc0faaa9e18cd25820a53dbef4492f70
+                        )
+
+                )
+
+            [Body] => {\"id\":4768}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:07 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac072a8eaf0b7-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:07+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => dc0faaa9e18cd25820a53dbef4492f70
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.19093
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => RZVUXfCIgV5yvYkAecpShTQJ7AOVI+k1xeAP0QskHRQ=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => dc0faaa9e18cd25820a53dbef4492f70
+                        )
+
+                )
+
+            [Body] => {\"id\":4770}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:07 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac0741975ff34-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:07+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => dc0faaa9e18cd25820a53dbef4492f70
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.18854
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => QEAAW/SEdmoBKnUrlAUOiehl63CRBlithptmKvxnVwE=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => dc0faaa9e18cd25820a53dbef4492f70
+                        )
+
+                )
+
+            [Body] => {\"id\":4772}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:07 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac0759c63d619-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:07+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => dc0faaa9e18cd25820a53dbef4492f70
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.17807
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => ZRbfJS0IWYAdPGUnZ2swhKotwHDM56VQn3LpvnsYVls=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => dc0faaa9e18cd25820a53dbef4492f70
+                        )
+
+                )
+
+            [Body] => {\"id\":4774}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:07 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac0770b65d13a-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:08+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e25ca730677255740aead41a0d4cb5f7
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.18715
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => SdMSZOQqe6M6kRmSqz7c/ouzslfyESpbUQ/MYqMl9C0=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => e25ca730677255740aead41a0d4cb5f7
+                        )
+
+                )
+
+            [Body] => {\"id\":4776}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:08 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac0787ffb213d-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:08+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e25ca730677255740aead41a0d4cb5f7
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.18314
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => ZHI+zp06gLa+DsfGoU1Y8Wn9TbpWHqpOnM+cZQt1gSI=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => e25ca730677255740aead41a0d4cb5f7
+                        )
+
+                )
+
+            [Body] => {\"id\":4780}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:08 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac079e85e13f4-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:08+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e25ca730677255740aead41a0d4cb5f7
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.17601
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => 2S9gE8N2u8dTl44HF8lLU6e4gwAhp646X17u9jPZSQI=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => e25ca730677255740aead41a0d4cb5f7
+                        )
+
+                )
+
+            [Body] => {\"id\":4782}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:08 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac07b4ba86f51-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:08+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e25ca730677255740aead41a0d4cb5f7
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.1673
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => WacZpBQa/dBdGYSicrKlv+I/RygwPrBTcOBkjOwnSOs=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => e25ca730677255740aead41a0d4cb5f7
+                        )
+
+                )
+
+            [Body] => {\"id\":4784}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:08 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac07ca89e0265-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:09+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e25ca730677255740aead41a0d4cb5f7
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.17435
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => 88Rm3F1SLqxeff/O1AJ/qxpQxkzmayh+fIlFVh2v6F0=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => e25ca730677255740aead41a0d4cb5f7
+                        )
+
+                )
+
+            [Body] => {\"id\":4786}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:09 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac07df9c8c46a-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:09+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 9f22a0f1969230035a3e27bf7e3188f8
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.18059
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => DolAmJJkNg3RiyZLkSBaYSO/254rpLPpT3PIrKijNkY=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => 9f22a0f1969230035a3e27bf7e3188f8
+                        )
+
+                )
+
+            [Body] => {\"id\":4788}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:09 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac07f58db8825-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:09+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 9f22a0f1969230035a3e27bf7e3188f8
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.183
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => qjwISBHqGMboMxNecSTTYUrMgQ2TcHaGBvslrZVvkxs=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => 9f22a0f1969230035a3e27bf7e3188f8
+                        )
+
+                )
+
+            [Body] => {\"id\":4790}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:09 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac080cbdd9eba-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:22:09+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 9f22a0f1969230035a3e27bf7e3188f8
+            [Date] => Oct 9, 2025 @ 3:22
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.18166
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.deleted
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => deleted
+                            [X-WC-Webhook-Signature] => tQWge2JX+DqY2Q3GCy2xGp9WeG2Q2tbA8fFhK4ADRU8=
+                            [X-WC-Webhook-ID] => 59
+                            [X-WC-Webhook-Delivery-ID] => 9f22a0f1969230035a3e27bf7e3188f8
+                        )
+
+                )
+
+            [Body] => {\"id\":4792}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:22:09 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac0822b973cf3-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T03:23:55+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 9493bbd7c5548dce07a02f129973818e
+            [Date] => Oct 9, 2025 @ 3:23
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/order/v1
+            [Duration] => 0.43871
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => BppoPbDA1pN0lrLRKCkxIm9wUmYty6nkzM+NItE55Ws=
+                            [X-WC-Webhook-ID] => 55
+                            [X-WC-Webhook-Delivery-ID] => 9493bbd7c5548dce07a02f129973818e
+                        )
+
+                )
+
+            [Body] => {\"id\":3016,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"USD\",\"version\":\"10.2.2\",\"prices_include_tax\":false,\"date_created\":\"2025-05-27T20:42:32\",\"date_modified\":\"2025-05-27T21:19:53\",\"discount_total\":\"716.00\",\"discount_tax\":\"53.70\",\"shipping_total\":\"1806.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"653.93\",\"total\":\"11178.93\",\"total_tax\":\"653.93\",\"customer_id\":1,\"order_key\":\"wc_order_XfLuR0hXsGWr2\",\"billing\":{\"first_name\":\"Shivam Patel\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"jeff@thepeakbeyond.com\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"98.56.162.34\",\"customer_user_agent\":\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/136.0.0.0 Safari\\/537.36\",\"created_via\":\"ywraq\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"3016\",\"meta_data\":[{\"id\":31408,\"key\":\"ywraq_raq\",\"value\":\"yes\"},{\"id\":31410,\"key\":\"_current_user\",\"value\":\"1\"},{\"id\":31411,\"key\":\"ywraq_raq_status\",\"value\":\"accepted\"},{\"id\":31413,\"key\":\"_ywraq_version\",\"value\":\"4.33.0\"},{\"id\":31414,\"key\":\"_ywraq_pdf_crypt\",\"value\":\"yes\"},{\"id\":31415,\"key\":\"ywraq_customer_name\",\"value\":\"Shivam Patel\"},{\"id\":31416,\"key\":\"ywraq_customer_message\",\"value\":\"This is a test quote\"},{\"id\":31417,\"key\":\"ywraq_customer_email\",\"value\":\"jeff@thepeakbeyond.com\"},{\"id\":31418,\"key\":\"_raq_request\",\"value\":{\"first_name\":{\"id\":\"first_name\",\"type\":\"text\",\"label\":\"First Name\",\"connect_to_field\":\"\",\"value\":\"Shivam\"},\"last_name\":{\"id\":\"last_name\",\"type\":\"text\",\"label\":\"Last Name\",\"connect_to_field\":\"\",\"value\":\"Patel\"},\"email\":{\"id\":\"email\",\"type\":\"email\",\"label\":\"Email\",\"connect_to_field\":\"\",\"value\":\"jeff@thepeakbeyond.com\"},\"message\":{\"id\":\"message\",\"type\":\"textarea\",\"label\":\"Message\",\"connect_to_field\":\"\",\"value\":\"This is a test quote\"},\"location_name\":{\"id\":\"location_name\",\"type\":\"text\",\"label\":\"Location Name\",\"connect_to_field\":\"\",\"value\":\"Newburgh\"},\"social_equity\":{\"id\":\"social_equity\",\"type\":\"radio\",\"label\":\"Are you a social equity license holder?\",\"connect_to_field\":\"\",\"value\":\"Yes\"},\"customer_id\":1,\"raq_content\":{\"bc99aa09629bfa56cf9ac3de4b3961d7\":{\"product_id\":\"452\",\"variation_id\":\"871\",\"quantity\":\"4\",\"variations\":{\"attribute_pa_remedy-finish\":\"black-acrylic\"}}},\"sent_from_cart\":false,\"user_name\":\"Shivam Patel\",\"user_email\":\"jeff@thepeakbeyond.com\",\"user_message\":\"This is a test quote\"}},{\"id\":31419,\"key\":\"ywraq_other_email_fields\",\"value\":{\"Location Name\":\"Newburgh\",\"Are you a social equity license holder?\":\"Yes\"}},{\"id\":31420,\"key\":\"ywraq_other_email_content\",\"value\":\"<strong>Location Name<\\/strong>: Newburgh<br><strong>Are you a social equity license holder?<\\/strong>: Yes<br>\"},{\"id\":31425,\"key\":\"ac_order_last_synced_time\",\"value\":\"1748380871\"},{\"id\":31426,\"key\":\"ac_datahash\",\"value\":\"420c55d6ad793db0af249219710eb195\"},{\"id\":31436,\"key\":\"_aftership_migrated\",\"value\":\"ok\"},{\"id\":31437,\"key\":\"_ywraq_enable_custom_text\",\"value\":\"no\"},{\"id\":31438,\"key\":\"_ywcm_request_response\",\"value\":\"\"},{\"id\":31439,\"key\":\"_ywraq_request_response_after\",\"value\":\"\"},{\"id\":31440,\"key\":\"_ywraq_optional_attachment\",\"value\":\"\"},{\"id\":31441,\"key\":\"_ywraq_enable_expiry_date\",\"value\":\"no\"},{\"id\":31442,\"key\":\"_ywraq_request_my_account_admin_message\",\"value\":\"Please review the quote and accept if you are ready to move forward with payment.\"},{\"id\":31443,\"key\":\"_ywraq_override_quote_payment_options\",\"value\":\"no\"},{\"id\":31444,\"key\":\"_ywraq_pay_quote_now\",\"value\":\"no\"},{\"id\":31445,\"key\":\"_ywraq_checkout_info\",\"value\":\"-\"},{\"id\":31446,\"key\":\"_ywraq_disable_shipping_method\",\"value\":\"1\"},{\"id\":31447,\"key\":\"_ywraq_lock_editing\",\"value\":\"no\"},{\"id\":31448,\"key\":\"_ywraq_safe_submit_field\",\"value\":\"send_quote\"},{\"id\":31449,\"key\":\"_ywraq_email_preview\",\"value\":{\"email\":\"jeff@thepeakbeyond.com\"}},{\"id\":31462,\"key\":\"_ywcm_request_expire\",\"value\":\"\"},{\"id\":31464,\"key\":\"_ywraq_author\",\"value\":\"1\"},{\"id\":31465,\"key\":\"ywraq_pending_status_date\",\"value\":\"2025-05-27\"},{\"id\":31466,\"key\":\"ywraq_status\",\"value\":\"pending\"},{\"id\":31484,\"key\":\"ac_last_synced_status\",\"value\":\"pending\"},{\"id\":31485,\"key\":\"activecampaign_for_woocommerce_external_checkout_id\",\"value\":\"f1cabe548c7759e6dcdbd7ec19f37abe\"}],\"line_items\":[{\"id\":70,\"name\":\"Counter-top flower display with 8 featured products - Black Acrylic\",\"product_id\":452,\"variation_id\":871,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"8600.00\",\"subtotal_tax\":\"645.00\",\"total\":\"8134.00\",\"total_tax\":\"610.05\",\"taxes\":[{\"id\":1,\"total\":\"610.05\",\"subtotal\":\"645.00\"}],\"meta_data\":[{\"id\":569,\"key\":\"pa_remedy-finish\",\"value\":\"black-acrylic\",\"display_key\":\"pa_remedy-finish\",\"display_value\":\"black-acrylic\"}],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":2033.5,\"image\":{\"id\":865,\"src\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/1400x1400-2.jpg\"},\"parent_name\":\"Counter-top flower display with 8 featured products\"},{\"id\":75,\"name\":\"Service -- Display Installation\",\"product_id\":372,\"variation_id\":0,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"600.00\",\"subtotal_tax\":\"45.00\",\"total\":\"350.00\",\"total_tax\":\"26.25\",\"taxes\":[{\"id\":1,\"total\":\"26.25\",\"subtotal\":\"45.00\"}],\"meta_data\":[],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":87.5,\"image\":{\"id\":\"\",\"src\":\"\"},\"parent_name\":null}],\"tax_lines\":[{\"id\":71,\"rate_code\":\"US-CA-US-CA-NEVADA COUNTY-GRASS VALLEY TAX-1\",\"rate_id\":1,\"label\":\"US-CA-NEVADA COUNTY-GRASS VALLEY Tax\",\"compound\":false,\"tax_total\":\"653.93\",\"shipping_tax_total\":\"0.00\",\"rate_percent\":7.5,\"meta_data\":[]}],\"shipping_lines\":[{\"id\":72,\"method_title\":\"Shipping\",\"method_id\":\"\",\"instance_id\":\"0\",\"total\":\"1806.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"tax_status\":\"taxable\",\"meta_data\":[]}],\"fee_lines\":[{\"id\":74,\"name\":\"Monthly software license fee\",\"tax_class\":\"\",\"tax_status\":\"taxable\",\"amount\":\"235\",\"total\":\"235.00\",\"total_tax\":\"17.63\",\"taxes\":[{\"id\":1,\"total\":\"17.63\",\"subtotal\":\"\"}],\"meta_data\":[]}],\"coupon_lines\":[],\"refunds\":[],\"payment_url\":\"https:\\/\\/cannabis-kiosks.com\\/checkout\\/order-pay\\/3016\\/?pay_for_order=true&key=wc_order_XfLuR0hXsGWr2\",\"is_editable\":true,\"needs_payment\":true,\"needs_processing\":true,\"date_created_gmt\":\"2025-05-27T20:42:32\",\"date_modified_gmt\":\"2025-05-27T21:19:53\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"$\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\"}],\"email_templates\":[{\"embeddable\":true,\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\\/actions\\/email_templates\"}],\"customer\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/customers\\/1\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 03:23:55 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bac3189878d886-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T06:23:30+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => e3f64f7d2adf7951f261aad11e7bcace
+            [Date] => Oct 9, 2025 @ 6:23
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/order/v1
+            [Duration] => 1.19221
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => BppoPbDA1pN0lrLRKCkxIm9wUmYty6nkzM+NItE55Ws=
+                            [X-WC-Webhook-ID] => 55
+                            [X-WC-Webhook-Delivery-ID] => e3f64f7d2adf7951f261aad11e7bcace
+                        )
+
+                )
+
+            [Body] => {\"id\":3016,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"USD\",\"version\":\"10.2.2\",\"prices_include_tax\":false,\"date_created\":\"2025-05-27T20:42:32\",\"date_modified\":\"2025-05-27T21:19:53\",\"discount_total\":\"716.00\",\"discount_tax\":\"53.70\",\"shipping_total\":\"1806.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"653.93\",\"total\":\"11178.93\",\"total_tax\":\"653.93\",\"customer_id\":1,\"order_key\":\"wc_order_XfLuR0hXsGWr2\",\"billing\":{\"first_name\":\"Shivam Patel\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"jeff@thepeakbeyond.com\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"98.56.162.34\",\"customer_user_agent\":\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/136.0.0.0 Safari\\/537.36\",\"created_via\":\"ywraq\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"3016\",\"meta_data\":[{\"id\":31408,\"key\":\"ywraq_raq\",\"value\":\"yes\"},{\"id\":31410,\"key\":\"_current_user\",\"value\":\"1\"},{\"id\":31411,\"key\":\"ywraq_raq_status\",\"value\":\"accepted\"},{\"id\":31413,\"key\":\"_ywraq_version\",\"value\":\"4.33.0\"},{\"id\":31414,\"key\":\"_ywraq_pdf_crypt\",\"value\":\"yes\"},{\"id\":31415,\"key\":\"ywraq_customer_name\",\"value\":\"Shivam Patel\"},{\"id\":31416,\"key\":\"ywraq_customer_message\",\"value\":\"This is a test quote\"},{\"id\":31417,\"key\":\"ywraq_customer_email\",\"value\":\"jeff@thepeakbeyond.com\"},{\"id\":31418,\"key\":\"_raq_request\",\"value\":{\"first_name\":{\"id\":\"first_name\",\"type\":\"text\",\"label\":\"First Name\",\"connect_to_field\":\"\",\"value\":\"Shivam\"},\"last_name\":{\"id\":\"last_name\",\"type\":\"text\",\"label\":\"Last Name\",\"connect_to_field\":\"\",\"value\":\"Patel\"},\"email\":{\"id\":\"email\",\"type\":\"email\",\"label\":\"Email\",\"connect_to_field\":\"\",\"value\":\"jeff@thepeakbeyond.com\"},\"message\":{\"id\":\"message\",\"type\":\"textarea\",\"label\":\"Message\",\"connect_to_field\":\"\",\"value\":\"This is a test quote\"},\"location_name\":{\"id\":\"location_name\",\"type\":\"text\",\"label\":\"Location Name\",\"connect_to_field\":\"\",\"value\":\"Newburgh\"},\"social_equity\":{\"id\":\"social_equity\",\"type\":\"radio\",\"label\":\"Are you a social equity license holder?\",\"connect_to_field\":\"\",\"value\":\"Yes\"},\"customer_id\":1,\"raq_content\":{\"bc99aa09629bfa56cf9ac3de4b3961d7\":{\"product_id\":\"452\",\"variation_id\":\"871\",\"quantity\":\"4\",\"variations\":{\"attribute_pa_remedy-finish\":\"black-acrylic\"}}},\"sent_from_cart\":false,\"user_name\":\"Shivam Patel\",\"user_email\":\"jeff@thepeakbeyond.com\",\"user_message\":\"This is a test quote\"}},{\"id\":31419,\"key\":\"ywraq_other_email_fields\",\"value\":{\"Location Name\":\"Newburgh\",\"Are you a social equity license holder?\":\"Yes\"}},{\"id\":31420,\"key\":\"ywraq_other_email_content\",\"value\":\"<strong>Location Name<\\/strong>: Newburgh<br><strong>Are you a social equity license holder?<\\/strong>: Yes<br>\"},{\"id\":31425,\"key\":\"ac_order_last_synced_time\",\"value\":\"1748380871\"},{\"id\":31426,\"key\":\"ac_datahash\",\"value\":\"420c55d6ad793db0af249219710eb195\"},{\"id\":31436,\"key\":\"_aftership_migrated\",\"value\":\"ok\"},{\"id\":31437,\"key\":\"_ywraq_enable_custom_text\",\"value\":\"no\"},{\"id\":31438,\"key\":\"_ywcm_request_response\",\"value\":\"\"},{\"id\":31439,\"key\":\"_ywraq_request_response_after\",\"value\":\"\"},{\"id\":31440,\"key\":\"_ywraq_optional_attachment\",\"value\":\"\"},{\"id\":31441,\"key\":\"_ywraq_enable_expiry_date\",\"value\":\"no\"},{\"id\":31442,\"key\":\"_ywraq_request_my_account_admin_message\",\"value\":\"Please review the quote and accept if you are ready to move forward with payment.\"},{\"id\":31443,\"key\":\"_ywraq_override_quote_payment_options\",\"value\":\"no\"},{\"id\":31444,\"key\":\"_ywraq_pay_quote_now\",\"value\":\"no\"},{\"id\":31445,\"key\":\"_ywraq_checkout_info\",\"value\":\"-\"},{\"id\":31446,\"key\":\"_ywraq_disable_shipping_method\",\"value\":\"1\"},{\"id\":31447,\"key\":\"_ywraq_lock_editing\",\"value\":\"no\"},{\"id\":31448,\"key\":\"_ywraq_safe_submit_field\",\"value\":\"send_quote\"},{\"id\":31449,\"key\":\"_ywraq_email_preview\",\"value\":{\"email\":\"jeff@thepeakbeyond.com\"}},{\"id\":31462,\"key\":\"_ywcm_request_expire\",\"value\":\"\"},{\"id\":31464,\"key\":\"_ywraq_author\",\"value\":\"1\"},{\"id\":31465,\"key\":\"ywraq_pending_status_date\",\"value\":\"2025-05-27\"},{\"id\":31466,\"key\":\"ywraq_status\",\"value\":\"pending\"},{\"id\":31484,\"key\":\"ac_last_synced_status\",\"value\":\"pending\"},{\"id\":31485,\"key\":\"activecampaign_for_woocommerce_external_checkout_id\",\"value\":\"f1cabe548c7759e6dcdbd7ec19f37abe\"}],\"line_items\":[{\"id\":70,\"name\":\"Counter-top flower display with 8 featured products - Black Acrylic\",\"product_id\":452,\"variation_id\":871,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"8600.00\",\"subtotal_tax\":\"645.00\",\"total\":\"8134.00\",\"total_tax\":\"610.05\",\"taxes\":[{\"id\":1,\"total\":\"610.05\",\"subtotal\":\"645.00\"}],\"meta_data\":[{\"id\":569,\"key\":\"pa_remedy-finish\",\"value\":\"black-acrylic\",\"display_key\":\"pa_remedy-finish\",\"display_value\":\"black-acrylic\"}],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":2033.5,\"image\":{\"id\":865,\"src\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/1400x1400-2.jpg\"},\"parent_name\":\"Counter-top flower display with 8 featured products\"},{\"id\":75,\"name\":\"Service -- Display Installation\",\"product_id\":372,\"variation_id\":0,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"600.00\",\"subtotal_tax\":\"45.00\",\"total\":\"350.00\",\"total_tax\":\"26.25\",\"taxes\":[{\"id\":1,\"total\":\"26.25\",\"subtotal\":\"45.00\"}],\"meta_data\":[],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":87.5,\"image\":{\"id\":\"\",\"src\":\"\"},\"parent_name\":null}],\"tax_lines\":[{\"id\":71,\"rate_code\":\"US-CA-US-CA-NEVADA COUNTY-GRASS VALLEY TAX-1\",\"rate_id\":1,\"label\":\"US-CA-NEVADA COUNTY-GRASS VALLEY Tax\",\"compound\":false,\"tax_total\":\"653.93\",\"shipping_tax_total\":\"0.00\",\"rate_percent\":7.5,\"meta_data\":[]}],\"shipping_lines\":[{\"id\":72,\"method_title\":\"Shipping\",\"method_id\":\"\",\"instance_id\":\"0\",\"total\":\"1806.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"tax_status\":\"taxable\",\"meta_data\":[]}],\"fee_lines\":[{\"id\":74,\"name\":\"Monthly software license fee\",\"tax_class\":\"\",\"tax_status\":\"taxable\",\"amount\":\"235\",\"total\":\"235.00\",\"total_tax\":\"17.63\",\"taxes\":[{\"id\":1,\"total\":\"17.63\",\"subtotal\":\"\"}],\"meta_data\":[]}],\"coupon_lines\":[],\"refunds\":[],\"payment_url\":\"https:\\/\\/cannabis-kiosks.com\\/checkout\\/order-pay\\/3016\\/?pay_for_order=true&key=wc_order_XfLuR0hXsGWr2\",\"is_editable\":true,\"needs_payment\":true,\"needs_processing\":true,\"date_created_gmt\":\"2025-05-27T20:42:32\",\"date_modified_gmt\":\"2025-05-27T21:19:53\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"$\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\"}],\"email_templates\":[{\"embeddable\":true,\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\\/actions\\/email_templates\"}],\"customer\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/customers\\/1\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 06:23:30 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bbca295d357240-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T09:07:54+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => cb819e9e111b6f46975872ddefe879f5
+            [Date] => Oct 9, 2025 @ 9:07
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/order/v1
+            [Duration] => 0.59209
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => BppoPbDA1pN0lrLRKCkxIm9wUmYty6nkzM+NItE55Ws=
+                            [X-WC-Webhook-ID] => 55
+                            [X-WC-Webhook-Delivery-ID] => cb819e9e111b6f46975872ddefe879f5
+                        )
+
+                )
+
+            [Body] => {\"id\":3016,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"USD\",\"version\":\"10.2.2\",\"prices_include_tax\":false,\"date_created\":\"2025-05-27T20:42:32\",\"date_modified\":\"2025-05-27T21:19:53\",\"discount_total\":\"716.00\",\"discount_tax\":\"53.70\",\"shipping_total\":\"1806.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"653.93\",\"total\":\"11178.93\",\"total_tax\":\"653.93\",\"customer_id\":1,\"order_key\":\"wc_order_XfLuR0hXsGWr2\",\"billing\":{\"first_name\":\"Shivam Patel\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"jeff@thepeakbeyond.com\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"98.56.162.34\",\"customer_user_agent\":\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/136.0.0.0 Safari\\/537.36\",\"created_via\":\"ywraq\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"3016\",\"meta_data\":[{\"id\":31408,\"key\":\"ywraq_raq\",\"value\":\"yes\"},{\"id\":31410,\"key\":\"_current_user\",\"value\":\"1\"},{\"id\":31411,\"key\":\"ywraq_raq_status\",\"value\":\"accepted\"},{\"id\":31413,\"key\":\"_ywraq_version\",\"value\":\"4.33.0\"},{\"id\":31414,\"key\":\"_ywraq_pdf_crypt\",\"value\":\"yes\"},{\"id\":31415,\"key\":\"ywraq_customer_name\",\"value\":\"Shivam Patel\"},{\"id\":31416,\"key\":\"ywraq_customer_message\",\"value\":\"This is a test quote\"},{\"id\":31417,\"key\":\"ywraq_customer_email\",\"value\":\"jeff@thepeakbeyond.com\"},{\"id\":31418,\"key\":\"_raq_request\",\"value\":{\"first_name\":{\"id\":\"first_name\",\"type\":\"text\",\"label\":\"First Name\",\"connect_to_field\":\"\",\"value\":\"Shivam\"},\"last_name\":{\"id\":\"last_name\",\"type\":\"text\",\"label\":\"Last Name\",\"connect_to_field\":\"\",\"value\":\"Patel\"},\"email\":{\"id\":\"email\",\"type\":\"email\",\"label\":\"Email\",\"connect_to_field\":\"\",\"value\":\"jeff@thepeakbeyond.com\"},\"message\":{\"id\":\"message\",\"type\":\"textarea\",\"label\":\"Message\",\"connect_to_field\":\"\",\"value\":\"This is a test quote\"},\"location_name\":{\"id\":\"location_name\",\"type\":\"text\",\"label\":\"Location Name\",\"connect_to_field\":\"\",\"value\":\"Newburgh\"},\"social_equity\":{\"id\":\"social_equity\",\"type\":\"radio\",\"label\":\"Are you a social equity license holder?\",\"connect_to_field\":\"\",\"value\":\"Yes\"},\"customer_id\":1,\"raq_content\":{\"bc99aa09629bfa56cf9ac3de4b3961d7\":{\"product_id\":\"452\",\"variation_id\":\"871\",\"quantity\":\"4\",\"variations\":{\"attribute_pa_remedy-finish\":\"black-acrylic\"}}},\"sent_from_cart\":false,\"user_name\":\"Shivam Patel\",\"user_email\":\"jeff@thepeakbeyond.com\",\"user_message\":\"This is a test quote\"}},{\"id\":31419,\"key\":\"ywraq_other_email_fields\",\"value\":{\"Location Name\":\"Newburgh\",\"Are you a social equity license holder?\":\"Yes\"}},{\"id\":31420,\"key\":\"ywraq_other_email_content\",\"value\":\"<strong>Location Name<\\/strong>: Newburgh<br><strong>Are you a social equity license holder?<\\/strong>: Yes<br>\"},{\"id\":31425,\"key\":\"ac_order_last_synced_time\",\"value\":\"1748380871\"},{\"id\":31426,\"key\":\"ac_datahash\",\"value\":\"420c55d6ad793db0af249219710eb195\"},{\"id\":31436,\"key\":\"_aftership_migrated\",\"value\":\"ok\"},{\"id\":31437,\"key\":\"_ywraq_enable_custom_text\",\"value\":\"no\"},{\"id\":31438,\"key\":\"_ywcm_request_response\",\"value\":\"\"},{\"id\":31439,\"key\":\"_ywraq_request_response_after\",\"value\":\"\"},{\"id\":31440,\"key\":\"_ywraq_optional_attachment\",\"value\":\"\"},{\"id\":31441,\"key\":\"_ywraq_enable_expiry_date\",\"value\":\"no\"},{\"id\":31442,\"key\":\"_ywraq_request_my_account_admin_message\",\"value\":\"Please review the quote and accept if you are ready to move forward with payment.\"},{\"id\":31443,\"key\":\"_ywraq_override_quote_payment_options\",\"value\":\"no\"},{\"id\":31444,\"key\":\"_ywraq_pay_quote_now\",\"value\":\"no\"},{\"id\":31445,\"key\":\"_ywraq_checkout_info\",\"value\":\"-\"},{\"id\":31446,\"key\":\"_ywraq_disable_shipping_method\",\"value\":\"1\"},{\"id\":31447,\"key\":\"_ywraq_lock_editing\",\"value\":\"no\"},{\"id\":31448,\"key\":\"_ywraq_safe_submit_field\",\"value\":\"send_quote\"},{\"id\":31449,\"key\":\"_ywraq_email_preview\",\"value\":{\"email\":\"jeff@thepeakbeyond.com\"}},{\"id\":31462,\"key\":\"_ywcm_request_expire\",\"value\":\"\"},{\"id\":31464,\"key\":\"_ywraq_author\",\"value\":\"1\"},{\"id\":31465,\"key\":\"ywraq_pending_status_date\",\"value\":\"2025-05-27\"},{\"id\":31466,\"key\":\"ywraq_status\",\"value\":\"pending\"},{\"id\":31484,\"key\":\"ac_last_synced_status\",\"value\":\"pending\"},{\"id\":31485,\"key\":\"activecampaign_for_woocommerce_external_checkout_id\",\"value\":\"f1cabe548c7759e6dcdbd7ec19f37abe\"}],\"line_items\":[{\"id\":70,\"name\":\"Counter-top flower display with 8 featured products - Black Acrylic\",\"product_id\":452,\"variation_id\":871,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"8600.00\",\"subtotal_tax\":\"645.00\",\"total\":\"8134.00\",\"total_tax\":\"610.05\",\"taxes\":[{\"id\":1,\"total\":\"610.05\",\"subtotal\":\"645.00\"}],\"meta_data\":[{\"id\":569,\"key\":\"pa_remedy-finish\",\"value\":\"black-acrylic\",\"display_key\":\"pa_remedy-finish\",\"display_value\":\"black-acrylic\"}],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":2033.5,\"image\":{\"id\":865,\"src\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/1400x1400-2.jpg\"},\"parent_name\":\"Counter-top flower display with 8 featured products\"},{\"id\":75,\"name\":\"Service -- Display Installation\",\"product_id\":372,\"variation_id\":0,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"600.00\",\"subtotal_tax\":\"45.00\",\"total\":\"350.00\",\"total_tax\":\"26.25\",\"taxes\":[{\"id\":1,\"total\":\"26.25\",\"subtotal\":\"45.00\"}],\"meta_data\":[],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":87.5,\"image\":{\"id\":\"\",\"src\":\"\"},\"parent_name\":null}],\"tax_lines\":[{\"id\":71,\"rate_code\":\"US-CA-US-CA-NEVADA COUNTY-GRASS VALLEY TAX-1\",\"rate_id\":1,\"label\":\"US-CA-NEVADA COUNTY-GRASS VALLEY Tax\",\"compound\":false,\"tax_total\":\"653.93\",\"shipping_tax_total\":\"0.00\",\"rate_percent\":7.5,\"meta_data\":[]}],\"shipping_lines\":[{\"id\":72,\"method_title\":\"Shipping\",\"method_id\":\"\",\"instance_id\":\"0\",\"total\":\"1806.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"tax_status\":\"taxable\",\"meta_data\":[]}],\"fee_lines\":[{\"id\":74,\"name\":\"Monthly software license fee\",\"tax_class\":\"\",\"tax_status\":\"taxable\",\"amount\":\"235\",\"total\":\"235.00\",\"total_tax\":\"17.63\",\"taxes\":[{\"id\":1,\"total\":\"17.63\",\"subtotal\":\"\"}],\"meta_data\":[]}],\"coupon_lines\":[],\"refunds\":[],\"payment_url\":\"https:\\/\\/cannabis-kiosks.com\\/checkout\\/order-pay\\/3016\\/?pay_for_order=true&key=wc_order_XfLuR0hXsGWr2\",\"is_editable\":true,\"needs_payment\":true,\"needs_processing\":true,\"date_created_gmt\":\"2025-05-27T20:42:32\",\"date_modified_gmt\":\"2025-05-27T21:19:53\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"$\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\"}],\"email_templates\":[{\"embeddable\":true,\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\\/actions\\/email_templates\"}],\"customer\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/customers\\/1\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 09:07:54 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bcbaf6092c42ba-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T12:53:28+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => ffb965a80b5ea03080c156bd8cb4c3b5
+            [Date] => Oct 9, 2025 @ 12:53
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/order/v1
+            [Duration] => 0.71676
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => BppoPbDA1pN0lrLRKCkxIm9wUmYty6nkzM+NItE55Ws=
+                            [X-WC-Webhook-ID] => 55
+                            [X-WC-Webhook-Delivery-ID] => ffb965a80b5ea03080c156bd8cb4c3b5
+                        )
+
+                )
+
+            [Body] => {\"id\":3016,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"USD\",\"version\":\"10.2.2\",\"prices_include_tax\":false,\"date_created\":\"2025-05-27T20:42:32\",\"date_modified\":\"2025-05-27T21:19:53\",\"discount_total\":\"716.00\",\"discount_tax\":\"53.70\",\"shipping_total\":\"1806.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"653.93\",\"total\":\"11178.93\",\"total_tax\":\"653.93\",\"customer_id\":1,\"order_key\":\"wc_order_XfLuR0hXsGWr2\",\"billing\":{\"first_name\":\"Shivam Patel\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"jeff@thepeakbeyond.com\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"98.56.162.34\",\"customer_user_agent\":\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/136.0.0.0 Safari\\/537.36\",\"created_via\":\"ywraq\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"3016\",\"meta_data\":[{\"id\":31408,\"key\":\"ywraq_raq\",\"value\":\"yes\"},{\"id\":31410,\"key\":\"_current_user\",\"value\":\"1\"},{\"id\":31411,\"key\":\"ywraq_raq_status\",\"value\":\"accepted\"},{\"id\":31413,\"key\":\"_ywraq_version\",\"value\":\"4.33.0\"},{\"id\":31414,\"key\":\"_ywraq_pdf_crypt\",\"value\":\"yes\"},{\"id\":31415,\"key\":\"ywraq_customer_name\",\"value\":\"Shivam Patel\"},{\"id\":31416,\"key\":\"ywraq_customer_message\",\"value\":\"This is a test quote\"},{\"id\":31417,\"key\":\"ywraq_customer_email\",\"value\":\"jeff@thepeakbeyond.com\"},{\"id\":31418,\"key\":\"_raq_request\",\"value\":{\"first_name\":{\"id\":\"first_name\",\"type\":\"text\",\"label\":\"First Name\",\"connect_to_field\":\"\",\"value\":\"Shivam\"},\"last_name\":{\"id\":\"last_name\",\"type\":\"text\",\"label\":\"Last Name\",\"connect_to_field\":\"\",\"value\":\"Patel\"},\"email\":{\"id\":\"email\",\"type\":\"email\",\"label\":\"Email\",\"connect_to_field\":\"\",\"value\":\"jeff@thepeakbeyond.com\"},\"message\":{\"id\":\"message\",\"type\":\"textarea\",\"label\":\"Message\",\"connect_to_field\":\"\",\"value\":\"This is a test quote\"},\"location_name\":{\"id\":\"location_name\",\"type\":\"text\",\"label\":\"Location Name\",\"connect_to_field\":\"\",\"value\":\"Newburgh\"},\"social_equity\":{\"id\":\"social_equity\",\"type\":\"radio\",\"label\":\"Are you a social equity license holder?\",\"connect_to_field\":\"\",\"value\":\"Yes\"},\"customer_id\":1,\"raq_content\":{\"bc99aa09629bfa56cf9ac3de4b3961d7\":{\"product_id\":\"452\",\"variation_id\":\"871\",\"quantity\":\"4\",\"variations\":{\"attribute_pa_remedy-finish\":\"black-acrylic\"}}},\"sent_from_cart\":false,\"user_name\":\"Shivam Patel\",\"user_email\":\"jeff@thepeakbeyond.com\",\"user_message\":\"This is a test quote\"}},{\"id\":31419,\"key\":\"ywraq_other_email_fields\",\"value\":{\"Location Name\":\"Newburgh\",\"Are you a social equity license holder?\":\"Yes\"}},{\"id\":31420,\"key\":\"ywraq_other_email_content\",\"value\":\"<strong>Location Name<\\/strong>: Newburgh<br><strong>Are you a social equity license holder?<\\/strong>: Yes<br>\"},{\"id\":31425,\"key\":\"ac_order_last_synced_time\",\"value\":\"1748380871\"},{\"id\":31426,\"key\":\"ac_datahash\",\"value\":\"420c55d6ad793db0af249219710eb195\"},{\"id\":31436,\"key\":\"_aftership_migrated\",\"value\":\"ok\"},{\"id\":31437,\"key\":\"_ywraq_enable_custom_text\",\"value\":\"no\"},{\"id\":31438,\"key\":\"_ywcm_request_response\",\"value\":\"\"},{\"id\":31439,\"key\":\"_ywraq_request_response_after\",\"value\":\"\"},{\"id\":31440,\"key\":\"_ywraq_optional_attachment\",\"value\":\"\"},{\"id\":31441,\"key\":\"_ywraq_enable_expiry_date\",\"value\":\"no\"},{\"id\":31442,\"key\":\"_ywraq_request_my_account_admin_message\",\"value\":\"Please review the quote and accept if you are ready to move forward with payment.\"},{\"id\":31443,\"key\":\"_ywraq_override_quote_payment_options\",\"value\":\"no\"},{\"id\":31444,\"key\":\"_ywraq_pay_quote_now\",\"value\":\"no\"},{\"id\":31445,\"key\":\"_ywraq_checkout_info\",\"value\":\"-\"},{\"id\":31446,\"key\":\"_ywraq_disable_shipping_method\",\"value\":\"1\"},{\"id\":31447,\"key\":\"_ywraq_lock_editing\",\"value\":\"no\"},{\"id\":31448,\"key\":\"_ywraq_safe_submit_field\",\"value\":\"send_quote\"},{\"id\":31449,\"key\":\"_ywraq_email_preview\",\"value\":{\"email\":\"jeff@thepeakbeyond.com\"}},{\"id\":31462,\"key\":\"_ywcm_request_expire\",\"value\":\"\"},{\"id\":31464,\"key\":\"_ywraq_author\",\"value\":\"1\"},{\"id\":31465,\"key\":\"ywraq_pending_status_date\",\"value\":\"2025-05-27\"},{\"id\":31466,\"key\":\"ywraq_status\",\"value\":\"pending\"},{\"id\":31484,\"key\":\"ac_last_synced_status\",\"value\":\"pending\"},{\"id\":31485,\"key\":\"activecampaign_for_woocommerce_external_checkout_id\",\"value\":\"f1cabe548c7759e6dcdbd7ec19f37abe\"}],\"line_items\":[{\"id\":70,\"name\":\"Counter-top flower display with 8 featured products - Black Acrylic\",\"product_id\":452,\"variation_id\":871,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"8600.00\",\"subtotal_tax\":\"645.00\",\"total\":\"8134.00\",\"total_tax\":\"610.05\",\"taxes\":[{\"id\":1,\"total\":\"610.05\",\"subtotal\":\"645.00\"}],\"meta_data\":[{\"id\":569,\"key\":\"pa_remedy-finish\",\"value\":\"black-acrylic\",\"display_key\":\"pa_remedy-finish\",\"display_value\":\"black-acrylic\"}],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":2033.5,\"image\":{\"id\":865,\"src\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/1400x1400-2.jpg\"},\"parent_name\":\"Counter-top flower display with 8 featured products\"},{\"id\":75,\"name\":\"Service -- Display Installation\",\"product_id\":372,\"variation_id\":0,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"600.00\",\"subtotal_tax\":\"45.00\",\"total\":\"350.00\",\"total_tax\":\"26.25\",\"taxes\":[{\"id\":1,\"total\":\"26.25\",\"subtotal\":\"45.00\"}],\"meta_data\":[],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":87.5,\"image\":{\"id\":\"\",\"src\":\"\"},\"parent_name\":null}],\"tax_lines\":[{\"id\":71,\"rate_code\":\"US-CA-US-CA-NEVADA COUNTY-GRASS VALLEY TAX-1\",\"rate_id\":1,\"label\":\"US-CA-NEVADA COUNTY-GRASS VALLEY Tax\",\"compound\":false,\"tax_total\":\"653.93\",\"shipping_tax_total\":\"0.00\",\"rate_percent\":7.5,\"meta_data\":[]}],\"shipping_lines\":[{\"id\":72,\"method_title\":\"Shipping\",\"method_id\":\"\",\"instance_id\":\"0\",\"total\":\"1806.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"tax_status\":\"taxable\",\"meta_data\":[]}],\"fee_lines\":[{\"id\":74,\"name\":\"Monthly software license fee\",\"tax_class\":\"\",\"tax_status\":\"taxable\",\"amount\":\"235\",\"total\":\"235.00\",\"total_tax\":\"17.63\",\"taxes\":[{\"id\":1,\"total\":\"17.63\",\"subtotal\":\"\"}],\"meta_data\":[]}],\"coupon_lines\":[],\"refunds\":[],\"payment_url\":\"https:\\/\\/cannabis-kiosks.com\\/checkout\\/order-pay\\/3016\\/?pay_for_order=true&key=wc_order_XfLuR0hXsGWr2\",\"is_editable\":true,\"needs_payment\":true,\"needs_processing\":true,\"date_created_gmt\":\"2025-05-27T20:42:32\",\"date_modified_gmt\":\"2025-05-27T21:19:53\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"$\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\"}],\"email_templates\":[{\"embeddable\":true,\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\\/actions\\/email_templates\"}],\"customer\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/customers\\/1\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 12:53:28 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98be05632983d114-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T15:53:13+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 10efcef958c0587da441a913fa9fc6c9
+            [Date] => Oct 9, 2025 @ 15:53
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/order/v1
+            [Duration] => 0.57983
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => BppoPbDA1pN0lrLRKCkxIm9wUmYty6nkzM+NItE55Ws=
+                            [X-WC-Webhook-ID] => 55
+                            [X-WC-Webhook-Delivery-ID] => 10efcef958c0587da441a913fa9fc6c9
+                        )
+
+                )
+
+            [Body] => {\"id\":3016,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"USD\",\"version\":\"10.2.2\",\"prices_include_tax\":false,\"date_created\":\"2025-05-27T20:42:32\",\"date_modified\":\"2025-05-27T21:19:53\",\"discount_total\":\"716.00\",\"discount_tax\":\"53.70\",\"shipping_total\":\"1806.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"653.93\",\"total\":\"11178.93\",\"total_tax\":\"653.93\",\"customer_id\":1,\"order_key\":\"wc_order_XfLuR0hXsGWr2\",\"billing\":{\"first_name\":\"Shivam Patel\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"jeff@thepeakbeyond.com\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"98.56.162.34\",\"customer_user_agent\":\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/136.0.0.0 Safari\\/537.36\",\"created_via\":\"ywraq\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"3016\",\"meta_data\":[{\"id\":31408,\"key\":\"ywraq_raq\",\"value\":\"yes\"},{\"id\":31410,\"key\":\"_current_user\",\"value\":\"1\"},{\"id\":31411,\"key\":\"ywraq_raq_status\",\"value\":\"accepted\"},{\"id\":31413,\"key\":\"_ywraq_version\",\"value\":\"4.33.0\"},{\"id\":31414,\"key\":\"_ywraq_pdf_crypt\",\"value\":\"yes\"},{\"id\":31415,\"key\":\"ywraq_customer_name\",\"value\":\"Shivam Patel\"},{\"id\":31416,\"key\":\"ywraq_customer_message\",\"value\":\"This is a test quote\"},{\"id\":31417,\"key\":\"ywraq_customer_email\",\"value\":\"jeff@thepeakbeyond.com\"},{\"id\":31418,\"key\":\"_raq_request\",\"value\":{\"first_name\":{\"id\":\"first_name\",\"type\":\"text\",\"label\":\"First Name\",\"connect_to_field\":\"\",\"value\":\"Shivam\"},\"last_name\":{\"id\":\"last_name\",\"type\":\"text\",\"label\":\"Last Name\",\"connect_to_field\":\"\",\"value\":\"Patel\"},\"email\":{\"id\":\"email\",\"type\":\"email\",\"label\":\"Email\",\"connect_to_field\":\"\",\"value\":\"jeff@thepeakbeyond.com\"},\"message\":{\"id\":\"message\",\"type\":\"textarea\",\"label\":\"Message\",\"connect_to_field\":\"\",\"value\":\"This is a test quote\"},\"location_name\":{\"id\":\"location_name\",\"type\":\"text\",\"label\":\"Location Name\",\"connect_to_field\":\"\",\"value\":\"Newburgh\"},\"social_equity\":{\"id\":\"social_equity\",\"type\":\"radio\",\"label\":\"Are you a social equity license holder?\",\"connect_to_field\":\"\",\"value\":\"Yes\"},\"customer_id\":1,\"raq_content\":{\"bc99aa09629bfa56cf9ac3de4b3961d7\":{\"product_id\":\"452\",\"variation_id\":\"871\",\"quantity\":\"4\",\"variations\":{\"attribute_pa_remedy-finish\":\"black-acrylic\"}}},\"sent_from_cart\":false,\"user_name\":\"Shivam Patel\",\"user_email\":\"jeff@thepeakbeyond.com\",\"user_message\":\"This is a test quote\"}},{\"id\":31419,\"key\":\"ywraq_other_email_fields\",\"value\":{\"Location Name\":\"Newburgh\",\"Are you a social equity license holder?\":\"Yes\"}},{\"id\":31420,\"key\":\"ywraq_other_email_content\",\"value\":\"<strong>Location Name<\\/strong>: Newburgh<br><strong>Are you a social equity license holder?<\\/strong>: Yes<br>\"},{\"id\":31425,\"key\":\"ac_order_last_synced_time\",\"value\":\"1748380871\"},{\"id\":31426,\"key\":\"ac_datahash\",\"value\":\"420c55d6ad793db0af249219710eb195\"},{\"id\":31436,\"key\":\"_aftership_migrated\",\"value\":\"ok\"},{\"id\":31437,\"key\":\"_ywraq_enable_custom_text\",\"value\":\"no\"},{\"id\":31438,\"key\":\"_ywcm_request_response\",\"value\":\"\"},{\"id\":31439,\"key\":\"_ywraq_request_response_after\",\"value\":\"\"},{\"id\":31440,\"key\":\"_ywraq_optional_attachment\",\"value\":\"\"},{\"id\":31441,\"key\":\"_ywraq_enable_expiry_date\",\"value\":\"no\"},{\"id\":31442,\"key\":\"_ywraq_request_my_account_admin_message\",\"value\":\"Please review the quote and accept if you are ready to move forward with payment.\"},{\"id\":31443,\"key\":\"_ywraq_override_quote_payment_options\",\"value\":\"no\"},{\"id\":31444,\"key\":\"_ywraq_pay_quote_now\",\"value\":\"no\"},{\"id\":31445,\"key\":\"_ywraq_checkout_info\",\"value\":\"-\"},{\"id\":31446,\"key\":\"_ywraq_disable_shipping_method\",\"value\":\"1\"},{\"id\":31447,\"key\":\"_ywraq_lock_editing\",\"value\":\"no\"},{\"id\":31448,\"key\":\"_ywraq_safe_submit_field\",\"value\":\"send_quote\"},{\"id\":31449,\"key\":\"_ywraq_email_preview\",\"value\":{\"email\":\"jeff@thepeakbeyond.com\"}},{\"id\":31462,\"key\":\"_ywcm_request_expire\",\"value\":\"\"},{\"id\":31464,\"key\":\"_ywraq_author\",\"value\":\"1\"},{\"id\":31465,\"key\":\"ywraq_pending_status_date\",\"value\":\"2025-05-27\"},{\"id\":31466,\"key\":\"ywraq_status\",\"value\":\"pending\"},{\"id\":31484,\"key\":\"ac_last_synced_status\",\"value\":\"pending\"},{\"id\":31485,\"key\":\"activecampaign_for_woocommerce_external_checkout_id\",\"value\":\"f1cabe548c7759e6dcdbd7ec19f37abe\"}],\"line_items\":[{\"id\":70,\"name\":\"Counter-top flower display with 8 featured products - Black Acrylic\",\"product_id\":452,\"variation_id\":871,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"8600.00\",\"subtotal_tax\":\"645.00\",\"total\":\"8134.00\",\"total_tax\":\"610.05\",\"taxes\":[{\"id\":1,\"total\":\"610.05\",\"subtotal\":\"645.00\"}],\"meta_data\":[{\"id\":569,\"key\":\"pa_remedy-finish\",\"value\":\"black-acrylic\",\"display_key\":\"pa_remedy-finish\",\"display_value\":\"black-acrylic\"}],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":2033.5,\"image\":{\"id\":865,\"src\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/1400x1400-2.jpg\"},\"parent_name\":\"Counter-top flower display with 8 featured products\"},{\"id\":75,\"name\":\"Service -- Display Installation\",\"product_id\":372,\"variation_id\":0,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"600.00\",\"subtotal_tax\":\"45.00\",\"total\":\"350.00\",\"total_tax\":\"26.25\",\"taxes\":[{\"id\":1,\"total\":\"26.25\",\"subtotal\":\"45.00\"}],\"meta_data\":[],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":87.5,\"image\":{\"id\":\"\",\"src\":\"\"},\"parent_name\":null}],\"tax_lines\":[{\"id\":71,\"rate_code\":\"US-CA-US-CA-NEVADA COUNTY-GRASS VALLEY TAX-1\",\"rate_id\":1,\"label\":\"US-CA-NEVADA COUNTY-GRASS VALLEY Tax\",\"compound\":false,\"tax_total\":\"653.93\",\"shipping_tax_total\":\"0.00\",\"rate_percent\":7.5,\"meta_data\":[]}],\"shipping_lines\":[{\"id\":72,\"method_title\":\"Shipping\",\"method_id\":\"\",\"instance_id\":\"0\",\"total\":\"1806.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"tax_status\":\"taxable\",\"meta_data\":[]}],\"fee_lines\":[{\"id\":74,\"name\":\"Monthly software license fee\",\"tax_class\":\"\",\"tax_status\":\"taxable\",\"amount\":\"235\",\"total\":\"235.00\",\"total_tax\":\"17.63\",\"taxes\":[{\"id\":1,\"total\":\"17.63\",\"subtotal\":\"\"}],\"meta_data\":[]}],\"coupon_lines\":[],\"refunds\":[],\"payment_url\":\"https:\\/\\/cannabis-kiosks.com\\/checkout\\/order-pay\\/3016\\/?pay_for_order=true&key=wc_order_XfLuR0hXsGWr2\",\"is_editable\":true,\"needs_payment\":true,\"needs_processing\":true,\"date_created_gmt\":\"2025-05-27T20:42:32\",\"date_modified_gmt\":\"2025-05-27T21:19:53\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"$\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\"}],\"email_templates\":[{\"embeddable\":true,\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\\/actions\\/email_templates\"}],\"customer\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/customers\\/1\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 15:53:13 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98bf0cb14babd494-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T21:39:03+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 32c17e5439ed71018d8ca82323df2499
+            [Date] => Oct 9, 2025 @ 21:39
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/order/v1
+            [Duration] => 0.59704
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => order.updated
+                            [X-WC-Webhook-Resource] => order
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => BppoPbDA1pN0lrLRKCkxIm9wUmYty6nkzM+NItE55Ws=
+                            [X-WC-Webhook-ID] => 55
+                            [X-WC-Webhook-Delivery-ID] => 32c17e5439ed71018d8ca82323df2499
+                        )
+
+                )
+
+            [Body] => {\"id\":3016,\"parent_id\":0,\"status\":\"pending\",\"currency\":\"USD\",\"version\":\"10.2.2\",\"prices_include_tax\":false,\"date_created\":\"2025-05-27T20:42:32\",\"date_modified\":\"2025-05-27T21:19:53\",\"discount_total\":\"716.00\",\"discount_tax\":\"53.70\",\"shipping_total\":\"1806.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"653.93\",\"total\":\"11178.93\",\"total_tax\":\"653.93\",\"customer_id\":1,\"order_key\":\"wc_order_XfLuR0hXsGWr2\",\"billing\":{\"first_name\":\"Shivam Patel\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"jeff@thepeakbeyond.com\",\"phone\":\"\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"98.56.162.34\",\"customer_user_agent\":\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/136.0.0.0 Safari\\/537.36\",\"created_via\":\"ywraq\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":null,\"cart_hash\":\"\",\"number\":\"3016\",\"meta_data\":[{\"id\":31408,\"key\":\"ywraq_raq\",\"value\":\"yes\"},{\"id\":31410,\"key\":\"_current_user\",\"value\":\"1\"},{\"id\":31411,\"key\":\"ywraq_raq_status\",\"value\":\"accepted\"},{\"id\":31413,\"key\":\"_ywraq_version\",\"value\":\"4.33.0\"},{\"id\":31414,\"key\":\"_ywraq_pdf_crypt\",\"value\":\"yes\"},{\"id\":31415,\"key\":\"ywraq_customer_name\",\"value\":\"Shivam Patel\"},{\"id\":31416,\"key\":\"ywraq_customer_message\",\"value\":\"This is a test quote\"},{\"id\":31417,\"key\":\"ywraq_customer_email\",\"value\":\"jeff@thepeakbeyond.com\"},{\"id\":31418,\"key\":\"_raq_request\",\"value\":{\"first_name\":{\"id\":\"first_name\",\"type\":\"text\",\"label\":\"First Name\",\"connect_to_field\":\"\",\"value\":\"Shivam\"},\"last_name\":{\"id\":\"last_name\",\"type\":\"text\",\"label\":\"Last Name\",\"connect_to_field\":\"\",\"value\":\"Patel\"},\"email\":{\"id\":\"email\",\"type\":\"email\",\"label\":\"Email\",\"connect_to_field\":\"\",\"value\":\"jeff@thepeakbeyond.com\"},\"message\":{\"id\":\"message\",\"type\":\"textarea\",\"label\":\"Message\",\"connect_to_field\":\"\",\"value\":\"This is a test quote\"},\"location_name\":{\"id\":\"location_name\",\"type\":\"text\",\"label\":\"Location Name\",\"connect_to_field\":\"\",\"value\":\"Newburgh\"},\"social_equity\":{\"id\":\"social_equity\",\"type\":\"radio\",\"label\":\"Are you a social equity license holder?\",\"connect_to_field\":\"\",\"value\":\"Yes\"},\"customer_id\":1,\"raq_content\":{\"bc99aa09629bfa56cf9ac3de4b3961d7\":{\"product_id\":\"452\",\"variation_id\":\"871\",\"quantity\":\"4\",\"variations\":{\"attribute_pa_remedy-finish\":\"black-acrylic\"}}},\"sent_from_cart\":false,\"user_name\":\"Shivam Patel\",\"user_email\":\"jeff@thepeakbeyond.com\",\"user_message\":\"This is a test quote\"}},{\"id\":31419,\"key\":\"ywraq_other_email_fields\",\"value\":{\"Location Name\":\"Newburgh\",\"Are you a social equity license holder?\":\"Yes\"}},{\"id\":31420,\"key\":\"ywraq_other_email_content\",\"value\":\"<strong>Location Name<\\/strong>: Newburgh<br><strong>Are you a social equity license holder?<\\/strong>: Yes<br>\"},{\"id\":31425,\"key\":\"ac_order_last_synced_time\",\"value\":\"1748380871\"},{\"id\":31426,\"key\":\"ac_datahash\",\"value\":\"420c55d6ad793db0af249219710eb195\"},{\"id\":31436,\"key\":\"_aftership_migrated\",\"value\":\"ok\"},{\"id\":31437,\"key\":\"_ywraq_enable_custom_text\",\"value\":\"no\"},{\"id\":31438,\"key\":\"_ywcm_request_response\",\"value\":\"\"},{\"id\":31439,\"key\":\"_ywraq_request_response_after\",\"value\":\"\"},{\"id\":31440,\"key\":\"_ywraq_optional_attachment\",\"value\":\"\"},{\"id\":31441,\"key\":\"_ywraq_enable_expiry_date\",\"value\":\"no\"},{\"id\":31442,\"key\":\"_ywraq_request_my_account_admin_message\",\"value\":\"Please review the quote and accept if you are ready to move forward with payment.\"},{\"id\":31443,\"key\":\"_ywraq_override_quote_payment_options\",\"value\":\"no\"},{\"id\":31444,\"key\":\"_ywraq_pay_quote_now\",\"value\":\"no\"},{\"id\":31445,\"key\":\"_ywraq_checkout_info\",\"value\":\"-\"},{\"id\":31446,\"key\":\"_ywraq_disable_shipping_method\",\"value\":\"1\"},{\"id\":31447,\"key\":\"_ywraq_lock_editing\",\"value\":\"no\"},{\"id\":31448,\"key\":\"_ywraq_safe_submit_field\",\"value\":\"send_quote\"},{\"id\":31449,\"key\":\"_ywraq_email_preview\",\"value\":{\"email\":\"jeff@thepeakbeyond.com\"}},{\"id\":31462,\"key\":\"_ywcm_request_expire\",\"value\":\"\"},{\"id\":31464,\"key\":\"_ywraq_author\",\"value\":\"1\"},{\"id\":31465,\"key\":\"ywraq_pending_status_date\",\"value\":\"2025-05-27\"},{\"id\":31466,\"key\":\"ywraq_status\",\"value\":\"pending\"},{\"id\":31484,\"key\":\"ac_last_synced_status\",\"value\":\"pending\"},{\"id\":31485,\"key\":\"activecampaign_for_woocommerce_external_checkout_id\",\"value\":\"f1cabe548c7759e6dcdbd7ec19f37abe\"}],\"line_items\":[{\"id\":70,\"name\":\"Counter-top flower display with 8 featured products - Black Acrylic\",\"product_id\":452,\"variation_id\":871,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"8600.00\",\"subtotal_tax\":\"645.00\",\"total\":\"8134.00\",\"total_tax\":\"610.05\",\"taxes\":[{\"id\":1,\"total\":\"610.05\",\"subtotal\":\"645.00\"}],\"meta_data\":[{\"id\":569,\"key\":\"pa_remedy-finish\",\"value\":\"black-acrylic\",\"display_key\":\"pa_remedy-finish\",\"display_value\":\"black-acrylic\"}],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":2033.5,\"image\":{\"id\":865,\"src\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/1400x1400-2.jpg\"},\"parent_name\":\"Counter-top flower display with 8 featured products\"},{\"id\":75,\"name\":\"Service -- Display Installation\",\"product_id\":372,\"variation_id\":0,\"quantity\":4,\"tax_class\":\"\",\"subtotal\":\"600.00\",\"subtotal_tax\":\"45.00\",\"total\":\"350.00\",\"total_tax\":\"26.25\",\"taxes\":[{\"id\":1,\"total\":\"26.25\",\"subtotal\":\"45.00\"}],\"meta_data\":[],\"sku\":\"\",\"global_unique_id\":\"\",\"price\":87.5,\"image\":{\"id\":\"\",\"src\":\"\"},\"parent_name\":null}],\"tax_lines\":[{\"id\":71,\"rate_code\":\"US-CA-US-CA-NEVADA COUNTY-GRASS VALLEY TAX-1\",\"rate_id\":1,\"label\":\"US-CA-NEVADA COUNTY-GRASS VALLEY Tax\",\"compound\":false,\"tax_total\":\"653.93\",\"shipping_tax_total\":\"0.00\",\"rate_percent\":7.5,\"meta_data\":[]}],\"shipping_lines\":[{\"id\":72,\"method_title\":\"Shipping\",\"method_id\":\"\",\"instance_id\":\"0\",\"total\":\"1806.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"tax_status\":\"taxable\",\"meta_data\":[]}],\"fee_lines\":[{\"id\":74,\"name\":\"Monthly software license fee\",\"tax_class\":\"\",\"tax_status\":\"taxable\",\"amount\":\"235\",\"total\":\"235.00\",\"total_tax\":\"17.63\",\"taxes\":[{\"id\":1,\"total\":\"17.63\",\"subtotal\":\"\"}],\"meta_data\":[]}],\"coupon_lines\":[],\"refunds\":[],\"payment_url\":\"https:\\/\\/cannabis-kiosks.com\\/checkout\\/order-pay\\/3016\\/?pay_for_order=true&key=wc_order_XfLuR0hXsGWr2\",\"is_editable\":true,\"needs_payment\":true,\"needs_processing\":true,\"date_created_gmt\":\"2025-05-27T20:42:32\",\"date_modified_gmt\":\"2025-05-27T21:19:53\",\"date_completed_gmt\":null,\"date_paid_gmt\":null,\"currency_symbol\":\"$\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\"}],\"email_templates\":[{\"embeddable\":true,\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/orders\\/3016\\/actions\\/email_templates\"}],\"customer\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/customers\\/1\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 21:39:03 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98c107498d9999d5-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T21:39:04+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => 79f511d0cbc0a1505d9317f6e3831021
+            [Date] => Oct 9, 2025 @ 21:39
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.27556
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.created
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => created
+                            [X-WC-Webhook-Signature] => IeOyae5Ine/90f0GICh3ryC4XZSbkrl6s2EaI5uFZqo=
+                            [X-WC-Webhook-ID] => 57
+                            [X-WC-Webhook-Delivery-ID] => 79f511d0cbc0a1505d9317f6e3831021
+                        )
+
+                )
+
+            [Body] => {\"id\":4798,\"name\":\"test cpb product\",\"slug\":\"\",\"permalink\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"date_created\":null,\"date_created_gmt\":null,\"date_modified\":\"2025-10-09T20:49:12\",\"date_modified_gmt\":\"2025-10-09T20:49:12\",\"type\":\"af_composite_product\",\"status\":\"draft\",\"featured\":false,\"catalog_visibility\":\"visible\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"\",\"price\":\"2000\",\"regular_price\":\"2000\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":0,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":false,\"stock_quantity\":null,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":false,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":false,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":20,\"name\":\"All Products\",\"slug\":\"all-products\"}],\"brands\":[],\"tags\":[],\"images\":[],\"attributes\":[],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi><span class=\\\"woocommerce-Price-currencySymbol\\\">&#36;<\\/span>2,000.00<\\/bdi><\\/span>\",\"related_ids\":[307,1607,2190,476,440],\"meta_data\":[{\"id\":69852,\"key\":\"af_comp_product_layout\",\"value\":\"vertical\"},{\"id\":69853,\"key\":\"af_comp_product_adj_min_qty\",\"value\":\"1\"},{\"id\":69854,\"key\":\"af_comp_product_adj_step_qty\",\"value\":\"1\"},{\"id\":69857,\"key\":\"af_comp_product_price_type\",\"value\":\"fixed_price\"},{\"id\":69858,\"key\":\"af_cp_form_location\",\"value\":\"after_desc\"},{\"id\":69859,\"key\":\"af_comp_product_price_adjustment\",\"value\":\"ignore\"},{\"id\":69860,\"key\":\"af_comp_product_adj_value\",\"value\":\"\"},{\"id\":69861,\"key\":\"af_comp_product_adj_max_qty\",\"value\":\"\"},{\"id\":69862,\"key\":\"af_comp_product_text\",\"value\":\"\"},{\"id\":69863,\"key\":\"af_cp_allow_edit_in_cart\",\"value\":\"no\"},{\"id\":69864,\"key\":\"af_comp_product_component_name\",\"value\":{\"1\":\"New Component 1\"}},{\"id\":69865,\"key\":\"af_comp_product_component_image\",\"value\":{\"1\":\"\"}},{\"id\":69866,\"key\":\"af_comp_product_component_desc\",\"value\":{\"1\":\"\"}},{\"id\":69867,\"key\":\"af_composite_product_all_products\",\"value\":{\"1\":[\"3805\",\"3804\",\"3803\"]}},{\"id\":69868,\"key\":\"af_composite_product_categories\",\"value\":[]},{\"id\":69869,\"key\":\"af_composite_product_tags\",\"value\":[]},{\"id\":69870,\"key\":\"af_composite_product_default_product\",\"value\":{\"1\":\"3805\"}},{\"id\":69871,\"key\":\"af_composite_product_required_component\",\"value\":[]},{\"id\":69872,\"key\":\"af_composite_product_quantity_op\",\"value\":{\"1\":\"fixed\"}},{\"id\":69873,\"key\":\"af_composite_product_fixed_qty\",\"value\":{\"1\":\"1\"}},{\"id\":69874,\"key\":\"af_composite_product_min_qty\",\"value\":{\"1\":\"1\"}},{\"id\":69875,\"key\":\"af_composite_product_max_qty\",\"value\":{\"1\":\"\"}},{\"id\":69876,\"key\":\"af_composite_product_component_style\",\"value\":{\"1\":\"simple\"}},{\"id\":69877,\"key\":\"af_composite_product_price_style\",\"value\":{\"1\":\"hide\"}},{\"id\":69878,\"key\":\"af_composite_product_stock_cb\",\"value\":{\"1\":\"hide\"}},{\"id\":69879,\"key\":\"af_composite_product_order\",\"value\":{\"1\":\"price\"}},{\"id\":69880,\"key\":\"af_composite_product_type\",\"value\":{\"1\":\"asc\"}},{\"id\":69881,\"key\":\"af_composite_product_exclusive_cb\",\"value\":[]},{\"id\":69882,\"key\":\"af_comp_product_scenario_name\",\"value\":[]},{\"id\":69883,\"key\":\"af_comp_product_scenario_desc\",\"value\":[]},{\"id\":69884,\"key\":\"af_comp_product_sc_hide_comp_cb\",\"value\":[]},{\"id\":69885,\"key\":\"af_comp_product_sc_hide_options_cb\",\"value\":[]},{\"id\":69886,\"key\":\"af_cp_scenario_condition_comp\",\"value\":[]},{\"id\":69887,\"key\":\"af_cp_scenario_action_comp\",\"value\":[]},{\"id\":69888,\"key\":\"af_cp_action_type\",\"value\":[]},{\"id\":69889,\"key\":\"af_cp_sc_type_selection\",\"value\":[]},{\"id\":69890,\"key\":\"af_cp_scenario_condition_type\",\"value\":[]},{\"id\":69891,\"key\":\"af_cp_scenario_condition_products\",\"value\":[]},{\"id\":69892,\"key\":\"af_cp_scenario_action_type\",\"value\":[]},{\"id\":69893,\"key\":\"af_cp_scenario_action_products\",\"value\":[]},{\"id\":69894,\"key\":\"af_cp_sc_action_type_selection\",\"value\":[]},{\"id\":69895,\"key\":\"af_cp_selection_title_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69896,\"key\":\"af_cp_selection_desc_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69897,\"key\":\"af_cp_selection_thumbnail_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69898,\"key\":\"af_cp_selection_price_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69899,\"key\":\"af_cp_selection_stock_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69900,\"key\":\"af_cp_comp_adj_type\",\"value\":{\"1\":\"fixed_increase\"}},{\"id\":69901,\"key\":\"af_cp_comp_adj_price_value\",\"value\":{\"1\":\"0\"}},{\"id\":69902,\"key\":\"af_composite_product_sorting_cb\",\"value\":[]},{\"id\":69903,\"key\":\"af_cp_enable_scenario_cb\",\"value\":[]},{\"id\":69904,\"key\":\"af_cp_sc_hide_comps\",\"value\":[]},{\"id\":69920,\"key\":\"_yoast_wpseo_primary_product_brand\",\"value\":\"\"},{\"id\":69921,\"key\":\"_yoast_wpseo_primary_product_cat\",\"value\":\"\"},{\"id\":69922,\"key\":\"_yoast_wpseo_content_score\",\"value\":\"90\"},{\"id\":69923,\"key\":\"_yoast_wpseo_focuskeywords\",\"value\":\"\"},{\"id\":69924,\"key\":\"_yoast_wpseo_keywordsynonyms\",\"value\":\"\"},{\"id\":69925,\"key\":\"_yoast_wpseo_estimated-reading-time-minutes\",\"value\":\"0\"},{\"id\":69926,\"key\":\"_elementor_page_assets\",\"value\":[]},{\"id\":69929,\"key\":\"af_cp_shipping_page_type\",\"value\":\"composite\"}],\"stock_status\":\"instock\",\"has_options\":false,\"post_password\":\"\",\"global_unique_id\":\"\",\"yoast_head\":\"<!-- This site is optimized with the Yoast SEO Premium plugin v26.1 (Yoast SEO v26.1.1) - https:\\/\\/yoast.com\\/wordpress\\/plugins\\/seo\\/ -->\\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\\n<meta name=\\\"robots\\\" content=\\\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\\\" \\/>\\n<link rel=\\\"canonical\\\" href=\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\" \\/>\\n<meta property=\\\"og:locale\\\" content=\\\"en_US\\\" \\/>\\n<meta property=\\\"og:type\\\" content=\\\"article\\\" \\/>\\n<meta property=\\\"og:title\\\" content=\\\"test cpb product\\\" \\/>\\n<meta property=\\\"og:url\\\" content=\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&amp;p=4798\\\" \\/>\\n<meta property=\\\"og:site_name\\\" content=\\\"The Peak Beyond\\\" \\/>\\n<meta property=\\\"article:publisher\\\" content=\\\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\\\" \\/>\\n<meta property=\\\"article:modified_time\\\" content=\\\"2025-10-09T20:49:12+00:00\\\" \\/>\\n<meta name=\\\"twitter:card\\\" content=\\\"summary_large_image\\\" \\/>\\n<script type=\\\"application\\/ld+json\\\" class=\\\"yoast-schema-graph\\\">{\\\"@context\\\":\\\"https:\\/\\/schema.org\\\",\\\"@graph\\\":[{\\\"@type\\\":\\\"WebPage\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\",\\\"name\\\":\\\"test cpb product | The Peak Beyond\\\",\\\"isPartOf\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#website\\\"},\\\"datePublished\\\":\\\"-0001-11-30T00:00:00+00:00\\\",\\\"dateModified\\\":\\\"2025-10-09T20:49:12+00:00\\\",\\\"breadcrumb\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\\\"},\\\"inLanguage\\\":\\\"en-US\\\",\\\"potentialAction\\\":[{\\\"@type\\\":\\\"ReadAction\\\",\\\"target\\\":[\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\"]}]},{\\\"@type\\\":\\\"BreadcrumbList\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\\\",\\\"itemListElement\\\":[{\\\"@type\\\":\\\"ListItem\\\",\\\"position\\\":1,\\\"name\\\":\\\"Home\\\",\\\"item\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/\\\"},{\\\"@type\\\":\\\"ListItem\\\",\\\"position\\\":2,\\\"name\\\":\\\"test cpb product\\\"}]},{\\\"@type\\\":\\\"WebSite\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#website\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/\\\",\\\"name\\\":\\\"The Peak Beyond \\/ Cannabis Kiosks\\\",\\\"description\\\":\\\"Interactive shopping kiosks for cannabis retail\\\",\\\"publisher\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#organization\\\"},\\\"potentialAction\\\":[{\\\"@type\\\":\\\"SearchAction\\\",\\\"target\\\":{\\\"@type\\\":\\\"EntryPoint\\\",\\\"urlTemplate\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?s={search_term_string}\\\"},\\\"query-input\\\":{\\\"@type\\\":\\\"PropertyValueSpecification\\\",\\\"valueRequired\\\":true,\\\"valueName\\\":\\\"search_term_string\\\"}}],\\\"inLanguage\\\":\\\"en-US\\\"},{\\\"@type\\\":\\\"Organization\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#organization\\\",\\\"name\\\":\\\"The Peak Beyond \\/ Cannabis Kiosks\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/\\\",\\\"logo\\\":{\\\"@type\\\":\\\"ImageObject\\\",\\\"inLanguage\\\":\\\"en-US\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\\\",\\\"contentUrl\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\\\",\\\"width\\\":350,\\\"height\\\":342,\\\"caption\\\":\\\"The Peak Beyond \\/ Cannabis Kiosks\\\"},\\\"image\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\\\"},\\\"sameAs\\\":[\\\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\\\",\\\"https:\\/\\/www.instagram.com\\/thepeakbeyond\\/#\\\",\\\"https:\\/\\/www.linkedin.com\\/company\\/the-peak-beyond\\\"]}]}<\\/script>\\n<!-- \\/ Yoast SEO Premium plugin. -->\",\"yoast_head_json\":{\"robots\":{\"index\":\"index\",\"follow\":\"follow\",\"max-snippet\":\"max-snippet:-1\",\"max-image-preview\":\"max-image-preview:large\",\"max-video-preview\":\"max-video-preview:-1\"},\"canonical\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"og_locale\":\"en_US\",\"og_type\":\"article\",\"og_title\":\"test cpb product\",\"og_url\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"og_site_name\":\"The Peak Beyond\",\"article_publisher\":\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\",\"article_modified_time\":\"2025-10-09T20:49:12+00:00\",\"twitter_card\":\"summary_large_image\",\"schema\":{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"name\":\"test cpb product | The Peak Beyond\",\"isPartOf\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#website\"},\"datePublished\":\"-0001-11-30T00:00:00+00:00\",\"dateModified\":\"2025-10-09T20:49:12+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/cannabis-kiosks.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"test cpb product\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#website\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/\",\"name\":\"The Peak Beyond \\/ Cannabis Kiosks\",\"description\":\"Interactive shopping kiosks for cannabis retail\",\"publisher\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/cannabis-kiosks.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#organization\",\"name\":\"The Peak Beyond \\/ Cannabis Kiosks\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\",\"contentUrl\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\",\"width\":350,\"height\":342,\"caption\":\"The Peak Beyond \\/ Cannabis Kiosks\"},\"image\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\",\"https:\\/\\/www.instagram.com\\/thepeakbeyond\\/#\",\"https:\\/\\/www.linkedin.com\\/company\\/the-peak-beyond\"]}]}},\"jetpack_sharing_enabled\":true,\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/products\\/4798\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 21:39:04 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98c1074e99cc2a17-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)
+2025-10-09T21:39:04+00:00 INFO Array
+(
+    [Webhook Delivery] => Array
+        (
+            [Delivery ID] => a7a17a20632216d2ab6013b914964bff
+            [Date] => Oct 9, 2025 @ 21:39
+            [URL] => https://webhooks.automizely.com/aftership/woocommerce/product/v1
+            [Duration] => 0.20088
+            [Request] => Array
+                (
+                    [Method] => POST
+                    [Headers] => Array
+                        (
+                            [User-Agent] => WooCommerce/10.2.2 Hookshot (WordPress/6.8.2)
+                            [Content-Type] => application/json
+                            [X-WC-Webhook-Source] => https://cannabis-kiosks.com/
+                            [X-WC-Webhook-Topic] => product.updated
+                            [X-WC-Webhook-Resource] => product
+                            [X-WC-Webhook-Event] => updated
+                            [X-WC-Webhook-Signature] => 1v2FKxe68Y8uYSkJNB9J9a6Eqozu2fXRnHQMvEjqcko=
+                            [X-WC-Webhook-ID] => 58
+                            [X-WC-Webhook-Delivery-ID] => a7a17a20632216d2ab6013b914964bff
+                        )
+
+                )
+
+            [Body] => {\"id\":4798,\"name\":\"test cpb product\",\"slug\":\"\",\"permalink\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"date_created\":null,\"date_created_gmt\":null,\"date_modified\":\"2025-10-09T20:49:12\",\"date_modified_gmt\":\"2025-10-09T20:49:12\",\"type\":\"af_composite_product\",\"status\":\"draft\",\"featured\":false,\"catalog_visibility\":\"visible\",\"description\":\"\",\"short_description\":\"\",\"sku\":\"\",\"price\":\"2000\",\"regular_price\":\"2000\",\"sale_price\":\"\",\"date_on_sale_from\":null,\"date_on_sale_from_gmt\":null,\"date_on_sale_to\":null,\"date_on_sale_to_gmt\":null,\"on_sale\":false,\"purchasable\":true,\"total_sales\":0,\"virtual\":false,\"downloadable\":false,\"downloads\":[],\"download_limit\":-1,\"download_expiry\":-1,\"external_url\":\"\",\"button_text\":\"\",\"tax_status\":\"taxable\",\"tax_class\":\"\",\"manage_stock\":false,\"stock_quantity\":null,\"backorders\":\"no\",\"backorders_allowed\":false,\"backordered\":false,\"low_stock_amount\":null,\"sold_individually\":false,\"weight\":\"\",\"dimensions\":{\"length\":\"\",\"width\":\"\",\"height\":\"\"},\"shipping_required\":true,\"shipping_taxable\":true,\"shipping_class\":\"\",\"shipping_class_id\":0,\"reviews_allowed\":false,\"average_rating\":\"0.00\",\"rating_count\":0,\"upsell_ids\":[],\"cross_sell_ids\":[],\"parent_id\":0,\"purchase_note\":\"\",\"categories\":[{\"id\":20,\"name\":\"All Products\",\"slug\":\"all-products\"}],\"brands\":[],\"tags\":[],\"images\":[],\"attributes\":[],\"default_attributes\":[],\"variations\":[],\"grouped_products\":[],\"menu_order\":0,\"price_html\":\"<span class=\\\"woocommerce-Price-amount amount\\\"><bdi><span class=\\\"woocommerce-Price-currencySymbol\\\">&#36;<\\/span>2,000.00<\\/bdi><\\/span>\",\"related_ids\":[474,300,1609,472,444],\"meta_data\":[{\"id\":69852,\"key\":\"af_comp_product_layout\",\"value\":\"vertical\"},{\"id\":69853,\"key\":\"af_comp_product_adj_min_qty\",\"value\":\"1\"},{\"id\":69854,\"key\":\"af_comp_product_adj_step_qty\",\"value\":\"1\"},{\"id\":69857,\"key\":\"af_comp_product_price_type\",\"value\":\"fixed_price\"},{\"id\":69858,\"key\":\"af_cp_form_location\",\"value\":\"after_desc\"},{\"id\":69859,\"key\":\"af_comp_product_price_adjustment\",\"value\":\"ignore\"},{\"id\":69860,\"key\":\"af_comp_product_adj_value\",\"value\":\"\"},{\"id\":69861,\"key\":\"af_comp_product_adj_max_qty\",\"value\":\"\"},{\"id\":69862,\"key\":\"af_comp_product_text\",\"value\":\"\"},{\"id\":69863,\"key\":\"af_cp_allow_edit_in_cart\",\"value\":\"no\"},{\"id\":69864,\"key\":\"af_comp_product_component_name\",\"value\":{\"1\":\"New Component 1\"}},{\"id\":69865,\"key\":\"af_comp_product_component_image\",\"value\":{\"1\":\"\"}},{\"id\":69866,\"key\":\"af_comp_product_component_desc\",\"value\":{\"1\":\"\"}},{\"id\":69867,\"key\":\"af_composite_product_all_products\",\"value\":{\"1\":[\"3805\",\"3804\",\"3803\"]}},{\"id\":69868,\"key\":\"af_composite_product_categories\",\"value\":[]},{\"id\":69869,\"key\":\"af_composite_product_tags\",\"value\":[]},{\"id\":69870,\"key\":\"af_composite_product_default_product\",\"value\":{\"1\":\"3805\"}},{\"id\":69871,\"key\":\"af_composite_product_required_component\",\"value\":[]},{\"id\":69872,\"key\":\"af_composite_product_quantity_op\",\"value\":{\"1\":\"fixed\"}},{\"id\":69873,\"key\":\"af_composite_product_fixed_qty\",\"value\":{\"1\":\"1\"}},{\"id\":69874,\"key\":\"af_composite_product_min_qty\",\"value\":{\"1\":\"1\"}},{\"id\":69875,\"key\":\"af_composite_product_max_qty\",\"value\":{\"1\":\"\"}},{\"id\":69876,\"key\":\"af_composite_product_component_style\",\"value\":{\"1\":\"simple\"}},{\"id\":69877,\"key\":\"af_composite_product_price_style\",\"value\":{\"1\":\"hide\"}},{\"id\":69878,\"key\":\"af_composite_product_stock_cb\",\"value\":{\"1\":\"hide\"}},{\"id\":69879,\"key\":\"af_composite_product_order\",\"value\":{\"1\":\"price\"}},{\"id\":69880,\"key\":\"af_composite_product_type\",\"value\":{\"1\":\"asc\"}},{\"id\":69881,\"key\":\"af_composite_product_exclusive_cb\",\"value\":[]},{\"id\":69882,\"key\":\"af_comp_product_scenario_name\",\"value\":[]},{\"id\":69883,\"key\":\"af_comp_product_scenario_desc\",\"value\":[]},{\"id\":69884,\"key\":\"af_comp_product_sc_hide_comp_cb\",\"value\":[]},{\"id\":69885,\"key\":\"af_comp_product_sc_hide_options_cb\",\"value\":[]},{\"id\":69886,\"key\":\"af_cp_scenario_condition_comp\",\"value\":[]},{\"id\":69887,\"key\":\"af_cp_scenario_action_comp\",\"value\":[]},{\"id\":69888,\"key\":\"af_cp_action_type\",\"value\":[]},{\"id\":69889,\"key\":\"af_cp_sc_type_selection\",\"value\":[]},{\"id\":69890,\"key\":\"af_cp_scenario_condition_type\",\"value\":[]},{\"id\":69891,\"key\":\"af_cp_scenario_condition_products\",\"value\":[]},{\"id\":69892,\"key\":\"af_cp_scenario_action_type\",\"value\":[]},{\"id\":69893,\"key\":\"af_cp_scenario_action_products\",\"value\":[]},{\"id\":69894,\"key\":\"af_cp_sc_action_type_selection\",\"value\":[]},{\"id\":69895,\"key\":\"af_cp_selection_title_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69896,\"key\":\"af_cp_selection_desc_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69897,\"key\":\"af_cp_selection_thumbnail_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69898,\"key\":\"af_cp_selection_price_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69899,\"key\":\"af_cp_selection_stock_cb\",\"value\":{\"1\":\"yes\"}},{\"id\":69900,\"key\":\"af_cp_comp_adj_type\",\"value\":{\"1\":\"fixed_increase\"}},{\"id\":69901,\"key\":\"af_cp_comp_adj_price_value\",\"value\":{\"1\":\"0\"}},{\"id\":69902,\"key\":\"af_composite_product_sorting_cb\",\"value\":[]},{\"id\":69903,\"key\":\"af_cp_enable_scenario_cb\",\"value\":[]},{\"id\":69904,\"key\":\"af_cp_sc_hide_comps\",\"value\":[]},{\"id\":69920,\"key\":\"_yoast_wpseo_primary_product_brand\",\"value\":\"\"},{\"id\":69921,\"key\":\"_yoast_wpseo_primary_product_cat\",\"value\":\"\"},{\"id\":69922,\"key\":\"_yoast_wpseo_content_score\",\"value\":\"90\"},{\"id\":69923,\"key\":\"_yoast_wpseo_focuskeywords\",\"value\":\"\"},{\"id\":69924,\"key\":\"_yoast_wpseo_keywordsynonyms\",\"value\":\"\"},{\"id\":69925,\"key\":\"_yoast_wpseo_estimated-reading-time-minutes\",\"value\":\"0\"},{\"id\":69926,\"key\":\"_elementor_page_assets\",\"value\":[]},{\"id\":69929,\"key\":\"af_cp_shipping_page_type\",\"value\":\"composite\"}],\"stock_status\":\"instock\",\"has_options\":false,\"post_password\":\"\",\"global_unique_id\":\"\",\"yoast_head\":\"<!-- This site is optimized with the Yoast SEO Premium plugin v26.1 (Yoast SEO v26.1.1) - https:\\/\\/yoast.com\\/wordpress\\/plugins\\/seo\\/ -->\\n<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [Yoast SEO - Settings] menu and set up a template. -->\\n<meta name=\\\"robots\\\" content=\\\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\\\" \\/>\\n<link rel=\\\"canonical\\\" href=\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\" \\/>\\n<meta property=\\\"og:locale\\\" content=\\\"en_US\\\" \\/>\\n<meta property=\\\"og:type\\\" content=\\\"article\\\" \\/>\\n<meta property=\\\"og:title\\\" content=\\\"test cpb product\\\" \\/>\\n<meta property=\\\"og:url\\\" content=\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&amp;p=4798\\\" \\/>\\n<meta property=\\\"og:site_name\\\" content=\\\"The Peak Beyond\\\" \\/>\\n<meta property=\\\"article:publisher\\\" content=\\\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\\\" \\/>\\n<meta property=\\\"article:modified_time\\\" content=\\\"2025-10-09T20:49:12+00:00\\\" \\/>\\n<meta name=\\\"twitter:card\\\" content=\\\"summary_large_image\\\" \\/>\\n<script type=\\\"application\\/ld+json\\\" class=\\\"yoast-schema-graph\\\">{\\\"@context\\\":\\\"https:\\/\\/schema.org\\\",\\\"@graph\\\":[{\\\"@type\\\":\\\"WebPage\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\",\\\"name\\\":\\\"test cpb product | The Peak Beyond\\\",\\\"isPartOf\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#website\\\"},\\\"datePublished\\\":\\\"-0001-11-30T00:00:00+00:00\\\",\\\"dateModified\\\":\\\"2025-10-09T20:49:12+00:00\\\",\\\"breadcrumb\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\\\"},\\\"inLanguage\\\":\\\"en-US\\\",\\\"potentialAction\\\":[{\\\"@type\\\":\\\"ReadAction\\\",\\\"target\\\":[\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\\\"]}]},{\\\"@type\\\":\\\"BreadcrumbList\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\\\",\\\"itemListElement\\\":[{\\\"@type\\\":\\\"ListItem\\\",\\\"position\\\":1,\\\"name\\\":\\\"Home\\\",\\\"item\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/\\\"},{\\\"@type\\\":\\\"ListItem\\\",\\\"position\\\":2,\\\"name\\\":\\\"test cpb product\\\"}]},{\\\"@type\\\":\\\"WebSite\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#website\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/\\\",\\\"name\\\":\\\"The Peak Beyond \\/ Cannabis Kiosks\\\",\\\"description\\\":\\\"Interactive shopping kiosks for cannabis retail\\\",\\\"publisher\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#organization\\\"},\\\"potentialAction\\\":[{\\\"@type\\\":\\\"SearchAction\\\",\\\"target\\\":{\\\"@type\\\":\\\"EntryPoint\\\",\\\"urlTemplate\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/?s={search_term_string}\\\"},\\\"query-input\\\":{\\\"@type\\\":\\\"PropertyValueSpecification\\\",\\\"valueRequired\\\":true,\\\"valueName\\\":\\\"search_term_string\\\"}}],\\\"inLanguage\\\":\\\"en-US\\\"},{\\\"@type\\\":\\\"Organization\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#organization\\\",\\\"name\\\":\\\"The Peak Beyond \\/ Cannabis Kiosks\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/\\\",\\\"logo\\\":{\\\"@type\\\":\\\"ImageObject\\\",\\\"inLanguage\\\":\\\"en-US\\\",\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\\\",\\\"url\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\\\",\\\"contentUrl\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\\\",\\\"width\\\":350,\\\"height\\\":342,\\\"caption\\\":\\\"The Peak Beyond \\/ Cannabis Kiosks\\\"},\\\"image\\\":{\\\"@id\\\":\\\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\\\"},\\\"sameAs\\\":[\\\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\\\",\\\"https:\\/\\/www.instagram.com\\/thepeakbeyond\\/#\\\",\\\"https:\\/\\/www.linkedin.com\\/company\\/the-peak-beyond\\\"]}]}<\\/script>\\n<!-- \\/ Yoast SEO Premium plugin. -->\",\"yoast_head_json\":{\"robots\":{\"index\":\"index\",\"follow\":\"follow\",\"max-snippet\":\"max-snippet:-1\",\"max-image-preview\":\"max-image-preview:large\",\"max-video-preview\":\"max-video-preview:-1\"},\"canonical\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"og_locale\":\"en_US\",\"og_type\":\"article\",\"og_title\":\"test cpb product\",\"og_url\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"og_site_name\":\"The Peak Beyond\",\"article_publisher\":\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\",\"article_modified_time\":\"2025-10-09T20:49:12+00:00\",\"twitter_card\":\"summary_large_image\",\"schema\":{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\",\"name\":\"test cpb product | The Peak Beyond\",\"isPartOf\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#website\"},\"datePublished\":\"-0001-11-30T00:00:00+00:00\",\"dateModified\":\"2025-10-09T20:49:12+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/?post_type=product&p=4798#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/cannabis-kiosks.com\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"test cpb product\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#website\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/\",\"name\":\"The Peak Beyond \\/ Cannabis Kiosks\",\"description\":\"Interactive shopping kiosks for cannabis retail\",\"publisher\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/cannabis-kiosks.com\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#organization\",\"name\":\"The Peak Beyond \\/ Cannabis Kiosks\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\",\"contentUrl\":\"https:\\/\\/cannabis-kiosks.com\\/wp-content\\/uploads\\/2025\\/02\\/the-peak-beyond-logo-teal-and-black-icon-small.webp\",\"width\":350,\"height\":342,\"caption\":\"The Peak Beyond \\/ Cannabis Kiosks\"},\"image\":{\"@id\":\"https:\\/\\/cannabis-kiosks.com\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/thepeakbeyond\\/\",\"https:\\/\\/www.instagram.com\\/thepeakbeyond\\/#\",\"https:\\/\\/www.linkedin.com\\/company\\/the-peak-beyond\"]}]}},\"jetpack_sharing_enabled\":true,\"_links\":{\"self\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/products\\/4798\",\"targetHints\":{\"allow\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}],\"collection\":[{\"href\":\"https:\\/\\/cannabis-kiosks.com\\/wp-json\\/wc\\/v3\\/products\"}]}}
+            [Response] => Array
+                (
+                    [Code] => 200
+                    [Message] => OK
+                    [Headers] => WpOrg\Requests\Utility\CaseInsensitiveDictionary Object
+                        (
+                            [data:protected] => Array
+                                (
+                                    [date] => Thu, 09 Oct 2025 21:39:04 GMT
+                                    [content-length] => 0
+                                    [cf-ray] => 98c107504d8cda7c-CDG
+                                    [vary] => Origin
+                                    [via] => 1.1 google
+                                    [cf-cache-status] => DYNAMIC
+                                    [strict-transport-security] => max-age=15552000
+                                    [server] => cloudflare
+                                )
+
+                        )
+
+                    [Body] => 
+                )
+
+        )
+
+)

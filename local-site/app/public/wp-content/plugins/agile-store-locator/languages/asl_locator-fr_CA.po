@@ -1,0 +1,2806 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"Project-Id-Version: Agile Store Locator\n"
+"POT-Creation-Date: 2022-09-07 10:55+0000\n"
+"PO-Revision-Date: 2022-09-07 11:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: Français du Canada\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: agile-store-locator.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Language: fr_CA\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.6.2; wp-6.0.2"
+
+#: includes/admin/attribute.php:121
+msgid " added successfully"
+msgstr " ajouté avec succès"
+
+#: admin/partials/shortcode-popup-html.php:69
+msgid "12 Hours"
+msgstr "12 heures"
+
+#: admin/partials/ui-customizer-fields.php:28
+msgid "13"
+msgstr "13"
+
+#: admin/partials/ui-customizer-fields.php:48
+msgid "14"
+msgstr "14"
+
+#: admin/partials/ui-customizer-fields.php:38
+msgid "16"
+msgstr "16"
+
+#: admin/partials/shortcode-popup-html.php:72
+msgid "24 Hours"
+msgstr "24 heures"
+
+#: includes/admin/store.php:856
+msgid ""
+"<p><a href=\"%verification_url%\" target=\"_blank\">Approve Store</a> to "
+"adding it in listing.</p>"
+msgstr ""
+"<p><a href=\"%verification_url%\" target=\"_blank\">Approuver le magasin</a> "
+"pour l&#39;ajouter à la liste.</p>"
+
+#: includes/frontend/request.php:526 includes/frontend/request.php:665
+msgid "A new lead is requesting details about the store: "
+msgstr "Un nouveau prospect demande des informations sur le magasin :"
+
+#: includes/plugin.php:296
+msgid "A Store Locator"
+msgstr "Un localisateur de magasin"
+
+#: public/partials/template-frontend-4.php:43
+msgid "Accept"
+msgstr "Accepter"
+
+#: admin/partials/attribute_special.php:51 admin/partials/categories.php:60
+#: admin/partials/markers.php:55 admin/partials/manage_store.php:100
+#: admin/partials/attribute.php:51 admin/partials/logos.php:50
+msgid "Action"
+msgstr "Action"
+
+#: admin/partials/manage_leads.php:6 admin/partials/attribute_special.php:6
+#: admin/partials/categories.php:6 admin/partials/manage_store.php:6
+#: admin/partials/add_store.php:23 admin/partials/edit_store.php:23
+#: admin/partials/attribute.php:6 admin/partials/logos.php:6
+msgid "Add"
+msgstr "Ajouter"
+
+#: admin/partials/categories.php:185
+msgid "Add Category"
+msgstr "ajouter une catégorie"
+
+#: admin/partials/categories.php:147
+msgid "Add New Category"
+msgstr "Ajouter une nouvelle catégorie"
+
+#: includes/plugin.php:298
+msgid "Add New Store"
+msgstr "Ajouter un nouveau magasin"
+
+#: admin/partials/add_store.php:489
+msgid "Add Store"
+msgstr "Ajouter un magasin"
+
+#: includes/admin/manager.php:771
+msgid "Add Store Locator Shortcode"
+msgstr "Ajouter un code abrégé de localisateur de magasin"
+
+#: admin/partials/dashboard.php:83
+msgid "Add the API Key"
+msgstr "Ajouter la clé API"
+
+#: admin/partials/dashboard.php:76
+msgid "Add the shortcode"
+msgstr "Ajouter le shortcode"
+
+#: admin/partials/dashboard.php:78
+msgid ""
+"Add the shortcode <b>[ASL_STORELOCATOR]</b> on the new page or whichever "
+"page you’d like to display it."
+msgstr ""
+"Ajoutez le shortcode <b>[ASL_STORELOCATOR]</b> sur la nouvelle page ou sur "
+"la page que vous souhaitez afficher."
+
+#: admin/partials/dashboard.php:90
+msgid "Add your Stores"
+msgstr "Ajoutez vos magasins"
+
+#: public/partials/asl-store-form.php:135
+msgid "Additional Data"
+msgstr "Donnée supplémentaire"
+
+#: admin/partials/add_store.php:58 admin/partials/edit_store.php:67
+#: public/partials/asl-store-form.php:150
+msgid "Additional Description"
+msgstr "Description supplémentaire"
+
+#: includes/frontend/app.php:1464
+msgid "Additional Details"
+msgstr "Détails supplémentaires"
+
+#: public/partials/asl-store-form.php:76
+msgid "ADDRESS LOCATION"
+msgstr "ADRESSE LIEU"
+
+#: includes/admin/store.php:855
+msgid "Address: "
+msgstr "Adresse:"
+
+#: admin/partials/dashboard.php:48
+msgid "Advanced"
+msgstr "Avancé"
+
+#. Name of the plugin
+#: admin/partials/dashboard.php:42
+msgid "Agile Store Locator"
+msgstr "Localisateur de magasin agile"
+
+#. Description of the plugin
+msgid ""
+"Agile Store Locator (Pro Version 4.8.4) is a Premium Store Finder Plugin "
+"designed to offer you immediate access to all the best stores in your local "
+"area. It enables you to find the very best stores and their location thanks "
+"to the power of Google Maps."
+msgstr ""
+"Agile Store Locator (Pro Version 4.8.4) est un plug-in Premium Store Finder "
+"conçu pour vous offrir un accès immédiat à tous les meilleurs magasins de "
+"votre région. Il vous permet de trouver les meilleurs magasins et leur "
+"emplacement grâce à la puissance de Google Maps."
+
+#: admin/partials/dashboard.php:286
+msgid "Agile Store Locator Features"
+msgstr "Fonctionnalités du localisateur de magasin agile"
+
+#: includes/plugin.php:317 admin/partials/ui-customizer.php:7
+msgid "Agile Store Locator UI Customizer"
+msgstr "Personnalisateur d'interface utilisateur Agile Store Locator"
+
+#. Author of the plugin
+msgid "AGILELOGIX"
+msgstr "AGILELOGIX"
+
+#: admin/partials/edit_store.php:45
+msgid "alert link"
+msgstr "lien d'alerte"
+
+#: admin/partials/edit_store.php:45
+msgid "Alert!"
+msgstr "Alerte!"
+
+#: admin/partials/dashboard.php:69
+msgid ""
+"Alert! Google API KEY is missing, the Map search, geocoding and direction "
+"will not work without it, Please add Google API KEY first."
+msgstr ""
+"Alerte! La clé API Google est manquante, la recherche de carte, le géocodage "
+"et la direction ne fonctionneront pas sans elle, veuillez d'abord ajouter la "
+"clé API Google."
+
+#: admin/partials/dashboard.php:222 public/partials/template-frontend-2.php:65
+#: public/partials/template-frontend-1.php:47
+#: public/partials/template-frontend-3.php:86
+#: public/partials/template-frontend-0.php:51
+msgid "ALL"
+msgstr "TOUT"
+
+#: includes/frontend/app.php:1424
+msgid "All Brands"
+msgstr "Toutes les marques"
+
+#: includes/frontend/app.php:527 includes/frontend/app.php:1423
+#: includes/frontend/app.php:1448
+msgid "All Categories"
+msgstr "toutes catégories"
+
+#: includes/frontend/app.php:1413
+msgid "All Cities"
+msgstr "Toutes les villes"
+
+#: includes/frontend/app.php:1411
+msgid "All Countries"
+msgstr "Tous les pays"
+
+#: includes/frontend/app.php:525 includes/frontend/app.php:1421
+msgid "All selected"
+msgstr "Tous sélectionnés"
+
+#: includes/frontend/app.php:1425
+msgid "All Specialities"
+msgstr "Toutes les spécialités"
+
+#: includes/frontend/app.php:1412
+msgid "All States"
+msgstr "Tous les États"
+
+#: includes/admin/store.php:51
+msgid "All Stores are deleted"
+msgstr "Tous les magasins sont supprimés"
+
+#: admin/partials/dashboard.php:155
+msgid "Analytics"
+msgstr "Analytique"
+
+#: includes/admin/store.php:240
+msgid "Approve"
+msgstr "Approuver"
+
+#: includes/admin/store.php:240
+msgid "Approving..."
+msgstr "Approuvant..."
+
+#: public/partials/asl-lead-form.php:11
+msgid ""
+"Are you ready to Experience the Difference? Just fill out the form below and "
+"one of our helpful Bintelli Representatives will find your nearest dealer "
+"and get you in contact!"
+msgstr ""
+"Êtes-vous prêt à découvrir la différence ? Remplissez simplement le "
+"formulaire ci-dessous et l'un de nos représentants Bintelli trouvera votre "
+"revendeur le plus proche et vous mettra en contact !"
+
+#: includes/admin/manager.php:211
+msgid "Are you sure to delete all stores of all languages?"
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer toutes les boutiques de toutes les "
+"langues ?"
+
+#: includes/admin/manager.php:192
+msgid "Are you sure to remove Template from the theme root directory?"
+msgstr "Êtes-vous sûr de supprimer Template du répertoire racine du thème ?"
+
+#: includes/admin/manager.php:185
+msgid "Are you sure you want to "
+msgstr "Êtes-vous sûr de vouloir"
+
+#: includes/plugin.php:316
+msgid "ASL Settings"
+msgstr "Paramètres ASL"
+
+#: includes/admin/asset.php:91
+msgid "Assets Backup Successfully, Download the Zip File."
+msgstr "Sauvegarde des actifs réussie, téléchargez le fichier Zip."
+
+#: includes/admin/asset.php:127
+msgid "Assets Imported Successfully."
+msgstr "Actifs importés avec succès."
+
+#: admin/partials/import_store.php:105
+msgid "Avoid Duplication"
+msgstr "Éviter les doublons"
+
+#: public/partials/template-frontend-2.php:141
+msgid "Back"
+msgstr "Retour"
+
+#: admin/partials/ui-customizer.php:8
+msgid "Back to Settings"
+msgstr "Retour aux paramètres"
+
+#: includes/frontend/app.php:1447
+msgid "Back to stores"
+msgstr "Retour aux magasins"
+
+#: includes/admin/manager.php:190
+msgid "Backup"
+msgstr "Sauvegarde"
+
+#: includes/admin/manager.php:189
+msgid ""
+"Backup of templates is not need if you haven't customize the template via "
+"plugin editor, are you sure to backup Template into theme root directory?"
+msgstr ""
+"La sauvegarde des modèles n'est pas nécessaire si vous n'avez pas "
+"personnalisé le modèle via l'éditeur de plug-in, êtes-vous sûr de "
+"sauvegarder le modèle dans le répertoire racine du thème ?"
+
+#: admin/partials/dashboard.php:403 admin/partials/dashboard.php:425
+#: includes/admin/manager.php:188
+msgid "Backup Template"
+msgstr "Modèle de sauvegarde"
+
+#: admin/partials/dashboard.php:368
+msgid "Basic System Info"
+msgstr "Informations de base sur le système"
+
+#: admin/partials/edit_store.php:45
+msgid "Best check yourself "
+msgstr "Mieux vérifier vous-même"
+
+#: public/partials/template-frontend-4.php:156
+msgid "Bewertung"
+msgstr "Bewertung"
+
+#: admin/partials/customize_map.php:148
+msgid "Bike Layer"
+msgstr "Couche de vélo"
+
+#: admin/partials/customize_map.php:13
+msgid "Border"
+msgstr "Frontière"
+
+#: admin/partials/add_store.php:190 admin/partials/edit_store.php:200
+msgid "Brand"
+msgstr "Marque"
+
+#: includes/frontend/app.php:1455
+msgid "brand"
+msgstr "marque"
+
+#: admin/partials/ui-customizer-fields.php:45
+msgid "Button Font"
+msgstr "Police du bouton"
+
+#: admin/partials/categories.php:186 admin/partials/markers.php:119
+#: admin/partials/logos.php:116
+msgid "Cancel"
+msgstr "Annuler"
+
+#: admin/partials/dashboard.php:121 admin/partials/manage_store.php:93
+#: admin/partials/manage_store.php:114 includes/frontend/app.php:1449
+#: public/partials/template-frontend-2.php:128
+#: public/partials/asl-store-form.php:66
+msgid "Categories"
+msgstr "Catégories"
+
+#: includes/admin/category.php:152
+msgid "Categories deleted successfully."
+msgstr "Catégories supprimées avec succès."
+
+#: admin/partials/add_store.php:171 admin/partials/edit_store.php:180
+#: includes/frontend/app.php:1458
+msgid "Category"
+msgstr "Catégorie"
+
+#: includes/admin/category.php:84
+msgid "Category added successfully"
+msgstr "Catégorie ajoutée avec succès"
+
+#: includes/admin/category.php:152
+msgid "Category deleted successfully."
+msgstr "Catégorie supprimée avec succès."
+
+#: admin/partials/categories.php:55 admin/partials/categories.php:93
+msgid "Category ID"
+msgstr "ID de catégorie"
+
+#: includes/admin/category.php:211
+msgid "Category updated successfully."
+msgstr "Catégorie mise à jour avec succès."
+
+#: admin/partials/categories.php:106 admin/partials/markers.php:93
+#: admin/partials/manage_store.php:51 admin/partials/logos.php:89
+msgid "Change"
+msgstr "Changer"
+
+#: admin/partials/add_store.php:137 admin/partials/edit_store.php:146
+msgid "Change Coordinates"
+msgstr "Modifier les coordonnées"
+
+#: public/partials/template-frontend-list.php:84
+msgid "Cities"
+msgstr "Villes"
+
+#: admin/partials/manage_store.php:107 admin/partials/add_store.php:99
+#: admin/partials/edit_store.php:108 includes/frontend/app.php:1410
+#: public/partials/asl-store-form.php:87
+msgid "City"
+msgstr "Ville"
+
+#: admin/partials/customize_map.php:20
+msgid "Clear All"
+msgstr "Tout effacer"
+
+#: public/partials/template-frontend-deal.php:4
+msgid "CLOSE"
+msgstr "PROCHE"
+
+#: admin/partials/categories.php:133 admin/partials/markers.php:167
+#: admin/partials/manage_store.php:157 admin/partials/add_store.php:542
+#: admin/partials/add_store.php:592 admin/partials/edit_store.php:580
+#: admin/partials/edit_store.php:628 admin/partials/shortcode-popup-html.php:83
+#: admin/partials/logos.php:163
+msgid "Close"
+msgstr "proche"
+
+#: admin/partials/add_store.php:257 admin/partials/add_store.php:291
+#: admin/partials/add_store.php:324 admin/partials/add_store.php:357
+#: admin/partials/add_store.php:391 admin/partials/add_store.php:424
+#: admin/partials/add_store.php:458 admin/partials/edit_store.php:272
+#: admin/partials/edit_store.php:310 admin/partials/edit_store.php:347
+#: admin/partials/edit_store.php:384 admin/partials/edit_store.php:422
+#: admin/partials/edit_store.php:459 admin/partials/edit_store.php:497
+msgid "Closed"
+msgstr "Fermé"
+
+#: admin/partials/ui-customizer-fields.php:17
+msgid "Colors"
+msgstr "Couleurs"
+
+#: admin/partials/manage_store.php:137
+msgid "Columns Visiblity"
+msgstr "Visibilité des colonnes"
+
+#: public/partials/asl-store-form.php:24
+msgid "Company"
+msgstr "Compagnie"
+
+#: public/partials/_agile_contact_modal.php:6
+msgid "Contact Form"
+msgstr "Formulaire de contact"
+
+#: admin/partials/import_store.php:111
+msgid "Coordinates"
+msgstr "Coordonnées"
+
+#: admin/partials/add_store.php:228 admin/partials/edit_store.php:240
+msgid "Copy/Paste Monday Timing"
+msgstr "Copier/Coller Lundi Timing"
+
+#: admin/partials/manage_store.php:108 admin/partials/add_store.php:114
+#: admin/partials/edit_store.php:123 includes/frontend/app.php:1408
+#: public/partials/asl-store-form.php:108
+msgid "Country"
+msgstr "Pays"
+
+#: admin/partials/dashboard.php:330
+msgid ""
+"Create a lead form page that can be used to get the contact information of "
+"potential customers easily."
+msgstr ""
+"Créez une page de formulaire de prospect qui peut être utilisée pour obtenir "
+"facilement les coordonnées de clients potentiels."
+
+#: includes/plugin.php:298
+msgid "Create New Store"
+msgstr "Créer un nouveau magasin"
+
+#: admin/partials/add_store.php:38
+msgid "Create Store"
+msgstr "Créer un magasin"
+
+#: admin/partials/attribute_special.php:50 admin/partials/categories.php:59
+#: admin/partials/manage_store.php:96 admin/partials/manage_store.php:117
+#: admin/partials/attribute.php:50
+msgid "Created On"
+msgstr "Créé sur"
+
+#: admin/partials/dashboard.php:391
+msgid "CSV Upload Permissions"
+msgstr "Autorisations de téléchargement CSV"
+
+#: admin/partials/import_store.php:85
+msgid ""
+"Current build works with CSV with comma as the delimiter. Please contact us "
+"at support@agilelogix.com for support."
+msgstr ""
+"La version actuelle fonctionne avec CSV avec une virgule comme délimiteur. "
+"Veuillez nous contacter à support@agilelogix.com pour obtenir de l'aide."
+
+#: includes/frontend/app.php:530 includes/frontend/app.php:1430
+#: public/partials/template-frontend-2.php:165
+#: public/partials/template-frontend-list.php:10
+#: public/partials/asl-search.php:32 public/partials/template-frontend-1.php:72
+#: public/partials/template-frontend-deal.php:45
+#: public/partials/template-frontend-deal.php:179
+#: public/partials/template-frontend-3.php:25
+#: public/partials/template-frontend-4.php:19
+#: public/partials/template-frontend-4.php:70
+#: public/partials/template-frontend-0.php:76
+#: public/partials/template-frontend-0.php:155
+msgid "Current Location"
+msgstr "Localisation actuelle"
+
+#: includes/frontend/app.php:1443
+msgid "Current+Location"
+msgstr "Emplacement actuel +"
+
+#: includes/plugin.php:312 admin/partials/customize_map.php:5
+msgid "Customize Map"
+msgstr "Personnaliser la carte"
+
+#: includes/plugin.php:297
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: admin/partials/import_store.php:134
+msgid "Date"
+msgstr "Date"
+
+#: admin/partials/manage_leads.php:77
+msgid "Dated"
+msgstr "Daté"
+
+#: includes/admin/store.php:347
+msgid "Default Lat & Default Lng values are invalid!"
+msgstr "Les valeurs Lat et Lng par défaut ne sont pas valides !"
+
+#: includes/admin/setting.php:377
+msgid "Default template is loaded"
+msgstr "Le modèle par défaut est chargé"
+
+#: admin/partials/customize_map.php:19 admin/partials/customize_map.php:115
+#: admin/partials/import_store.php:137 admin/partials/import_store.php:152
+msgid "Delete"
+msgstr "Effacer"
+
+#: includes/admin/manager.php:214
+msgid "DELETE ALL"
+msgstr "SUPPRIMER TOUT"
+
+#: includes/admin/manager.php:209
+msgid "DELETE ALL STORES"
+msgstr "SUPPRIMER TOUS LES MAGASINS"
+
+#: admin/partials/import_store.php:97
+msgid "Delete All Stores"
+msgstr "Supprimer tous les magasins"
+
+#: includes/admin/manager.php:184
+msgid "Delete Categories"
+msgstr "Supprimer les catégories"
+
+#: includes/admin/manager.php:183
+msgid "Delete Category"
+msgstr "Supprimer la catégorie"
+
+#: includes/admin/manager.php:186
+msgid "Delete it!"
+msgstr "Supprime-le!"
+
+#: includes/admin/manager.php:196
+msgid "Delete Logo"
+msgstr "Supprimer le logo"
+
+#: includes/admin/manager.php:194
+msgid "Delete Marker"
+msgstr "Supprimer le marqueur"
+
+#: includes/admin/manager.php:195
+msgid "Delete Markers"
+msgstr "Supprimer les marqueurs"
+
+#: admin/partials/manage_leads.php:53 admin/partials/attribute_special.php:31
+#: admin/partials/categories.php:34 admin/partials/markers.php:35
+#: admin/partials/manage_store.php:60 admin/partials/attribute.php:31
+#: admin/partials/logos.php:31
+msgid "Delete Selected"
+msgstr "Supprimer sélectionnée"
+
+#: includes/admin/manager.php:197
+msgid "Delete Selected Logos"
+msgstr "Supprimer les logos sélectionnés"
+
+#: includes/admin/manager.php:200
+msgid "Delete Store"
+msgstr "Supprimer le magasin"
+
+#: includes/admin/manager.php:201
+msgid "Delete Stores"
+msgstr "Supprimer les magasins"
+
+#: admin/partials/dashboard.php:404
+msgid "Delete Template"
+msgstr "Supprimer le modèle"
+
+#: includes/admin/attribute.php:92
+msgid "deleted successfully"
+msgstr "Supprimé avec succès"
+
+#: admin/partials/import_store.php:97
+msgid "Deleting..."
+msgstr "Suppression..."
+
+#: admin/partials/add_store.php:201 admin/partials/edit_store.php:210
+msgid "Descending Order for the list, higher number on top."
+msgstr "Ordre décroissant pour la liste, numéro le plus élevé en haut."
+
+#: admin/partials/add_store.php:53 admin/partials/edit_store.php:62
+msgid "Description"
+msgstr "La description"
+
+#: public/partials/asl-search.php:31
+msgid "Destination missing or invalid"
+msgstr "Destination manquante ou invalide"
+
+#: public/partials/template-frontend-4.php:148
+msgid "Die Top 10 Abnehmen im Liegen Standorte"
+msgstr "Die Top 10 Abnehmen im Liegen Standorte"
+
+#: public/partials/asl-store-page.php:88
+msgid "Direction"
+msgstr "Direction"
+
+#: includes/frontend/app.php:1416 includes/frontend/app.php:1437
+#: public/partials/template-frontend-deal.php:207
+msgid "Directions"
+msgstr "les directions"
+
+#: admin/partials/categories.php:30
+msgid ""
+"Directory is not writable, Category Image Upload will Fail, Make directory "
+"writable."
+msgstr ""
+"Le répertoire n'est pas accessible en écriture, le téléchargement d'images "
+"de catégorie échouera, rendez le répertoire accessible en écriture."
+
+#: admin/partials/import_store.php:57
+msgid ""
+"Directory is not writable, Excel Import will Fail, Make directory writable."
+msgstr ""
+"Le répertoire n'est pas accessible en écriture, l'importation Excel échouera,"
+" rendez le répertoire accessible en écriture."
+
+#: admin/partials/markers.php:30
+msgid ""
+"Directory is not writable, Marker Image Upload will Fail, Make directory "
+"writable."
+msgstr ""
+"Le répertoire n'est pas accessible en écriture, le téléchargement de l'image "
+"du marqueur échouera, rendez le répertoire accessible en écriture."
+
+#: admin/partials/shortcode-popup-html.php:46
+msgid "Disable"
+msgstr "Désactiver"
+
+#: admin/partials/manage_store.php:92 admin/partials/manage_store.php:113
+#: admin/partials/add_store.php:214 admin/partials/edit_store.php:223
+#: includes/admin/store.php:695
+msgid "Disabled"
+msgstr "Handicapé"
+
+#: admin/partials/dashboard.php:64
+msgid ""
+"Discover how the Agile Store Locator Plugin works and explore the 3 most "
+"vital steps to use the plugin."
+msgstr ""
+"Découvrez comment fonctionne le plug-in Agile Store Locator et explorez les "
+"3 étapes les plus vitales pour utiliser le plug-in."
+
+#: admin/partials/dashboard.php:352
+msgid "Display Where to Buy Locations to Millions"
+msgstr "Afficher les emplacements où acheter à des millions"
+
+#: includes/frontend/app.php:1438 includes/frontend/app.php:1450
+#: public/partials/template-frontend-list.php:82
+#: public/partials/template-frontend-deal.php:290
+msgid "Distance"
+msgstr "Distance"
+
+#: includes/frontend/app.php:1451 public/partials/template-frontend-2.php:116
+#: public/partials/template-frontend-deal.php:79
+#: public/partials/template-frontend-0.php:115
+msgid "Distance Range"
+msgstr "Plage de distances"
+
+#: admin/partials/shortcode-popup-html.php:55
+msgid "Distance Unit"
+msgstr "Unité de distance"
+
+#: includes/admin/manager.php:869
+msgid "Docs"
+msgstr "Documents"
+
+#: admin/partials/import_store.php:150
+msgid "Download"
+msgstr "Télécharger"
+
+#: public/partials/template-frontend-2.php:78
+#: public/partials/template-frontend-1.php:60
+#: public/partials/template-frontend-3.php:44
+#: public/partials/template-frontend-4.php:42
+#: public/partials/template-frontend-0.php:64
+msgid ""
+"Due to the GDPR, we need your consent to load data from Google, more "
+"information in our privacy policy."
+msgstr ""
+"En raison du GDPR, nous avons besoin de votre consentement pour charger des "
+"données de Google, plus d'informations dans notre politique de "
+"confidentialité."
+
+#: includes/admin/manager.php:187
+msgid "Duplicate it!"
+msgstr "Dupliquez-le !"
+
+#: includes/admin/import-export.php:854
+msgid "Duplicate rows skipped: "
+msgstr "Lignes en double ignorées :"
+
+#: includes/admin/manager.php:202
+msgid "Duplicate Selected Store"
+msgstr "Dupliquer le magasin sélectionné"
+
+#: includes/admin/store.php:398
+msgid "Duplicate stores removed"
+msgstr "Magasins en double supprimés"
+
+#: admin/partials/manage_leads.php:37
+msgid "Duration Selection"
+msgstr "Sélection de la durée"
+
+#: admin/partials/dashboard.php:357
+msgid "Easily Personalize Your Store Locator"
+msgstr "Personnalisez facilement votre localisateur de magasin"
+
+#: admin/partials/manage_leads.php:14 admin/partials/attribute_special.php:14
+#: admin/partials/categories.php:14 admin/partials/import_store.php:26
+#: admin/partials/attribute.php:14 admin/partials/logos.php:14
+msgid "Edit"
+msgstr "Éditer"
+
+#: includes/plugin.php:320 admin/partials/edit_store.php:38
+msgid "Edit Store"
+msgstr "Modifier le magasin"
+
+#: admin/partials/manage_store.php:110 admin/partials/add_store.php:90
+#: admin/partials/edit_store.php:99 admin/partials/import_store.php:108
+#: public/partials/asl-lead-form.php:23 public/partials/asl-store-form.php:59
+msgid "Email"
+msgstr "E-mail"
+
+#: includes/elements/lead.php:67 includes/frontend/request.php:528
+#: includes/frontend/request.php:667
+msgid "Email Address: "
+msgstr "Adresse e-mail:"
+
+#: includes/admin/store.php:695
+msgid "Enabled"
+msgstr "Activé"
+
+#: admin/partials/add_store.php:246 admin/partials/add_store.php:280
+#: admin/partials/add_store.php:313 admin/partials/add_store.php:346
+#: admin/partials/add_store.php:380 admin/partials/add_store.php:413
+#: admin/partials/add_store.php:447 admin/partials/edit_store.php:260
+#: admin/partials/edit_store.php:298 admin/partials/edit_store.php:335
+#: admin/partials/edit_store.php:372 admin/partials/edit_store.php:410
+#: admin/partials/edit_store.php:447 admin/partials/edit_store.php:485
+#: includes/admin/manager.php:207
+msgid "End Time"
+msgstr "Heure de fin"
+
+#: admin/partials/dashboard.php:350
+msgid "Enjoy Attractive Store Locator Layouts With Unlimited Features."
+msgstr ""
+"Profitez de mises en page attrayantes de localisateur de magasin avec des "
+"fonctionnalités illimitées."
+
+#: public/partials/asl-search.php:30 public/partials/template-frontend-1.php:71
+#: public/partials/_agile_modal.php:11
+#: public/partials/template-frontend-deal.php:44
+#: public/partials/template-frontend-deal.php:118
+#: public/partials/template-frontend-deal.php:178
+#: public/partials/template-frontend-0.php:75
+#: public/partials/template-frontend-0.php:154
+msgid "Enter a Location"
+msgstr "Entrez un lieu"
+
+#: public/partials/asl-store-form.php:61
+msgid "Enter correct email address"
+msgstr "Entrez l'adresse e-mail correcte"
+
+#: public/partials/template-frontend-3.php:72
+#: public/partials/template-frontend-4.php:61
+msgid "Enter your address"
+msgstr "Entrez votre adresse"
+
+#: public/partials/_agile_contact_modal.php:27
+msgid "Enter your email"
+msgstr "Entrer votre Email"
+
+#: public/partials/_agile_contact_modal.php:24
+msgid "Enter your name"
+msgstr "Entrez votre nom"
+
+#: includes/admin/google-map.php:59
+msgid "Error Occured saving Map."
+msgstr "Une erreur s'est produite lors de l'enregistrement de la carte."
+
+#: includes/admin/manager.php:213
+msgid "Error Occured, Please try Again."
+msgstr "Une erreur s'est produite, veuillez réessayer."
+
+#: includes/admin/store.php:737
+msgid "Error occurred while approving the records"
+msgstr "Une erreur s'est produite lors de l'approbation des enregistrements"
+
+#: includes/admin/store.php:707
+msgid "Error occurred while Changing Status"
+msgstr "Une erreur s'est produite lors du changement de statut"
+
+#: includes/admin/lead.php:69 includes/admin/lead.php:75
+#: includes/admin/attribute.php:82 includes/admin/attribute.php:88
+#: includes/admin/category.php:142 includes/admin/category.php:148
+#: includes/admin/marker.php:115 includes/admin/marker.php:121
+#: includes/admin/logo.php:138 includes/admin/logo.php:144
+msgid "Error occurred while deleting record"
+msgstr "Une erreur s'est produite lors de la suppression de l'enregistrement"
+
+#: includes/admin/lead.php:351 includes/admin/category.php:239
+#: includes/admin/marker.php:332 includes/admin/logo.php:240
+msgid "Error occurred while geting record"
+msgstr "Une erreur s'est produite lors de l'obtention de l'enregistrement"
+
+#: includes/admin/store.php:674 includes/admin/attribute.php:126
+#: includes/admin/attribute.php:162 includes/admin/category.php:90
+#: includes/admin/marker.php:60
+msgid "Error occurred while saving record"
+msgstr "Une erreur s'est produite lors de l'enregistrement de l'enregistrement"
+
+#: includes/admin/store.php:458 includes/admin/store.php:530
+msgid "Error occurred while saving Store"
+msgstr "Une erreur s'est produite lors de l'enregistrement de la boutique"
+
+#: includes/admin/marker.php:63
+msgid "Error occurred while uploading image."
+msgstr "Une erreur s'est produite lors du téléchargement de l'image."
+
+#: includes/admin/setting.php:177
+msgid "Error! Default Lat & Lng are invalid values, please try to swap them."
+msgstr ""
+"Erreur! Lat & Lng par défaut sont des valeurs non valides, veuillez essayer "
+"de les échanger."
+
+#: includes/helper.php:1528
+msgid "Error! fail to delete the file."
+msgstr "Erreur! ne parvient pas à supprimer le fichier."
+
+#: includes/helper.php:788 includes/helper.php:822
+msgid "Error! fail to move the file, check permisions."
+msgstr ""
+"Erreur! ne parvenez pas à déplacer le fichier, vérifiez les autorisations."
+
+#: includes/frontend/request.php:574
+msgid "Error! fail to send your email to the store."
+msgstr "Erreur! n'arrivez pas à envoyer votre e-mail au magasin."
+
+#: includes/admin/category.php:76 includes/admin/category.php:203
+#: includes/admin/marker.php:173 includes/admin/logo.php:72
+#: includes/admin/logo.php:202
+msgid "Error! Failed to upload the image."
+msgstr "Erreur! Échec du téléchargement de l'image."
+
+#: includes/admin/store.php:792
+msgid ""
+"Error! Failed to validate for the coordinates by the Google API, validate "
+"the Server API key."
+msgstr ""
+"Erreur! Échec de la validation des coordonnées par l'API Google, validez la "
+"clé API du serveur."
+
+#: includes/frontend/request.php:459 includes/frontend/request.php:610
+msgid "Error! Invalid contact details."
+msgstr "Erreur! Coordonnées invalides."
+
+#: includes/frontend/request.php:604
+msgid "Error! Invalid contact request."
+msgstr "Erreur! Demande de contact invalide."
+
+#: includes/frontend/request.php:444
+msgid "Error! Invalid lead contact request."
+msgstr "Erreur! Demande de contact avec le prospect non valide."
+
+#: includes/frontend/request.php:737
+msgid "Error! Invalid parameters provided."
+msgstr "Erreur! Paramètres non valides fournis."
+
+#: includes/frontend/request.php:726
+msgid "Error! Invalid register request."
+msgstr "Erreur! Demande d'enregistrement invalide."
+
+#: includes/frontend/request.php:845
+msgid "Error! Invalid Store data provided."
+msgstr "Erreur! Données de magasin non valides fournies."
+
+#: includes/admin/setting.php:206
+msgid "Error! Lang is not defined."
+msgstr "Erreur! Lang n'est pas défini."
+
+#: includes/admin/logo.php:43
+msgid "Error! logo name is required."
+msgstr "Erreur! le nom du logo est requis."
+
+#: includes/admin/ajax-handler.php:167
+msgid "Error! method not exist!"
+msgstr "Erreur! la méthode n'existe pas !"
+
+#: includes/frontend/request.php:465 includes/frontend/request.php:616
+#: includes/frontend/request.php:801
+msgid "Error! Please fill up the stores parameters."
+msgstr "Erreur! Veuillez remplir les paramètres des magasins."
+
+#: includes/admin/ajax-handler.php:189
+msgid "Error! route not found."
+msgstr "Erreur! itinéraire introuvable."
+
+#: includes/frontend/request.php:579 includes/frontend/request.php:706
+msgid "Error! Sorry there are no close store to your region."
+msgstr "Erreur! Désolé, il n'y a pas de magasin proche de votre région."
+
+#: includes/admin/store.php:757
+msgid "Error! Store not found."
+msgstr "Erreur! Magasin introuvable."
+
+#: includes/helper.php:812
+msgid "Error! Template file doesn't exist."
+msgstr "Erreur! Le fichier modèle n'existe pas."
+
+#: includes/helper.php:774 includes/helper.php:803
+msgid "Error! Template file is not valid."
+msgstr "Erreur! Le fichier modèle n'est pas valide."
+
+#: includes/admin/base.php:238
+msgid "Error! unkown file is uploaded."
+msgstr "Erreur! un fichier inconnu est téléchargé."
+
+#: includes/admin/store.php:632
+msgid "Error! Update id not found."
+msgstr "Erreur! ID de mise à jour introuvable."
+
+#: includes/admin/import-export.php:864
+msgid "Error! Wrong coordinates, invalid stores: "
+msgstr "Erreur! Coordonnées erronées, magasins invalides :"
+
+#: includes/admin/asset.php:135
+msgid "Error, file not moved, check permission."
+msgstr "Erreur, fichier non déplacé, vérifiez l'autorisation."
+
+#: admin/partials/import_store.php:91
+msgid "Export All"
+msgstr "Exporter tout"
+
+#: admin/partials/dashboard.php:186
+msgid "Export Analytics"
+msgstr "Analyse des exportations"
+
+#: admin/partials/manage_leads.php:44
+msgid "Export Dealers"
+msgstr "Concessionnaires à l'exportation"
+
+#: admin/partials/manage_leads.php:41
+msgid "Export Leads"
+msgstr "Exporter des prospects"
+
+#: admin/partials/import_store.php:123
+msgid "Export with Logo Images Path"
+msgstr "Exporter avec le chemin des images de logo"
+
+#: admin/partials/import_store.php:119
+msgid "Export with Store IDs (IDs are required for update)"
+msgstr ""
+"Exporter avec les ID de magasin (les ID sont requis pour la mise à jour)"
+
+#: admin/partials/dashboard.php:395
+msgid "Extension Installed"
+msgstr "Extension installée"
+
+#: includes/admin/asset.php:95
+msgid "Failed to Create the Backup"
+msgstr "Impossible de créer la sauvegarde"
+
+#: includes/admin/asset.php:130
+msgid "Failed to Imported Assets."
+msgstr "Échec de l'importation des ressources."
+
+#: admin/partials/add_store.php:69 admin/partials/edit_store.php:78
+#: includes/frontend/app.php:1436
+#: public/partials/template-frontend-deal.php:244
+#: public/partials/asl-store-form.php:52
+msgid "Fax"
+msgstr "Fax"
+
+#: admin/partials/import_store.php:76
+msgid "Fetch Coordinates"
+msgstr "Récupérer les coordonnées"
+
+#: admin/partials/import_store.php:78
+msgid "Fetch Missing Coordinates"
+msgstr "Récupérer les coordonnées manquantes"
+
+#: admin/partials/import_store.php:78
+msgid "Fetching Coordinates..."
+msgstr "Récupération des coordonnées..."
+
+#: includes/admin/setting.php:744
+msgid "Fields has been updated successfully."
+msgstr "Les champs ont été mis à jour avec succès."
+
+#: admin/partials/import_store.php:184
+msgid "File"
+msgstr "Dossier"
+
+#: includes/helper.php:1525
+msgid "File deleted successfully."
+msgstr "Fichier supprimé avec succès."
+
+#: admin/partials/import_store.php:133
+msgid "File Name"
+msgstr "Nom de fichier"
+
+#: admin/partials/categories.php:116 admin/partials/categories.php:169
+#: admin/partials/customize_map.php:85 admin/partials/markers.php:103
+#: admin/partials/markers.php:150 admin/partials/add_store.php:524
+#: admin/partials/add_store.php:575 admin/partials/edit_store.php:563
+#: admin/partials/edit_store.php:612 admin/partials/import_store.php:188
+msgid "File Path..."
+msgstr "Chemin du fichier..."
+
+#: public/partials/asl-store-form.php:12
+msgid ""
+"Fill up the form of your Store to register it for the approval by the "
+"administrator and it will list down in the Store Locator listing."
+msgstr ""
+"Remplissez le formulaire de votre magasin pour l'enregistrer pour "
+"approbation par l'administrateur et il apparaîtra dans la liste du "
+"localisateur de magasin."
+
+#: public/partials/template-frontend-4.php:79
+#: public/partials/template-frontend-4.php:88
+msgid "Filter Option"
+msgstr "Options de filtre"
+
+#: public/partials/asl-lead-form.php:10
+msgid "Find a Dealer"
+msgstr "Trouver un revendeur"
+
+#: public/partials/template-frontend-2.php:163
+msgid "Find A Store"
+msgstr "Trouver un magasin"
+
+#: admin/partials/ui-customizer-fields.php:18
+#: admin/partials/ui-customizer-fields.php:25
+msgid "Font Size"
+msgstr "Taille de police"
+
+#: includes/helper.php:926 includes/frontend/request.php:275
+#: includes/frontend/app.php:1474
+msgid "Fri"
+msgstr "Ven"
+
+#: admin/partials/add_store.php:371 admin/partials/edit_store.php:398
+msgid "Friday"
+msgstr "Vendredi"
+
+#: public/partials/_agile_modal.php:10
+#: public/partials/template-frontend-deal.php:117
+msgid "From"
+msgstr "De"
+
+#: public/partials/asl-lead-form.php:18
+msgid "Full Name"
+msgstr "Nom et prénom"
+
+#: includes/elements/lead.php:66 includes/frontend/request.php:527
+#: includes/frontend/request.php:666
+msgid "Full Name: "
+msgstr "Nom et prénom:"
+
+#: admin/partials/markers.php:34
+msgid "Generate Tool"
+msgstr "Générer l'outil"
+
+#: admin/partials/dashboard.php:85
+msgid "Generate your Google Maps API key so  Map related features can work."
+msgstr ""
+"Générez votre clé API Google Maps pour que les fonctionnalités liées à Map "
+"puissent fonctionner."
+
+#: admin/partials/shortcode-popup-html.php:43
+msgid "Geo-Location Dialog"
+msgstr "Boîte de dialogue de géolocalisation"
+
+#: admin/partials/shortcode-popup-html.php:47
+msgid "Geo-location Modal"
+msgstr "Modalité de géolocalisation"
+
+#: includes/admin/manager.php:181
+msgid "Geocode was not Successful:"
+msgstr "Le géocodage n'a pas réussi :"
+
+#: admin/partials/shortcode-popup-html.php:36
+msgid "Geocoding on Enter key (Google Geocoding API)"
+msgstr "Géocodage sur la touche Entrée (Google Geocoding API)"
+
+#: admin/partials/shortcode-popup-html.php:50
+msgid "GeoJS IP Service (Free API)"
+msgstr "Service IP GeoJS (API gratuite)"
+
+#: admin/partials/shortcode-popup-html.php:49
+msgid "Geolocation On Load"
+msgstr "Géolocalisation au chargement"
+
+#: public/partials/_agile_modal.php:26
+#: public/partials/template-frontend-deal.php:134
+msgid "GET DIRECTIONS"
+msgstr "OBTENIR DES DIRECTIONS"
+
+#: admin/partials/dashboard.php:205 admin/partials/dashboard.php:359
+msgid "Get Pro Version Now !"
+msgstr "Obtenez la version Pro maintenant !"
+
+#: public/partials/_agile_modal.php:6
+#: public/partials/template-frontend-deal.php:114
+msgid "Get Your Directions"
+msgstr "Obtenez votre itinéraire"
+
+#: admin/partials/dashboard.php:379
+msgid "Google API Key"
+msgstr "Clé API Google"
+
+#: includes/admin/manager.php:584
+msgid "Google API Key is Missing"
+msgstr "La clé API Google est manquante"
+
+#: includes/vendors/borlabs.php:75
+msgid ""
+"Google Maps has been blocked.<br>Click on <strong>Load Store Locator</strong>"
+" to unblock Google Maps library.<br> further details about the <a "
+"href=\"https://policies.google.com/privacy?hl=en\" target=\"_blank\" "
+"rel=\"nofollow\">Google Maps Privacy Policy</a> . "
+msgstr ""
+"Google Maps a été bloqué.<br> Cliquez sur <strong>Load Store Locator</strong>"
+" pour débloquer la bibliothèque Google Maps.<br> plus de détails sur la <a "
+"href=\"https://policies.google.com/privacy?hl=en\" target=\"_blank\" "
+"rel=\"nofollow\">politique de confidentialité de Google Maps</a> ."
+
+#: includes/admin/import-export.php:148
+msgid "Google Server API Key is Missing."
+msgstr "La clé API du serveur Google est manquante."
+
+#: includes/admin/store.php:775
+msgid "Google Server API key is missing."
+msgstr "La clé API Google Server est manquante."
+
+#: admin/partials/dashboard.php:379
+msgid ""
+"Green sign mean the Google API key is added in the plugin, doesn't mean you "
+"have configured it properly in Google Cloud Console."
+msgstr ""
+"Le signe vert signifie que la clé API Google est ajoutée dans le plug-in, ne "
+"signifie pas que vous l'avez configurée correctement dans Google Cloud "
+"Console."
+
+#: admin/partials/import_store.php:86
+msgid "Guide article: "
+msgstr "Article du guide :"
+
+#: admin/partials/manage_store.php:145
+msgid "Hidden Columns"
+msgstr "Colonnes cachées"
+
+#: includes/frontend/app.php:1440
+msgid "Hide Details"
+msgstr "Cacher les détails"
+
+#: admin/partials/manage_store.php:70
+msgid "Hide Pending Stores"
+msgstr "Masquer les magasins en attente"
+
+#: public/partials/template-frontend-4.php:148
+msgid "Hide Table"
+msgstr "Masquer le tableau"
+
+#: admin/partials/dashboard.php:63
+msgid "How it works?"
+msgstr "Comment ça fonctionne?"
+
+#: admin/partials/customize_map.php:95
+msgid "How to use KML files?"
+msgstr "Comment utiliser les fichiers KML ?"
+
+#: includes/admin/setting.php:302
+msgid "HTML added in TextEditor"
+msgstr "HTML ajouté dans TextEditor"
+
+#. URI of the plugin
+msgid "https://agilestorelocator.com"
+msgstr "https://agilestorelocator.com"
+
+#. Author URI of the plugin
+msgid "https://agilestorelocator.com/"
+msgstr "https://agilestorelocator.com/"
+
+#: public/partials/asl-store-form.php:162
+msgid ""
+"I agree to terms and conditions and all the provided information is correct"
+msgstr ""
+"J'accepte les termes et conditions et toutes les informations fournies sont "
+"correctes"
+
+#: admin/partials/categories.php:58 admin/partials/categories.php:165
+#: admin/partials/markers.php:54 admin/partials/markers.php:99
+#: admin/partials/markers.php:146 admin/partials/add_store.php:571
+#: admin/partials/edit_store.php:608
+msgid "Icon"
+msgstr "Icône"
+
+#: admin/partials/manage_leads.php:71 admin/partials/attribute_special.php:47
+#: admin/partials/attribute.php:47
+msgid "ID"
+msgstr "IDENTIFIANT"
+
+#: admin/partials/categories.php:112 admin/partials/logos.php:49
+msgid "Image"
+msgstr "Image"
+
+#: admin/partials/import_store.php:136 admin/partials/import_store.php:151
+msgid "Import"
+msgstr "Importer"
+
+#: admin/partials/import_store.php:48
+msgid "Import Stores"
+msgstr "Importer des magasins"
+
+#: admin/partials/import_store.php:86
+msgid "Import Stores Using Excel/CSV"
+msgstr "Importer des magasins à l'aide d'Excel/CSV"
+
+#: includes/plugin.php:315
+msgid "Import/Export Stores"
+msgstr "Magasins d'import/export"
+
+#: admin/partials/import_store.php:84
+msgid "Imported CSV Files"
+msgstr "Fichiers CSV importés"
+
+#: admin/partials/import_store.php:151
+msgid "Importing..."
+msgstr "Importation..."
+
+#: includes/frontend/app.php:1462 public/partials/template-frontend-1.php:76
+msgid "In"
+msgstr "Dans"
+
+#: admin/partials/shortcode-popup-html.php:84
+msgid "Insert Shortcode"
+msgstr "Insérer un code court"
+
+#: includes/admin/manager.php:212
+msgid "Invalid File, Accepts JPG, PNG, GIF or SVG."
+msgstr "Fichier non valide, accepte JPG, PNG, GIF ou SVG."
+
+#: admin/partials/import_store.php:114
+msgid "It may slow import process for a large CSV file with 5k+ rows."
+msgstr ""
+"Cela peut ralentir le processus d'importation d'un gros fichier CSV avec "
+"plus de 5 000 lignes."
+
+#: admin/partials/dashboard.php:383
+msgid "JSON Cache"
+msgstr "Cache JSON"
+
+#: admin/partials/shortcode-popup-html.php:58
+#: public/partials/template-frontend-2.php:118
+#: public/partials/template-frontend-1.php:79
+#: public/partials/_agile_modal.php:19
+#: public/partials/template-frontend-deal.php:81
+#: public/partials/template-frontend-deal.php:127
+#: public/partials/template-frontend-0.php:117
+msgid "KM"
+msgstr "KM"
+
+#: includes/frontend/app.php:1434
+msgid "Km"
+msgstr "kilomètres"
+
+#: includes/admin/google-map.php:103
+msgid "KML File uploaded successfully."
+msgstr "Fichier KML téléchargé avec succès."
+
+#: admin/partials/customize_map.php:78
+msgid "KML Files"
+msgstr "Fichiers KML"
+
+#: admin/partials/manage_store.php:103
+msgid "Lat"
+msgstr "Lat"
+
+#: admin/partials/add_store.php:129 admin/partials/edit_store.php:138
+#: public/partials/asl-store-form.php:120
+msgid "Latitude"
+msgstr "Latitude"
+
+#: admin/partials/dashboard.php:329
+msgid "Lead Contact Form"
+msgstr "Formulaire de contact principal"
+
+#: includes/admin/lead.php:79
+msgid "Lead deleted successfully."
+msgstr "Prospect supprimé avec succès."
+
+#: admin/partials/manage_leads.php:74
+msgid "Lead Email"
+msgstr "Courriel principal"
+
+#: admin/partials/manage_leads.php:72
+msgid "Lead Name"
+msgstr "Nom du prospect"
+
+#: admin/partials/manage_leads.php:73
+msgid "Lead Phone"
+msgstr "Téléphone principal"
+
+#: includes/admin/lead.php:105
+msgid "Lead Updated Successfully."
+msgstr "Prospect mis à jour avec succès."
+
+#: includes/admin/lead.php:79
+msgid "Leads deleted successfully."
+msgstr "Prospects supprimés avec succès."
+
+#: includes/plugin.php:318
+msgid "Leads Manager"
+msgstr "Gestionnaire de prospects"
+
+#: includes/admin/setting.php:73
+msgid "Level has been changed."
+msgstr "Le niveau a été changé."
+
+#: includes/admin/setting.php:266
+msgid "List Template has no Map."
+msgstr "Le modèle de liste n'a pas de carte."
+
+#: admin/partials/manage_store.php:104
+msgid "Lng"
+msgstr "Lng"
+
+#: includes/vendors/borlabs.php:76 public/partials/template-frontend-2.php:79
+#: public/partials/template-frontend-1.php:61
+#: public/partials/template-frontend-3.php:45
+#: public/partials/template-frontend-0.php:65
+msgid "Load Store Locator"
+msgstr "Charger le localisateur de magasin"
+
+#: admin/partials/ui-customizer.php:30
+msgid "Load Template"
+msgstr "Charger le modèle"
+
+#: admin/partials/manage_store.php:70
+msgid "Loading Stores"
+msgstr "Chargement des magasins"
+
+#: admin/partials/ui-customizer.php:30
+#: public/partials/template-frontend-2.php:93
+#: public/partials/template-frontend-list.php:31
+#: public/partials/template-frontend-1.php:138
+#: public/partials/template-frontend-deal.php:194
+#: public/partials/template-frontend-3.php:64
+#: public/partials/template-frontend-4.php:51
+#: public/partials/template-frontend-0.php:147
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: public/partials/_agile_modal.php:47
+#: public/partials/template-frontend-deal.php:155
+msgid "LOCATE"
+msgstr "LOCALISER"
+
+#: public/partials/_agile_modal.php:38
+#: public/partials/template-frontend-deal.php:147
+msgid "LOCATE YOUR GEOPOSITION"
+msgstr "LOCALISEZ VOTRE GÉOPOSITION"
+
+#: admin/partials/dashboard.php:383
+msgid "Locator JSON files are cached to serve speedy response."
+msgstr ""
+"Les fichiers JSON de localisateur sont mis en cache pour fournir une réponse "
+"rapide."
+
+#: admin/partials/add_store.php:164 admin/partials/add_store.php:520
+#: admin/partials/edit_store.php:173 admin/partials/edit_store.php:559
+msgid "Logo"
+msgstr "Logo"
+
+#: includes/admin/logo.php:148
+msgid "Logo deleted Successfully."
+msgstr "Logo supprimé avec succès."
+
+#: admin/partials/manage_store.php:95 admin/partials/manage_store.php:116
+#: admin/partials/logos.php:47 admin/partials/logos.php:80
+msgid "Logo ID"
+msgstr "Identifiant du logo"
+
+#: includes/admin/logo.php:83
+msgid "Logo is uploaded successfully."
+msgstr "Le logo est téléchargé avec succès."
+
+#: admin/partials/add_store.php:515 admin/partials/edit_store.php:554
+#: admin/partials/logos.php:138
+msgid "Logo Name"
+msgstr "Nom du logo"
+
+#: includes/admin/logo.php:211
+msgid "Logo updated successfully."
+msgstr "Logo mis à jour avec succès."
+
+#: includes/admin/logo.php:148
+msgid "Logos deleted Successfully."
+msgstr "Logos supprimés avec succès."
+
+#: admin/partials/add_store.php:133 admin/partials/edit_store.php:142
+#: public/partials/asl-store-form.php:127
+msgid "Longitude"
+msgstr "Longitude"
+
+#: includes/plugin.php:305 admin/partials/attribute.php:27
+msgid "Manage Brands"
+msgstr "Gérer les marques"
+
+#: includes/plugin.php:300 admin/partials/categories.php:27
+msgid "Manage Categories"
+msgstr "Gérer les catégories"
+
+#: admin/partials/manage_leads.php:30
+msgid "Manage Leads"
+msgstr "Gérer les prospects"
+
+#: includes/plugin.php:309 admin/partials/logos.php:27
+msgid "Manage Logos"
+msgstr "Gérer les logos"
+
+#: includes/plugin.php:308 admin/partials/markers.php:27
+msgid "Manage Markers"
+msgstr "Gérer les marqueurs"
+
+#: includes/plugin.php:304
+msgid "Manage Specialities"
+msgstr "Gérer les spécialités"
+
+#: admin/partials/attribute_special.php:27
+msgid "Manage Speciality"
+msgstr "Gérer la spécialité"
+
+#: includes/plugin.php:299 admin/partials/manage_store.php:32
+msgid "Manage Stores"
+msgstr "Gérer les magasins"
+
+#: includes/admin/google-map.php:55
+msgid "Map has been updated successfully."
+msgstr "La carte a été mise à jour avec succès."
+
+#: admin/partials/add_store.php:151 admin/partials/edit_store.php:160
+msgid "Marker"
+msgstr "Marqueur"
+
+#: includes/admin/marker.php:55
+msgid "Marker added successfully"
+msgstr "Marqueur ajouté avec succès"
+
+#: admin/partials/customize_map.php:157
+msgid "Marker Animation"
+msgstr "Animation de marqueur"
+
+#: includes/admin/marker.php:125
+msgid "Marker deleted successfully."
+msgstr "Marqueur supprimé avec succès."
+
+#: admin/partials/markers.php:52 admin/partials/manage_store.php:94
+#: admin/partials/manage_store.php:115
+msgid "Marker ID"
+msgstr "ID de marqueur"
+
+#: admin/partials/markers.php:140 admin/partials/add_store.php:565
+#: admin/partials/edit_store.php:602
+msgid "Marker Name"
+msgstr "Nom du marqueur"
+
+#: includes/admin/marker.php:182
+msgid "Marker Updated Successfully."
+msgstr "Marqueur mis à jour avec succès."
+
+#: admin/partials/dashboard.php:134
+msgid "Markers"
+msgstr "Marqueurs"
+
+#: includes/admin/marker.php:125
+msgid "Markers deleted successfully."
+msgstr "Marqueurs supprimés avec succès."
+
+#: admin/partials/import_store.php:54
+msgid ""
+"Mbstring extension is not installed on your server, contact your server "
+"admin OR login to your cpanel and enable it. Import will not work without "
+"this extension."
+msgstr ""
+"L'extension Mbstring n'est pas installée sur votre serveur, contactez "
+"l'administrateur de votre serveur OU connectez-vous à votre cpanel et "
+"activez-le. L'importation ne fonctionnera pas sans cette extension."
+
+#: public/partials/asl-lead-form.php:38
+#: public/partials/_agile_contact_modal.php:30
+msgid "Message"
+msgstr "Message"
+
+#: includes/elements/lead.php:73 includes/frontend/request.php:535
+#: includes/frontend/request.php:673
+msgid "Message: "
+msgstr "Message:"
+
+#: public/partials/_agile_modal.php:22
+#: public/partials/template-frontend-deal.php:130
+msgid "Mile"
+msgstr "Mile"
+
+#: admin/partials/shortcode-popup-html.php:61 includes/frontend/app.php:1433
+msgid "Miles"
+msgstr "Milles"
+
+#: includes/admin/import-export.php:141
+msgid "Missing Coordinates are not Found in Store Listing"
+msgstr ""
+"Les coordonnées manquantes sont introuvables dans la liste des magasins"
+
+#: includes/admin/import-export.php:144
+msgid "Missing Coordinates Request Completed"
+msgstr "Demande de coordonnées manquantes terminée"
+
+#: includes/helper.php:926 includes/frontend/request.php:275
+#: includes/frontend/app.php:1474
+msgid "Mon"
+msgstr "Lun"
+
+#: admin/partials/add_store.php:236 admin/partials/edit_store.php:248
+msgid "Monday"
+msgstr "Lundi"
+
+#: admin/partials/dashboard.php:265
+msgid "Most Search Locations"
+msgstr "La plupart des emplacements de recherche"
+
+#: admin/partials/dashboard.php:245
+msgid "Most Views Stores"
+msgstr "Magasins les plus consultés"
+
+#: admin/partials/dashboard.php:355
+msgid "Multiple Color Schemes For Templates"
+msgstr "Schémas de couleurs multiples pour les modèles"
+
+#: admin/partials/attribute_special.php:48 admin/partials/categories.php:56
+#: admin/partials/categories.php:97 admin/partials/categories.php:155
+#: admin/partials/markers.php:53 admin/partials/markers.php:88
+#: admin/partials/add_store.php:514 admin/partials/edit_store.php:553
+#: admin/partials/attribute.php:48 admin/partials/logos.php:48
+#: admin/partials/logos.php:84 admin/partials/logos.php:137
+#: public/partials/asl-store-form.php:31
+msgid "Name"
+msgstr "Nom"
+
+#: admin/partials/attribute.php:32
+msgid "New Brand"
+msgstr "Nouvelle marque"
+
+#: admin/partials/categories.php:35
+msgid "New Category"
+msgstr "Nouvelle catégorie"
+
+#: admin/partials/add_store.php:167 admin/partials/edit_store.php:176
+#: admin/partials/logos.php:32
+msgid "New Logo"
+msgstr "Nouveau logo"
+
+#: admin/partials/markers.php:36 admin/partials/add_store.php:158
+#: admin/partials/edit_store.php:167
+msgid "New Marker"
+msgstr "Nouveau marqueur"
+
+#: admin/partials/attribute_special.php:32
+msgid "New Speciality"
+msgstr "Nouvelle spécialité"
+
+#: admin/partials/manage_store.php:62
+msgid "New Store"
+msgstr "Nouveau magasin"
+
+#: includes/admin/store.php:853
+msgid "New store is registered with these details."
+msgstr "Le nouveau magasin est enregistré avec ces détails."
+
+#: admin/partials/add_store.php:218 admin/partials/edit_store.php:227
+msgid "No"
+msgstr "Non"
+
+#: includes/admin/store.php:404
+msgid "No Duplicate deleted!"
+msgstr "Aucun doublon supprimé !"
+
+#: admin/partials/customize_map.php:106
+msgid "No KML File Exist!"
+msgstr "Aucun fichier KML n'existe !"
+
+#: public/partials/template-frontend-4.php:205
+msgid "No Rating Found!"
+msgstr "Aucune évaluation trouvée !"
+
+#: admin/partials/import_store.php:107 includes/frontend/app.php:526
+#: includes/frontend/app.php:1422 includes/frontend/app.php:1442
+msgid "None"
+msgstr "Aucun"
+
+#: includes/frontend/app.php:528 includes/frontend/app.php:1426
+msgid "None Selected"
+msgstr "Aucune sélection"
+
+#: public/partials/template-frontend-2.php:64
+#: public/partials/template-frontend-1.php:46
+#: public/partials/template-frontend-deal.php:3
+#: public/partials/template-frontend-3.php:85
+#: public/partials/template-frontend-0.php:50
+msgid "OPEN"
+msgstr "OUVERT"
+
+#: admin/partials/add_store.php:258 admin/partials/add_store.php:292
+#: admin/partials/add_store.php:325 admin/partials/add_store.php:358
+#: admin/partials/add_store.php:392 admin/partials/add_store.php:425
+#: admin/partials/add_store.php:459 admin/partials/edit_store.php:273
+#: admin/partials/edit_store.php:311 admin/partials/edit_store.php:348
+#: admin/partials/edit_store.php:385 admin/partials/edit_store.php:423
+#: admin/partials/edit_store.php:460 admin/partials/edit_store.php:498
+msgid "Open 24 Hour"
+msgstr "Ouvert 24h/24"
+
+#: admin/partials/attribute_special.php:49 admin/partials/categories.php:101
+#: admin/partials/categories.php:159 admin/partials/attribute.php:49
+msgid "Order"
+msgstr "Ordre"
+
+#: admin/partials/categories.php:48 admin/partials/categories.php:57
+msgid "Order ID"
+msgstr "numéro de commande"
+
+#: admin/partials/add_store.php:80 admin/partials/edit_store.php:89
+msgid "Other Details"
+msgstr "Autres détails"
+
+#: admin/partials/dashboard.php:308
+msgid ""
+"Our plugin includes a search widget that can be added anywhere on your "
+"website for address searching."
+msgstr ""
+"Notre plugin comprend un widget de recherche qui peut être ajouté n'importe "
+"où sur votre site Web pour la recherche d'adresses."
+
+#: admin/partials/dashboard.php:319
+msgid ""
+"Our Plugin lets you register multiple stores on the registration page to "
+"display on the store locator page."
+msgstr ""
+"Notre plugin vous permet d'enregistrer plusieurs magasins sur la page "
+"d'inscription pour les afficher sur la page de localisation des magasins."
+
+#: admin/partials/dashboard.php:171
+msgid "Period"
+msgstr "Période"
+
+#: admin/partials/manage_store.php:109 admin/partials/add_store.php:63
+#: admin/partials/edit_store.php:72 admin/partials/import_store.php:110
+#: includes/frontend/app.php:1435 public/partials/asl-store-form.php:45
+msgid "Phone"
+msgstr "Téléphoner"
+
+#: public/partials/asl-lead-form.php:28
+msgid "Phone Name"
+msgstr "Nom du téléphone"
+
+#: includes/elements/lead.php:68 includes/frontend/request.php:529
+msgid "Phone: "
+msgstr "Téléphoner:"
+
+#: includes/frontend/app.php:1414
+msgid "Pickup Here"
+msgstr "Ramassage ici"
+
+#: public/partials/asl-store-form.php:165
+msgid "Please agree to register for store in the listing."
+msgstr "Veuillez accepter de vous inscrire au magasin dans la liste."
+
+#: public/partials/_agile_contact_modal.php:30
+msgid "Please enter message"
+msgstr "Veuillez entrer un message"
+
+#: public/partials/asl-lead-form.php:28
+msgid "Please enter phone number"
+msgstr "Veuillez entrer le numéro de téléphone"
+
+#: public/partials/asl-lead-form.php:23
+#: public/partials/_agile_contact_modal.php:27
+msgid "Please enter valid email"
+msgstr "Veuillez saisir une adresse e-mail valide"
+
+#: public/partials/asl-lead-form.php:18
+#: public/partials/_agile_contact_modal.php:24
+msgid "Please enter your name"
+msgstr "S'il vous plaît entrez votre nom"
+
+#: public/partials/asl-lead-form.php:33
+msgid "Please enter zip code"
+msgstr "Veuillez entrer le code postal"
+
+#: includes/frontend/app.php:678 includes/frontend/app.php:771
+msgid "Please fill up the form."
+msgstr "Veuillez remplir le formulaire."
+
+#: includes/admin/asset.php:112
+msgid "Please login with Administrator Account."
+msgstr "Veuillez vous connecter avec un compte administrateur."
+
+#: admin/partials/import_store.php:86
+msgid ""
+"Please upload your CSV file and then import it though the import button, "
+"please make sure to follow the given template and the columns should be in "
+"the right format as described in the documentation or simply use Template."
+"csv format, please validate your API Key before import."
+msgstr ""
+"Veuillez télécharger votre fichier CSV, puis l'importer via le bouton "
+"d'importation, assurez-vous de suivre le modèle donné et les colonnes "
+"doivent être dans le bon format comme décrit dans la documentation ou "
+"utilisez simplement le format Template.csv, veuillez valider votre clé API "
+"avant importer."
+
+#: admin/partials/import_store.php:77
+msgid ""
+"Please use fetch coordinates button to fill your missing coordinates "
+"(Lat/Lng) of your stores through the Google Geocoding API Service, it is "
+"important to validate the response of the Google Server Maps API Key and "
+"that should report \"Valid API Key\"."
+msgstr ""
+"Veuillez utiliser le bouton de récupération des coordonnées pour remplir vos "
+"coordonnées manquantes (Lat/Lng) de vos magasins via le service API Google "
+"Geocoding, il est important de valider la réponse de la clé API Google "
+"Server Maps et cela devrait indiquer \"Clé API valide\"."
+
+#: includes/admin/manager.php:215
+msgid "PLEASE VALIDATE PURCHASE CODE!"
+msgstr "VEUILLEZ VALIDER LE CODE D'ACHAT !"
+
+#: admin/partials/import_store.php:60
+msgid ""
+"Please Validate the Google Server API Key before Import process, to make "
+"sure the coordinates will be fetched correctly through the Google Maps API, "
+"ASL is not responsible if Google API doesn't provide correct values, please "
+"save your Server Google API Key in ASL Settings."
+msgstr ""
+"Veuillez valider la clé API Google Server avant le processus d'importation, "
+"pour vous assurer que les coordonnées seront récupérées correctement via "
+"l'API Google Maps, ASL n'est pas responsable si l'API Google ne fournit pas "
+"de valeurs correctes, veuillez enregistrer votre clé API Google Server dans "
+"les paramètres ASL ."
+
+#: admin/partials/dashboard.php:375
+msgid "Plugin version"
+msgstr "Version du plug-in"
+
+#: admin/partials/manage_leads.php:75 admin/partials/manage_store.php:112
+#: admin/partials/add_store.php:109 admin/partials/edit_store.php:118
+#: public/partials/asl-store-form.php:101
+msgid "Postal Code"
+msgstr "code postal"
+
+#: includes/elements/lead.php:69 includes/frontend/request.php:530
+msgid "Postal Code: "
+msgstr "Code postal:"
+
+#: public/partials/_agile_modal.php:15
+#: public/partials/template-frontend-deal.php:122
+msgid "Prepopulated Destination Address"
+msgstr "Adresse de destination préremplie"
+
+#: public/partials/template-frontend-1.php:145
+#: public/partials/template-frontend-0.php:163
+msgid "PRINT"
+msgstr "IMPRIMER"
+
+#: admin/partials/add_store.php:199 admin/partials/edit_store.php:208
+msgid "Priority Order"
+msgstr "Commande prioritaire"
+
+#: public/partials/template-frontend-2.php:118
+#: public/partials/template-frontend-1.php:79
+#: public/partials/template-frontend-deal.php:81
+#: public/partials/template-frontend-0.php:117
+msgid "Radius"
+msgstr "Rayon"
+
+#: includes/frontend/app.php:1444
+msgid "Radius Circle"
+msgstr "Cercle de rayon"
+
+#: includes/frontend/request.php:668
+msgid "Rating: "
+msgstr "Évaluation:"
+
+#: includes/frontend/app.php:1439
+msgid "Read more"
+msgstr "Lire la suite"
+
+#: includes/frontend/app.php:1457
+msgid "Region"
+msgstr "Région"
+
+#: public/partials/asl-store-form.php:172
+msgid "Register"
+msgstr "S'inscrire"
+
+#: public/partials/asl-store-form.php:11
+msgid "Register your Store!"
+msgstr "Enregistrez votre magasin !"
+
+#: public/partials/asl-store-form.php:172
+msgid "Registering..."
+msgstr "Enregistrement..."
+
+#: includes/admin/manager.php:193
+msgid "Remove"
+msgstr "Retirer"
+
+#: admin/partials/import_store.php:98
+msgid "Remove Duplicates"
+msgstr "Supprimer les doublons"
+
+#: includes/admin/manager.php:191
+msgid "Remove Template"
+msgstr "Supprimer le modèle"
+
+#: admin/partials/dashboard.php:92
+msgid ""
+"Remove the dummy stores through Manage Stores and add your own store "
+"locations."
+msgstr ""
+"Supprimez les magasins factices via Gérer les magasins et ajoutez vos "
+"propres emplacements de magasins."
+
+#: admin/partials/import_store.php:98
+msgid "Removing..."
+msgstr "Suppression..."
+
+#: includes/frontend/app.php:1427
+msgid "Reset Map"
+msgstr "Réinitialiser la carte"
+
+#: admin/partials/ui-customizer.php:36
+msgid "Reset Template"
+msgstr "Réinitialiser le modèle"
+
+#: admin/partials/ui-customizer.php:36
+msgid "Reseting..."
+msgstr "Réinitialisation..."
+
+#: admin/partials/dashboard.php:215
+msgid "Rows"
+msgstr "Lignes"
+
+#: admin/partials/add_store.php:228 admin/partials/edit_store.php:240
+msgid "Same Everyday"
+msgstr "Même tous les jours"
+
+#: includes/helper.php:926 includes/frontend/request.php:275
+#: includes/frontend/app.php:1474
+msgid "Sat"
+msgstr "Assis"
+
+#: admin/partials/add_store.php:404 admin/partials/edit_store.php:435
+msgid "Saturday"
+msgstr "Samedi"
+
+#: admin/partials/manage_store.php:156
+msgid "Save"
+msgstr "sauvegarder"
+
+#: admin/partials/customize_map.php:168
+msgid "Save Customization"
+msgstr "Enregistrer la personnalisation"
+
+#: admin/partials/ui-customizer.php:33
+msgid "Save Settings"
+msgstr "Enregistrer les paramètres"
+
+#: admin/partials/add_store.php:489 admin/partials/edit_store.php:528
+msgid "Saving Store..."
+msgstr "Enregistrement du magasin..."
+
+#: admin/partials/ui-customizer.php:33 admin/partials/customize_map.php:168
+msgid "Saving..."
+msgstr "Économie..."
+
+#: includes/frontend/app.php:1428
+msgid "Scan Area"
+msgstr "Zone de numérisation"
+
+#: includes/frontend/app.php:524 includes/frontend/app.php:1420
+#: public/partials/template-frontend-list.php:10
+#: public/partials/asl-search.php:57 public/partials/template-frontend-3.php:25
+#: public/partials/template-frontend-4.php:19
+msgid "Search"
+msgstr "Chercher"
+
+#: includes/frontend/app.php:1465
+msgid "Search an address to see the nearest stores."
+msgstr "Recherchez une adresse pour voir les magasins les plus proches."
+
+#: admin/partials/shortcode-popup-html.php:33
+msgid "Search By Address (Google)"
+msgstr "Recherche par adresse (Google)"
+
+#: admin/partials/shortcode-popup-html.php:34
+msgid "Search By Store Name (Database)"
+msgstr "Rechercher par nom de magasin (base de données)"
+
+#: admin/partials/shortcode-popup-html.php:35
+msgid "Search By Stores Cities, States (Database)"
+msgstr "Rechercher par magasins Villes, États (base de données)"
+
+#: admin/partials/manage_store.php:86
+msgid "Search City"
+msgstr "Rechercher une ville"
+
+#: admin/partials/manage_store.php:87
+msgid "Search Country"
+msgstr "Rechercher un pays"
+
+#: admin/partials/manage_store.php:89
+msgid "Search Email"
+msgstr "Chercher un email"
+
+#: admin/partials/manage_leads.php:61 admin/partials/attribute_special.php:39
+#: admin/partials/categories.php:45 admin/partials/categories.php:46
+#: admin/partials/markers.php:45 admin/partials/manage_store.php:76
+#: admin/partials/manage_store.php:78 admin/partials/manage_store.php:80
+#: admin/partials/attribute.php:39 admin/partials/logos.php:40
+msgid "Search ID"
+msgstr "ID de recherche"
+
+#: admin/partials/manage_store.php:82
+msgid "Search Lat"
+msgstr "Rechercher lat."
+
+#: admin/partials/manage_leads.php:64
+msgid "Search Lead Email"
+msgstr "Adresse e-mail du prospect de recherche"
+
+#: admin/partials/manage_leads.php:62
+msgid "Search Lead Name"
+msgstr "Rechercher le nom du prospect"
+
+#: admin/partials/manage_leads.php:63
+msgid "Search Lead Phone"
+msgstr "Rechercher un numéro de téléphone principal"
+
+#: admin/partials/manage_store.php:83
+msgid "Search Lng"
+msgstr "Recherche Lng"
+
+#: public/partials/template-frontend-2.php:165
+#: public/partials/template-frontend-1.php:69
+#: public/partials/template-frontend-1.php:72
+#: public/partials/template-frontend-deal.php:42
+#: public/partials/template-frontend-deal.php:45
+#: public/partials/template-frontend-deal.php:176
+#: public/partials/template-frontend-deal.php:179
+#: public/partials/template-frontend-0.php:73
+#: public/partials/template-frontend-0.php:76
+#: public/partials/template-frontend-0.php:152
+#: public/partials/template-frontend-0.php:155
+msgid "Search Location"
+msgstr "Emplacement de recherche"
+
+#: admin/partials/attribute_special.php:40 admin/partials/categories.php:47
+#: admin/partials/markers.php:46 admin/partials/attribute.php:40
+#: admin/partials/logos.php:41 public/partials/template-frontend-1.php:99
+#: public/partials/template-frontend-1.php:101
+#: public/partials/template-frontend-deal.php:53
+#: public/partials/template-frontend-deal.php:54
+#: public/partials/template-frontend-0.php:86
+#: public/partials/template-frontend-0.php:88
+msgid "Search Name"
+msgstr "Nom de la recherche"
+
+#: admin/partials/manage_store.php:88
+msgid "Search Phone"
+msgstr "Rechercher un téléphone"
+
+#: admin/partials/manage_leads.php:65
+msgid "Search Postal Code"
+msgstr "Rechercher un code postal"
+
+#: admin/partials/manage_store.php:85
+msgid "Search State"
+msgstr "État de la recherche"
+
+#: admin/partials/manage_leads.php:66
+msgid "Search Store Title"
+msgstr "Rechercher le titre du magasin"
+
+#: admin/partials/manage_store.php:84
+msgid "Search Street"
+msgstr "Rechercher une rue"
+
+#: admin/partials/manage_store.php:81
+msgid "Search Title"
+msgstr "Titre de la recherche"
+
+#: admin/partials/shortcode-popup-html.php:30
+msgid "Search Type"
+msgstr "Type de recherche"
+
+#: admin/partials/manage_store.php:90
+msgid "Search URL"
+msgstr "URL de recherche"
+
+#: admin/partials/dashboard.php:307
+msgid "Search Widget"
+msgstr "Widget de recherche"
+
+#: public/partials/template-frontend-list.php:41
+#: public/partials/asl-search.php:24
+msgid "Search your Location"
+msgstr "Rechercher votre emplacement"
+
+#: admin/partials/manage_store.php:91
+msgid "Search Zip"
+msgstr "Code postal de recherche"
+
+#: includes/frontend/app.php:1453
+msgid "Search!"
+msgstr "Chercher!"
+
+#: admin/partials/dashboard.php:147
+msgid "Searches"
+msgstr "Recherches"
+
+#: admin/partials/dashboard.php:159
+msgid "See how your stores are performing in the selected duration."
+msgstr ""
+"Découvrez les performances de vos magasins pendant la durée sélectionnée."
+
+#: public/partials/asl-store-form.php:110
+msgid "Select"
+msgstr "Sélectionner"
+
+#: includes/frontend/app.php:531 includes/frontend/app.php:1454
+msgid "Select a category"
+msgstr "choisissez une catégorie"
+
+#: admin/partials/manage_leads.php:70 admin/partials/attribute_special.php:46
+#: admin/partials/categories.php:54 admin/partials/markers.php:51
+#: admin/partials/manage_store.php:99 admin/partials/attribute.php:46
+#: admin/partials/logos.php:46
+msgid "Select All"
+msgstr "Tout sélectionner"
+
+#: includes/admin/manager.php:199 includes/frontend/app.php:532
+msgid "Select Brand"
+msgstr "Sélectionner la marque"
+
+#: includes/frontend/app.php:535
+msgid "Select Category"
+msgstr "Choisir une catégorie"
+
+#: admin/partials/add_store.php:116 admin/partials/edit_store.php:125
+#: includes/admin/manager.php:208 includes/frontend/app.php:1460
+msgid "Select Country"
+msgstr "Choisissez le pays"
+
+#: includes/frontend/app.php:1441
+msgid "Select Distance"
+msgstr "Sélectionnez Distance"
+
+#: admin/partials/shortcode-popup-html.php:74
+msgid "Select either 12 or 24 hours time format"
+msgstr "Sélectionnez le format d'heure 12 ou 24 heures"
+
+#: includes/admin/manager.php:830
+msgid "Select Image"
+msgstr "Sélectionner une image"
+
+#: includes/admin/manager.php:204
+msgid "Select Logo"
+msgstr "Sélectionner un logo"
+
+#: includes/admin/manager.php:206
+msgid "Select Marker"
+msgstr "Sélectionnez le marqueur"
+
+#: includes/frontend/app.php:523 includes/frontend/app.php:1419
+msgid "Select Option"
+msgstr "Sélectionner une option"
+
+#: includes/frontend/app.php:533
+msgid "Select Region"
+msgstr "Choisissez une région"
+
+#: includes/admin/manager.php:179 includes/admin/manager.php:180
+msgid "Select Some Options"
+msgstr "Sélectionnez certaines options"
+
+#: includes/admin/manager.php:198
+msgid "Select Special"
+msgstr "Sélectionnez Spécial"
+
+#: includes/frontend/app.php:1461
+msgid "Select State"
+msgstr "Sélectionnez l'état"
+
+#: includes/frontend/app.php:1415
+msgid "Select Store"
+msgstr "Sélectionnez le magasin"
+
+#: admin/partials/shortcode-popup-html.php:18
+msgid "Select Template"
+msgstr "Sélectionnez un modèle"
+
+#: includes/frontend/app.php:529 includes/frontend/app.php:1429
+msgid "selected"
+msgstr "choisi"
+
+#: includes/admin/store.php:704
+msgid "Selected Stores"
+msgstr "Magasins sélectionnés"
+
+#: includes/admin/import-export.php:87
+msgid "Server Google API Key is Missing"
+msgstr "La clé de l'API Google du serveur est manquante"
+
+#: includes/admin/import-export.php:90
+msgid "Server Google API Key is not saved."
+msgstr "La clé d'API Google du serveur n'est pas enregistrée."
+
+#: admin/partials/import_store.php:64
+msgid "Server Google Maps Key"
+msgstr "Clé Google Maps du serveur"
+
+#: includes/admin/setting.php:168
+msgid "Setting has been updated successfully."
+msgstr "Le paramètre a été mis à jour avec succès."
+
+#: includes/admin/manager.php:865
+msgid "Settings"
+msgstr "Réglages"
+
+#: includes/admin/setting.php:107
+msgid "Settings has been updated."
+msgstr "Les paramètres ont été mis à jour."
+
+#: public/partials/template-frontend-deal.php:125
+msgid "Show Distance In"
+msgstr "Afficher la distance en"
+
+#: admin/partials/manage_store.php:70
+msgid "Show Pending Stores"
+msgstr "Afficher les magasins en attente"
+
+#: public/partials/template-frontend-4.php:148
+msgid "Show Table"
+msgstr "Afficher le tableau"
+
+#: admin/partials/manage_store.php:56
+msgid "Show/Hide Columns"
+msgstr "Afficher/Masquer les colonnes"
+
+#: admin/partials/dashboard.php:54
+msgid "Simple"
+msgstr "Simple"
+
+#: admin/partials/customize_map.php:16
+msgid "Solid"
+msgstr "Solide"
+
+#: includes/admin/import-export.php:204
+msgid "Some error occured"
+msgstr "Une erreur s'est produite"
+
+#: includes/frontend/request.php:637
+msgid "Sorry! you have already submited the form."
+msgstr "Pardon! vous avez déjà soumis le formulaire."
+
+#: includes/admin/import-export.php:189
+msgid "Sorry, file already exists."
+msgstr "Désolé, le fichier existe déjà."
+
+#: includes/admin/import-export.php:193
+msgid "Sorry, only CSV files are allowed."
+msgstr "Désolé, seuls les fichiers CSV sont autorisés."
+
+#: includes/admin/base.php:212
+msgid "Sorry, only JPG, JPEG, PNG & GIF files are allowed."
+msgstr "Désolé, seuls les fichiers JPG, JPEG, PNG et GIF sont autorisés."
+
+#: includes/admin/base.php:234
+msgid "Sorry, only KML files are allowed to import"
+msgstr "Désolé, seuls les fichiers KML sont autorisés à importer"
+
+#: includes/admin/base.php:200
+msgid "Sorry, your file is too large."
+msgstr "Désolé, votre fichier est trop volumineux."
+
+#: public/partials/template-frontend-list.php:80
+msgid "Sort by:"
+msgstr "Trier par:"
+
+#: admin/partials/edit_store.php:192
+msgid "Special"
+msgstr "Spécial"
+
+#: includes/frontend/app.php:1456
+msgid "special"
+msgstr "spécial"
+
+#: admin/partials/add_store.php:180
+msgid "Speciality"
+msgstr "Spécialité"
+
+#: public/partials/template-frontend-4.php:155
+msgid "Standorte"
+msgstr "Standorte"
+
+#: public/partials/_agile_contact_modal.php:20
+#: public/partials/_agile_contact_modal.php:21
+msgid "star"
+msgstr "étoile"
+
+#: public/partials/_agile_contact_modal.php:12
+#: public/partials/_agile_contact_modal.php:13
+#: public/partials/_agile_contact_modal.php:14
+#: public/partials/_agile_contact_modal.php:15
+#: public/partials/_agile_contact_modal.php:16
+#: public/partials/_agile_contact_modal.php:17
+#: public/partials/_agile_contact_modal.php:18
+#: public/partials/_agile_contact_modal.php:19
+msgid "stars"
+msgstr "étoiles"
+
+#: admin/partials/add_store.php:242 admin/partials/add_store.php:276
+#: admin/partials/add_store.php:309 admin/partials/add_store.php:342
+#: admin/partials/add_store.php:376 admin/partials/add_store.php:409
+#: admin/partials/add_store.php:443 admin/partials/edit_store.php:256
+#: admin/partials/edit_store.php:294 admin/partials/edit_store.php:331
+#: admin/partials/edit_store.php:368 admin/partials/edit_store.php:406
+#: admin/partials/edit_store.php:443 admin/partials/edit_store.php:481
+#: includes/admin/manager.php:203
+msgid "Start Time"
+msgstr "Heure de début"
+
+#: admin/partials/manage_store.php:106 admin/partials/add_store.php:104
+#: admin/partials/edit_store.php:113 includes/frontend/app.php:1409
+#: public/partials/asl-store-form.php:94
+msgid "State"
+msgstr "État"
+
+#: public/partials/template-frontend-list.php:85
+msgid "States"
+msgstr "États"
+
+#: public/partials/template-frontend-2.php:103
+#: public/partials/template-frontend-deal.php:86
+#: public/partials/template-frontend-0.php:122
+msgid "Status"
+msgstr "Statut"
+
+#: admin/partials/manage_store.php:48
+msgid "Status Disable"
+msgstr "Statut Désactiver"
+
+#: admin/partials/manage_store.php:47
+msgid "Status Enable"
+msgstr "Statut activé"
+
+#: admin/partials/manage_leads.php:76
+msgid "Store"
+msgstr "Magasin"
+
+#: includes/admin/store.php:525
+msgid "Store added successfully."
+msgstr "Magasin ajouté avec succès."
+
+#: admin/partials/add_store.php:79 admin/partials/edit_store.php:88
+msgid "Store Address"
+msgstr "Adresse du magasin"
+
+#: includes/frontend/request.php:546
+msgid "Store Address: "
+msgstr "Adresse du magasin :"
+
+#: includes/admin/store.php:671
+msgid "Store deleted successfully."
+msgstr "Magasin supprimé avec succès."
+
+#: includes/frontend/app.php:1463
+msgid "Store Details"
+msgstr "Détails du magasin"
+
+#: public/partials/template-frontend-2.php:154
+#: public/partials/template-frontend-1.php:157
+#: public/partials/template-frontend-3.php:104
+#: public/partials/template-frontend-4.php:113
+#: public/partials/template-frontend-0.php:176
+msgid "Store Direction"
+msgstr "Direction du magasin"
+
+#: includes/admin/store.php:454
+msgid "Store duplicated successfully."
+msgstr "Magasin dupliqué avec succès."
+
+#: admin/partials/dashboard.php:240 admin/partials/manage_store.php:101
+msgid "Store ID"
+msgstr "Identifiant du magasin"
+
+#: public/partials/asl-store-form.php:19
+msgid "STORE INFORMATION"
+msgstr "INFORMATIONS SUR LE MAGASIN"
+
+#: includes/admin/store.php:770
+msgid "Store is already approved."
+msgstr "Le magasin est déjà approuvé."
+
+#: admin/partials/dashboard.php:296
+msgid "Store Locator"
+msgstr "Localisateur de magasin"
+
+#: includes/cron/store-cron.php:144
+msgid "Store Locator Cron Imported Files: "
+msgstr "Fichiers importés par Cron du localisateur de magasins :"
+
+#: includes/elements/lead.php:56
+msgid "Store Locator Lead Follow-up"
+msgstr "Suivi des prospects du localisateur de magasins"
+
+#: includes/frontend/request.php:524 includes/frontend/request.php:663
+msgid "Store Locator Lead Request"
+msgstr "Demande de prospect de localisateur de magasin"
+
+#: admin/partials/manage_store.php:67
+msgid ""
+"Store Locator Listing columns can easily be updated by simply add/remove "
+"from the template, Please visit the link for more"
+msgstr ""
+"Les colonnes de la liste des magasins peuvent être facilement mises à jour "
+"en ajoutant/supprimant simplement du modèle. Veuillez visiter le lien pour "
+"en savoir plus."
+
+#: admin/partials/shortcode-popup-html.php:6
+msgid "Store Locator Shortcode"
+msgstr "Code abrégé du localisateur de magasin"
+
+#: includes/admin/store.php:851
+msgid "Store Locator Updates! New Store Registered"
+msgstr "Mises à jour du localisateur de magasin ! Nouveau magasin enregistré"
+
+#: admin/partials/dashboard.php:318
+msgid "Store Registration Form"
+msgstr "Formulaire d'inscription au magasin"
+
+#: admin/partials/add_store.php:489 admin/partials/edit_store.php:528
+msgid "Store Saved"
+msgstr "Magasin enregistré"
+
+#: admin/partials/add_store.php:81 admin/partials/edit_store.php:90
+msgid "Store Timing"
+msgstr "Calendrier du magasin"
+
+#: includes/admin/store.php:627
+msgid "Store updated successfully."
+msgstr "Magasin mis à jour avec succès."
+
+#: admin/partials/dashboard.php:108
+msgid "Stores"
+msgstr "Magasins"
+
+#: includes/admin/store.php:671
+msgid "Stores deleted successfully."
+msgstr "Magasins supprimés avec succès."
+
+#: admin/partials/manage_store.php:105 admin/partials/add_store.php:94
+#: admin/partials/edit_store.php:103 public/partials/asl-store-form.php:80
+msgid "Street"
+msgstr "Rue"
+
+#: public/partials/asl-lead-form.php:42
+#: public/partials/_agile_contact_modal.php:33
+msgid "Submit"
+msgstr "Soumettre"
+
+#: admin/partials/categories.php:132 admin/partials/categories.php:185
+#: admin/partials/markers.php:118 admin/partials/markers.php:166
+#: admin/partials/manage_store.php:156 admin/partials/add_store.php:541
+#: admin/partials/add_store.php:591 admin/partials/edit_store.php:579
+#: admin/partials/edit_store.php:627 admin/partials/logos.php:115
+#: admin/partials/logos.php:162
+msgid "Submitting ..."
+msgstr "Envoi..."
+
+#: public/partials/asl-lead-form.php:42
+#: public/partials/_agile_contact_modal.php:33
+msgid "Submitting..."
+msgstr "Soumission..."
+
+#: includes/admin/store.php:305
+msgid "Success! All coordinates looks correct values"
+msgstr "Succès! Toutes les coordonnées semblent des valeurs correctes"
+
+#: includes/admin/store.php:890
+msgid "Success! Store has been approved."
+msgstr "Succès! Le magasin a été approuvé."
+
+#: includes/admin/store.php:734
+msgid "Success! Store is approved and registered into the listing."
+msgstr "Succès! Le magasin est approuvé et enregistré dans la liste."
+
+#: includes/frontend/request.php:841
+msgid "Success! Store is registered successfully."
+msgstr "Succès! Le magasin est enregistré avec succès."
+
+#: includes/helper.php:926 includes/frontend/request.php:275
+#: includes/frontend/app.php:1474
+msgid "Sun"
+msgstr "Soleil"
+
+#: admin/partials/add_store.php:438 admin/partials/edit_store.php:473
+msgid "Sunday"
+msgstr "Dimanche"
+
+#: admin/partials/dashboard.php:356
+msgid "Support Multiple Languages & Localization"
+msgstr "Prise en charge de plusieurs langues et localisation"
+
+#: admin/partials/ui-customizer.php:15 admin/partials/ui-customizer.php:18
+#: admin/partials/ui-customizer.php:19 admin/partials/ui-customizer.php:20
+#: admin/partials/ui-customizer.php:21
+msgid "Template"
+msgstr "Modèle"
+
+#: admin/partials/shortcode-popup-html.php:21
+msgid "Template 0"
+msgstr "Modèle 0"
+
+#: admin/partials/shortcode-popup-html.php:22
+msgid "Template 1"
+msgstr "Modèle 1"
+
+#: admin/partials/shortcode-popup-html.php:23
+msgid "Template 2"
+msgstr "Modèle 2"
+
+#: admin/partials/shortcode-popup-html.php:24
+msgid "Template 3"
+msgstr "Modèle 3"
+
+#: includes/helper.php:785
+msgid "Template file moved to theme directory."
+msgstr "Fichier de modèle déplacé dans le répertoire du thème."
+
+#: includes/helper.php:819
+msgid "Template file removed from the theme directory."
+msgstr "Fichier de modèle supprimé du répertoire du thème."
+
+#: admin/partials/ui-customizer.php:22
+msgid "Template List"
+msgstr "Liste de modèles"
+
+#: admin/partials/shortcode-popup-html.php:25
+msgid "Template list"
+msgstr "Liste des modèles"
+
+#: includes/admin/setting.php:666
+msgid "Template UI settings updated"
+msgstr "Paramètres de l'interface utilisateur du modèle mis à jour"
+
+#: includes/admin/setting.php:342
+msgid "Template Updated"
+msgstr "Modèle mis à jour"
+
+#: includes/admin/setting.php:690
+msgid "Template updated"
+msgstr "Modèle mis à jour"
+
+#: includes/admin/manager.php:216
+msgid ""
+"Thank you for purchasing <b>Store Locator for WordPress</b> Plugin, kindly "
+"enter your purchase code to unlock the page. <a target=\"_blank\" "
+"href=\"https://agilestorelocator.com/wiki/store-locator-purchase-code/\">How "
+"to Get Your Purchase Code</a>."
+msgstr ""
+"Merci d&#39;avoir acheté <b>Store Locator for WordPress</b> Plugin, veuillez "
+"entrer votre code d&#39;achat pour déverrouiller la page. <a "
+"target=\"_blank\" href=\"https://agilestorelocator.com/wiki/store-locator-"
+"purchase-code/\">Comment obtenir votre code d&#39;achat</a> ."
+
+#: includes/frontend/request.php:569 includes/frontend/request.php:700
+msgid "Thank you! we have received your request."
+msgstr "Merci! Nous avons reçu votre demande."
+
+#: includes/admin/import-export.php:198
+msgid "The file has been uploaded."
+msgstr "Le fichier a été téléchargé."
+
+#: admin/partials/customize_map.php:98
+msgid "The List of KML Files"
+msgstr "La liste des fichiers KML"
+
+#: includes/elements/lead.php:65
+msgid "This is a follow-up email for the store: "
+msgstr "Ceci est un e-mail de suivi pour le magasin :"
+
+#: includes/helper.php:926 includes/frontend/request.php:275
+#: includes/frontend/app.php:1474
+msgid "Thur"
+msgstr "Jeu"
+
+#: admin/partials/add_store.php:337 admin/partials/edit_store.php:360
+msgid "Thursday"
+msgstr "Jeudi"
+
+#: admin/partials/shortcode-popup-html.php:66
+msgid "Time Format"
+msgstr "Format de l'heure"
+
+#: admin/partials/manage_store.php:102 admin/partials/add_store.php:43
+#: admin/partials/edit_store.php:52 admin/partials/import_store.php:109
+#: public/partials/template-frontend-list.php:83
+msgid "Title"
+msgstr "Titre"
+
+#: admin/partials/ui-customizer-fields.php:35
+msgid "Title Font"
+msgstr "Police de titre"
+
+#: includes/admin/store.php:854
+msgid "Title: "
+msgstr "Titre:"
+
+#: public/partials/_agile_modal.php:14
+#: public/partials/template-frontend-deal.php:121
+msgid "To"
+msgstr "À"
+
+#: admin/partials/dashboard.php:163
+msgid "Top Views"
+msgstr "Vues supérieures"
+
+#: admin/partials/customize_map.php:130
+msgid "Traffic Layer"
+msgstr "Couche de trafic"
+
+#: admin/partials/customize_map.php:139
+msgid "Transit Layer"
+msgstr "Couche de transit"
+
+#: admin/partials/manage_leads.php:10 admin/partials/attribute_special.php:10
+#: admin/partials/categories.php:10 admin/partials/add_store.php:15
+#: admin/partials/edit_store.php:15 admin/partials/import_store.php:22
+#: admin/partials/attribute.php:10 admin/partials/logos.php:10
+msgid "Trash"
+msgstr "Poubelle"
+
+#: includes/admin/manager.php:210
+msgid "Truncate Stores Table"
+msgstr "Tronquer la table des magasins"
+
+#: admin/partials/dashboard.php:354
+msgid "Try Multiple Layouts with Listing and Accordion"
+msgstr "Essayez plusieurs mises en page avec liste et accordéon"
+
+#: includes/helper.php:926 includes/frontend/request.php:275
+#: includes/frontend/app.php:1474
+msgid "Tues"
+msgstr "You are"
+
+#: admin/partials/add_store.php:271 admin/partials/edit_store.php:286
+msgid "Tuesday"
+msgstr "Mardi"
+
+#: admin/partials/shortcode-popup-html.php:48
+msgid "Type your Location Modal"
+msgstr "Tapez votre emplacement modal"
+
+#: admin/partials/categories.php:85 admin/partials/categories.php:132
+msgid "Update Category"
+msgstr "Mettre à jour la catégorie"
+
+#: admin/partials/logos.php:71 admin/partials/logos.php:115
+msgid "Update Logo"
+msgstr "Mettre à jour le logo"
+
+#: admin/partials/markers.php:76 admin/partials/markers.php:118
+msgid "Update Marker"
+msgstr "Mettre à jour le marqueur"
+
+#: admin/partials/edit_store.php:528
+msgid "Update Store"
+msgstr "Mettre à jour le magasin"
+
+#: includes/admin/attribute.php:158
+msgid "Updated Successfully"
+msgstr "Mis à jour avec succés"
+
+#: admin/partials/markers.php:166 admin/partials/add_store.php:541
+#: admin/partials/add_store.php:591 admin/partials/edit_store.php:579
+#: admin/partials/edit_store.php:627 admin/partials/import_store.php:90
+#: admin/partials/logos.php:162
+msgid "Upload"
+msgstr "Télécharger"
+
+#: admin/partials/import_store.php:174
+msgid "Upload CSV File"
+msgstr "Télécharger le fichier CSV"
+
+#: includes/admin/manager.php:182
+msgid "Upload Failed! Please try Again."
+msgstr "Le téléchargement a échoué ! Veuillez réessayer."
+
+#: admin/partials/import_store.php:204
+msgid "Upload File"
+msgstr "Téléverser un fichier"
+
+#: admin/partials/customize_map.php:88
+msgid "Upload KML"
+msgstr "Télécharger le fichier KML"
+
+#: admin/partials/add_store.php:506 admin/partials/edit_store.php:545
+#: admin/partials/logos.php:129
+msgid "Upload Logo"
+msgstr "Télécharger le logo"
+
+#: admin/partials/markers.php:132 admin/partials/add_store.php:557
+#: admin/partials/edit_store.php:595
+msgid "Upload Marker"
+msgstr "Télécharger le marqueur"
+
+#: admin/partials/categories.php:39
+msgid ""
+"Upload SVG File for Categories if you are using Template 2. To sort "
+"categories by the Order ID, please use shortcode attribute "
+"cat_sort=\"order\", example: [ASL_STORELOCATOR cat_sort=\"ordr\"]"
+msgstr ""
+"Téléchargez le fichier SVG pour les catégories si vous utilisez le modèle 2. "
+"Pour trier les catégories par ID de commande, veuillez utiliser l'attribut "
+"de code court cat_sort=\"order\", exemple : [ASL_STORELOCATOR "
+"cat_sort=\"ordr\"]"
+
+#: admin/partials/manage_store.php:111
+msgid "URL"
+msgstr "URL"
+
+#: admin/partials/dashboard.php:353
+msgid "Use 5 Beautiful Store Locator Themes"
+msgstr "Utilisez 5 beaux thèmes de localisateur de magasin"
+
+#: includes/admin/manager.php:205
+msgid "Use Image"
+msgstr "Utiliser l'image"
+
+#: public/partials/_agile_modal.php:57
+#: public/partials/template-frontend-deal.php:164
+msgid "USE LOCATION"
+msgstr "UTILISER L'EMPLACEMENT"
+
+#: public/partials/_agile_modal.php:53
+#: public/partials/template-frontend-deal.php:161
+msgid "Use my location to find the closest Service Provider near me"
+msgstr ""
+"Utilisez ma position pour trouver le fournisseur de services le plus proche "
+"de chez moi"
+
+#: includes/frontend/app.php:1452
+msgid "User denied geo-location, check preferences."
+msgstr "L'utilisateur a refusé la géolocalisation, vérifiez les préférences."
+
+#: includes/admin/import-export.php:78
+msgid "Valid API Key"
+msgstr "Clé API valide"
+
+#: admin/partials/manage_store.php:61
+msgid "Validate Coordinates"
+msgstr "Valider les coordonnées"
+
+#: admin/partials/import_store.php:69
+msgid "Validate Key"
+msgstr "Valider la clé"
+
+#: admin/partials/manage_store.php:61 admin/partials/import_store.php:69
+msgid "Validating..."
+msgstr "Validation..."
+
+#: admin/partials/dashboard.php:85
+msgid "Video Tutorial"
+msgstr "Didacticiel vidéo"
+
+#: admin/partials/import_store.php:135
+msgid "View"
+msgstr "Voir"
+
+#: admin/partials/dashboard.php:250 admin/partials/dashboard.php:270
+msgid "Views"
+msgstr "Vues"
+
+#: admin/partials/dashboard.php:343
+msgid "Want To Upgrade Plugin?"
+msgstr "Vous voulez mettre à jour le plugin ?"
+
+#: admin/partials/manage_leads.php:21 admin/partials/attribute_special.php:18
+#: admin/partials/categories.php:18 admin/partials/attribute.php:18
+msgid "Warning"
+msgstr "Avertissement"
+
+#: admin/partials/edit_store.php:45
+msgid "Warning!"
+msgstr "Avertissement!"
+
+#: admin/partials/ui-customizer.php:24
+msgid "WC Addon"
+msgstr "Complément WC"
+
+#: admin/partials/add_store.php:48 admin/partials/edit_store.php:57
+#: includes/frontend/app.php:522 includes/frontend/app.php:677
+#: includes/frontend/app.php:770 includes/frontend/app.php:1418
+#: public/partials/asl-store-page.php:92
+msgid "Website"
+msgstr "Site Internet"
+
+#: public/partials/asl-store-form.php:38
+msgid "Website URL"
+msgstr "URL de site web"
+
+#: includes/helper.php:926 includes/frontend/request.php:275
+#: includes/frontend/app.php:1474
+msgid "Wed"
+msgstr "Épouser"
+
+#: admin/partials/add_store.php:304 admin/partials/edit_store.php:323
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: includes/frontend/app.php:1459
+msgid "Within"
+msgstr "Dans"
+
+#: admin/partials/add_store.php:83 admin/partials/edit_store.php:92
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: admin/partials/add_store.php:219 admin/partials/edit_store.php:228
+msgid "Yes"
+msgstr "Oui"
+
+#: admin/partials/dashboard.php:297
+msgid ""
+"You can leverage store locators in multiple themes, layouts, color schemes, "
+"and language that you can easily personalize."
+msgstr ""
+"Vous pouvez tirer parti des localisateurs de magasins dans plusieurs thèmes, "
+"mises en page, schémas de couleurs et langues que vous pouvez facilement "
+"personnaliser."
+
+#: admin/partials/manage_store.php:70
+msgid "You have pending stores to approve them."
+msgstr "Vous avez des magasins en attente pour les approuver."
+
+#: public/partials/_agile_modal.php:44
+#: public/partials/template-frontend-deal.php:152
+msgid "Your Address"
+msgstr "Votre adresse"
+
+#: includes/frontend/app.php:1431
+msgid "Your Current Location"
+msgstr "Ta location actuelle"
+
+#: includes/frontend/app.php:534
+msgid "Your Geo Location"
+msgstr "Votre géolocalisation"
+
+#: public/partials/asl-lead-form.php:33
+msgid "Zip Code"
+msgstr "Code postal"
+
+#: includes/frontend/app.php:1417
+msgid "Zoom"
+msgstr "Zoom"

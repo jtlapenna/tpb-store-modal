@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TPB Modal Standalone Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .product-header {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            flex: 1;
+            max-width: 400px;
+        }
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .product-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5ac59a;
+            margin-bottom: 20px;
+        }
+        .product-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .configure-button {
+            background: linear-gradient(135deg, #5ac59a 0%, #4a9d7a 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .configure-button:hover {
+            background: linear-gradient(135deg, #4a9d7a 0%, #3d8b6a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(90, 197, 154, 0.3);
+        }
+        .test-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        /* Modal Styles */
+        .tpb-qv-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: none;
+        }
+        
+        .tpb-qv-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            max-width: 1200px;
+            height: 75vh;
+            max-height: 800px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tpb-qv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            flex-shrink: 0;
+        }
+        
+        .tpb-qv-title {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .tpb-qv-modal-content {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+        
+        .tpb-qv-close {
+            position: relative;
+            top: auto;
+            right: auto;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: #f0f2f5;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tpb-qv-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="test-info">
+            <strong>🧪 Standalone Test:</strong> This tests the modal system without WordPress dependencies.
+            <br><strong>Features:</strong> Modal opens, iframe loads, native stepper displays
+        </div>
+        
+        <div class="product-header">
+            <div class="product-image">
+                <img src="https://via.placeholder.com/400x300?text=Flower+Station" alt="Test Flower Station">
+            </div>
+            <div class="product-info">
+                <h1 class="product-title">Test Flower Station</h1>
+                <div class="product-price">$1,299.00</div>
+                <div class="product-description">
+                    This is a test product for the TPB QuickView Modal system. The modal should open when you click the "Configure Now" button below, showing the native stepper interface.
+                </div>
+                
+                <!-- CPB Button that should trigger the modal -->
+                <a href="#" 
+                   class="afc_add_to_cart_button configure-button" 
+                   data-tpb-quickview="1"
+                   data-product-url="test-modal-iframe.html">
+                    Configure Now
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal HTML -->
+    <div id="tpb-qv-overlay" class="tpb-qv-overlay">
+        <div class="tpb-qv-modal">
+            <div class="tpb-qv-header">
+                <h2 class="tpb-qv-title">Configure Your Flower Stations</h2>
+                <button class="tpb-qv-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="tpb-qv-modal-content">
+                <iframe id="tpb-qv-iframe" class="tpb-qv-iframe" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // Simplified TPBModal implementation for testing
+        window.TPBModal = {
+            open: function(url) {
+                console.log('🚀 Opening modal for:', url);
+                
+                const overlay = document.getElementById('tpb-qv-overlay');
+                const iframe = document.getElementById('tpb-qv-iframe');
+                
+                // Show overlay
+                overlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Load iframe with quickview parameter
+                const iframeUrl = url + (url.includes('?') ? '&' : '?') + 'tpb_qv_iframe=1';
+                iframe.src = iframeUrl;
+                
+                console.log('🔗 Iframe URL:', iframeUrl);
+                
+                // Handle iframe load
+                iframe.onload = function() {
+                    console.log('✅ Iframe loaded');
+                    // The native stepper should initialize automatically
+                };
+            },
+            
+            close: function() {
+                console.log('🚪 Closing modal');
+                const overlay = document.getElementById('tpb-qv-overlay');
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            },
+            
+            detectButtons: function() {
+                console.log('🔍 Detecting CPB buttons...');
+                const buttons = document.querySelectorAll('.afc_add_to_cart_button, [data-tpb-quickview]');
+                console.log('🎯 Found', buttons.length, 'CPB buttons');
+                
+                buttons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const url = this.getAttribute('data-product-url') || this.href;
+                        console.log('🔴 CPB button clicked:', url);
+                        TPBModal.open(url);
+                    });
+                });
+            }
+        };
+        
+        // Initialize when DOM is ready
+        $(document).ready(function() {
+            console.log('🚀 Initializing TPB Modal...');
+            TPBModal.detectButtons();
+            
+            // Close button handler
+            $('.tpb-qv-close').on('click', function() {
+                TPBModal.close();
+            });
+            
+            // Close on overlay click
+            $('#tpb-qv-overlay').on('click', function(e) {
+                if (e.target === this) {
+                    TPBModal.close();
+                }
+            });
+            
+            // Close on Escape key
+            $(document).on('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    TPBModal.close();
+                }
+            });
+            
+            console.log('✅ TPB Modal initialized');
+        });
+    </script>
+</body>
+</html>

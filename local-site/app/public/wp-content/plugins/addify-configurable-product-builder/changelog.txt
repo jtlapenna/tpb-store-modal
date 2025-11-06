@@ -1,0 +1,39 @@
+*** Configurable Products Builder Change log ***
+
+2025-10-16 - version 1.3.0
+* Update - Added generic class for providing compatibility for third party plugins.
+* Update - Added compatibility with Request a Quote by Addify.
+
+2025-10-01 - version 1.2.2
+* Update - Updated compatibility for latest WooCommerce versions.
+
+2025-01-08 - version 1.2.1
+* Fix - Fixed the issue where the "Add to Cart" button was not clickable for non-configurable products.
+
+2025-01-07 - version 1.2.0
+* Update - Limited the description for selected component variations.
+* Update - Added a strike-through for discounted component products in existing products.
+* Update - Applied a strike-through to component prices showing "0" when a fixed price is set for the entire configurable product.
+* Update - Set the same price in the component price adjustment dropdown to inherit the standard product price, and hide the adjustment value field.
+* Update - Removed the radio button from layout images.
+* Update - Added a strike-through price when a discount is applied to the final price.
+* Update - Made the "View Product" button in the component design customizable.
+* Update - Adjusted shipping costs to be applied per item when applied to the whole configurable product; for components, costs are applied per item from components only.
+* Update - Ensured compatibility with Storefront, Divi, Twenty Twenty-Four, Avada, and Elementor.
+* Fix - Typo fixes.
+* Fix - Thumbnail design adjustments.
+* Fix - Radio button design improvements.
+* Fix - Dropdown with image design enhancements.
+* Fix - Simple dropdown design corrections.
+* Fix - Removed the 7px margin-left from the description.
+* Fix - The module dropdown defaults to the first option with a price, but the pricing does not display until the selection is changed.
+
+2024-09-24 - version 1.1.1
+* Fix - Typo fixes.
+* Fix - Product description update.
+
+2024-09-05 - version 1.1.0
+* Update - Compatible with WooCommerce cart and checkout blocks.
+
+2022-07-25 - version 1.0.0
+* Initial release of the plugin.

@@ -1,0 +1,29 @@
+; TPB Store Modal - Custom PHP Configuration
+; Increased limits for large file uploads
+
+; File Upload Settings - Set to values greater than backup size
+upload_max_filesize = 2048M
+post_max_size = 2048M
+max_file_uploads = 50
+
+; Execution Settings - Set to 0 for infinite time
+max_execution_time = 0
+max_input_time = -1
+memory_limit = 2048M
+
+; Additional settings for large file handling
+max_input_vars = 10000
+max_input_nesting_level = 64
+default_socket_timeout = 600
+
+; Error Reporting
+display_errors = On
+log_errors = On
+error_log = /Users/jeff/Projects/tpb-store-modal/local-site/logs/php-errors.log
+
+; Session Settings
+session.gc_maxlifetime = 3600
+
+; Other Settings
+max_input_vars = 10000
+max_input_nesting_level = 64

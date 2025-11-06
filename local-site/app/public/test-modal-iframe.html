@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modal Iframe Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f5f5f5; 
+            box-sizing: border-box;
+            max-width: 90%;
+            overflow-x: hidden;
+        }
+        
+        /* Add tpb-qv-iframe class for testing */
+        body.tpb-qv-iframe form.cart .quantity,
+        body.tpb-qv-iframe .yith-ywraq-add-to-quote,
+        body.tpb-qv-iframe [class*="add-to-quote"] {
+            display: none !important;
+        }
+        .woocommerce {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .woocommerce-product-gallery {
+            margin-bottom: 20px;
+        }
+        .woocommerce-product-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product_title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5ac59a;
+            margin-bottom: 20px;
+        }
+        .cart {
+            margin-top: 20px;
+        }
+        .quantity {
+            margin-bottom: 15px;
+        }
+        .quantity label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .quantity input {
+            width: 80px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .button {
+            background: #5ac59a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .button:hover {
+            background: #4a9d7a;
+        }
+        
+        /* Native Stepper Styles */
+        .tpb-qv-native { 
+            font-family: inherit; 
+            margin: 20px 0; 
+        }
+        .tpb-step { 
+            margin: 12px 0; 
+            padding: 20px; 
+            border: 1px solid #e3e6ea; 
+            border-radius: 8px; 
+            background: #f8f9fa; 
+        }
+        .tpb-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+            gap: 16px; 
+            margin-top: 12px; 
+        }
+        .tpb-card { 
+            border: 1px solid #e3e6ea; 
+            border-radius: 12px; 
+            padding: 12px; 
+            background: #fff; 
+            text-align: left;
+        }
+        .tpb-actions { 
+            display: flex; 
+            gap: 8px; 
+            margin-top: 8px; 
+            align-items: center; 
+            justify-content: flex-start;
+        }
+        .tpb-hint { 
+            color: #6b7280; 
+            font-size: 13px; 
+            margin: 4px 0 8px; 
+            text-align: left;
+        }
+        .tpb-title { 
+            font-weight: 700; 
+            font-size: 18px; 
+            margin: 8px 0; 
+            text-align: left;
+        }
+        .tpb-select, .tpb-radio { 
+            margin-top: 6px; 
+            text-align: left;
+        }
+        .tpb-toast { 
+            position: fixed; 
+            right: 12px; 
+            bottom: 12px; 
+            background: #111827; 
+            color: #fff; 
+            padding: 10px 14px; 
+            border-radius: 8px; 
+            opacity: .95; 
+            z-index: 99999; 
+        }
+        .sr-live { 
+            position: absolute; 
+            left: -9999px; 
+            top: auto; 
+            width: 1px; 
+            height: 1px; 
+            overflow: hidden; 
+        }
+        .tpb-step[hidden] { 
+            display: none !important; 
+        }
+        .tpb-step:not([hidden]) { 
+            display: block !important; 
+        }
+    </style>
+</head>
+<body class="tpb-qv-iframe">
+    <div class="woocommerce">
+        <div class="product">
+            <div class="woocommerce-product-gallery">
+                <img src="https://via.placeholder.com/400x300?text=Flower+Station" alt="Test Flower Station">
+            </div>
+            
+            <div class="summary">
+                <h1 class="product_title">Test Flower Station</h1>
+                <div class="price">$1,299.00</div>
+                
+                <form class="cart">
+                    <div class="quantity">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1">
+                    </div>
+                    
+                    <button type="submit" class="single_add_to_cart_button button">
+                        Add to Cart
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Native Stepper Implementation
+        (function(){
+            'use strict';
+            
+            function $(s,c){ return (c||document).querySelector(s); }
+            function el(t,o){ 
+                var n=document.createElement(t); 
+                if(o){ 
+                    if(o.className) n.className=o.className; 
+                    if(o.text) n.textContent=o.text; 
+                    if(o.html) n.innerHTML=o.html; 
+                } 
+                return n; 
+            }
+            function clear(n){ while(n&&n.firstChild) n.removeChild(n.firstChild); }
+            
+            function hideLegacy(){ 
+                ['.af_cp_all_components_content','.afcpb-wrapper','.af_cp_content'].forEach(function(sel){ 
+                    var c=$(sel); 
+                    if(c){ c.style.display='none'; } 
+                }); 
+            }
+            
+            function resize(){ 
+                try{ 
+                    var h=document.body.scrollHeight; 
+                    if(window.parent&&window.parent!==window){ 
+                        window.parent.postMessage({ type:'TPB_QV', action:'resize', height:h }, '*'); 
+                    } 
+                }catch(e){} 
+            }
+            
+            function mount(){ 
+                var r=document.getElementById('tpb-qv-native'); 
+                if(r) return r; 
+                r=el('div',{className:'tpb-qv-native'}); 
+                r.id='tpb-qv-native'; 
+                r.setAttribute('role','region'); 
+                r.setAttribute('aria-label','Configurator'); 
+                var host=$('.woocommerce .product')||$('.type-product')||$('main')||document.body; 
+                host.insertBefore(r, host.firstChild||null); 
+                return r; 
+            }
+            
+            function toast(m){ 
+                var t=el('div',{className:'tpb-toast',text:m}); 
+                t.setAttribute('role','status'); 
+                t.setAttribute('aria-live','polite'); 
+                document.body.appendChild(t); 
+                setTimeout(function(){ if(t&&t.remove) t.remove(); }, 1800); 
+            }
+            
+            function fetchProducts(p){ 
+                // Mock fetch for testing - simulate filtering logic
+                var allProducts = [
+                        { id: 1, name: '8-SKU Hardware Kit', price_html: '$299.00', image_url: 'https://via.placeholder.com/300x200?text=8-SKU+Hardware', tags: ['8-sku'], categories: ['hardware-only-kits'] },
+                        { id: 2, name: '10-SKU Hardware Kit', price_html: '$399.00', image_url: 'https://via.placeholder.com/300x200?text=10-SKU+Hardware', tags: ['10-sku'], categories: ['hardware-only-kits'] },
+                        { id: 3, name: '16-SKU Hardware Kit', price_html: '$499.00', image_url: 'https://via.placeholder.com/300x200?text=16-SKU+Hardware', tags: ['16-sku'], categories: ['hardware-only-kits'] },
+                        { id: 4, name: '20-SKU Hardware Kit', price_html: '$699.00', image_url: 'https://via.placeholder.com/300x200?text=20-SKU+Hardware', tags: ['20-sku'], categories: ['hardware-only-kits'] },
+                        { id: 5, name: '8-SKU Flower Station', price_html: '$899.00', image_url: 'https://via.placeholder.com/300x200?text=8-SKU+Station', tags: ['8-sku', 'flower-stations'], categories: ['flower-stations'] },
+                        { id: 6, name: '10-SKU Flower Station', price_html: '$1099.00', image_url: 'https://via.placeholder.com/300x200?text=10-SKU+Station', tags: ['10-sku', 'flower-stations'], categories: ['flower-stations'] },
+                        { id: 7, name: '16-SKU Flower Station', price_html: '$1299.00', image_url: 'https://via.placeholder.com/300x200?text=16-SKU+Station', tags: ['16-sku', 'flower-stations'], categories: ['flower-stations'] },
+                        { id: 8, name: '20-SKU Flower Station', price_html: '$1599.00', image_url: 'https://via.placeholder.com/300x200?text=20-SKU+Station', tags: ['20-sku', 'flower-stations'], categories: ['flower-stations'] }
+                    ];
+                
+                var filtered = allProducts.filter(function(product) {
+                    // Check tags (AND matching)
+                    if (p.tags && p.tags.length) {
+                        var hasAllTags = p.tags.every(function(tag) {
+                            return product.tags && product.tags.indexOf(tag) !== -1;
+                        });
+                        if (!hasAllTags) return false;
+                    }
+                    
+                    // Check categories (AND matching)
+                    if (p.categories && p.categories.length) {
+                        var hasAllCats = p.categories.every(function(cat) {
+                            return product.categories && product.categories.indexOf(cat) !== -1;
+                        });
+                        if (!hasAllCats) return false;
+                    }
+                    
+                    // Check exclude_categories (NOT IN)
+                    if (p.exclude_categories && p.exclude_categories.length) {
+                        var hasExcludedCat = p.exclude_categories.some(function(cat) {
+                            return product.categories && product.categories.indexOf(cat) !== -1;
+                        });
+                        if (hasExcludedCat) return false;
+                    }
+                    
+                    return true;
+                });
+                
+                return Promise.resolve({ results: filtered });
+            }
+            
+            function addCart(id,q,btn){ 
+                if(btn){ btn.disabled=true; } 
+                return Promise.resolve().then(function(){ 
+                    toast('Added to cart: Product ' + id); 
+                }).finally(function(){ 
+                    if(btn){ btn.disabled=false; } 
+                }); 
+            }
+            
+            function addQuote(id,btn){ 
+                if(btn){ btn.disabled=true; } 
+                return Promise.resolve().then(function(){ 
+                    toast('Added to quote: Product ' + id); 
+                }).finally(function(){ 
+                    if(btn){ btn.disabled=false; } 
+                }); 
+            }
+            
+            function build(){ 
+                var params=new URLSearchParams(location.search); 
+                if(!(params.get('tpb_qv_iframe')==='1' || params.get('tpb_qv')==='1')) return; 
+                
+                hideLegacy(); 
+                var root=mount(); 
+                clear(root); 
+                var live=el('div',{className:'sr-live'}); 
+                live.setAttribute('aria-live','polite'); 
+                root.appendChild(live); 
+                
+                var state={sku:null,strategy:null}; 
+                
+                // Step 1: SKU Selection
+                var s1=el('div',{className:'tpb-step'}); 
+                s1.appendChild(el('div',{className:'tpb-title',text:'How many SKUs?'})); 
+                s1.appendChild(el('div',{className:'tpb-hint',text:'Select how many strains you will display at this station.'})); 
+                var sel=el('select',{className:'tpb-select'}); 
+                ['','8','10','16','20'].forEach(function(v){ 
+                    var o=el('option'); 
+                    o.value=v; 
+                    o.textContent=v?(v+' SKU'):'Select'; 
+                    sel.appendChild(o); 
+                }); 
+                s1.appendChild(sel); 
+                
+                // Step 2: Build Strategy
+                var s2=el('div',{className:'tpb-step'}); 
+                s2.appendChild(el('div',{className:'tpb-title',text:'Build Strategy'})); 
+                s2.appendChild(el('div',{className:'tpb-hint',text:'Custom Build includes hardware only; Pre-designed includes furniture.'})); 
+                var r=el('div',{className:'tpb-radio'}); 
+                r.innerHTML='<label><input type="radio" name="tpb-strategy" value="custom"> Custom Build</label> <label style="margin-left:16px"><input type="radio" name="tpb-strategy" value="predesigned"> Pre-designed</label>'; 
+                s2.appendChild(r); 
+                
+                // Step 3: Results
+                var s3=el('div',{className:'tpb-step'}); 
+                var resH=el('div',{className:'tpb-title',text:'Choose Your Station'}); 
+                resH.id='tpb-results-heading'; 
+                resH.tabIndex=-1; 
+                s3.appendChild(resH); 
+                var grid=el('div',{className:'tpb-grid'}); 
+                s3.appendChild(grid); 
+                s2.hidden = true; 
+                s3.hidden = true; 
+                
+                function focusResults(){ try{ resH.focus(); }catch(e){} } 
+                
+                function update(){ 
+                    grid.innerHTML=''; 
+                    if(!state.sku||!state.strategy){ resize(); return; } 
+                    
+                    var skuTag = state.sku ? (state.sku+'-sku') : null; 
+                    var tags = skuTag ? [skuTag] : []; 
+                    if(state.strategy==='predesigned'){ tags.push('flower-stations'); } 
+                    var cats=(state.strategy==='custom')?['hardware-only-kits']:[]; 
+                    
+                    fetchProducts({tags:tags,categories:cats,sort:'price_asc',limit:24}).then(function(d){ 
+                        var items=Array.isArray(d)?d:(d&&Array.isArray(d.results)?d.results:[]); 
+                        if(!items.length){ 
+                            grid.appendChild(el('div',{className:'tpb-hint',text:'No matching products'})); 
+                        } 
+                        items.forEach(function(p){ 
+                            var card=el('div',{className:'tpb-card'}); 
+                            card.innerHTML='<div><img alt="'+(p.name||'')+'" src="'+(p.image_url||'')+'" style="width:100%;height:auto;border-radius:8px"/></div><div style="margin-top:8px;font-weight:600">'+(p.name||'')+'</div><div style="color:#064e3b;margin-top:4px">'+(p.price_html||'')+'</div>'; 
+                            var actions=el('div',{className:'tpb-actions'}); 
+                            var qty=el('input'); 
+                            qty.type='number'; 
+                            qty.min='1'; 
+                            qty.value='1'; 
+                            qty.style.width='64px'; 
+                            qty.setAttribute('aria-label','Quantity'); 
+                            var bc=el('button',{className:'button',text:'Add to cart'}); 
+                            var bq=el('button',{className:'button',text:'Add to quote'}); 
+                            bc.addEventListener('click',function(){ addCart(p.id,qty.value,bc); }); 
+                            bq.addEventListener('click',function(){ addQuote(p.id,bq); }); 
+                            actions.appendChild(el('span',{className:'tpb-hint',text:'Qty:'})); 
+                            actions.appendChild(qty); 
+                            actions.appendChild(bc); 
+                            actions.appendChild(bq); 
+                            card.appendChild(actions); 
+                            grid.appendChild(card); 
+                        }); 
+                        focusResults(); 
+                        resize(); 
+                    }).catch(function(){ 
+                        toast('Failed to load results'); 
+                        resize(); 
+                    }); 
+                } 
+                
+                sel.addEventListener('change',function(){ 
+                    state.sku=this.value||null; 
+                    s2.hidden = !state.sku; 
+                    if(!state.sku){ 
+                        state.strategy=null; 
+                        s3.hidden=true; 
+                    } 
+                    update(); 
+                    resize(); 
+                }); 
+                
+                r.addEventListener('change',function(e){ 
+                    if(e.target&&e.target.name==='tpb-strategy'){ 
+                        state.strategy=e.target.value; 
+                        s3.hidden = !state.strategy; 
+                        update(); 
+                        resize(); 
+                    } 
+                }); 
+                
+                root.appendChild(s1); 
+                root.appendChild(s2); 
+                root.appendChild(s3); 
+                resize(); 
+                window.addEventListener('resize', function(){ resize(); }); 
+            }
+            
+            if(document.readyState==='loading'){ 
+                document.addEventListener('DOMContentLoaded', build);
+            } else { 
+                build(); 
+            }
+        })();
+    </script>
+</body>
+</html>

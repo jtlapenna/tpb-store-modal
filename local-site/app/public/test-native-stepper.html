@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Native Stepper Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-container { max-width: 800px; margin: 0 auto; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .test-button { 
+            background: #007cba; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin: 10px;
+        }
+        .test-button:hover { background: #005a87; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Native Stepper Test</h1>
+        
+        <div class="status info">
+            <strong>Test:</strong> This page tests the native stepper JavaScript without WordPress dependencies.
+        </div>
+        
+        <button class="test-button" onclick="testNativeStepper()">Test Native Stepper</button>
+        <button class="test-button" onclick="testProductFetch()">Test Product Fetch</button>
+        
+        <div id="test-results" class="status info">
+            <strong>Results:</strong> Click a test button to see results here.
+        </div>
+        
+        <div id="stepper-container"></div>
+    </div>
+
+    <script>
+        // Mock the native stepper JavaScript (simplified version)
+        function testNativeStepper() {
+            console.log('🧪 Testing native stepper...');
+            
+            const container = document.getElementById('stepper-container');
+            container.innerHTML = '';
+            
+            // Create the stepper UI
+            const stepper = document.createElement('div');
+            stepper.className = 'tpb-qv-native';
+            stepper.id = 'tpb-qv-native';
+            stepper.setAttribute('role', 'region');
+            stepper.setAttribute('aria-label', 'Configurator');
+            
+            // Add CSS
+            const css = document.createElement('style');
+            css.textContent = `
+                .tpb-qv-native { font-family: inherit; margin: 20px 0; }
+                .tpb-step { margin: 12px 0; padding: 20px; border: 1px solid #e3e6ea; border-radius: 8px; background: #f8f9fa; }
+                .tpb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 12px; }
+                .tpb-card { border: 1px solid #e3e6ea; border-radius: 12px; padding: 12px; background: #fff; }
+                .tpb-actions { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+                .tpb-hint { color: #6b7280; font-size: 13px; margin: 4px 0 8px; }
+                .tpb-title { font-weight: 700; font-size: 18px; margin: 8px 0; }
+                .tpb-select, .tpb-radio { margin-top: 6px; }
+                .tpb-toast { position: fixed; right: 12px; bottom: 12px; background: #111827; color: #fff; padding: 10px 14px; border-radius: 8px; opacity: .95; z-index: 99999; }
+                .sr-live { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+                .tpb-step[hidden] { display: none !important; }
+                .tpb-step:not([hidden]) { display: block !important; }
+            `;
+            document.head.appendChild(css);
+            
+            // Step 1: SKU Selection
+            const step1 = document.createElement('div');
+            step1.className = 'tpb-step';
+            step1.innerHTML = `
+                <div class="tpb-title">How many SKUs?</div>
+                <div class="tpb-hint">Select how many strains you will display at this station.</div>
+                <select class="tpb-select" id="sku-select">
+                    <option value="">Select</option>
+                    <option value="8">8 SKU</option>
+                    <option value="16">16 SKU</option>
+                    <option value="20">20 SKU</option>
+                </select>
+            `;
+            
+            // Step 2: Build Strategy
+            const step2 = document.createElement('div');
+            step2.className = 'tpb-step';
+            step2.hidden = true;
+            step2.innerHTML = `
+                <div class="tpb-title">Build Strategy</div>
+                <div class="tpb-hint">Custom Build includes hardware only; Pre-designed includes furniture.</div>
+                <div class="tpb-radio">
+                    <label><input type="radio" name="strategy" value="custom"> Custom Build</label>
+                    <label style="margin-left: 16px"><input type="radio" name="strategy" value="predesigned"> Pre-designed</label>
+                </div>
+            `;
+            
+            // Step 3: Results
+            const step3 = document.createElement('div');
+            step3.className = 'tpb-step';
+            step3.hidden = true;
+            step3.innerHTML = `
+                <div class="tpb-title">Choose Your Station</div>
+                <div class="tpb-grid" id="results-grid">
+                    <div class="tpb-hint">Select SKU count and strategy to see results</div>
+                </div>
+            `;
+            
+            stepper.appendChild(step1);
+            stepper.appendChild(step2);
+            stepper.appendChild(step3);
+            container.appendChild(stepper);
+            
+            // Add event listeners
+            const skuSelect = document.getElementById('sku-select');
+            const strategyRadios = document.querySelectorAll('input[name="strategy"]');
+            const resultsGrid = document.getElementById('results-grid');
+            
+            skuSelect.addEventListener('change', function() {
+                const sku = this.value;
+                step2.hidden = !sku;
+                step3.hidden = true;
+                resultsGrid.innerHTML = '<div class="tpb-hint">Select SKU count and strategy to see results</div>';
+                updateResults();
+            });
+            
+            strategyRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    step3.hidden = false;
+                    updateResults();
+                });
+            });
+            
+            function updateResults() {
+                const sku = skuSelect.value;
+                const strategy = document.querySelector('input[name="strategy"]:checked')?.value;
+                
+                if (!sku || !strategy) {
+                    resultsGrid.innerHTML = '<div class="tpb-hint">Select SKU count and strategy to see results</div>';
+                    return;
+                }
+                
+                // Mock results based on selection
+                const mockResults = generateMockResults(sku, strategy);
+                resultsGrid.innerHTML = '';
+                
+                mockResults.forEach(product => {
+                    const card = document.createElement('div');
+                    card.className = 'tpb-card';
+                    card.innerHTML = `
+                        <div><img src="${product.image}" alt="${product.name}" style="width: 100%; height: auto; border-radius: 8px"/></div>
+                        <div style="margin-top: 8px; font-weight: 600">${product.name}</div>
+                        <div style="color: #064e3b; margin-top: 4px">${product.price}</div>
+                        <div class="tpb-actions">
+                            <span class="tpb-hint">Qty:</span>
+                            <input type="number" min="1" value="1" style="width: 64px" aria-label="Quantity">
+                            <button class="button" onclick="addToCart('${product.id}')">Add to cart</button>
+                            <button class="button" onclick="addToQuote('${product.id}')">Add to quote</button>
+                        </div>
+                    `;
+                    resultsGrid.appendChild(card);
+                });
+            }
+            
+            function generateMockResults(sku, strategy) {
+                const baseProducts = [
+                    { id: '1', name: '8-SKU Hardware Kit', price: '$299.00', image: 'https://via.placeholder.com/300x200?text=8-SKU+Hardware' },
+                    { id: '2', name: '16-SKU Hardware Kit', price: '$499.00', image: 'https://via.placeholder.com/300x200?text=16-SKU+Hardware' },
+                    { id: '3', name: '20-SKU Hardware Kit', price: '$699.00', image: 'https://via.placeholder.com/300x200?text=20-SKU+Hardware' },
+                    { id: '4', name: '8-SKU Flower Station', price: '$899.00', image: 'https://via.placeholder.com/300x200?text=8-SKU+Station' },
+                    { id: '5', name: '16-SKU Flower Station', price: '$1299.00', image: 'https://via.placeholder.com/300x200?text=16-SKU+Station' },
+                    { id: '6', name: '20-SKU Flower Station', price: '$1599.00', image: 'https://via.placeholder.com/300x200?text=20-SKU+Station' }
+                ];
+                
+                if (strategy === 'custom') {
+                    return baseProducts.filter(p => p.name.includes(sku + '-SKU') && p.name.includes('Hardware'));
+                } else {
+                    return baseProducts.filter(p => p.name.includes(sku + '-SKU') && p.name.includes('Station'));
+                }
+            }
+            
+            // Mock functions
+            window.addToCart = function(id) {
+                showToast('Added to cart: Product ' + id);
+            };
+            
+            window.addToQuote = function(id) {
+                showToast('Added to quote: Product ' + id);
+            };
+            
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'tpb-toast';
+                toast.textContent = message;
+                toast.setAttribute('role', 'status');
+                toast.setAttribute('aria-live', 'polite');
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 1800);
+            }
+            
+            document.getElementById('test-results').innerHTML = '<strong>Results:</strong> ✅ Native stepper created successfully! Try selecting SKU count and strategy.';
+        }
+        
+        function testProductFetch() {
+            console.log('🧪 Testing product fetch...');
+            
+            // Mock the fetch function
+            const mockFetch = (url, options) => {
+                console.log('Mock fetch called with:', url, options);
+                
+                return Promise.resolve({
+                    ok: true,
+                    json: () => Promise.resolve({
+                        results: [
+                            { id: 1, name: 'Test Product 1', price_html: '$299.00', image_url: 'https://via.placeholder.com/300x200' },
+                            { id: 2, name: 'Test Product 2', price_html: '$499.00', image_url: 'https://via.placeholder.com/300x200' }
+                        ]
+                    })
+                });
+            };
+            
+            // Test the fetch
+            mockFetch('/wp-json/tpb/v1/qv/products', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ tags: ['8-sku'], categories: ['hardware-only-kits'] })
+            }).then(response => response.json()).then(data => {
+                console.log('✅ Mock fetch successful:', data);
+                document.getElementById('test-results').innerHTML = '<strong>Results:</strong> ✅ Product fetch test successful! Mock data: ' + JSON.stringify(data, null, 2);
+            }).catch(error => {
+                console.error('❌ Mock fetch failed:', error);
+                document.getElementById('test-results').innerHTML = '<strong>Results:</strong> ❌ Product fetch test failed: ' + error.message;
+            });
+        }
+    </script>
+</body>
+</html>

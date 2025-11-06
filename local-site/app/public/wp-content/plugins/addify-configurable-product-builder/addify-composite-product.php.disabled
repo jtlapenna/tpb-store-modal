@@ -1,0 +1,136 @@
+<?php
+/**
+ * Plugin Name:       Configurable Product Builder
+ * Plugin URI:        https://woocommerce.com/products/configurable-product-builder/
+ * Description:       Create configurable products using your existing catalog. Suitable to sell customizable products like computers, bicycles, sports kits, and more.
+ * Version:           1.3.0
+ * Author:            Addify
+ * Developed By:      Addify
+ * Author URI:        https://woocommerce.com/vendor/addify/
+ * Support:           https://woocommerce.com/vendor/addify/
+ * Domain Path:       /languages
+ * Text Domain:       af_comp_product
+ * Requires Plugins: woocommerce
+ * WC requires at least: 4.0
+ * WC tested up to: 10.*.*
+ * Requires at least: 6.5
+ * Tested up to: 6.*.*
+ * Requires PHP: 7.4
+ * Woo: 18734004227064:4e31e188c49a1db882c57a587fce8fe3
+
+ */
+
+if ( ! class_exists( 'ADF_Composite_Product_Main' ) ) {
+	class ADF_Composite_Product_Main {
+
+		public function __construct() {
+			$this->af_comp_product_global_vars();
+			include_once AFCPB_DIR_PATH . '/includes/af-general-functions.php';
+			include_once AFCPB_DIR_PATH . '/includes/front/class-af-composite-product-helper.php';
+			if (is_admin() ) {
+				include_once AFCPB_DIR_PATH . '/includes/admin/class-af-composite-product-admin.php';
+				include_once AFCPB_DIR_PATH . '/includes/class-af-cp-ajax.php';
+			} else {
+				include_once AFCPB_DIR_PATH . '/includes/front/class-af-composite-product-front.php';
+			}
+			register_activation_hook(__FILE__, array( $this, 'af_cp_composite_product_on_activation' ));
+			add_action( 'plugins_loaded', array( $this, 'afcpb_add_product_class_fn' ) );
+			add_action( 'wp_loaded', array( $this, 'afcpb_load_text_domain' ) );
+			add_filter( 'product_type_selector', array( $this, 'afcpb_add_composite_product_type' ) );
+			add_filter( 'woocommerce_product_class', array( $this, 'afcpb_add_new_class_for_product_type' ), 10, 2 );
+			add_action( 'plugins_loaded', array( $this, 'afcpb_multisite_check' ) );
+			add_action( 'before_woocommerce_init', array( $this, 'afcpb_HOPS_Compatibility' )); 
+		}
+
+
+		public function af_cp_composite_product_on_activation() {
+		
+			if (empty(get_option( 'wc_settings_tab_composite_product_af_cp_view_product' ))) {
+				update_option( 'wc_settings_tab_composite_product_af_cp_view_product', 'View product' );
+			}
+		}
+
+		public function afcpb_exempt_block_init() {
+
+			include_once AFCPB_DIR_PATH . 'blocks-compatibility/composite-product-cart-blocks/af_composite_product_cart_integration.php';
+			
+			add_action(
+				'woocommerce_blocks_cart_block_registration',
+				function ( $integration_registry ) {
+					$integration_registry->register(new Composite_Blocks_Integration());
+				}
+			);
+		}   
+
+		public function afcpb_HOPS_Compatibility() {
+
+			if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+			}
+		}       
+
+
+		public function afcpb_multisite_check() {
+
+			// Check the installation of WooCommerce module if it is not a multi site.
+			if ( ! is_multisite() && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
+
+				add_action( 'admin_notices', array( $this, 'afcpb_woo_check' ));
+			}
+		}
+		public function afcpb_woo_check() {
+			// Deactivate the plugin.
+			deactivate_plugins( __FILE__ );
+			?>
+			<div id="message" class="error">
+				<p>
+					<strong>
+						<?php esc_html_e( 'Configurable Product Builder is inactive. WooCommerce plugin must be active in order to activate it.', 'af_comp_product' ); ?>
+					</strong>
+				</p>
+			</div>
+			<?php
+		}           
+
+		public function afcpb_load_text_domain() {
+			if ( function_exists( 'load_plugin_textdomain' ) ) {
+				load_plugin_textdomain( 'af_comp_product', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+			}
+		}
+
+		public function af_comp_product_global_vars() {
+			if ( ! defined( 'AFCPB_DIR_URL' ) ) {
+				define( 'AFCPB_DIR_URL', plugin_dir_url( __FILE__ ) );
+			}
+
+			if ( ! defined( 'AFCPB_BASENAME_URL' ) ) {
+				define( 'AFCPB_BASENAME_URL', plugin_basename( __FILE__ ) );
+			}
+			if ( ! defined( 'AFCPB_DIR_PATH' ) ) {
+				define( 'AFCPB_DIR_PATH', plugin_dir_path( __FILE__ ) );
+			}
+		}
+
+		public function afcpb_add_composite_product_type( $types ) {
+			$types['af_composite_product'] = 'Configurable Product';
+			return $types;
+		}
+
+		public function afcpb_add_new_class_for_product_type( $class_name, $product_type ) {
+			if ( 'af_composite_product' == $product_type ) {
+				$class_name = 'WC_Product_Af_Composite';
+			}
+			return $class_name;
+		}
+
+		public function afcpb_add_product_class_fn() {
+			if ( ! class_exists( 'WC_Product', false ) ) {
+				include_once dirname( WC_PLUGIN_FILE ) . '/includes/abstracts/abstract-wc-product.php';
+			}
+			include AFCPB_DIR_PATH . '/includes/composite-product-type/class-af-composite-product-type.php';
+		}
+	}
+	new ADF_Composite_Product_Main();
+}
+
+

@@ -1,0 +1,306 @@
+Item Name,Is Returnable Item,Brand,Manufacturer,Description,Rate,Package Weight,Package Length,Package Height,Package Width,Dimension Unit,Weight Unit,Is Combo Product,Vendor,Purchase Rate
+Component -- NFC Reader,false,ACS,ACS,,USD 63.00,3.00,9.00,3.00,7.00,in,lb,false,,USD 45.00
+"Estone -- 27"" Tablet",false,Estone,Estone,,USD 1700.00,35.00,6.00,20.00,30.00,in,lb,false,,USD 1220.00
+"Estone -- 32"" Tablet",true,Estone,Estone,,USD 2000.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 1390.00
+"Estone -- 32"" Tablet",true,Estone,Estone,,USD 2000.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 1390.00
+Component -- RFID Reader,false,Parallax,Parallax,,USD 77.00,0.30,7.00,3.00,5.00,in,lb,false,,USD 55.00
+Component -- USB Hub (10 Port),false,Rosonway,Rosonway,,USD 61.61,4.00,5.00,3.00,9.00,in,lb,false,,USD 44.01
+Component -- RFID Tag,false,TrustTag,TrustTag,,USD 3.10,0.10,1.00,0.01,1.00,in,lb,false,,USD 0.21
+Component -- NFC Tag 30mm,false,GoToTags,GoToTags,,USD 3.10,0.10,1.00,0.01,1.00,in,lb,false,,USD 1.00
+"Estone -- 15"" Tablet",false,Estone,Estone,,USD 1275.00,18.00,5.00,13.00,20.00,in,lb,false,,USD 920.00
+"Estone -- 21.5"" Tablet",false,Estone,Estone,,USD 1450.00,25.00,6.00,15.00,26.00,in,lb,false,,USD 1040.00
+"Estone -- 21.5"" Tablet",false,Estone,Estone,,USD 1450.00,25.00,6.00,15.00,26.00,in,lb,false,,USD 1040.00
+Service -- Monthly Software License Fee,false,,,Software License Fee,USD 125.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"Planar -- 27"" Touchscreen Monitor",false,Planar,Planar,,USD 657.52,23.00,19.00,3.00,35.00,in,lb,false,,USD 469.66
+"Planar -- 22"" Touchscreen Monitor",false,Planar,Planar,,USD 450.00,25.00,22.00,13.00,3.00,in,lb,false,,USD 320.90
+NUC Computer,false,Intel,Intel,,USD 880.00,4.00,7.00,7.00,7.00,in,lb,false,,USD 629.00
+"Estone -- 43"" Tablet",true,Estone,Estone,,USD 2300.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 1630.00
+"E - 15"" Lift + Learn -- 10 SKU",false,,,"'- 15"" all-in-one tablet
+- 10 NFC readers / featured products
+- Misc. electronic components",USD 2075.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1416.19
+"E - 22"" Lift + Learn -- 10 SKU",false,,,"'- 22"" all-in-one tablet
+- 10 NFC readers / featured products
+- Misc. electronic components",USD 2225.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1536.19
+"E - 27"" Lift + Learn -- 10 SKU",false,,,"'- 27"" all-in-one tablet
+- 10 NFC readers / featured products
+- Misc. electronic components",USD 2450.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1696.19
+"E - 15"" Pick & Place -- 24 SKU",false,,,"'- 15"" all-in-one tablet
+- 1 RFID reader w/ 24 featured products
+- Misc. electronic components",USD 1475.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 960.62
+"E - 22"" Pick & Place -- 24 SKU",false,,,"'- 22"" all-in-one tablet
+- 1 RFID reader w/ 24 featured products
+- Misc. electronic components",USD 1625.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1080.62
+"E - 27"" Pick & Place -- 24 SKU",true,,,"'- 27"" all-in-one tablet
+- 1 RFID reader w/ 24 featured products
+- Misc. electronic components",USD 1875.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1235.79
+Service -- Smart Store Installation,false,,,Installation,USD 2500.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 85.00
+"72"" Built in Pick + Place Furniture",false,,,Temeka Fixture 72” x 30” in Bright White gloss laminate,USD 3870.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 3496.00
+"36"" Built in Lift + Learn Furniture",false,,,"Temeka Fixture 36"" x 30"" in Bright White gloss laminate",USD 3177.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 2888.00
+"36"" Built in Pick + Place Furniture",false,,,,USD 3880.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 2948.80
+Component -- Ethernet Cable,false,,,,USD 9.65,4.00,12.00,3.00,12.00,in,lb,false,,USD 6.89
+Component -- Surge Protector,false,,,,USD 32.89,0.00,0.00,0.00,0.00,in,lb,false,,USD 23.49
+Component -- USB Hub (4 Port),false,,,,USD 27.99,4.00,9.00,4.00,4.00,in,lb,false,,USD 19.99
+"E - 15"" Lift + Learn -- 14 SKU",false,,,"'- 15"" all-in-one tablet
+- 14 NFC readers / featured products
+- Misc. electronic components",USD 2375.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1622.81
+"E - 15"" Lift + Learn -- 12 SKU",false,,,"'- 15"" all-in-one tablet
+- 12 NFC readers / featured products
+- Misc. electronic components",USD 2200.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1528.49
+"E - 15"" Lift + Learn -- 16 SKU",false,,,"'- 15"" all-in-one tablet
+- 16 NFC readers / featured products
+- Misc. electronic components",USD 2500.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1743.16
+"E - 15"" Lift + Learn -- 18 SKU",false,,,"'- 15"" all-in-one tablet
+- 18 NFC readers / featured products
+- Misc. electronic components",USD 2675.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1837.48
+"E - 15"" Lift + Learn -- 20 SKU",false,,,"'- 15"" all-in-one tablet
+- 20 NFC readers / featured products
+- Misc. electronic components",USD 2800.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1931.80
+"E - 22"" Lift + Learn -- 12 SKU",false,,,"'- 22"" all-in-one tablet
+- 12 NFC readers / featured products
+- Misc. electronic components",USD 2350.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1648.49
+"E - 22"" Lift + Learn -- 14 SKU",false,,,"'- 22"" all-in-one tablet
+- 14 NFC readers / featured products
+- Misc. electronic components",USD 2525.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1742.81
+"E - 22"" Lift + Learn -- 16 SKU",false,,,"'- 22"" all-in-one tablet
+- 16 NFC readers / featured products
+- Misc. electronic components",USD 2650.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1912.96
+"E - 22"" Lift + Learn -- 18 SKU",false,,,"'- 22"" all-in-one tablet
+- 18 NFC readers / featured products
+- Misc. electronic components",USD 2800.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1742.81
+"E - 22"" Lift + Learn -- 20 SKU",false,,,"'- 22"" all-in-one tablet
+- 20 NFC readers / featured products
+- Misc. electronic components",USD 2950.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1742.81
+"E - 27"" Lift + Learn -- 12 SKU",false,,,"'- 27"" all-in-one tablet
+- 12 NFC readers / featured products
+- Misc. electronic components",USD 2600.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1808.49
+"E - 27"" Lift + Learn -- 14 SKU",false,,,"'- 27"" all-in-one tablet
+- 14 NFC readers / featured products
+- Misc. electronic components",USD 2750.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1902.81
+"E - 27"" Lift + Learn -- 16 SKU",false,,,"'- 27"" all-in-one tablet
+- 16 NFC readers / featured products
+- Misc. electronic components",USD 2900.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1902.81
+"E - 27"" Lift + Learn -- 18 SKU",false,,,"'- 27"" all-in-one tablet
+- 18 NFC readers / featured products
+- Misc. electronic components",USD 3050.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 2117.48
+"E - 27"" Lift + Learn -- 20 SKU",false,,,"'- 27"" all-in-one tablet
+- 20 NFC readers / featured products
+- Misc. electronic components",USD 3200.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 2211.80
+"E - 15"" Lift + Learn -- 08 SKU",false,,,"'- 15"" all-in-one tablet
+- 8 NFC readers / featured products
+- Misc. electronic components",USD 1900.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1321.87
+"E - 22"" Lift + Learn -- 08 SKU",false,,,"'- 22"" all-in-one tablet
+- 8 NFC readers / featured products
+- Misc. electronic components",USD 2050.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1441.87
+"E - 27"" Lift + Learn -- 08 SKU",false,,,"'- 27"" all-in-one tablet
+- 8 NFC readers / featured products
+- Misc. electronic components",USD 2300.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1601.87
+Shipping and Freight,false,,,,USD 70.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 70.00
+Component -- Surge Protector 3 Pack,false,,,,USD 83.99,0.00,0.00,0.00,0.00,in,lb,false,,USD 59.99
+API Integration Fee,false,,,API FEES,USD 125.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+Reimbursed Expenses,false,,,,USD 1.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"E - 22"" Pick & Place -- 12 SKU",false,,,"'- 22"" all-in-one tablet
+- 1 RFID reader w/ 12 featured products
+- Misc. electronic components",USD 1625.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1080.62
+"E - 15"" Pick & Place -- 12 SKU",false,,,"'- 15"" all-in-one tablet
+- 1 RFID reader w/ 12 featured products
+- Misc. electronic components",USD 1475.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 960.62
+"E - 27"" Pick & Place -- 12 SKU",true,,,"'- 27"" all-in-one tablet
+- 1 RFID reader w/ 12 featured products
+- Misc. electronic components",USD 1875.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1235.79
+Product Coasters,false,,,,USD 9.00,0.00,3.00,3.00,3.00,in,lb,false,,USD 7.40
+Dell + Stick Computer,true,,,Dell + Stick Computer,USD 588.00,7.50,21.18,2.13,21.18,in,lb,false,,USD 420.00
+"Pilot 24"" Pick & Place -- 24 SKU",false,,,"'- 24"" Monitor with Stick Computer
+- 1 RFID reader w/ 24 featured products
+- Misc. electronic components",USD 850.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 560.90
+INACTIVE,false,,,Stick computer,USD 285.00,4.00,5.50,0.07,2.50,in,oz,false,,USD 180.00
+"Dell P2418HT 23.8"" Touch Monitor",false,Dell,,,USD 330.00,20.00,21.17,16.52,9.24,in,lb,false,,USD 235.49
+"Refurbished 22"" Planar",true,,,,USD 140.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+Refurbished NUC Computer,true,,,,USD 250.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"RF - Planar 22"" Pick & Place -- 24 SKU",false,,,,USD 585.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 90.42
+"Pilot 24"" Lift + Learn -- 10 SKU",false,,,"'- 24"" Monitor with Stick Computer
+- 10 NFC readers / featured products
+- Misc. electronic components",USD 1515.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1080.47
+Component -- Full Motion TV Monitor Wall Mount,false,,,,USD 30.00,9.00,12.00,3.00,12.00,in,lb,false,,USD 19.99
+"15.6"" WIMAXIT Touch Screen Portable Monitor",false,,,,USD 270.00,4.24,13.98,0.39,8.86,in,lb,false,,USD 189.99
+Component -- Anker USB C Cable,true,,,,USD 12.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 7.99
+Component -- Mini HDMI to HDMI Adapter,false,,,,USD 13.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 8.79
+"Quick Checkout Station -- 15.6"" (w/o product interaction)",false,,,,USD 565.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 403.64
+"E - 27"" Pick & Place -- 18 SKU",false,,,"'- 27"" all-in-one tablet
+- 1 RFID reader w/ 18 featured products
+- Misc. electronic components",USD 1875.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1239.16
+Remedy -- Small Flower Jar,false,,,,USD 40.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 35.00
+Bud Bar Puffer Pod,false,,,,USD 43.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 40.00
+Bud Bar Eyelet Security Tether,false,,,,USD 12.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 9.00
+Service -- Display Installation,false,,,,USD 150.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+Component -- Adapters for Pilot Computers,false,,,,USD 91.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 65.00
+Component -- Tether,true,,,,USD 12.53,0.00,0.00,0.00,0.00,in,lb,false,,USD 8.95
+"Quick Checkout Station -- 24"" (w/o product interaction)",false,,,,USD 630.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 449.14
+ZNC Shelf Inserts,true,,,"Acrylic inserts six products each.
+30"" long",USD 35.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 35.00
+Tablet Power Supply,false,Estone,,,USD 42.00,5.00,12.00,4.00,5.00,in,lb,false,,USD 0.00
+"22"" ZNC Pick & Place Station",false,ZNC,,,USD 2900.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"22"" Pick & Place -- 24 SKU",false,,,"'- 22"" all-in-one tablet
+- 1 RFID reader w/ 24 featured products
+- Misc. electronic components",USD 1625.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Built in Lift + Learn,false,,,,USD 3800.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"22"" Lift + Learn -- 16 SKU",false,,,"'- 22"" all-in-one tablet
+- 16 NFC readers / featured products
+- Misc. electronic components",USD 2650.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"27"" Pick & Place -- 18 SKU",false,,,"'- 27"" all-in-one tablet
+- 1 RFID reader w/ 18 featured products
+- Misc. electronic components",USD 1875.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Refurbished NUC Computer,false,,,,USD 250.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"Quick Checkout Station -- 15.6"" (w/o product interaction)",false,,,,USD 565.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Maintenance,false,,,,USD 120.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Installation,false,,,,USD 1400.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Service -- Installation,false,,,,USD 2000.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"15.6"" Quick Checkout Station (w/o product interaction)",false,,,,USD 600.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"22"" PLANAR Lift + Learn -- 16 SKU",false,,,,USD 2286.67,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+mC-Print3 Receipt Printer,false,Star Micronics,,,USD 510.00,7.00,10.00,13.00,8.00,in,lb,false,,USD 333.38
+Component -- NFC Tag 50mm,false,GoToTags,GoToTags,,USD 3.10,0.10,5.00,0.01,5.00,in,lb,false,,USD 1.09
+"22"" ELO Touch Screen Portable Monitor",false,,,,USD 630.00,10.00,1.63,19.87,11.91,in,lb,false,,USD 450.00
+"TW-Quick Checkout Station -- 22"" (w/o product interaction)",false,,,"22"" quick checkout station w/out product interaction.  Customer may choose to purchase furniture housing for screen separately.",USD 760.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 489.88
+"Generic 50"" TV Monitor",false,,,,USD 825.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 550.00
+"50"" Menu Board",false,,,,USD 1110.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 730.00
+"Interactive Station -- 43"" (w/o product interaction)",false,,,,USD 1225.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 873.66
+"Generic 43"" TV Monitor",false,,,,USD 675.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 450.00
+"Generic 43"" Touchscreen Monitor",false,,,,USD 1425.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 950.00
+"Generic 50"" Touchscreen Monitor",false,,,,USD 2800.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 2000.00
+"Interactive Station -- 50"" (w/o product interaction)",false,,,,USD 1625.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1135.66
+INSERT - counter product landing pad,true,,,,USD 170.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 120.00
+INSERT - counter flower shelf,false,,,,USD 295.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 210.00
+Service - Custom Development,false,,,,USD 150.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 35.00
+Monitor Stand (MOUNTUP),true,,,,USD 40.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 27.99
+Trade show demo unit,true,,,,USD 955.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 682.62
+Desktop product riser display,true,,,,USD 45.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 32.00
+Refurbished -- NFC reader,false,,,,USD 47.25,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+Refurbished -- USB Hub (10 Port),false,,,,USD 46.20,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"Estone -- 55"" Tablet",true,Estone,Estone,,USD 2700.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 1930.00
+"E - 43"" Pick & Place -- 24 SKU",true,,,"'- 43"" all-in-one tablet
+- 1 NFC reader w/ 24 featured products
+- Misc. electronic components",USD 2500.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1731.54
+"TouchWo - 27"" Touch Screen",false,,,,USD 655.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 435.00
+"TouchWo - 21"" Touch Screen",false,,,,USD 375.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 245.00
+"NH - 22"" Lift + Learn - 16 SKU",true,,,"'- 22"" display
+- 1 NFC reader w/ 16 featured products
+- Misc. electronic components",USD 1785.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1192.82
+"NH - 27"" Pick & Place -- 24 SKU",false,,,"'- 27"" display
+- 1 NFC reader w/ 24 featured products
+- Misc. electronic components",USD 1125.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 716.54
+VESA mount,false,,,,USD 56.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 40.00
+Component -- HDMI extender,false,,,,USD 20.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 10.00
+"Quick Checkout Station -- 27"" (w/o product interaction)",false,,,"27"" quick checkout station w/out product interaction.  Customer may choose to purchase furniture housing for screen separately.",USD 1040.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 679.88
+"RF Estone -- 21.5"" Tablet",false,,,,USD 500.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 275.00
+Test Product - $0,false,,,Test Product Description,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+INSERT - Landing Pad (MDF) - QTY 1,true,,,,USD 155.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 112.00
+INSERT - Landing Pad (MDF) - QTY 2+,true,,,,USD 135.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 99.00
+INSERT - Landing Pad (Painted MDF) - QTY 1,false,,,,USD 190.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 138.00
+INSERT - Landing Pad (Painted MDF) - QTY 2+,false,,,,USD 175.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 125.00
+INSERT - Landing Pad (Oak Finish) - QTY 1,false,,,,USD 210.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 151.00
+INSERT - Landing Pad (Oak Finish) - QTY 2+,false,,,,USD 190.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 138.00
+INSERT - Landing Pad (Walnut Finish) - QTY 1,false,,,,USD 210.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 151.00
+INSERT - Landing Pad (Walnut Finish) - QTY 2+,false,,,,USD 190.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 138.00
+INSERT - Landing Pad (Laminate) - QTY 1,false,,,,USD 175.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 125.00
+INSERT - Landing Pad (Laminate) - QTY 2+,false,,,,USD 155.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 112.00
+INSERT - 8 Product Floating Shelf (MDF) - QTY 1,false,,,,USD 545.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 392.00
+INSERT - 8 Product Floating Shelf (MDF) - QTY 2+,false,,,,USD 685.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 490.00
+INSERT - 8 Product Floating Shelf (Painted MDF) - QTY 1,false,,,,USD 730.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 522.00
+INSERT - 8 Product Floating Shelf (Painted MDF) - QTY 2+,false,,,,USD 500.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 360.00
+INSERT - 8 Product Floating Shelf (Oak Finish) - QTY 2+,false,,,,USD 685.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 490.00
+INSERT - 8 Product Floating Shelf (Oak Finish) - QTY 1,false,,,,USD 730.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 522.00
+INSERT - 8 Product Floating Shelf (Walnut Finish) - QTY 1,false,,,,USD 730.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 522.00
+INSERT - 8 Product Floating Shelf (Walnut Finish) - QTY 2+,false,,,,USD 685.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 457.00
+INSERT - 8 Product Floating Shelf (Laminate) - QTY 1,false,,,,USD 685.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 490.00
+INSERT - 8 Product Floating Shelf (Laminate) - QTY 2+,false,,,,USD 640.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 457.00
+GC-AC4 // Pick & Place table with metal legs,false,,,,USD 4210.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+GC-F3 // Lift + Learn table w/ 2 Flower Displays,false,,,,USD 6330.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+GC-AC3 // Table-top Pick & Place display,false,,,,USD 3300.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+GC-AC2 // Wall-mounted Pick & Place display w/ back panel,false,,,,USD 2615.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+GC-AC1 // Floating wall-mounted Pick & Place display,false,,,,USD 2900.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+GC-F2 // Table-top Flower Display w/ 10 Featured Products,false,,,,USD 3480.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+"22"" Quick Checkout Stations",false,,,,USD 860.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+Counter-top flower display with 8 featured products-White Acrylic,false,,,,USD 2150.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+Counter-top flower display with 16 featured products-White Acrylic,false,,,,USD 3435.00,1.00,1.00,1.00,1.00,in,lb,false,,USD 0.00
+Counter-top flower display with 16 featured products-Black Acrylic,false,,,,USD 3435.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Counter-top flower display with 16 featured products-Wood,false,,,,USD 3625.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Counter-top flower display with 8 featured products-Black Acrylic,false,,,,USD 2150.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Counter-top flower display with 8 featured products-Wood,false,,,,USD 2225.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+GC-AC5 // Pick & Place table w/ 2 Shopping Displays,false,,,,USD 5215.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+GC-F1 // Flower table podium w/ 8 products-Topper only,false,,,,USD 1300.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+GC-F1 // Flower table podium w/ 8 products-W/ metal stand and 1 wooden shelf,false,,,,USD 1995.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"TouchWo - 43"" Touch Screen",false,,,,USD 1000.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 650.00
+"NH - 22"" Lift + Learn - 10 SKU",false,,,"'- 22"" display
+- 1 NFC reader w/ 10 featured products
+- Misc. electronic components",USD 1385.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 922.82
+"NH - 22"" Pick & Place -- 24 SKU",false,,,"'- 22"" display
+- 1 NFC reader w/ 24 featured products
+- Misc. electronic components",USD 840.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 526.54
+"NH - 22"" Lift + Learn - 8 SKU",true,,,"'- 22"" display
+- 1 NFC reader w/ 8 featured products
+- Misc. electronic components",USD 1235.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 824.10
+Menu Board PC,false,,,,USD 285.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 189.00
+"TouchWo - 49"" Touch Screen",false,,,,USD 1275.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 912.00
+Acer UT222Q bmip 21.5” Full HD (1920 x 1080) 10 Point Touch Monitor,false,,,,USD 350.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 234.73
+ViewSonic TD2230 22 Inch 1080p 10-Point Multi Touch Screen,false,,,,USD 400.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 265.99
+Travel,false,,,,USD 0.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Motorolla Q11 mesh WiFi,false,,,,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+Pick & Place Fixtures,false,,,,USD 1750.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+Lift + Learn Display Installation,false,,,Installation procedure for installing Lift + Learn Stations,USD 135.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"RF Estone -- 15"" Tablet",false,Estone,Estone,,USD 500.00,18.00,5.00,13.00,20.00,in,lb,false,,USD 275.00
+MeLE Mini PC,false,MeLe,,Stick computer,USD 285.00,4.00,5.50,0.07,2.50,in,oz,false,,USD 180.00
+"PO-NH-E- 22"" Touch Screen",false,,,,USD 645.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 390.00
+"PO-NH-E- 27"" Touch Screen",false,,,,USD 785.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 490.00
+"NH-E- 27"" Lift + Learn - 10 SKU",false,,,"'- 22"" display
+- 1 NFC reader w/ 10 featured products
+- Misc. electronic components",USD 1735.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1237.82
+"NH-E- 22"" Lift + Learn - 16 SKU",true,,,"'- 22"" display
+- 1 NFC reader w/ 16 featured products
+- Misc. electronic components",USD 1975.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1407.82
+"NH-E-22"" Lift + Learn - 8 SKU",true,,,"'- 22"" display
+- 1 NFC reader w/ 8 featured products
+- Misc. electronic components",USD 1465.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1039.10
+"NH-E- 22"" Pick & Place -- 24 SKU",false,,,"'- 22"" display
+- 1 NFC reader w/ 24 featured products
+- Misc. electronic components",USD 1050.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 741.54
+"NH-E- 27"" Pick & Place -- 24 SKU",false,,,"'- 27"" display
+- 1 NFC reader w/ 24 featured products
+- Misc. electronic components",USD 1195.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 841.54
+"NH-E- 22"" Lift + Learn - 20 SKU",true,,,"'- 22"" display
+- 1 NFC reader w/ 20 featured products
+- Misc. electronic components",USD 2300.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1592.18
+Service -- Display Installation,false,,,,USD 150.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 150.00
+"PO-E- 22"" Touch Screen",false,,,,USD 585.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 390.00
+"PO-E- 27"" Touch Screen",false,,,,USD 735.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 490.00
+Remedy -- Medium Flower Jar,false,,,,USD 43.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 43.00
+8 Product Flower Station Topper,false,,,,USD 2375.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+16 Product Flower Station Topper,false,,,,USD 3225.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"E-Quick Checkout Station -- 22"" (w/o product interaction)",false,,,"22"" quick checkout station w/out product interaction.  Customer may choose to purchase furniture housing for screen separately.",USD 820.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 586.89
+"PO-E- 15"" Touch Screen",false,,,,USD 490.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 350.00
+"E-Quick Checkout Station -- 15"" (w/o product interaction)",false,,,"15"" quick checkout station w/out product interaction.  Customer may choose to purchase furniture housing for screen separately.",USD 765.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 546.89
+Tableu Data License,false,,,,USD 225.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+GC-16 Position Table Top Unit Lift & Learn Flower Station,false,,,,USD 463.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 463.00
+Remedy - Security Tether Cables(5pk),false,,,,USD 25.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 25.00
+GC - P&P Reader Block,false,,,,USD 315.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 245.00
+ZNC Coasters,false,,,,USD 13.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 11.23
+GC - 8 unit flower station topper (millwork only),false,,,,USD 637.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 637.00
+Dell Optiplex 7060 Micro PC,false,Dell,,,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 162.34
+BENFEI DisplayPort to HDMI Cable,false,,,,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 12.78
+MISC. USB Hubs (various brands),false,,,,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 90.98
+Lenovo ThinkCentre M625q,false,,,,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 298.62
+Misc. power supply,false,,,,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 27.48
+MISC electronics components,false,,,,USD 0.00,0.00,0.00,0.00,0.00,in,lb,false,,USD 0.00
+"NH-E-22"" Lift + Learn - 10 SKU",true,,,"'- 22"" display
+- 1 NFC reader w/ 8 featured products
+- Misc. electronic components",USD 1560.00,0.00,0.00,0.00,0.00,in,lb,true,,USD 1059.10
+"27"" Replacement",false,,,,USD 865.00,0.00,0.00,0.00,0.00,,,true,,USD 0.00
+Computer Fan,false,,,,USD 15.40,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Component -- NFC Tag,false,,,,USD 3.02,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"ZNC 22"" Tabletop Lift N Learn",false,,,"22"" Lift + Learn  w/ 30 product interactions
+ZNC Tabletop Flower Station
+Planar + Nuc Fabrication",USD 1596.58,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Replacement RFID tags,false,,,,USD 3.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Components,false,,,,USD 0.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Temeka Pick + Place 12 product Table,false,,,,USD 3880.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+Sales Tax,false,,,,USD 0.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"Refurbished 22"" Pick & Place -- 24 SKU",false,,,,USD 585.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00
+"27"" Quick Checkout Station w/out product interaction",false,,,,USD 735.00,0.00,0.00,0.00,0.00,,,false,,USD 0.00

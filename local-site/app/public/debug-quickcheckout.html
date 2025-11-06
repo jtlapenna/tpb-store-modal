@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Checkout Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; text-decoration: none; display: inline-block; }
+    </style>
+    <link rel="stylesheet" href="wp-content/plugins/tpb-quickview-modal/assets/css/modal.css">
+</head>
+<body>
+    <h1>Quick Checkout Debug Test</h1>
+    
+    <h2>Test Buttons</h2>
+    <a class="test-button" href="http://the-peak-beyond-modal.local/product/quick-checkout-station-configure-now/">Quick Checkout (Exact Store URL)</a>
+    <a class="test-button" href="quickcheckout-station-configure-now">Quick Checkout (Simple URL)</a>
+    <button class="test-button" data-tpb-modal="true" href="quickcheckout-station-configure-now">Quick Checkout (Button)</button>
+    
+    <div id="debug-info" style="background: #f0f0f0; padding: 10px; margin: 20px 0; border-radius: 4px; font-family: monospace;">
+        <div>TPBQuickCheckoutModal available: <span id="modal-available">Loading...</span></div>
+        <div>Console output will appear below:</div>
+        <div id="console-output" style="background: white; padding: 10px; margin: 10px 0; border-radius: 4px; font-family: monospace; white-space: pre-wrap; max-height: 200px; overflow-y: auto;"></div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="tpb-qv-quickcheckout-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" aria-label="Close modal">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/FF9800/white?text=Quick+Checkout" alt="Quick Checkout" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Choose Your Quickcheckout Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Quick checkout stations provide our awesome shopping user interface without the physical product interaction.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="quick-checkout">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="wp-content/plugins/tpb-quickview-modal/assets/js/modal-quickcheckout-handler.js"></script>
+    
+    <script>
+        // Test configuration
+        window.TPB_QV_CONFIG = {
+            home_url: 'http://the-peak-beyond-modal.local/',
+            qv_param: 'tpb_qv_iframe',
+            ajax_url: 'http://the-peak-beyond-modal.local/wp-admin/admin-ajax.php',
+            nonce: '3fc645425f',
+            cpb_enabled: '',
+            plugin_url: 'http://the-peak-beyond-modal.local/wp-content/plugins/tpb-quickview-modal/',
+            debug: '1'
+        };
+        
+        // Capture console output
+        const originalLog = console.log;
+        const originalError = console.error;
+        const consoleOutput = document.getElementById('console-output');
+        
+        function addToConsole(message, type = 'log') {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = type === 'error' ? '❌' : '✅';
+            consoleOutput.textContent += `[${timestamp}] ${prefix} ${message}\n`;
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToConsole(args.join(' '), 'log');
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToConsole(args.join(' '), 'error');
+        };
+        
+        // Test when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Quick Checkout Debug Test Loaded');
+            console.log('TPB_QV_CONFIG:', window.TPB_QV_CONFIG);
+            console.log('jQuery available:', typeof $ !== 'undefined');
+            
+            const modalAvailable = typeof window.TPBQuickCheckoutModal !== 'undefined';
+            document.getElementById('modal-available').textContent = modalAvailable ? 'YES' : 'NO';
+            console.log('TPBQuickCheckoutModal available:', modalAvailable);
+            
+            if (modalAvailable) {
+                console.log('TPBQuickCheckoutModal object:', window.TPBQuickCheckoutModal);
+            }
+        });
+        
+        // Test button clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[href*="quickcheckout"], button[data-tpb-modal="true"]')) {
+                console.log('Quick Checkout button clicked:', e.target);
+                console.log('Button href:', e.target.getAttribute('href'));
+                console.log('Button data-tpb-modal:', e.target.getAttribute('data-tpb-modal'));
+            }
+        });
+    </script>
+</body>
+</html>

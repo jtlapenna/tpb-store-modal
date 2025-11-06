@@ -1,0 +1,826 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Configurable Product Builder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-14 19:35+0000\n"
+"PO-Revision-Date: 2025-10-14 19:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.3; php-8.0.30\n"
+"X-Domain: af_comp_product"
+
+#: includes/class-af-cp-ajax.php:840
+msgid " -> Select variation attributes first"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:916
+msgid " can not select in any other component"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:885
+msgid " cannot be purchased at the moment"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:470
+msgid " Click here  "
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:948
+msgid " is out of stock"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:982
+msgid " is required"
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:1360
+msgid " quantity"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:472
+msgid " to select product options"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:960
+msgid ") more can not selected"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:346
+msgid "Active price"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:77
+msgid "Add condition description for internal reference."
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:60
+msgid "Add condition title for internal reference."
+msgstr ""
+
+#: includes/product-settings/component/af-product-components.php:222
+msgid "Add new component"
+msgstr ""
+
+#: includes/product-settings/scenario/af-scenarios.php:94
+msgid "Add new scenario"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:162
+msgid ""
+"Add quantity steps to sell this configurable products Multiple of X. This "
+"feature is not compatible with WooCommerce Blocks."
+msgstr ""
+
+#: includes/composite-product-type/class-af-composite-product-type.php:30
+msgid "Add to cart"
+msgstr ""
+
+#. Author of the plugin
+msgid "Addify"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:266
+msgid "Adjustment Type "
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:282
+msgid "Adjustment Value"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:125
+msgid "Adjustment value"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:18
+msgid "Advanced Settings"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:83
+msgid "After Product Description"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:84
+msgid "After Product summary"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:168
+msgid "Allow edit in cart"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:405
+msgid "Allow sorting"
+msgstr ""
+
+#: includes/product-settings/scenario/af-condition.php:72
+msgid "Any"
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:572
+#: includes/product-settings/component/af-single-component.php:332
+msgid "Ascending"
+msgstr ""
+
+#: templates/variable-product/af-variable-product-template.php:64
+msgid "Available on Backorder!"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:17
+msgid "Basic settings"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:99
+msgid "Calculated price from components"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:172
+msgid "Check if you want to allow user to edit component quantities in cart."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:409
+msgid ""
+"Check if you want to allow user to sort the products by price / rating / "
+"newest and popularity."
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:222
+msgid ""
+"Check if you want to hide the specific options from component if the above "
+"conditions are met."
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:165
+msgid ""
+"Check if you want to hide the whole component if the above conditions are "
+"met."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:429
+msgid "Check if you want to make this component exclusive,"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:419
+msgid ""
+"Check if you want to make this component required for user to buy in "
+"configurable product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:381
+msgid ""
+"Check if you want to show description of selected component product to user."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:393
+msgid "Check if you want to show price of selected component product to user."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:399
+msgid "Check if you want to show stock of selected component product to user."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:387
+msgid ""
+"Check if you want to show thumbnail of selected component product to user."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:375
+msgid "Check if you want to show title of selected component product to user."
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:121
+#: includes/product-settings/scenario/af-single-scenario.php:262
+msgid "Choose a Component"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:94
+#: includes/product-settings/scenario/af-single-scenario.php:235
+msgid "Choose a component"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:196
+msgid ""
+"Choose a default selected product from above selected products, categories "
+"and tags."
+msgstr ""
+
+#: includes/af-general-functions.php:1222
+msgid "Choose a product"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:151
+msgid "Choose a shipping type for configurable product. "
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:238
+msgid "Choose action "
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:104
+msgid "Choose categories"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:177
+msgid "Choose components"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:200
+msgid ""
+"Choose Components you wants to hide if the user select above conditions."
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:97
+msgid "Choose condition"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:178
+msgid "Choose default selected product"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:107
+msgid "Choose product categories"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:133
+msgid "Choose product categories for this component."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:142
+msgid "Choose product tags"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:169
+msgid "Choose product tags for this component."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:76
+#: includes/product-settings/component/af-single-component.php:80
+#: includes/product-settings/scenario/af-single-scenario.php:100
+#: includes/product-settings/scenario/af-single-scenario.php:241
+msgid "Choose products"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:98
+msgid "Choose products for this component."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:139
+msgid "Choose tags"
+msgstr ""
+
+#: includes/product-settings/component/af-product-components.php:47
+#: includes/product-settings/scenario/af-scenarios.php:41
+msgid "Close"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:47
+msgid "Component Image"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:153
+msgid "Component products will be ship individually."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:201
+msgid "Component quantity type"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:93
+msgid "Components"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:88
+msgid "Conditional Logic"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:86
+msgid "Conditions"
+msgstr ""
+
+#. Name of the plugin
+msgid "Configurable Product Builder"
+msgstr ""
+
+#: addify-composite-product.php:86
+msgid ""
+"Configurable Product Builder is inactive. WooCommerce plugin must be active "
+"in order to activate it."
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:23
+msgid "Configurable Product Settings"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:178
+msgid "Configurable product text "
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:83
+msgid "Configurable Settings"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Create configurable products using your existing catalog. Suitable to sell "
+"customizable products like computers, bicycles, sports kits, and more."
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:566
+#: includes/product-settings/component/af-single-component.php:318
+msgid "Date"
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:563
+#: includes/front/class-af-composite-product-front.php:571
+msgid "Default"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:175
+msgid "Default product"
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:573
+#: includes/product-settings/component/af-single-component.php:333
+msgid "Descending"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:37
+#: includes/product-settings/component/af-single-component.php:379
+#: includes/product-settings/scenario/af-single-scenario.php:66
+msgid "Description"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:302
+msgid "Dropdown with product image"
+msgstr ""
+
+#: includes/af-general-functions.php:1218
+msgid "Enter 3 characters"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:130
+msgid "Enter Adjustment value ( price / percentage )"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:286
+msgid "Enter adjustment value."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:41
+msgid "Enter description of the component."
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:152
+msgid ""
+"Enter maximum quantity a customer can buy. Applies to whole configurable "
+"product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:260
+msgid "Enter maximum quantity of component product."
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:141
+msgid ""
+"Enter minimum quantity a customer can buy. Applies to whole configurable "
+"product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:243
+msgid "Enter minimum quantity of component product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:31
+msgid "Enter name of the component."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:225
+msgid "Enter quantity of component product"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:182
+msgid ""
+"Enter text for configurable product that will be shown to user on product "
+"page before components."
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:43
+msgid "Enter text for view product button."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:425
+msgid "Exclusive product "
+msgstr ""
+
+#: includes/product-settings/component/af-product-components.php:43
+#: includes/product-settings/scenario/af-scenarios.php:37
+msgid "Expand"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:50 includes/class-af-cp-ajax.php:269
+#: includes/class-af-cp-ajax.php:516 includes/class-af-cp-ajax.php:583
+#: includes/class-af-cp-ajax.php:730 includes/class-af-cp-ajax.php:1046
+#: includes/class-af-cp-ajax.php:1133 includes/class-af-cp-ajax.php:1268
+#: includes/class-af-cp-ajax.php:1296 includes/class-af-cp-ajax.php:1346
+#: includes/class-af-cp-ajax.php:1401 includes/class-af-cp-ajax.php:1431
+#: includes/class-af-cp-ajax.php:1570
+msgid "Failed Ajax security check!"
+msgstr ""
+
+#: includes/front/class-af-composite-product-helper.php:36
+#: includes/front/class-af-composite-product-helper.php:248
+msgid "Failed security check!"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:107
+msgid "Final price adjustment"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:114
+msgid "Fixed decrease"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:271
+msgid "Fixed decrease "
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:113
+msgid "Fixed increase"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:270
+msgid "Fixed increase "
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:98
+msgid "Fixed price for whole configurable product"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:205
+msgid "Fixed quantity"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:78
+msgid "Form location"
+msgstr ""
+
+#: includes/product-settings/scenario/af-action.php:73
+msgid "Hide"
+msgstr ""
+
+#: includes/product-settings/scenario/af-action.php:74
+msgid "Hide all except"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:149
+msgid "Hide components"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:345
+msgid "Hide price"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:205
+msgid "Hide specific component options"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:359
+msgid "Hide stock message in dropdown"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://woocommerce.com/products/configurable-product-builder/"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://woocommerce.com/vendor/addify/"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:430
+msgid ""
+"If checked, the product select in this component will not be available for "
+"selection in any other component."
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:112
+msgid "Ignore adjustment"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:50
+msgid "Insert Image"
+msgstr ""
+
+#: includes/product-settings/scenario/af-condition.php:70
+msgid "Is"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:147
+msgid "Max quantity"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:256
+msgid "Maximum quantity "
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:136
+msgid "Min quantity"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:239
+msgid "Minimum quantity "
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:565
+#: includes/product-settings/component/af-single-component.php:27
+#: includes/product-settings/component/af-single-component.php:317
+msgid "Name"
+msgstr ""
+
+#: includes/product-settings/scenario/af-condition.php:71
+msgid "Not"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:328
+msgid "Order type"
+msgstr ""
+
+#: templates/variable-product/af-variable-product-template.php:65
+msgid "Out of Stock!"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:116
+msgid "Percentage decrease"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:274
+msgid "Percentage decrease "
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:115
+msgid "Percentage increase"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:273
+msgid "Percentage increase "
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:468
+msgid "Please  "
+msgstr ""
+
+#: templates/variable-product/af-variable-product-template.php:62
+msgid "Please choose product variations"
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:568
+#: includes/product-settings/component/af-single-component.php:320
+msgid "Popularity"
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:564
+#: includes/product-settings/component/af-single-component.php:316
+#: includes/product-settings/component/af-single-component.php:391
+msgid "Price"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:93
+msgid "Price type"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:297
+msgid "Product listing style "
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:312
+msgid "Product order"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:341
+msgid "Product price style "
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:152
+msgid "Product will ship as whole configurable product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:221
+msgid "Quantity"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:303
+msgid "Radio buttons"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:206
+msgid "Range Min/Max"
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:567
+#: includes/product-settings/component/af-single-component.php:319
+msgid "Rating"
+msgstr ""
+
+#: includes/composite-product-type/class-af-composite-product-type.php:30
+msgid "Read more"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:347
+msgid "Regular price + Sale price"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:8
+msgid "Remove Component"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:46
+msgid "Remove Scenario"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:415
+msgid "Required component"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:256
+#: templates/single-product/af-cp-steps.php:107
+#: templates/single-product/af-component-templates.php:60
+msgid "Review your selection"
+msgstr ""
+
+#: includes/class-af-cp-ajax.php:301
+msgid "Review your selections"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:272
+msgid "Same Price"
+msgstr ""
+
+#: includes/product-settings/scenario/af-single-scenario.php:55
+msgid "Scenario name"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:167
+#: includes/product-settings/af-save-meta-fields.php:6
+msgid "Security Violated Error!"
+msgstr ""
+
+#: includes/af-general-functions.php:1405
+#: includes/af-general-functions.php:1475
+msgid "Select"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:32
+msgid "Select a layout"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:362
+msgid "Select a option to show product stock message to user in dropdown."
+msgstr ""
+
+#: includes/af-general-functions.php:1529
+msgid "Select a Product"
+msgstr ""
+
+#: includes/af-general-functions.php:1132
+#: includes/af-general-functions.php:1402
+msgid "Select a product"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:349
+msgid "Select a style for component product price in dropdown."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:306
+msgid "Select a style for component product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:276
+msgid "Select adjustment type."
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:119
+msgid ""
+"Select adjustment type. This adjustment will apply to total price of "
+"composite product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:69
+msgid ""
+"Select an image for component. Image will show when the selected product "
+"don't have image."
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:72
+msgid "Select layout for configurable product."
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:87
+msgid "Select location for configurable product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:208
+msgid "Select option for quantity of component product."
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:397
+#: includes/front/class-af-composite-product-front.php:403
+msgid "Select Options"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:101
+msgid "Select price type for this configurable product."
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:190
+msgid "Select products/categories/tags first"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:150
+msgid "Select shipping type"
+msgstr ""
+
+#: includes/af-general-functions.php:1405
+#: includes/af-general-functions.php:1475
+msgid "Selected"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:368
+msgid "Selection detail visibility"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:322
+#: includes/product-settings/component/af-single-component.php:335
+msgid "Set product listing by price, name, date, rating or popularity."
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:156
+msgid "Ship components"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:155
+msgid "Ship whole composite Product"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:360
+msgid "Show stock message in drop down"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:301
+msgid "Simple dropdown"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:158
+msgid "Step quantity"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:68
+msgid "Steps"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:397
+msgid "Stock"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:355
+msgid "Stock availability "
+msgstr ""
+
+#: includes/front/class-af-composite-product-front.php:511
+msgid "This will be quote button"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:304
+#: includes/product-settings/component/af-single-component.php:385
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:373
+msgid "Title"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:57
+msgid "Toggle"
+msgstr ""
+
+#: includes/product-settings/component/af-product-components.php:221
+msgid "Update components"
+msgstr ""
+
+#: includes/product-settings/scenario/af-scenarios.php:93
+msgid "Update scenarios"
+msgstr ""
+
+#: includes/product-settings/component/af-single-component.php:50
+msgid "Upload Image"
+msgstr ""
+
+#: includes/product-settings/af-general-settings.php:46
+msgid "Vertical"
+msgstr ""
+
+#: includes/admin/class-af-composite-product-admin.php:40
+msgid "View Product"
+msgstr ""

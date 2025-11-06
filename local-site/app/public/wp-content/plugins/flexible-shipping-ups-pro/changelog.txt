@@ -1,0 +1,607 @@
+*** Flexible Shipping UPS Pro Changelog *** [WooCommerce UPS](https://octolize.com/product/ups-woocommerce-live-rates-and-access-points-pro/)
+
+## [3.7.1] - 2025-10-06 
+### Added
+- Support for WooCommerce 10.3
+
+## [3.7.0] - 2025-08-25
+### Changed
+- The notice type in debug mode
+
+## [3.6.5] - 2025-08-21
+### Fixed
+- Client Credentials Token refresh
+
+## [3.6.4] - 2025-08-11
+### Added
+- Support for WooCommerce 10.2
+
+## [3.6.3] - 2025-08-05
+### Fixed
+- 404 error on missing CSS file
+
+## [3.6.2] - 2025-08-04
+### Added
+- Support for WooCommerce 10.1
+
+## [3.6.1] - 2025-07-28
+### Fixed
+- Access points data saving in Block-based checkout
+- Help links
+
+## [3.6.0] - 2025-07-16
+### Added
+- Communication regarding the auth code
+
+## [3.5.1] - 2025-07-15
+### Added
+- Support for WooCommerce 10.0
+
+## [3.5.0] - 2025-06-05
+### Added
+- 3D Packer algorithm
+- CSAT in shipping method
+- Error notices displayed for admins without a debug mode enabled
+- Info for weight-based API errors
+### Changed
+- Plugin title
+- Default services settings
+- Default pickup type
+- SuperPost changed to Ground Saver
+
+## [3.4.2] - 2025-05-22
+### Added
+- Support for WordPress 6.8
+- Support for WooCommerce 9.9
+- CSAT in shipping method settings
+
+## [3.4.1] - 2025-04-09
+### Added
+- Support for WooCommerce 9.8
+### Fixed
+- Delivery Date/Time in block based checkout
+
+## [3.4.0] - 2025-03-04
+### Added
+- Delivery Date/Time in block based checkout
+
+## [3.3.2] - 2025-01-27
+### Added
+- Support for WooCommerce 9.7
+
+## [3.3.1] - 2025-01-20
+### Added
+- Support for WooCommerce 9.6
+
+## [3.3.0] - 2025-01-07
+### Addded
+- Detailed package data for UPS Labels plugin integration
+
+## [3.2.2] - 2024-12-10
+### Fixed
+- Translations loading
+
+## [3.2.1] - 2024-11-18
+### Added
+- Support for WooCommerce 9.5
+
+## [3.2.0] - 2024-11-12
+### Added
+- Client Credentials Flow in REST API
+### Fixed
+- Debug mode logs
+
+## [3.1.0] - 2024-10-29
+### Added
+- Action Scheduler in token refresh process
+
+## [3.0.0] - 2024-10-21
+### Added
+- Flexible Shipping Rules Table fields
+- Support for WordPress 6.7
+
+## [2.2.18] - 2024-10-04
+### Added
+- Permission check in authorization revoke process
+
+## [2.2.17] - 2024-09-26
+### Added
+- Support for WooCommerce 9.4
+- Plugin update reminder
+### Changed
+- Improved authorization revoke process
+
+## [2.2.16] - 2024-09-01
+### Added
+- Support for WooCommerce 9.3
+
+## [2.2.15] - 2024-08-27
+### Added
+- mutex lock on token refresh
+### Fixed
+- single access point REST API request
+
+## [2.2.14] - 2024-08-19
+### Added
+- Ability to close UPS Labels advertisement
+
+## [2.2.13] - 2024-08-05
+### Added
+- Support for WooCommerce 9.2
+### Fixed
+- Deprecation messages on PHP 8.2
+
+## [2.2.12] - 2024-07-18
+### Added
+- Support for WordPress 6.6
+
+## [2.2.11] - 2024-07-17
+### Added
+- UPS Labels advertisement
+
+## [2.2.10] - 2024-06-30
+### Added
+- Support for WooCommerce 9.1
+
+## [2.2.9] - 2024-06-26
+### Fixed
+- Negotiated rates were not calculated correctly when the API returns a single rate
+
+## [2.2.8] - 2024-06-10
+### Fixed
+- Chinese Yuan currency handling
+
+## [2.2.7] - 2024-06-02
+### Added
+- Support for WooCommerce 9.0
+
+## [2.2.6] - 2024-05-09
+### Added
+- Support for WooCommerce 8.9
+### Fixed
+- Invalid or missing monetary value for free products
+
+## [2.2.5] - 2024-04-18
+### Added
+- API Type notice
+
+## [2.2.4] - 2024-04-15
+### Added
+- Support for WooCommerce 8.8
+### Fixed
+- Warning in cart and checkout
+
+## [2.2.3] - 2024-03-27
+### Added
+- Support for WordPress 6.5
+### Changed
+- Logs moved to WooCommerce logs
+### Fixed
+- Delivery date templates
+- AJAX requests permissions
+
+## [2.2.2] - 2024-02-28
+### Added
+- Support for WooCommerce 8.7
+
+## [2.2.1] - 2024-02-15
+### Fixed
+- The stability of the REST API connection with caching plugins
+
+## [2.2.0] - 2024-02-05
+### Added
+- Support for WooCommerce 8.6
+- Germanized tax settings check and notice
+
+## [2.1.4] - 2024-01-29
+### Fixed
+- package padding was not applied to the package dimensions
+
+## [2.1.3] - 2023-12-28
+### Added
+- Support for WooCommerce 8.5
+
+## [2.1.2] - 2023-12-04
+### Added
+- Support for WooCommerce 8.4
+### Fixed
+- Compatibility with Germanized
+
+## [2.1.1] - 2023-11-10
+### Fixed
+- Missing assets
+
+## [2.1.0] - 2023-11-09
+### Added
+- Support for WooCommerce Checkout Block
+
+## [2.0.12] - 2023-11-07
+### Added
+- Support for WordPress 6.4
+- Support for WooCommerce 8.3
+
+## [2.0.11] - 2023-10-16
+### Fixed
+- REST API Negotiated Rates
+
+## [2.0.10] - 2023-10-03
+### Added
+- Support for WooCommerce 8.2
+### Fixed
+- Insurance in REST API
+
+## [2.0.9] - 2023-09-26
+### Fixed
+- REST API Negotiated Rates
+
+## [2.0.7] - 2023-09-06
+### Added
+- Support for WooCommerce 8.1
+
+## [2.0.6] - 2023-08-16
+### Added
+- Support for WordPress 6.3
+### Fixed
+- Invalid package delivery confirmation type
+
+## [2.0.5] - 2023-08-03
+### Added
+- Support for WooCommerce 8.0
+
+## [2.0.4] - 2023-07-13
+### Updated
+- libraries
+
+## [2.0.3] - 2023-07-04
+### Added
+- Support for WooCommerce 7.9
+
+## [2.0.2] - 2023-06-14
+### Fixed
+* Prefixed libraries
+
+## [2.0.1] - 2023-06-05
+### Fixed
+- Plugin settings form
+
+## [2.0.0] - 2023-06-05
+### Added
+- Support for OAuth
+- Support for REST API
+- Support for WooCommerce 7.8
+
+## [1.20.6] - 2023-05-22
+### Fixed
+- Packer boxes dimensions settings
+
+## [1.20.5] - 2023-04-19
+### Added
+- Support for WooCommerce 7.7
+### Fixed
+- Assets attached only when needed
+
+## [1.20.4] - 2023-04-18
+### Fixed
+- Deprecated messages in PHP 8.1 and newer
+
+## [1.20.3] - 2023-04-04
+### Fixed
+- Currency switchers compatibility for free shipping threshold
+
+## [1.20.2] - 2023-03-27
+### Added
+- Support for WordPress 6.2
+- Support for WooCommerce 7.6
+
+## [1.20.1] - 2023-03-10
+### Fixed
+- Fatal error for surepost services
+
+## [1.20.0] - 2023-03-02
+### Added
+- UPS Simple Rate
+- Support for WooCommerce 7.5
+### Changed
+- Removed service code from API request
+
+## [1.19.2] - 2023-02-08
+### Added
+- Support for WooCommerce 7.4
+
+## [1.19.1] - 2023-01-09
+### Fixed
+- Custom Origin settings
+
+## [1.19.0] - 2023-01-09
+### Added
+- Custom Origin in shipping method instance
+- Custom Origin in Sure Post shipping method instance
+- Support for WooCommerce 7.3
+
+## [1.18.0] - 2022-12-13
+### Added
+- The Shipping Extensions tab
+
+## [1.17.1] - 2022-12-05
+### Fixed
+- Delivery Confirmation in the United States and Canada
+
+## [1.17.0] - 2022-11-23
+### Added
+- Support for WooCommerce 7.2
+- WooCommerce High-Performance Order Storage (HPOS) compatibility declaration
+
+## [1.16.0] - 2022-10-24
+### Added
+- Support for WordPress 6.1
+- Support for WooCommerce 7.1
+### Updated
+- Octolize tracker
+
+## [1.15.3] - 2022-10-03
+### Added
+- Support for WooCommerce 7.0
+
+## [1.15.2] - 2022-09-14
+### Added
+- Support for WooCommerce 6.9
+### Fixed
+- missing library (PSR/Containter)
+
+## [1.15.1] - 2022-06-29
+### Added
+- Support for WooCommerce 6.7
+
+## [1.15.0] - 2022-06-20
+### Added
+- API requests cache
+### Fixed
+- Delivery confirmation in Canada on package level
+
+## [1.14.1] - 2022-05-30
+### Added
+- Support for WooCommerce 6.6
+### Fixed
+- 3D packer
+
+## [1.14.0] - 2022-05-17
+### Added
+- new packer algorithm: 3D box packing, available by adding filter in functions.php file: add_filter( 'flexible_shipping_ups/packer/enable_3d_packer', '__return_true' );
+
+## [1.13.9] - 2022-05-12
+### Added
+- Support for WordPress 6.0
+- Support for WooCommerce 6.5
+
+## [1.13.8] - 2022-04-19
+### Added
+- Support for WooCommerce 6.4
+### Fixed
+- Empty packages warnings
+
+## [1.13.7] - 2022-03-23
+### Fixed
+- Fatal Error when wc_empty_cart function not exists
+
+## [1.13.6] - 2022-03-02
+### Added
+- Support for WooCommerce 6.3
+
+## [1.13.5] - 2022-01-27
+### Added
+- Support for WooCommerce 6.2
+
+## [1.13.4] - 2022-01-19
+### Added
+- Support for WordPress 5.9
+### Fixed
+- Connection status checker
+
+## [1.13.3] - 2022-01-11
+### Added
+- Support for WooCommerce 6.1
+
+## [1.13.2] - 2021-12-14
+### Added
+- Support for WooCommerce 6.0
+
+## [1.13.1] - 2021-11-15
+### Fixed
+- SurePost shipping method description
+
+## [1.13.0] - 2021-11-09
+### Changed
+- SurePost services moved to separate shipping method
+
+## [1.12.1] - 2021-10-18
+### Changed
+- Composer libraries updated
+
+## [1.12.0] - 2021-10-13
+### Adding
+- UPS Labels cross-sell box
+- Support for WooCommerce 5.8
+### Changed
+- Name of Shipping Method
+
+## [1.11.0] - 2021-09-30
+### Changed
+- License activation moved to plugins page
+
+## [1.10.0] - 2021-08-05
+### Added
+- US SurePost services
+- Delivery Confirmation
+
+## [1.9.0] - 2021-07-19
+### Added
+- Ability to get rates without pickup type (not set value)
+
+## [1.8.3] - 2021-06-07
+### Added
+- Conditional Shipping Methods cross-sell box
+### Changed
+- Composer libraries updated
+
+## [1.8.2] - 2021-05-17
+### Added
+- Support for WooCommerce 5.3
+
+## [1.8.1] - 2021-03-30
+### Fixed
+- fixed fatal error on some installations on shipping service initialisation
+
+## [1.8.0] - 2021-03-25
+### Added
+- caching for access points on session level
+### Fixed
+- access point support after changing country
+
+
+## [1.7.0] - 2021-03-02
+### Modified
+- pickup type moved between libraries
+
+## [1.6.0] - 2021-01-18
+### Added
+- Blackout Lead Days
+- Support for Free Shipping
+
+## [1.5.2] - 2020-12-07
+### Added
+- Support for WordPress 5.6
+
+## [1.5.1] - 2020-11-12
+### Added
+- Support for WooCommerce 4.7
+
+## [1.5.0] - 2020-08-31
+### Added
+- Active Payments plugin integration
+### Fixed
+- Fatal error when no collection point found for given address
+- Delivery dates displayed multiple times with other Live Rates plugins
+
+## [1.4.2] - 2020-08-20
+### Added
+- Support for Wordpress 5.5
+
+## [1.4.1] - 2020-07-29
+### Fixed
+- Search of nearest access point based on destination address
+
+## [1.4.0] - 2020-07-29
+### Added
+- Information about additional Pickup Type options
+- Support for WooCommerce 4.4
+
+### Fixed
+- Search of nearest access point
+
+## [1.3.14] - 2020-05-21
+### Added
+- Custom box dimensions to custom box name in order meta
+
+## [1.3.12] - 2020-05-18
+### Fixed
+- Warning on empty API response
+
+## [1.3.10] - 2020-04-28
+### Added
+- Integration with WooCommerce Multi-Currency plugin
+
+## [1.3.9] - 2020-04-20
+### Fixed
+- Multiple Access point flat rate methods in shipping zone
+- Fatal error when collection point not found
+
+## [1.3.8] - 2020-04-07
+### Fixed
+- Unhandled CollectionPointNotFoundException
+
+## [1.3.7] - 2020-03-19
+### Added
+- Support for WooCommerce 4.0
+
+## [1.3.6] - 2020-02-19
+### Added
+- More messages in debug mode
+
+### Changed
+- API Status field functionality moved to other WP Desk library
+
+## [1.3.5] - 2020-02-05
+### Added
+- Minimal package weight: 0.1
+
+### Fixed
+- Negotiated rates
+
+## [1.3.4] - 2020-01-27
+### Fixed
+- Conflicts with other shipping plugins
+- Services when Estimated Delivery is set to None
+
+## [1.3.2] - 2020-01-23
+### Fixed
+- Package dimensions for packed shipments
+
+## [1.3.1] - 2020-01-21
+### Fixed
+- Warnings
+
+## [1.3.0] - 2020-01-20
+### Added
+- WP Desk Abstract Shipping libraries
+
+## [1.2.3] - 2020-01-07
+### Added
+- Support for WooCommerce 3.9
+
+## [1.2.2] - 2019-10-25
+### Added
+- Password masking in debug messages
+
+## [1.2.1] - 2019-10-15
+### Fixed
+- Access point and flat rate configuration
+
+## [1.2.0] - 2019-10-01
+### Added
+- Packer separately
+- Pickup type
+- Cutoff time
+- Lead time functionality
+- Maximum time in transit
+- Install proposition when required plugins are not found
+
+## [1.1.4] - 2019-08-20
+- ShipmentTotalWeight should be sent only with time in transit request
+
+## [1.1.3] - 2019-08-12
+### Added
+- Support for WooCommerce 3.7
+
+## [1.1.2] - 2019-07-11
+### Fixed
+- Rare change for fatal error when activating plugin
+
+## [1.1.1] - 2019-07-02
+### Fixed
+- Fatal error in order meta.
+
+## [1.1.0] - 2019-06-27
+### Added
+- Multi currency support
+
+### Fixed
+- Too many notices in checkout
+
+### Removed
+- Subscription enforce
+
+## [1.0] - 2019-05-21
+### Added
+- First Release!
+
+##### Added,Fixed

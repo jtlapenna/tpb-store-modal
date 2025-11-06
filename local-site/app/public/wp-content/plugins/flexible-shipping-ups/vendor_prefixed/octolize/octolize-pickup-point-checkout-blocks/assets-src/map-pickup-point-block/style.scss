@@ -1,0 +1,27 @@
+.octolize-pickup-point-block {
+  .selected-point {
+
+    .points-map {
+      height: 200px;
+      width: 100%;
+
+      .map {
+        width: 50%;
+        height: 200px;
+        float: left;
+      }
+
+      .point-details {
+        width: 50%;
+        height: 200px;
+        float: left;
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .points-popup-map {
+    padding-top: 10px;
+  }
+}

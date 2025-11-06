@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exact Store Setup Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        .elementor-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; text-decoration: none; display: inline-block; }
+    </style>
+    <link rel="stylesheet" href="wp-content/plugins/tpb-quickview-modal/assets/css/modal.css">
+</head>
+<body>
+    <h1>Exact Store Setup Test</h1>
+    
+    <h2>Test Buttons (Exact Store Page Format)</h2>
+    
+    <!-- Elementor Button (exact format from store page) -->
+    <div class="elementor-element elementor-element-d483fc5 tpb-qv-trigger elementor-widget elementor-widget-button" data-id="d483fc5" data-element_type="widget" data-tpb-quickview="4607" data-product-url="http://the-peak-beyond-modal.local/product/flower-station-configure-now/" data-widget_type="button.default">
+        <div class="elementor-widget-container">
+            <div class="elementor-button-wrapper">
+                <a class="elementor-button elementor-button-link elementor-size-sm" href="http://the-peak-beyond-modal.local/product/flower-station-configure-now/">
+                    <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-text">Configure Now</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Product Card (exact format from store page) -->
+    <div class="elementor-element elementor-element-82c60c6 tpb-card e-flex e-con-boxed e-con e-parent" data-id="82c60c6" data-element_type="container" data-tpb-quickview="3867" data-product-url="http://the-peak-beyond-modal.local/product/flower-station-configure-now/" role="button" tabindex="0">
+        <div class="e-con-inner">
+            <h3>8-SKU Flower Station</h3>
+            <p>Click this card to test</p>
+        </div>
+    </div>
+
+    <!-- Include Modal HTML (exact format from store page) -->
+    <div id="tpb-qv-flower-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" aria-label="Close modal">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/white?text=Flower+Station" alt="Flower Station" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Configure Your Flower Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Please choose a SKU-count to see the base-price for electronics hardware.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="flower-station">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Include TPB Modal Handler -->
+    <script src="wp-content/plugins/tpb-quickview-modal/assets/js/modal-flower-handler.js"></script>
+    
+    <script>
+        // Exact configuration from store page
+        window.TPB_QV_CONFIG = {
+            home_url: 'http://the-peak-beyond-modal.local/',
+            qv_param: 'tpb_qv_iframe',
+            ajax_url: 'http://the-peak-beyond-modal.local/wp-admin/admin-ajax.php',
+            nonce: '3fc645425f',
+            cpb_enabled: '',
+            plugin_url: 'http://the-peak-beyond-modal.local/wp-content/plugins/tpb-quickview-modal/',
+            debug: '1'
+        };
+        
+        // Debug logging
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Exact Store Setup Test Loaded');
+            console.log('TPB_QV_CONFIG:', window.TPB_QV_CONFIG);
+            console.log('jQuery available:', typeof $ !== 'undefined');
+            console.log('TPBFlowerModal available:', typeof window.TPBFlowerModal !== 'undefined');
+            
+            // Test if modal HTML exists
+            const modal = document.getElementById('tpb-qv-flower-modal');
+            console.log('Modal HTML found:', modal !== null);
+            
+            // Test trigger selectors
+            const triggers = document.querySelectorAll('[data-tpb-quickview]');
+            console.log('Trigger elements found:', triggers.length);
+            triggers.forEach((trigger, index) => {
+                console.log(`Trigger ${index + 1}:`, {
+                    element: trigger,
+                    'data-tpb-quickview': trigger.getAttribute('data-tpb-quickview'),
+                    href: trigger.querySelector('a')?.getAttribute('href') || 'N/A'
+                });
+            });
+        });
+        
+        // Add click listeners for debugging
+        document.addEventListener('click', function(e) {
+            console.log('Click detected on:', e.target);
+            console.log('Event path:', e.composedPath());
+            
+            // Check if it's a trigger
+            const trigger = e.target.closest('[data-tpb-quickview]');
+            if (trigger) {
+                console.log('Trigger element found:', trigger);
+                console.log('Trigger data-tpb-quickview:', trigger.getAttribute('data-tpb-quickview'));
+                
+                const link = trigger.querySelector('a');
+                if (link) {
+                    console.log('Link href:', link.getAttribute('href'));
+                }
+            }
+        });
+    </script>
+</body>
+</html>

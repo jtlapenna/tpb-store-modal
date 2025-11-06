@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Page Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .debug-section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .test-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; font-family: monospace; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+    <link rel="stylesheet" href="wp-content/plugins/tpb-quickview-modal/assets/css/modal.css">
+</head>
+<body>
+    <h1>🔍 Store Page Debug Test</h1>
+    
+    <div class="debug-section">
+        <h2>1. Test Buttons (Same as Store Page)</h2>
+        <button class="test-button" data-tpb-quickview="4607" href="http://the-peak-beyond-modal.local/product/flower-station-configure-now/">Flower Station (Elementor Style)</button>
+        <button class="test-button" data-tpb-quickview="4608" href="http://the-peak-beyond-modal.local/product/category-station-configure-now/">Category Station (Elementor Style)</button>
+        <button class="test-button" data-tpb-modal="true" href="flower-station-configure-now">Flower Station (Simple Style)</button>
+        <div id="button-status" class="status">Ready to test</div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>2. Console Output</h2>
+        <div id="console-output" style="background: #f8f9fa; padding: 10px; border-radius: 4px; font-family: monospace; white-space: pre-wrap; max-height: 300px; overflow-y: auto;"></div>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Include TPB Modal Handlers -->
+    <script src="wp-content/plugins/tpb-quickview-modal/assets/js/modal-flower-handler.js"></script>
+    <script src="wp-content/plugins/tpb-quickview-modal/assets/js/modal-category-handler.js"></script>
+    
+    <!-- Include Modal HTML -->
+    <div id="tpb-qv-flower-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" aria-label="Close modal">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/white?text=Flower+Station" alt="Flower Station" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Configure Your Flower Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Please choose a SKU-count to see the base-price for electronics hardware.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="flower-station">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tpb-qv-category-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" aria-label="Close modal">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/2196F3/white?text=Category+Station" alt="Category Station" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Configure Your Category Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Please choose a build strategy and form factor for your category station.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="category-station">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test configuration (same as store page)
+        window.TPB_QV_CONFIG = {
+            home_url: 'http://the-peak-beyond-modal.local/',
+            qv_param: 'tpb_qv_iframe',
+            ajax_url: 'http://the-peak-beyond-modal.local/wp-admin/admin-ajax.php',
+            nonce: '3fc645425f',
+            cpb_enabled: '',
+            plugin_url: 'http://the-peak-beyond-modal.local/wp-content/plugins/tpb-quickview-modal/',
+            debug: '1'
+        };
+        
+        // Capture console output
+        const originalLog = console.log;
+        const originalError = console.error;
+        const consoleOutput = document.getElementById('console-output');
+        
+        function addToConsole(message, type = 'log') {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = type === 'error' ? '❌' : '✅';
+            consoleOutput.textContent += `[${timestamp}] ${prefix} ${message}\n`;
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToConsole(args.join(' '), 'log');
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToConsole(args.join(' '), 'error');
+        };
+        
+        // Test button clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('[data-tpb-quickview], [data-tpb-modal="true"]')) {
+                console.log('Button clicked:', e.target);
+                console.log('Button attributes:', {
+                    'data-tpb-quickview': e.target.getAttribute('data-tpb-quickview'),
+                    'data-tpb-modal': e.target.getAttribute('data-tpb-modal'),
+                    'href': e.target.getAttribute('href')
+                });
+                
+                // Check if handlers are available
+                if (window.TPBFlowerModal) {
+                    console.log('TPBFlowerModal available');
+                } else {
+                    console.error('TPBFlowerModal not available');
+                }
+                
+                if (window.TPBCategoryModal) {
+                    console.log('TPBCategoryModal available');
+                } else {
+                    console.error('TPBCategoryModal not available');
+                }
+            }
+        });
+        
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Store Page Debug Test Loaded');
+            console.log('TPB_QV_CONFIG:', window.TPB_QV_CONFIG);
+            console.log('jQuery available:', typeof $ !== 'undefined');
+        });
+    </script>
+</body>
+</html>

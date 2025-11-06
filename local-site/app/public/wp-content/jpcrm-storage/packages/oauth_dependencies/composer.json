@@ -1,0 +1,10 @@
+{
+  "name": "automattic/jpcrm_oauth_dependencies",
+  "description": "Dependencies used by JPCRM for OAuth connections",
+  "require": {
+      "league/oauth2-client": "^2.6",
+      "league/oauth2-google": "^4.0",
+      "google/apiclient": "2.12.6",
+      "psr/log": "^1"
+  }
+}

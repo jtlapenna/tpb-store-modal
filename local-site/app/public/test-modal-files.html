@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPB Modal Files Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .test-section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; font-family: monospace; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .test-button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>🔍 TPB Modal Files Accessibility Test</h1>
+    
+    <div class="test-section">
+        <h2>File Loading Test</h2>
+        <div id="file-status" class="status">Testing file accessibility...</div>
+        <button class="test-button" onclick="testFiles()">Test File Loading</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Modal Test</h2>
+        <div id="modal-status" class="status">Ready to test modals</div>
+        <button class="test-button" data-tpb-modal="true" href="flower-station-configure-now">Test Flower Modal</button>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Include TPB Modal CSS -->
+    <link rel="stylesheet" href="wp-content/plugins/tpb-quickview-modal/assets/css/modal.css">
+    
+    <!-- Include TPB Modal Handler -->
+    <script src="wp-content/plugins/tpb-quickview-modal/assets/js/modal-flower-handler.js"></script>
+    
+    <!-- Include Modal HTML -->
+    <div id="tpb-qv-flower-modal" class="tpb-qv-overlay" style="display: none;">
+        <div class="tpb-qv-modal">
+            <button class="tpb-qv-close" aria-label="Close modal">&times;</button>
+            <div class="tpb-qv-left-panel">
+                <div id="tpb-qv-product-image">
+                    <img src="https://via.placeholder.com/400x300/4CAF50/white?text=Flower+Station" alt="Flower Station" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div class="tpb-qv-right-panel">
+                <h2 class="tpb-qv-title">Configure Your Flower Stations</h2>
+                <div id="tpb-qv-base-price" class="tpb-qv-base-price">
+                    Please choose a SKU-count to see the base-price for electronics hardware.
+                </div>
+                <div id="tpb-qv-stepper-container" class="tpb-qv-stepper-container" data-modal-type="flower-station">
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Stepper content would load here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test configuration
+        window.TPB_QV_CONFIG = {
+            home_url: 'http://the-peak-beyond-modal.local/',
+            qv_param: 'tpb_qv_iframe',
+            ajax_url: '/wp-admin/admin-ajax.php',
+            nonce: 'test-nonce',
+            cpb_enabled: false,
+            plugin_url: 'wp-content/plugins/tpb-quickview-modal/',
+            debug: true
+        };
+        
+        function testFiles() {
+            const status = document.getElementById('file-status');
+            const tests = [
+                { name: 'jQuery', test: () => typeof $ !== 'undefined' },
+                { name: 'Flower Handler', test: () => typeof window.TPBFlowerModal !== 'undefined' },
+                { name: 'TPB_QV_CONFIG', test: () => typeof window.TPB_QV_CONFIG !== 'undefined' },
+                { name: 'Modal CSS', test: () => document.querySelector('link[href*="modal.css"]') !== null },
+                { name: 'Modal HTML', test: () => document.getElementById('tpb-qv-flower-modal') !== null }
+            ];
+            
+            let results = [];
+            let allPassed = true;
+            
+            tests.forEach(test => {
+                try {
+                    const passed = test.test();
+                    results.push(`${passed ? '✅' : '❌'} ${test.name}: ${passed ? 'LOADED' : 'MISSING'}`);
+                    if (!passed) allPassed = false;
+                } catch (e) {
+                    results.push(`❌ ${test.name}: ERROR - ${e.message}`);
+                    allPassed = false;
+                }
+            });
+            
+            status.innerHTML = results.join('<br>');
+            status.className = `status ${allPassed ? 'success' : 'error'}`;
+        }
+        
+        // Test modal trigger
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('[data-tpb-modal="true"]')) {
+                const modal = document.getElementById('tpb-qv-flower-modal');
+                if (modal) {
+                    document.getElementById('modal-status').textContent = 'Modal found - opening...';
+                    document.getElementById('modal-status').className = 'status success';
+                    modal.classList.add('is-open');
+                    setTimeout(() => {
+                        modal.classList.remove('is-open');
+                        document.getElementById('modal-status').textContent = 'Modal test completed!';
+                    }, 2000);
+                } else {
+                    document.getElementById('modal-status').textContent = 'Modal not found!';
+                    document.getElementById('modal-status').className = 'status error';
+                }
+            }
+        });
+        
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 TPB Modal Files Test Page Loaded');
+            testFiles();
+        });
+    </script>
+</body>
+</html>

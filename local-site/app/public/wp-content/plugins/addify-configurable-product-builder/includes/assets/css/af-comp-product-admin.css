@@ -1,0 +1,290 @@
+.af-comp-product-tbl{
+	width: 100%;
+}
+
+input#upload_image_for_component-1{
+	width: 100px;
+}
+
+
+.upload_image_for_component{
+	width: 250px;
+}
+
+.af-comp-product-tbl tr td:first-child{
+	width: 28%;
+	font-weight: 500;
+	font-size: 14px;
+	vertical-align: top;
+	line-height: 2;
+	padding-left: 10px;
+}
+.af-comp-product-input{
+	width: 60% !important;
+	height: 34px;
+}
+textarea.af-comp-product-input{
+	min-height: 100px;
+	max-height: 200px;
+}
+.af_comp_product_grid_view{
+	display: grid;
+}
+.af_cp_scenario_desc_div{
+	display: none;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+	width: 102%;
+}
+.af_composite_product_desc_div{
+	display: none;
+	margin-left: 14px;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.af_cp_scenario_div,
+.af_composite_product_title_div{
+	min-height: 20px;
+	width: 98%;
+	min-height: 40px;
+	padding-right: 12px;
+	padding-left: 20px;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: capitalize;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.af_composite_product_main_div{
+	margin-top: 4px;
+	width: 98%;
+}
+.af_cp_update_scenario_div,
+.af_composite_product_add_new_component_div{
+	padding: 10px;
+	margin-top: 10px;
+	text-align: right;
+	border: 1px solid rgba(128, 128, 128, 0.6);
+}
+.af_cp_scenario,
+.af_comp_product_remove_component{
+	float: right;
+	margin-top: -4px !important;
+}
+.af_composite_product_main_div div:first-child{
+	text-align: right;
+	padding: 10px;
+	width: 100%;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.btn_text_color{
+	cursor: pointer;
+	color: #2271b1;
+}
+.af_comp_product_setting_fields{
+	min-width: 30%;
+}
+.af_comp_product_hidden{
+	display: none;
+}
+.upload_image_for_component{
+	width: 20%;
+}
+
+.af_cp_expand_close{
+	text-align: right;
+	padding: 12px;
+	width: 98%;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.af_cp_scenario_main_div{
+	width: 98%;
+	margin: 0;
+	margin-bottom: 10px;
+	padding: 0px 0px;
+}
+.af_cp_update_scenario_div{
+	width: 96%;
+	padding: 20px;
+	text-align: right;
+}
+.sf_cp_scenario_conditions{
+	width: 100%;
+	margin: 0;
+	padding: 0px;
+}
+/* .sf_cp_scenario_conditions div{ */
+.sf_cp_scenario_conditions .conditions{
+	width: 98%;
+	margin: 0px 0px 0px 6px;
+	border: 1px solid rgba(128, 128, 128, 0.5);
+	padding: 4px 0px 0px 4px;
+}
+.sf_cp_scenario_conditions .title{
+	text-align: center;
+	height: 20px;
+	margin-bottom: 4px;
+}
+.sf_cp_scenario_conditions .conditions table td,
+.af_cp_sc_actions_tbl td{
+	background-color: rgb(182 182 182 / 28%);
+	padding: 8px;
+}
+.sf_cp_scenario_conditions .conditions table td select,
+.af_cp_sc_actions_tbl td select{
+	width: 100%;
+}
+.sf_cp_scenario_conditions .conditions table,
+.af_cp_sc_actions_tbl{
+	width: 100%;
+	margin: 0;
+	border-spacing: 4px;
+}
+.af_cp_sc_actions_tbl tr td:first-child,
+.sf_cp_scenario_conditions .conditions table tr td:first-child{
+	width: 26%;
+}
+.af_cp_sc_actions_tbl tr td:nth-child(2),
+.sf_cp_scenario_conditions .conditions table tr td:nth-child(2){
+	width: 16%;
+}
+.af_cp_sc_actions_tbl tr td:nth-child(3),
+.sf_cp_scenario_conditions .conditions table tr td:nth-child(3){
+	width: 50%;
+}
+.af_cp_sc_actions_tbl tr td:nth-child(4),
+.sf_cp_scenario_conditions .conditions table tr td:nth-child(4){
+	width: 8%;
+	text-align: center;
+}
+.af_cp_sc_actions_tbl tr:first-child{
+	height: 40px;
+	font-weight: 600;
+	text-align: center;
+}
+.af_cp_sc_actions_tbl tr td{
+	vertical-align: top;
+}
+.af_cp_remove_row{
+	font-size: 22px;
+	cursor: pointer;
+}
+.af_cp_remove_row:hover{
+	font-size: 26px;
+	color: rgba(219, 33, 33, 0.87);
+}
+.conditions table tr td{
+	vertical-align: top;
+}
+.conditions table tr:first-child{
+	padding: 4px;
+	text-align: center;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+div.conditions{
+	/* max-height: 400px; */
+	overflow-y: auto;
+}
+.conditions table tr:last-child{
+	position: sticky;
+	bottom: 0;
+	background-color: #ffffff;
+}
+.af_cp_desc_div_toggle_btn{
+	width: 100%;
+	margin-left: -10px;
+	margin-top: 2px;
+	padding: 4px;
+	border-bottom: 1px solid rgb(128 128 128 / 19%) !important;
+}
+.af_cp_comp_advance_settings{
+	display: none;
+}
+.af_cp_comp_btn_active{
+	color: #2271b1;
+	font-weight: 600;
+	text-decoration: underline;
+}
+.af_cp_desc_div_toggle_btn{
+	text-align: left !important;
+}
+.af_cp_desc_div_toggle_btn span{
+	cursor: pointer;
+	margin-right: 10px;
+}
+.af_cp_layout_main_div{
+	width: 100%;
+	margin-bottom: 20px;
+	font-weight: 600;
+}
+.af_cp_layout_div{
+	cursor: pointer;
+	vertical-align: middle;
+	display: inline-block;
+	/* width: 100px;
+	height: 80px; */
+	width: 110px;
+	height: 90px;
+	margin: 5px;
+	position: relative;
+	border: 1px solid #bdbcbc8a;
+}
+.af_cp_layout_div input{
+	display: inline-block;
+	vertical-align: middle;
+}
+.af_cp_layout_div img{
+	width: 80%;
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.af_cp_selected_layout{
+	border: 2px solid #007cba;
+}
+.af_cp_comp_border_top td{
+	border-top: 1px solid #bdbcbc8a;
+	padding: 8px;
+}
+.af_cp_enable_sce_div{
+	width: 30px;
+	height: 16px;
+	margin: 0px 6px -6px 0px;
+	display: inline-block;
+	border: 1px solid #80808075;
+	border-radius: 40%;
+	background-color: #d8cccc5c;
+	padding: 2px;
+	vertical-align: top;
+}
+.af_cp_enable_sce_span{
+	width: 52%;
+	height: 86%;
+	background-color: white;
+	border-radius: 50%;
+	border: 1px solid gray;
+}
+.af_cp_enable_sce_div_selected{
+	background-color: #0071a1 !important;
+}
+.af_cp_enable_sce_span_selected{
+	float: right;
+}
+.af_cp_scenario_div .title_div{
+	display: inline-block;
+	padding: 8px 0px;
+	width: 70%;
+	min-height: 24px;
+}
+.af_cp_scenario_div .af_cp_enable_sce_div{
+	margin-top: 8px !important;
+}
+.af_cp_scenario_div .button{
+	margin-top: 4px !important;
+}
+.af_cp_scenario_div div ,
+.af_cp_scenario_div input{
+	cursor: pointer;
+}
+.af_composite_product_title_div{
+	padding-top: 8px;
+	cursor: pointer;
+}
